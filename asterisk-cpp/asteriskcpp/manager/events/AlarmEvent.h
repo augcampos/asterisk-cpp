@@ -1,0 +1,58 @@
+/*
+ * AlarmEvent.h
+ *
+ *  Created on: Aug 4, 2011
+ *      Author: a-campos
+ */
+
+#ifndef ALARMEVENT_H_
+#define ALARMEVENT_H_
+
+#include "asteriskcpp/manager/events/ManagerEvent.h"
+
+namespace asteriskcpp {
+
+/**
+ * An AlarmEvent is triggered when a Zap channel enters or changes alarm state.<p>
+ * It is implemented in <code>channels/chan_zap.c</code>
+ *
+ */
+class AlarmEvent: public ManagerEvent {
+public:
+	inline static std::string getEventName() {
+		return ("AlarmEvent");
+	}
+
+	AlarmEvent(const std::string & values) :
+			ManagerEvent(values) {
+	}
+	virtual ~AlarmEvent() {
+	}
+
+	/**
+	 * Returns the kind of alarm that happened.<p>
+	 * This may be one of
+	 * <ul>
+	 * <li>Red Alarm</li>
+	 * <li>Yellow Alarm</li>
+	 * <li>Blue Alarm</li>
+	 * <li>Recovering</li>
+	 * <li>Loopback</li>
+	 * <li>Not Open</li>
+	 * </ul>
+	 */
+	std::string getAlarm() const {
+		return (getProperty("Alarm"));
+	}
+
+	/**
+	 * Returns the number of the channel the alarm occured on.
+	 */
+	std::string getChannel() const {
+		return (getProperty("Channel"));
+	}
+};
+
+}
+
+#endif /* ALARMEVENT_H_ */

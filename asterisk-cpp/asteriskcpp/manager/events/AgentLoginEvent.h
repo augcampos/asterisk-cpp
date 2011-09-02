@@ -1,0 +1,52 @@
+/*
+ * AgentLoginEvent.h
+ *
+ *  Created on: Aug 2, 2011
+ *      Author: a-campos
+ */
+
+#ifndef AGENTLOGINEVENT_H_
+#define AGENTLOGINEVENT_H_
+
+#include "asteriskcpp/manager/events/ManagerEvent.h"
+
+namespace asteriskcpp {
+
+/**
+ * An AgentLoginEvent is triggered when an agent is successfully logged in using AgentLogin.<p>
+ * It is implemented in <code>channels/chan_agent.c</code>
+ *
+ * @see org.asteriskjava.manager.event.AgentLogoffEvent
+ */
+class AgentLoginEvent: public ManagerEvent {
+public:
+	inline static std::string getEventName() {
+		return ("AgentLoginEvent");
+	}
+	AgentLoginEvent(const std::string & values) :
+			ManagerEvent(values) {
+	}
+	virtual ~AgentLoginEvent() {
+	}
+
+	/**
+	 * Returns the name of the agent that logged in.
+	 */
+	std::string getAgent() const {
+		return (getProperty("Agent"));
+	}
+
+	/**
+	 * Returns the name of the channel associated with the logged in agent.
+	 *
+	 * @return the name of the channel associated with the logged in agent.
+	 * @since 0.3
+	 */
+	std::string getChannel() const {
+		return (getProperty("Channel"));
+	}
+};
+
+}
+
+#endif /* AGENTLOGINEVENT_H_ */
