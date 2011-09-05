@@ -23,18 +23,13 @@ public:
 	inline static std::string getEventName() {
 		return ("AgentLoginEvent");
 	}
-	AgentLoginEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
-	virtual ~AgentLoginEvent() {
-	}
+	AgentLoginEvent(const std::string & values);
+	virtual ~AgentLoginEvent();
 
 	/**
 	 * Returns the name of the agent that logged in.
 	 */
-	std::string getAgent() const {
-		return (getProperty("Agent"));
-	}
+	std::string getAgent() const;
 
 	/**
 	 * Returns the name of the channel associated with the logged in agent.
@@ -42,9 +37,7 @@ public:
 	 * @return the name of the channel associated with the logged in agent.
 	 * @since 0.3
 	 */
-	std::string getChannel() const {
-		return (getProperty("Channel"));
-	}
+	std::string getChannel() const;
 };
 
 }

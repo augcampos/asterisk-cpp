@@ -8,7 +8,7 @@
 #ifndef AGENTCONNECTEVENT_H_
 #define AGENTCONNECTEVENT_H_
 
-#include "AbstractAgentEvent.h"
+#include "asteriskcpp/manager/events/AbstractAgentEvent.h"
 
 namespace asteriskcpp {
 
@@ -24,20 +24,15 @@ public:
 	inline static std::string getEventName() {
 		return ("AgentConnectEvent");
 	}
-	AgentConnectEvent(const std::string & values) :
-			AbstractAgentEvent(values) {
-	}
-	virtual ~AgentConnectEvent() {
-	}
+	AgentConnectEvent(const std::string & values);
+	virtual ~AgentConnectEvent() ;
 
 	/**
 	 * Returns the amount of time the caller was on hold.
 	 *
 	 * @return the amount of time the caller was on hold in seconds.
 	 */
-	std::string getHoldTime() const {
-		return (getProperty("HoldTime"));
-	}
+	std::string getHoldTime() const ;
 
 	/**
 	 * Returns the unique ID of the queue member channel that is taking the
@@ -47,9 +42,7 @@ public:
 	 *
 	 * @return the unique ID of the queue member channel that is taking the call.
 	 */
-	std::string getBridgedChannel() const {
-		return (getProperty("BridgedChannel"));
-	}
+	std::string getBridgedChannel() const ;
 
 	/**
 	 * Returns the amount of time the agent's channel was ringing before answered.<p>
@@ -58,9 +51,7 @@ public:
 	 * @return the amount of time the agent's channel was ringing before answered in seconds.
 	 * @since 1.0.0
 	 */
-	std::string getRingtime() const {
-		return (getProperty("Ringtime"));
-	}
+	std::string getRingtime() const ;
 
 };
 

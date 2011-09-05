@@ -25,23 +25,16 @@ public:
 		return ("AgentCallbackLoginEvent");
 	}
 
-	AgentCallbackLoginEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
+	AgentCallbackLoginEvent(const std::string & values);
 
-	virtual ~AgentCallbackLoginEvent() {
-	}
+	virtual ~AgentCallbackLoginEvent();
 
 	/**
 	 * Returns the name of the agent that logged in.
 	 */
-	std::string getAgent() const {
-		return (getProperty("Agent"));
-	}
+	std::string getAgent() const;
 
-	std::string getLoginChan() const {
-		return (getProperty("Loginchan"));
-	}
+	std::string getLoginChan() const;
 };
 
 }

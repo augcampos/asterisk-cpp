@@ -8,7 +8,7 @@
 #ifndef AGENTDUMPEVENT_H_
 #define AGENTDUMPEVENT_H_
 
-#include "AbstractAgentEvent.h"
+#include "asteriskcpp/manager/events/AbstractAgentEvent.h"
 
 namespace asteriskcpp {
 
@@ -25,11 +25,8 @@ public:
 	inline static std::string getEventName() {
 		return ("AgentDumpEvent");
 	}
-	AgentDumpEvent(const std::string & values) :
-			AbstractAgentEvent(values) {
-	}
-	virtual ~AgentDumpEvent() {
-	}
+	AgentDumpEvent(const std::string & values);
+	virtual ~AgentDumpEvent();
 };
 
 }

@@ -17,22 +17,15 @@ public:
 	inline static std::string getEventName() {
 		return ("AgentLogoffEvent");
 	}
-	AgentLogoffEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
-	virtual ~AgentLogoffEvent() {
-	}
+	AgentLogoffEvent(const std::string & values);
+	virtual ~AgentLogoffEvent();
 
 	/**
 	 * Gets the name of the agent that logged off.
 	 */
-	std::string getAgent() const {
-		return (getProperty("Agent"));
-	}
+	std::string getAgent() const;
 
-	std::string getLoginTime() const {
-		return (getProperty("Logintime"));
-	}
+	std::string getLoginTime() const;
 
 };
 

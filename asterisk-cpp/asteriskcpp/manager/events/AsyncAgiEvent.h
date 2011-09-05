@@ -8,9 +8,8 @@
 #ifndef ASYNCAGIEVENT_H_
 #define ASYNCAGIEVENT_H_
 
-#include "ResponseEvent.h"
+#include "asteriskcpp/manager/events/ResponseEvent.h"
 #include "vector"
-#include <boost/algorithm/string.hpp>
 
 namespace asteriskcpp {
 
@@ -34,29 +33,22 @@ public:
 	inline static std::string getEventName() {
 		return ("AsyncAgiEvent");
 	}
-	AsyncAgiEvent(const std::string & values) :
-			ResponseEvent(values) {
-	}
-	virtual ~AsyncAgiEvent() {
-	}
+	AsyncAgiEvent(const std::string & values);
+	virtual ~AsyncAgiEvent();
 
 	/**
 	 * Returns the name of the channel this event occurred on.
 	 *
 	 * @return the name of the channel this event occurred on.
 	 */
-	std::string getChannel() const {
-		return (getProperty("Channel"));
-	}
+	std::string getChannel() const;
 
 	/**
 	 * Returns the sub event type. This is either "Start", "Exec" or "End".
 	 *
 	 * @return the sub event type.
 	 */
-	std::string getSubEvent() const {
-		return (getProperty("SubEvent"));
-	}
+	std::string getSubEvent() const;
 
 	/**
 	 * Returns the command id of the corresponding {@link org.asteriskjava.manager.action.AgiAction}.<p>
@@ -65,9 +57,7 @@ public:
 	 * @return the command id.
 	 * @see org.asteriskjava.manager.action.AgiAction#setCommandId(String)
 	 */
-	std::string getCommandId() const {
-		return (getProperty("CommandId"));
-	}
+	std::string getCommandId() const;
 
 	/**
 	 * Returns the raw result of a command execution in response to the corresponding
@@ -81,18 +71,14 @@ public:
 	 *
 	 * @return the URL encoded result.
 	 */
-	std::string getResult() const {
-		return (getProperty("Result"));
-	}
+	std::string getResult() const;
 
 	/**
 	 * Decodes the result.
 	 *
 	 * @return the decoded result.
 	 */
-	std::vector<std::string> decodeResult() {
-		return (decode(getResult()));
-	}
+	std::vector<std::string> decodeResult();
 
 	/**
 	 * Returns the raw AGI environment similar to the AGI request for FastAGI.<p>
@@ -112,9 +98,7 @@ public:
 	 *
 	 * @return the URL encoded AGI environment.
 	 */
-	std::string getEnv() const {
-		return (getProperty("Env"));
-	}
+	std::string getEnv() const;
 
 	/**
 	 * Decodes the AGI environment and returns a list of lines.
@@ -123,15 +107,9 @@ public:
 	 *         if {@link #getEnv()} returns <code>null</code>).
 	 * @see #getEnv()
 	 */
-	std::vector<std::string> decodeEnv() {
-		return (decode(getEnv()));
-	}
+	std::vector<std::string> decodeEnv();
 private:
-	std::vector<std::string> decode(std::string s) {
-		std::vector<std::string> rt;
-		boost::split(rt, s, boost::is_any_of("\n"));
-		return (rt);
-	}
+	std::vector<std::string> decode(std::string s);
 };
 
 }

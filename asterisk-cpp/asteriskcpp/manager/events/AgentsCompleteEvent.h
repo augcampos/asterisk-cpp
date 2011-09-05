@@ -8,7 +8,7 @@
 #ifndef AGENTSCOMPLETEEVENT_H_
 #define AGENTSCOMPLETEEVENT_H_
 
-#include "ResponseEvent.h"
+#include "asteriskcpp/manager/events/ResponseEvent.h"
 
 namespace asteriskcpp {
 
@@ -25,11 +25,8 @@ public:
 	inline static std::string getEventName() {
 		return ("AgentsCompleteEvent");
 	}
-	AgentsCompleteEvent(const std::string & values) :
-			ResponseEvent(values) {
-	}
-	virtual ~AgentsCompleteEvent() {
-	}
+	AgentsCompleteEvent(const std::string & values);
+	virtual ~AgentsCompleteEvent();
 };
 
 }

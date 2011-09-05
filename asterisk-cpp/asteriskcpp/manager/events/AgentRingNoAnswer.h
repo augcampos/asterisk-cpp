@@ -8,7 +8,7 @@
 #ifndef AGENTRINGNOANSWER_H_
 #define AGENTRINGNOANSWER_H_
 
-#include "AbstractAgentEvent.h"
+#include "asteriskcpp/manager/events/AbstractAgentEvent.h"
 
 namespace asteriskcpp {
 
@@ -25,20 +25,15 @@ public:
 	inline static std::string getEventName() {
 		return ("AgentRingNoAnswer");
 	}
-	AgentRingNoAnswer(const std::string & values) :
-			AbstractAgentEvent(values) {
-	}
-	virtual ~AgentRingNoAnswer() {
-	}
+	AgentRingNoAnswer(const std::string & values);
+	virtual ~AgentRingNoAnswer();
 
 	/**
 	 * Returns the amount of time the agent's channel was ringing.
 	 *
 	 * @return the amount of time the agent's channel was ringing in seconds.
 	 */
-	std::string getRingtime() const {
-		return (getProperty("Ringtime"));
-	}
+	std::string getRingtime() const;
 };
 
 }

@@ -22,20 +22,15 @@ public:
 	inline static std::string getEventName() {
 		return ("AlarmClearEvent");
 	}
-	AlarmClearEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
-	virtual ~AlarmClearEvent() {
-	}
+	AlarmClearEvent(const std::string & values) ;
+	virtual ~AlarmClearEvent() ;
 
 	/**
 	 * Returns the number of the zap channel that left alarm state.
 	 *
 	 * @return the number of the zap channel that left alarm state.
 	 */
-	std::string getChannel() const {
-		return (getProperty("Channel"));
-	}
+	std::string getChannel() const ;
 
 };
 

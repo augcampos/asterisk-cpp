@@ -23,11 +23,8 @@ public:
 		return ("AlarmEvent");
 	}
 
-	AlarmEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
-	virtual ~AlarmEvent() {
-	}
+	AlarmEvent(const std::string & values);
+	virtual ~AlarmEvent();
 
 	/**
 	 * Returns the kind of alarm that happened.<p>
@@ -41,16 +38,12 @@ public:
 	 * <li>Not Open</li>
 	 * </ul>
 	 */
-	std::string getAlarm() const {
-		return (getProperty("Alarm"));
-	}
+	std::string getAlarm() const;
 
 	/**
 	 * Returns the number of the channel the alarm occured on.
 	 */
-	std::string getChannel() const {
-		return (getProperty("Channel"));
-	}
+	std::string getChannel() const;
 };
 
 }

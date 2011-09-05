@@ -8,9 +8,9 @@
 #ifndef EVENTBUILDER_H_
 #define EVENTBUILDER_H_
 
-#include "events/ManagerEvent.h"
+#include "asteriskcpp/manager/events/ManagerEvent.h"
 #include <boost/shared_ptr.hpp>
-#include "../utils/LogHandler.h"
+#include "asteriskcpp/utils/LogHandler.h"
 
 namespace asteriskcpp {
 
@@ -38,7 +38,7 @@ public:
 
 	template<class C>
 	void RegisterClass() {
-		LOG_TRACE_STR("REGISTER EVENT CLASS " + C::getEventName());
+		LOG_TRACE_DATA("REGISTER EVENT CLASS " << C::getEventName());
 		eventFactoryMap.insert(std::make_pair(C::getEventName(), new factory<C>()));
 	}
 
