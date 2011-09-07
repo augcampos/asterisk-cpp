@@ -56,10 +56,10 @@ public:
 };
 
 class ManagerResponsesHandler: public Thread {
-	typedef ResponseCallBack* value_t;
-	typedef std::map<std::string, value_t> listenersList_t;
+	typedef std::map<std::string, ResponseCallBack*> listenersList_t;
 	boost::condition_variable m_cond;
 	boost::mutex m_mutex;
+	ResponseCallBack* getListener(const std::string& key);
 public:
 	void addResponsetListener(const std::string& key, ResponseCallBack* bcb);
 	void removeResponseListener(const std::string& key);

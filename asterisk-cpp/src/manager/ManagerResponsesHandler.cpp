@@ -27,7 +27,8 @@ ASyncResponseCallBack::ASyncResponseCallBack(ManagerAction* a, unsigned int tout
 
 void ASyncResponseCallBack::fireCallBack(ManagerResponse* mr) {
 	LOG_TRACE_STR("ASyncResponseCallBack :" + (*mr).toLog());
-	if (function != NULL)
+	if (function != NULL
+	)
 		(function)(mr);
 }
 
@@ -62,16 +63,20 @@ void ResponseCallBack::fireTimeout() {
 
 void ManagerResponsesHandler::addResponsetListener(const std::string& key, ResponseCallBack* bcb) {
 	boost::unique_lock<boost::mutex> lock(m_mutex);
-
 	LOG_TRACE_STR("ADD RESPONSE Listener " + key+ "::" + typeid(*bcb).name() + "::" + convertToString(bcb->timeout));
-	listeners[key] = bcb;
+	const std::pair<std::string, ResponseCallBack*> p = std::make_pair(key, bcb);
+	listeners.insert(p);
 	m_cond.notify_one();
+
 }
 
 void ManagerResponsesHandler::removeResponseListener(const std::string& key) {
-	value_t m = listeners[key];
+	boost::unique_lock<boost::mutex> lock(m_mutex);
+	LOG_TRACE_STR("REMOVE RESPONSE Listener " + key);
+	ResponseCallBack* m = getListener(key);
 	listeners.erase(key);
-	delete (m);
+	if (m)
+		delete (m);
 }
 
 void ManagerResponsesHandler::stop() {
@@ -91,7 +96,7 @@ void ManagerResponsesHandler::run() {
 			}
 
 			for (listenersList_t::const_iterator it = listeners.begin(); it != listeners.end(); it++) {
-				value_t m = (*it).second;
+				ResponseCallBack* m = (*it).second;
 				if (boost::get_system_time() >= m->timeout) {
 					m->fireTimeout();
 					removeResponseListener((*it).first);
@@ -109,16 +114,23 @@ void ManagerResponsesHandler::clear() {
 	m_cond.notify_one();
 }
 
+ResponseCallBack* ManagerResponsesHandler::getListener(const std::string& key) {
+	if (listeners.find(key) != listeners.end())
+		return (listeners[key]);
+
+	return (NULL);
+}
+
 void ManagerResponsesHandler::fireResponseCallback(ManagerResponse *mr) {
 	LOG_DEBUG_STR("FIRE RESPONSE " + typeid(*mr).name() + "::" + mr->toLog());
 	std::string key = mr->getActionId();
-	if (listeners.find(key) != listeners.end()) {
-		value_t listner = listeners[key];
-		if (listner) {
-			listner->fireCallBack(mr);
-			removeResponseListener(key);
-		}
+
+	ResponseCallBack* listner = getListener(key);
+	if (listner) {
+		listner->fireCallBack(mr);
+		removeResponseListener(key);
 	}
+
 }
 
 }

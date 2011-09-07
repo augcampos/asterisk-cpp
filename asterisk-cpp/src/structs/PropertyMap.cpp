@@ -56,16 +56,23 @@ std::string PropertyMap::getProperty(const std::string& key) const {
 
 void PropertyMap::convertStr(const std::string& propertyStr) {
 	std::string knull;
-	std::vector<std::string> lines;
-	boost::split(lines, propertyStr, boost::is_any_of(NEWLINE));
-	for (std::vector<std::string>::const_iterator it = lines.begin(); it != lines.end(); it++) {
-		size_t sep = (*it).find(SEP);
-		if (knull.size() == 0 && sep != (*it).npos) {
-			setProperty((*it).substr(0, sep), (*it).substr(sep + 2));
+	std::string::size_type lastPos = propertyStr.find_first_not_of(NEWLINE, 0);
+	std::string::size_type pos = propertyStr.find(NEWLINE);
+	while (std::string::npos != pos || std::string::npos != lastPos) {
+		std::string line = propertyStr.substr(lastPos, pos - lastPos);
+
+		size_t sep = line.find(SEP);
+		if (knull.size() == 0 && sep != line.npos && sep < 35) {
+			setProperty(line.substr(0, sep), line.substr(sep + 2));
 		} else {
-			knull.append(*it);
+			//std::cout << "knull[" << str2Log(line) << "]" << std::endl;
+			knull.append(line);
 		}
+
+		lastPos = propertyStr.find_first_not_of(NEWLINE, pos);
+		pos = propertyStr.find(NEWLINE, lastPos);
 	}
+
 	if (knull.size())
 		setProperty("", knull);
 }
@@ -77,6 +84,9 @@ void PropertyMap::addProperty(const std::string& key, const std::string& value) 
 }
 
 std::string PropertyMap::makeStdLine(const std::string & key, const std::string & value) {
+	if (key.length() < 2) {
+		return (std::string(value + NEWLINE));
+	}
 	return (std::string(key + SEP + value + NEWLINE));
 }
 
