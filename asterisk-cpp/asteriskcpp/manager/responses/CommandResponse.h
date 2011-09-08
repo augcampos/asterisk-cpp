@@ -41,7 +41,7 @@ public:
 	 *
 	 * @return a List of strings representing the lines returned by the CLI command.
 	 */
-	std::vector<std::string> getResult() const;
+	const std::vector<std::string>& getResult();
 private:
 	std::vector<std::string> result;
 };

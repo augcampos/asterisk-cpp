@@ -52,19 +52,19 @@ void ManagerConnection::disconnect() {
 }
 
 void ManagerConnection::send(const std::string& data) {
+	boost::mutex::scoped_lock lock(mutWrite);
 	LOG_DEBUG_STR(str2Log(data));
 	this->socket->writeData(data.c_str(), (unsigned int) data.size());
 }
 
 void ManagerConnection::sendAction(ManagerAction& action) {
-	//TODO: call sendAction(action, NULL) // to set the correct response
-	send(action.toString());
+	sendAction(action, NULL);
 }
 
 void ManagerConnection::sendAction(ManagerAction& action, responseCallbackFunction_t rcbf) {
 	ASyncResponseCallBack *asrcb = new ASyncResponseCallBack(&action, defaultActionTimeout, rcbf);
-	addResponsetListener(action.getActionId(), asrcb);
-	sendAction(action);
+	addResponsetListener(action.generateID(), asrcb);
+	send(action.toString());
 }
 
 ManagerResponse* ManagerConnection::syncSendAction(ManagerAction& action) {
@@ -74,7 +74,7 @@ ManagerResponse* ManagerConnection::syncSendAction(ManagerAction& action) {
 ManagerResponse* ManagerConnection::syncSendAction(ManagerAction& action, unsigned int timeout) {
 	SyncResponseCallBack *srcb = new SyncResponseCallBack(&action, timeout);
 	addResponsetListener(action.generateID(), srcb);
-	sendAction(action);
+	send(action.toString());
 	srcb->stoll();
 	return (&(*srcb->response));
 }
@@ -149,9 +149,9 @@ void ManagerConnection::logoff() {
 	if (this->isAuthenticated()) {
 		LogoffAction la;
 		ManagerResponse *mr = syncSendAction(la);
-
-		if (mr->getType() == ManagerResponse::Type_SUCCESS)
+		if (mr->getType() == ManagerResponse::Type_SUCCESS) {
 			this->changeState(CONNECTED);
+		}
 
 		delete (mr);
 	}
@@ -181,6 +181,9 @@ void ManagerConnection::changeState(State newState) {
 		if (state == DISCONNECTED) {
 			this->reader.start(socket, this);
 			ManagerResponsesHandler::start();
+		} else {
+			this->reader.stop();
+			ManagerResponsesHandler::stop();
 		}
 	}
 		break;

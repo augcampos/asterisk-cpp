@@ -29,7 +29,7 @@ public:
 	ManagerConnection();
 	virtual ~ManagerConnection();
 
-	bool connect(const std::string& server, unsigned int port=5038);
+	bool connect(const std::string& server, unsigned int port = 5038);
 	void disconnect();
 	bool login(const std::string& user, const std::string& pass);
 	void logoff();
@@ -54,6 +54,7 @@ private:
 	State state;
 	TCPSocket* socket;
 	Reader reader;
+	boost::mutex mutWrite;
 	EventBuilder eventBuilder;
 	ResponseBuilder responseBuilder;
 	AsteriskVersion* asteriskVersion;

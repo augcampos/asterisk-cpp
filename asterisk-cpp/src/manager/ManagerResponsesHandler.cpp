@@ -128,8 +128,8 @@ void ManagerResponsesHandler::fireResponseCallback(ManagerResponse *mr) {
 	ResponseCallBack* listner = getListener(key);
 	if (listner) {
 		listner->fireCallBack(mr);
-		removeResponseListener(key);
 	}
+	removeResponseListener(key);
 
 }
 

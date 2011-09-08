@@ -25,7 +25,7 @@ std::string CommandResponse::getPrivilege() const {
 	return ("command");
 }
 
-std::vector<std::string> CommandResponse::getResult() const {
+const std::vector<std::string>& CommandResponse::getResult(){
 	return (result);
 }
 

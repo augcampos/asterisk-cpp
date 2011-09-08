@@ -33,13 +33,7 @@ void CommandAction::setCommand(std::string command) {
 }
 
 ManagerResponse *CommandAction::expectedResponce(const std::string & response) {
-	std::cout << "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" << std::endl;
-	std::cout << response << std::endl;
-	std::cout << "---------------------------------------------------------" << std::endl;
-	ManagerResponse *rt = new CommandResponse(response);
-	(*rt).toLog();
-	std::cout << "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" << std::endl;
-	return (rt);
+	return (new CommandResponse(response));
 }
 
 } /* namespace asteriskcpp */
