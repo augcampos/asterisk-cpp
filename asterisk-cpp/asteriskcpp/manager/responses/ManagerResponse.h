@@ -32,6 +32,10 @@ public:
 
 	Type getType();
 
+	bool inline isTypeSuccess() {
+		return (this != NULL && (getType() == Type_SUCCESS));
+	}
+
 	/**
 	 * Returns a Map with all attributes of this response.<p>
 	 * The keys are all lower case!
@@ -63,7 +67,6 @@ public:
 	 *         <code>null</code> if there is no such attribute.
 	 */
 	std::string getAttribute(const std::string& key) const;
-
 
 	std::string getActionId() const;
 

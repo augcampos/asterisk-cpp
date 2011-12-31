@@ -27,9 +27,9 @@ ASyncResponseCallBack::ASyncResponseCallBack(ManagerAction* a, unsigned int tout
 
 void ASyncResponseCallBack::fireCallBack(ManagerResponse* mr) {
 	LOG_TRACE_STR("ASyncResponseCallBack :" + (*mr).toLog());
-	if (function != NULL
-	)
+	if (function != NULL) {
 		(function)(mr);
+	}
 }
 
 SyncResponseCallBack::SyncResponseCallBack(ManagerAction* a, unsigned int timeOut) :

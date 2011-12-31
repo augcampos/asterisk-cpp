@@ -20,14 +20,11 @@ ManagerResponse::ManagerResponse(const std::string& responseStr) {
 	convertStr(responseStr);
 }
 
-
-
 ManagerResponse::Type ManagerResponse::getType() {
 	std::string sType = getProperty("Response");
-	if (sType == TYPE_ERROR
-	)
+	if (sType == TYPE_ERROR) {
 		return (ManagerResponse::Type_ERROR);
-
+	}
 	return (ManagerResponse::Type_SUCCESS);
 
 }

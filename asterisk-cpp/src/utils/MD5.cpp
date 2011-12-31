@@ -41,7 +41,7 @@
 #include "asteriskcpp/utils/MD5.h"
 
 /* system implementation headers */
-#include <stdio.h>
+#include <cstdio>
 #include <cstring>
 
 // Constants for MD5Transform routine.
