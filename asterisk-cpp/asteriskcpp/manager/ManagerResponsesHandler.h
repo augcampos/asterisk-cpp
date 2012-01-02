@@ -46,9 +46,12 @@ protected:
 };
 
 class SyncResponseCallBack: public ResponseCallBack {
+	typedef boost::unique_lock<boost::mutex> syncLock_t;
 	boost::mutex m_mutex;
 	boost::condition_variable m_cond;
 public:
+	virtual ~SyncResponseCallBack();
+
 	ManagerResponse *response;
 	SyncResponseCallBack(ManagerAction* a, unsigned int timeOut);
 	void stoll();
@@ -57,12 +60,15 @@ public:
 
 class ManagerResponsesHandler: public Thread {
 	typedef std::map<std::string, ResponseCallBack*> listenersList_t;
-	boost::condition_variable m_cond;
+	typedef boost::mutex::scoped_lock managerLock_t;
 	boost::mutex m_mutex;
+	boost::condition_variable m_cond;
 	ResponseCallBack* getListener(const std::string& key);
 public:
+	virtual ~ManagerResponsesHandler();
 	void addResponsetListener(const std::string& key, ResponseCallBack* bcb);
 	void removeResponseListener(const std::string& key);
+	bool isEmpty();
 
 	virtual void stop();
 	virtual void run();

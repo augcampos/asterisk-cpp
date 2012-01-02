@@ -35,15 +35,23 @@ void ASyncResponseCallBack::fireCallBack(ManagerResponse* mr) {
 SyncResponseCallBack::SyncResponseCallBack(ManagerAction* a, unsigned int timeOut) :
 		ResponseCallBack(a, timeOut) {
 }
+
+SyncResponseCallBack::~SyncResponseCallBack() {
+	syncLock_t lock(m_mutex);
+	m_cond.notify_all();
+	LOG_TRACE_STR("");
+}
+
 void SyncResponseCallBack::stoll() {
-	boost::unique_lock<boost::mutex> lock(m_mutex);
+	syncLock_t lock(m_mutex);
+	LOG_TRACE_STR("");
 	m_cond.wait(lock);
 }
 void SyncResponseCallBack::fireCallBack(ManagerResponse* mr) {
-	boost::unique_lock<boost::mutex> lock(m_mutex);
+	syncLock_t lock(m_mutex);
 	response = mr;
 	LOG_TRACE_STR("SyncResponseCallBack : "+ (*mr).toLog());
-	m_cond.notify_one();
+	m_cond.notify_all();
 }
 
 ManagerAction *ResponseCallBack::getAction() const {
@@ -60,23 +68,34 @@ void ResponseCallBack::fireTimeout() {
 	fireCallBack(rto);
 	delete (rto);
 }
-
+ManagerResponsesHandler::~ManagerResponsesHandler() {
+	this->stop();
+}
 void ManagerResponsesHandler::addResponsetListener(const std::string& key, ResponseCallBack* bcb) {
-	boost::unique_lock<boost::mutex> lock(m_mutex);
+	managerLock_t lock(m_mutex);
 	LOG_TRACE_STR("ADD RESPONSE Listener " + key+ "::" + typeid(*bcb).name() + "::" + convertToString(bcb->timeout));
 	const std::pair<std::string, ResponseCallBack*> p = std::make_pair(key, bcb);
 	listeners.insert(p);
 	m_cond.notify_one();
-
 }
 
 void ManagerResponsesHandler::removeResponseListener(const std::string& key) {
-	boost::unique_lock<boost::mutex> lock(m_mutex);
+	managerLock_t lock(m_mutex);
 	LOG_TRACE_STR("REMOVE RESPONSE Listener " + key);
 	ResponseCallBack* m = getListener(key);
 	listeners.erase(key);
-	if (m)
+	if (m) {
 		delete (m);
+	}
+}
+
+bool ManagerResponsesHandler::isEmpty() {
+	managerLock_t lock(m_mutex);
+	bool rt = listeners.empty();
+	if (rt)
+		m_cond.wait(lock);
+
+	return rt;
 }
 
 void ManagerResponsesHandler::stop() {
@@ -90,16 +109,15 @@ void ManagerResponsesHandler::run() {
 	{
 		boost::this_thread::disable_interruption di;
 		{
-			if (listeners.empty()) {
-				boost::unique_lock<boost::mutex> lock(m_mutex);
-				m_cond.wait(lock);
-			}
 
-			for (listenersList_t::const_iterator it = listeners.begin(); it != listeners.end(); it++) {
-				ResponseCallBack* m = (*it).second;
-				if (boost::get_system_time() >= m->timeout) {
-					m->fireTimeout();
-					removeResponseListener((*it).first);
+			if (!isEmpty()) {
+
+				for (listenersList_t::const_iterator it = listeners.begin(); it != listeners.end(); it++) {
+					ResponseCallBack* m = (*it).second;
+					if (boost::get_system_time() >= m->timeout) {
+						m->fireTimeout();
+						removeResponseListener((*it).first);
+					}
 				}
 			}
 
@@ -111,7 +129,7 @@ void ManagerResponsesHandler::clear() {
 	for (listenersList_t::const_iterator it = listeners.begin(); it != listeners.end(); it++) {
 		removeResponseListener((*it).first);
 	}
-	m_cond.notify_one();
+	m_cond.notify_all();
 }
 
 ResponseCallBack* ManagerResponsesHandler::getListener(const std::string& key) {

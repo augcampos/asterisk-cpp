@@ -18,6 +18,7 @@ namespace asteriskcpp {
 class ManagerEventsHandler {
 	typedef std::set<const ManagerEventListener*> EventListenersList;
 public:
+	virtual ~ManagerEventsHandler();
 	void addEventListener(const ManagerEventListener& mel);
 	void removeEventListener(const ManagerEventListener& mel);
 

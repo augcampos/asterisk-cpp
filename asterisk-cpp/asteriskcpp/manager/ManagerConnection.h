@@ -70,7 +70,6 @@ private:
 
 	TCPSocket* socket;
 	Reader reader;
-	boost::mutex mutWrite;
 	EventBuilder eventBuilder;
 	ResponseBuilder responseBuilder;
 	AsteriskVersion* asteriskVersion;

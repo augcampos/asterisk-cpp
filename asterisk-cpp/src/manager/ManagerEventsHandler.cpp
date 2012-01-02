@@ -14,6 +14,10 @@
 
 namespace asteriskcpp {
 
+ManagerEventsHandler::~ManagerEventsHandler() {
+
+}
+
 void ManagerEventsHandler::addEventListener(const ManagerEventListener& mel) {
 	listeners.insert(&mel);
 }

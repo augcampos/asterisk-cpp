@@ -65,9 +65,8 @@ void ManagerConnection::disconnect() {
 }
 
 void ManagerConnection::send(const std::string& data) {
-	boost::mutex::scoped_lock lock(mutWrite);
 	LOG_DEBUG_STR(str2Log(data));
-	this->socket->writeData(data.c_str(), (unsigned int) (data.size()));
+	this->socket->writeData(data.c_str(), (unsigned int) (data.length()));
 }
 
 void ManagerConnection::sendAction(ManagerAction & action) {
@@ -202,7 +201,7 @@ void ManagerConnection::dispatchResponse(const std::string& response) {
 
 	ManagerAction *action = NULL;
 	std::string actionId = extractActionID(response);
-	if (actionId != "") {
+	if (!actionId.empty()) {
 		ResponseCallBack *cb = ManagerResponsesHandler::listeners[actionId];
 		if (cb != NULL) {
 			action = cb->getAction();
