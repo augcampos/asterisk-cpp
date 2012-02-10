@@ -12,27 +12,27 @@
 
 namespace asteriskcpp {
 
-/**
- * An AlarmEvent is triggered when a Zap channel leaves alarm state.<p>
- * It is implemented in <code>channels/chan_zap.c</code>
- *
- */
-class AlarmClearEvent: public ManagerEvent {
-public:
-	inline static std::string getEventName() {
-		return ("AlarmClearEvent");
-	}
-	AlarmClearEvent(const std::string & values) ;
-	virtual ~AlarmClearEvent() ;
-
 	/**
-	 * Returns the number of the zap channel that left alarm state.
+	 * An AlarmEvent is triggered when a Zap channel leaves alarm state.<p>
+	 * It is implemented in <code>channels/chan_zap.c</code>
 	 *
-	 * @return the number of the zap channel that left alarm state.
 	 */
-	std::string getChannel() const ;
+	class AlarmClearEvent: public ManagerEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("AlarmClearEvent");
+		}
+		AlarmClearEvent(const std::string & values);
+		virtual ~AlarmClearEvent();
 
-};
+		/**
+		 * Returns the number of the zap channel that left alarm state.
+		 *
+		 * @return the number of the zap channel that left alarm state.
+		 */
+		std::string getChannel() const;
+
+	};
 
 }
 

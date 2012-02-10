@@ -9,26 +9,26 @@
 
 namespace asteriskcpp {
 
-AbstractChannelEvent::AbstractChannelEvent(const std::string& values) :
-		ManagerEvent(values) {
-}
-AbstractChannelEvent::~AbstractChannelEvent() {
+	AbstractChannelEvent::AbstractChannelEvent(const std::string& values) :
+			ManagerEvent(values) {
+	}
+	AbstractChannelEvent::~AbstractChannelEvent() {
 
-}
+	}
 
-std::string AbstractChannelEvent::getChannel() const {
-	return (getProperty("Channel"));
-}
+	std::string AbstractChannelEvent::getChannel() const {
+		return (getProperty("Channel"));
+	}
 
-std::string AbstractChannelEvent::getCallerId() const {
-	return (getProperty("CallerId"));
-}
+	std::string AbstractChannelEvent::getCallerId() const {
+		return (getProperty("CallerId"));
+	}
 
-std::string AbstractChannelEvent::getCallerIdNum() const {
-	return (getProperty("CallerIdNum"));
-}
+	std::string AbstractChannelEvent::getCallerIdNum() const {
+		return (getProperty("CallerIdNum"));
+	}
 
-std::string AbstractChannelEvent::getCallerIdName() const {
-	return (getProperty("CallerIdName"));
-}
+	std::string AbstractChannelEvent::getCallerIdName() const {
+		return (getProperty("CallerIdName"));
+	}
 }

@@ -12,10 +12,10 @@
 
 namespace asteriskcpp {
 
-class ManagerEventListener {
-public:
-	virtual void onManagerEvent(const ManagerEvent* me)=0;
-};
+	class ManagerEventListener {
+	public:
+		virtual void onManagerEvent(const ManagerEvent* me)=0;
+	};
 
 }
 

@@ -13,24 +13,24 @@
 
 namespace asteriskcpp {
 
-class FullyBootedEvent: public ManagerEvent {
+	class FullyBootedEvent: public ManagerEvent {
 
-public:
-	static inline std::string getEventName() {
-		return ("FullyBooted");
-	}
+	public:
+		static inline std::string getEventName() {
+			return ("FullyBooted");
+		}
 
-	FullyBootedEvent() :
-			ManagerEvent() {
-	}
+		FullyBootedEvent() :
+				ManagerEvent() {
+		}
 
-	FullyBootedEvent(const std::string& values) :
-			ManagerEvent(values) {
-	}
-	virtual ~FullyBootedEvent() {
-	}
+		FullyBootedEvent(const std::string& values) :
+				ManagerEvent(values) {
+		}
+		virtual ~FullyBootedEvent() {
+		}
 
-};
+	};
 
 }
 

@@ -12,41 +12,41 @@
 
 namespace asteriskcpp {
 
-/**
- * Abstract base class for RTCP related events.<p>
- *
- * @author srt
- * @version $Id$
- * @since 1.0.0
- */
-class AbstractRtcpEvent: public asteriskcpp::ManagerEvent {
-public:
-	AbstractRtcpEvent(const std::string & values);
-	virtual ~AbstractRtcpEvent();
-
 	/**
-	 * Returns the short term loss ratio. This is the fraction of packets lost since the last RR
-	 * or SR packet was sent.
+	 * Abstract base class for RTCP related events.<p>
 	 *
-	 * @return the short term loss ratio.
+	 * @author srt
+	 * @version $Id$
+	 * @since 1.0.0
 	 */
-	long getFractionLost() const;
+	class AbstractRtcpEvent: public asteriskcpp::ManagerEvent {
+	public:
+		AbstractRtcpEvent(const std::string & values);
+		virtual ~AbstractRtcpEvent();
 
-	/**
-	 * Returns the interarrival jitter.
-	 *
-	 * @return the interarrival jitter.
-	 */
-	double getIaJitter() const;
+		/**
+		 * Returns the short term loss ratio. This is the fraction of packets lost since the last RR
+		 * or SR packet was sent.
+		 *
+		 * @return the short term loss ratio.
+		 */
+		long getFractionLost() const;
 
-	/**
-	 * Returns the delay since the last SR.
-	 *
-	 * @return the delay since the last SR in seconds.
-	 */
-	double getDlSr() const;
+		/**
+		 * Returns the interarrival jitter.
+		 *
+		 * @return the interarrival jitter.
+		 */
+		double getIaJitter() const;
 
-};
+		/**
+		 * Returns the delay since the last SR.
+		 *
+		 * @return the delay since the last SR in seconds.
+		 */
+		double getDlSr() const;
+
+	};
 
 } /* namespace asteriskcpp */
 #endif /* ABSTRACTRTCPEVENT_H_ */

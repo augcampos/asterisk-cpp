@@ -12,32 +12,32 @@
 
 namespace asteriskcpp {
 
-/**
- * This event is sent when a user joins a conference - either one already in progress or as the first user to
- * join a newly instantiated bridge.
- *
- * @since 1.0.0
- */
-class ConfbridgeJoinEvent: public AbstractChannelEvent {
-public:
-	inline static std::string getEventName() {
-		return ("ConfbridgeJoinEvent");
-	}
-	ConfbridgeJoinEvent(const std::string& values) :
-			AbstractChannelEvent(values) {
-	}
-	virtual ~ConfbridgeJoinEvent() {
-	}
-
 	/**
-	 * Returns the id of the conference the participant joined.
+	 * This event is sent when a user joins a conference - either one already in progress or as the first user to
+	 * join a newly instantiated bridge.
 	 *
-	 * @return id of the conference the participant joined.
+	 * @since 1.0.0
 	 */
-	std::string getConference() const {
-		return (getProperty("Conference"));
-	}
-};
+	class ConfbridgeJoinEvent: public AbstractChannelEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("ConfbridgeJoinEvent");
+		}
+		ConfbridgeJoinEvent(const std::string& values) :
+				AbstractChannelEvent(values) {
+		}
+		virtual ~ConfbridgeJoinEvent() {
+		}
+
+		/**
+		 * Returns the id of the conference the participant joined.
+		 *
+		 * @return id of the conference the participant joined.
+		 */
+		std::string getConference() const {
+			return (getProperty("Conference"));
+		}
+	};
 
 }
 

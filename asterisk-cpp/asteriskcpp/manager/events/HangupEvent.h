@@ -12,42 +12,42 @@
 
 namespace asteriskcpp {
 
-/**
- * A HangupEvent is triggered when a channel is hung up.<p>
- * It is implemented in <code>channel.c</code>
- *
- */
-class HangupEvent: public asteriskcpp::AbstractChannelEvent {
-public:
-	inline static std::string getEventName() {
-		return ("HangupEvent");
-	}
-	HangupEvent(const std::string & values) :
-			AbstractChannelEvent(values) {
-	}
-	virtual ~HangupEvent() {
-	}
-
 	/**
-	 * Returns the cause of the hangup.
+	 * A HangupEvent is triggered when a channel is hung up.<p>
+	 * It is implemented in <code>channel.c</code>
 	 *
-	 * @return the hangup cause.
-	 * @see org.asteriskjava.live.HangupCause
 	 */
-	int getCause() const {
-		return (convertFromString<int>(getProperty("Cause")));
-	}
+	class HangupEvent: public asteriskcpp::AbstractChannelEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("HangupEvent");
+		}
+		HangupEvent(const std::string & values) :
+				AbstractChannelEvent(values) {
+		}
+		virtual ~HangupEvent() {
+		}
 
-	/**
-	 * Returns the textual representation of the hangup cause.
-	 *
-	 * @return the textual representation of the hangup cause.
-	 * @since 0.2
-	 */
-	std::string getCauseTxt() const {
-		return (getProperty("CauseTxt"));
-	}
-};
+		/**
+		 * Returns the cause of the hangup.
+		 *
+		 * @return the hangup cause.
+		 * @see org.asteriskjava.live.HangupCause
+		 */
+		int getCause() const {
+			return (convertFromString<int>(getProperty("Cause")));
+		}
+
+		/**
+		 * Returns the textual representation of the hangup cause.
+		 *
+		 * @return the textual representation of the hangup cause.
+		 * @since 0.2
+		 */
+		std::string getCauseTxt() const {
+			return (getProperty("CauseTxt"));
+		}
+	};
 
 } /* namespace asterisk_cpp */
 #endif /* HANGUPEVENT_H_ */

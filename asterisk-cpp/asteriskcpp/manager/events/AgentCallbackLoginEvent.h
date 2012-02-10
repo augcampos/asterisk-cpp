@@ -12,30 +12,30 @@
 
 namespace asteriskcpp {
 
-/**
- * An AgentCallbackLoginEvent is triggered when an agent is successfully logged in using
- * AgentCallbackLogin.<p>
- * It is implemented in <code>channels/chan_agent.c</code>
- *
- * @see org.asteriskjava.manager.event.AgentCallbackLogoffEvent
- */
-class AgentCallbackLoginEvent: public ManagerEvent {
-public:
-	inline static std::string getEventName() {
-		return ("AgentCallbackLoginEvent");
-	}
-
-	AgentCallbackLoginEvent(const std::string & values);
-
-	virtual ~AgentCallbackLoginEvent();
-
 	/**
-	 * Returns the name of the agent that logged in.
+	 * An AgentCallbackLoginEvent is triggered when an agent is successfully logged in using
+	 * AgentCallbackLogin.<p>
+	 * It is implemented in <code>channels/chan_agent.c</code>
+	 *
+	 * @see org.asteriskjava.manager.event.AgentCallbackLogoffEvent
 	 */
-	std::string getAgent() const;
+	class AgentCallbackLoginEvent: public ManagerEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("AgentCallbackLoginEvent");
+		}
 
-	std::string getLoginChan() const;
-};
+		AgentCallbackLoginEvent(const std::string & values);
+
+		virtual ~AgentCallbackLoginEvent();
+
+		/**
+		 * Returns the name of the agent that logged in.
+		 */
+		std::string getAgent() const;
+
+		std::string getLoginChan() const;
+	};
 
 }
 

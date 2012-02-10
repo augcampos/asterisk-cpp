@@ -9,11 +9,11 @@
 
 namespace asteriskcpp {
 
-AgentDumpEvent::AgentDumpEvent(const std::string & values) :
-		AbstractAgentEvent(values) {
-}
-AgentDumpEvent::~AgentDumpEvent() {
-}
+	AgentDumpEvent::AgentDumpEvent(const std::string & values) :
+			AbstractAgentEvent(values) {
+	}
+	AgentDumpEvent::~AgentDumpEvent() {
+	}
 
 } //NS
 

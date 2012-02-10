@@ -9,11 +9,11 @@
 
 namespace asteriskcpp {
 
-LinkEvent::LinkEvent(const std::string & values) :
-		BridgeEvent(values) {
-}
+	LinkEvent::LinkEvent(const std::string & values) :
+			BridgeEvent(values) {
+	}
 
-LinkEvent::~LinkEvent() {
-}
+	LinkEvent::~LinkEvent() {
+	}
 
 } /* namespace asterisk_cpp */

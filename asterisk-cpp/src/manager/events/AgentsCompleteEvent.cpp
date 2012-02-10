@@ -9,11 +9,11 @@
 
 namespace asteriskcpp {
 
-AgentsCompleteEvent::AgentsCompleteEvent(const std::string & values) :
-		ResponseEvent(values) {
-}
-AgentsCompleteEvent::~AgentsCompleteEvent() {
-}
+	AgentsCompleteEvent::AgentsCompleteEvent(const std::string & values) :
+			ResponseEvent(values) {
+	}
+	AgentsCompleteEvent::~AgentsCompleteEvent() {
+	}
 
 } //NS
 

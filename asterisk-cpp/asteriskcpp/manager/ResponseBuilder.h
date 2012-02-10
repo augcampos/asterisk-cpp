@@ -13,12 +13,12 @@
 
 namespace asteriskcpp {
 
-class ResponseBuilder {
-public:
-	ResponseBuilder();
-	virtual ~ResponseBuilder();
-	virtual ManagerResponse* buildResponse(ManagerAction* action, const std::string& responseStr);
-};
+	class ResponseBuilder {
+	public:
+		ResponseBuilder();
+		virtual ~ResponseBuilder();
+		virtual ManagerResponse* buildResponse(ManagerAction* action, const std::string& responseStr);
+	};
 
 }
 

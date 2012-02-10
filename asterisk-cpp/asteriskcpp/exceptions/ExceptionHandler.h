@@ -25,22 +25,22 @@
 
 namespace asteriskcpp {
 
-class ExceptionHandler {
-private:
-	static ExceptionHandler* exceptionHandlerPtr;
+	class ExceptionHandler {
+	private:
+		static ExceptionHandler* exceptionHandlerPtr;
 
-public:
-	~ExceptionHandler();
+	public:
+		~ExceptionHandler();
 
-	static void createExceptionHandler();
-	static std::string getStackTraceString();
-	static void destroyExceptionHandler();
+		static void createExceptionHandler();
+		static std::string getStackTraceString();
+		static void destroyExceptionHandler();
 
-private:
-	ExceptionHandler();
+	private:
+		ExceptionHandler();
 
-	static void signalHandler(int signal);
-};
+		static void signalHandler(int signal);
+	};
 
 }
 

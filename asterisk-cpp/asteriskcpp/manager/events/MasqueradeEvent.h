@@ -12,65 +12,65 @@
 
 namespace asteriskcpp {
 
-/**
- * A MasqueradeEvent is triggered when Asterisk masquerades a channel.<p>
- * Available since Asterisk 1.6<p>
- * It is implemented in <code>main/channel.c</code>
- *
- * @since 1.0.0
- */
-class MasqueradeEvent: public ManagerEvent {
-public:
-	inline static std::string getEventName() {
-		return ("MasqueradeEvent");
-	}
-	MasqueradeEvent(const std::string & values);
-	virtual ~MasqueradeEvent();
-
 	/**
-	 * Returns the name of the clone channel.
+	 * A MasqueradeEvent is triggered when Asterisk masquerades a channel.<p>
+	 * Available since Asterisk 1.6<p>
+	 * It is implemented in <code>main/channel.c</code>
 	 *
-	 * @return the name of the clone channel.
+	 * @since 1.0.0
 	 */
-	std::string getClone() const;
+	class MasqueradeEvent: public ManagerEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("MasqueradeEvent");
+		}
+		MasqueradeEvent(const std::string & values);
+		virtual ~MasqueradeEvent();
 
-	/**
-	 * Returns the state of the clone channel.
-	 *
-	 * @return the state of the clone channel.
-	 * @see org.asteriskjava.util.AstState
-	 */
-	int getCloneState() const;
+		/**
+		 * Returns the name of the clone channel.
+		 *
+		 * @return the name of the clone channel.
+		 */
+		std::string getClone() const;
 
-	/**
-	 * Returns the state of the clone channel as a descriptive text.
-	 *
-	 * @return the state of the clone channel as a descriptive text.
-	 */
-	std::string getCloneStateDesc() const;
+		/**
+		 * Returns the state of the clone channel.
+		 *
+		 * @return the state of the clone channel.
+		 * @see org.asteriskjava.util.AstState
+		 */
+		int getCloneState() const;
 
-	/**
-	 * Returns the name of the original channel.
-	 *
-	 * @return the name of the original channel.
-	 */
-	std::string getOriginal() const;
+		/**
+		 * Returns the state of the clone channel as a descriptive text.
+		 *
+		 * @return the state of the clone channel as a descriptive text.
+		 */
+		std::string getCloneStateDesc() const;
 
-	/**
-	 * Returns the state of the original channel.
-	 *
-	 * @return the state of the original channel.
-	 * @see org.asteriskjava.util.AstState
-	 */
-	int getOriginalState() const;
+		/**
+		 * Returns the name of the original channel.
+		 *
+		 * @return the name of the original channel.
+		 */
+		std::string getOriginal() const;
 
-	/**
-	 * Returns the state of the original channel as a descriptive text.
-	 *
-	 * @return the state of the original channel as a descriptive text.
-	 */
-	std::string getOriginalStateDesc() const;
-};
+		/**
+		 * Returns the state of the original channel.
+		 *
+		 * @return the state of the original channel.
+		 * @see org.asteriskjava.util.AstState
+		 */
+		int getOriginalState() const;
+
+		/**
+		 * Returns the state of the original channel as a descriptive text.
+		 *
+		 * @return the state of the original channel as a descriptive text.
+		 */
+		std::string getOriginalStateDesc() const;
+	};
 
 } /* namespace asterisk_cpp */
 #endif /* MASQUERADEEVENT_H_ */

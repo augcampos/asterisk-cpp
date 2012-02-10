@@ -9,28 +9,27 @@
 
 namespace asteriskcpp {
 
-AbstractMeetMeMuteAction::AbstractMeetMeMuteAction(const std::string& meetMe, int userNum)  {
-}
+	AbstractMeetMeMuteAction::AbstractMeetMeMuteAction(const std::string& meetMe, int userNum) {
+	}
 
-AbstractMeetMeMuteAction::~AbstractMeetMeMuteAction() {
-}
+	AbstractMeetMeMuteAction::~AbstractMeetMeMuteAction() {
+	}
 
-std::string AbstractMeetMeMuteAction::getMeetMe() const {
-	return (getProperty("MeetMe"));
-}
+	std::string AbstractMeetMeMuteAction::getMeetMe() const {
+		return (getProperty("MeetMe"));
+	}
 
-void AbstractMeetMeMuteAction::setMeetMe(const std::string & meetMe) {
-	setProperty("MeetMe", meetMe);
-}
+	void AbstractMeetMeMuteAction::setMeetMe(const std::string & meetMe) {
+		setProperty("MeetMe", meetMe);
+	}
 
-int AbstractMeetMeMuteAction::getUserNum() const {
-	return (getProperty<int>("MeetMe"));
-}
+	int AbstractMeetMeMuteAction::getUserNum() const {
+		return (getProperty<int>("MeetMe"));
+	}
 
-void AbstractMeetMeMuteAction::setUserNum(int userNum) {
-	setProperty("UserNum", userNum);
-}
-
+	void AbstractMeetMeMuteAction::setUserNum(int userNum) {
+		setProperty("UserNum", userNum);
+	}
 
 } /* namespace asterisk_cpp */
 

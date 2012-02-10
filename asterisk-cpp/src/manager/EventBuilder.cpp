@@ -67,95 +67,95 @@
 
 namespace asteriskcpp {
 
-EventBuilder::EventBuilder() {
-	RegisterClass<AgentCallbackLoginEvent>();
-	RegisterClass<AgentCallbackLogoffEvent>();
-	RegisterClass<AgentCalledEvent>();
-	RegisterClass<AgentCompleteEvent>();
-	RegisterClass<AgentConnectEvent>();
-	RegisterClass<AgentDumpEvent>();
-	RegisterClass<AgentLoginEvent>();
-	RegisterClass<AgentLogoffEvent>();
-	RegisterClass<AgentRingNoAnswer>();
-	RegisterClass<AgentsCompleteEvent>();
-	RegisterClass<AgiExecEvent>();
-	RegisterClass<AlarmClearEvent>();
-	RegisterClass<AlarmEvent>();
-	RegisterClass<AsyncAgiEvent>();
-	RegisterClass<BridgeEvent>();
-	RegisterClass<BridgeExecEvent>();
-	RegisterClass<CdrEvent>();
-	RegisterClass<ChannelReloadEvent>();
-	RegisterClass<ChannelUpdateEvent>();
-	RegisterClass<ConfbridgeEndEvent>();
-	RegisterClass<ConfbridgeJoinEvent>();
-	RegisterClass<ConfbridgeLeaveEvent>();
-	RegisterClass<ConfbridgeListCompleteEvent>();
-	RegisterClass<ConfbridgeListEvent>();
-	RegisterClass<ConfbridgeListRoomsCompleteEvent>();
-	RegisterClass<ConfbridgeListRoomsEvent>();
-	RegisterClass<ConfbridgeStartEvent>();
-	RegisterClass<ConfbridgeTalkingEvent>();
-	RegisterClass<ConnectEvent>();
-	RegisterClass<CoreShowChannelEvent>();
-	RegisterClass<CoreShowChannelsCompleteEvent>();
-	RegisterClass<DbGetResponseEvent>();
-	RegisterClass<DialEvent>();
-	RegisterClass<DisconnectEvent>();
-	RegisterClass<DndStateEvent>();
-	RegisterClass<DtmfEvent>();
-	RegisterClass<ExtensionStatusEvent>();
-	RegisterClass<FaxDocumentStatusEvent>();
-	RegisterClass<FaxReceivedEvent>();
-	RegisterClass<FaxStatusEvent>();
-	RegisterClass<FullyBootedEvent>();
-	RegisterClass<HangupEvent>();
-	RegisterClass<HoldEvent>();
-	RegisterClass<HoldedCallEvent>();
-	RegisterClass<JabberEventEvent>();
-	RegisterClass<JitterBufStatsEvent>();
-	RegisterClass<JoinEvent>();
-	RegisterClass<LeaveEvent>();
-	RegisterClass<LinkEvent>();
-	RegisterClass<ListDialplanEvent>();
-	RegisterClass<LogChannelEvent>();
-	RegisterClass<MasqueradeEvent>();
-	RegisterClass<MeetMeEndEvent>();
-	RegisterClass<MeetMeJoinEvent>();
+	EventBuilder::EventBuilder() {
+		RegisterClass<AgentCallbackLoginEvent>();
+		RegisterClass<AgentCallbackLogoffEvent>();
+		RegisterClass<AgentCalledEvent>();
+		RegisterClass<AgentCompleteEvent>();
+		RegisterClass<AgentConnectEvent>();
+		RegisterClass<AgentDumpEvent>();
+		RegisterClass<AgentLoginEvent>();
+		RegisterClass<AgentLogoffEvent>();
+		RegisterClass<AgentRingNoAnswer>();
+		RegisterClass<AgentsCompleteEvent>();
+		RegisterClass<AgiExecEvent>();
+		RegisterClass<AlarmClearEvent>();
+		RegisterClass<AlarmEvent>();
+		RegisterClass<AsyncAgiEvent>();
+		RegisterClass<BridgeEvent>();
+		RegisterClass<BridgeExecEvent>();
+		RegisterClass<CdrEvent>();
+		RegisterClass<ChannelReloadEvent>();
+		RegisterClass<ChannelUpdateEvent>();
+		RegisterClass<ConfbridgeEndEvent>();
+		RegisterClass<ConfbridgeJoinEvent>();
+		RegisterClass<ConfbridgeLeaveEvent>();
+		RegisterClass<ConfbridgeListCompleteEvent>();
+		RegisterClass<ConfbridgeListEvent>();
+		RegisterClass<ConfbridgeListRoomsCompleteEvent>();
+		RegisterClass<ConfbridgeListRoomsEvent>();
+		RegisterClass<ConfbridgeStartEvent>();
+		RegisterClass<ConfbridgeTalkingEvent>();
+		RegisterClass<ConnectEvent>();
+		RegisterClass<CoreShowChannelEvent>();
+		RegisterClass<CoreShowChannelsCompleteEvent>();
+		RegisterClass<DbGetResponseEvent>();
+		RegisterClass<DialEvent>();
+		RegisterClass<DisconnectEvent>();
+		RegisterClass<DndStateEvent>();
+		RegisterClass<DtmfEvent>();
+		RegisterClass<ExtensionStatusEvent>();
+		RegisterClass<FaxDocumentStatusEvent>();
+		RegisterClass<FaxReceivedEvent>();
+		RegisterClass<FaxStatusEvent>();
+		RegisterClass<FullyBootedEvent>();
+		RegisterClass<HangupEvent>();
+		RegisterClass<HoldEvent>();
+		RegisterClass<HoldedCallEvent>();
+		RegisterClass<JabberEventEvent>();
+		RegisterClass<JitterBufStatsEvent>();
+		RegisterClass<JoinEvent>();
+		RegisterClass<LeaveEvent>();
+		RegisterClass<LinkEvent>();
+		RegisterClass<ListDialplanEvent>();
+		RegisterClass<LogChannelEvent>();
+		RegisterClass<MasqueradeEvent>();
+		RegisterClass<MeetMeEndEvent>();
+		RegisterClass<MeetMeJoinEvent>();
 
-}
-
-EventBuilder::~EventBuilder() {
-
-}
-
-static std::string extractEventName(const std::string& eventStr) {
-	size_t endl = eventStr.find("\r\n");
-	if (endl != eventStr.npos) {
-		size_t sep = eventStr.find("Event: ");
-		if (sep != eventStr.npos) {
-			return (eventStr.substr(sep + 7, endl - (sep + 7)));
-		}
-	}
-	return ("");
-}
-
-ManagerEvent* EventBuilder::buildEvent(const std::string& eventStr) {
-
-	std::string eventName = extractEventName(eventStr);
-	if (!eventName.empty()) {
-
-		EnventFactoryMapType::const_iterator it = eventFactoryMap.find(eventName);
-		if (it != eventFactoryMap.end()) {
-			return ((it->second)->create(eventStr));
-		} else {
-			LOG_WARN_STR("EVENT:INVALID OR NOT IMPLEMENTED \n"+ str2Log(eventStr))
-			return (new ManagerEvent(eventStr));
-		}
 	}
 
-	return (NULL);
-}
+	EventBuilder::~EventBuilder() {
+
+	}
+
+	static std::string extractEventName(const std::string& eventStr) {
+		size_t endl = eventStr.find("\r\n");
+		if (endl != eventStr.npos) {
+			size_t sep = eventStr.find("Event: ");
+			if (sep != eventStr.npos) {
+				return (eventStr.substr(sep + 7, endl - (sep + 7)));
+			}
+		}
+		return ("");
+	}
+
+	ManagerEvent* EventBuilder::buildEvent(const std::string& eventStr) {
+
+		std::string eventName = extractEventName(eventStr);
+		if (!eventName.empty()) {
+
+			EnventFactoryMapType::const_iterator it = eventFactoryMap.find(eventName);
+			if (it != eventFactoryMap.end()) {
+				return ((it->second)->create(eventStr));
+			} else {
+				LOG_WARN_STR("EVENT:INVALID OR NOT IMPLEMENTED \n"+ str2Log(eventStr))
+				return (new ManagerEvent(eventStr));
+			}
+		}
+
+		return (NULL);
+	}
 
 } /* namespace asterisk_cpp */
 

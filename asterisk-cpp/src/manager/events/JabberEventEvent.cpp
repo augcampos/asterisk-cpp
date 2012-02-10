@@ -8,19 +8,19 @@
 
 namespace asteriskcpp {
 
-JabberEventEvent::JabberEventEvent(const std::string & values) :
-		ManagerEvent(values) {
+	JabberEventEvent::JabberEventEvent(const std::string & values) :
+			ManagerEvent(values) {
 
-}
-JabberEventEvent::~JabberEventEvent() {
-}
+	}
+	JabberEventEvent::~JabberEventEvent() {
+	}
 
-std::string JabberEventEvent::getAccount() const {
-	return (getProperty("Account"));
-}
+	std::string JabberEventEvent::getAccount() const {
+		return (getProperty("Account"));
+	}
 
-std::string JabberEventEvent::getPacket() const {
-	return (getProperty("Packet"));
-}
+	std::string JabberEventEvent::getPacket() const {
+		return (getProperty("Packet"));
+	}
 
 } /* namespace asterisk_cpp */

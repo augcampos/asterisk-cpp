@@ -10,8 +10,8 @@
 
 namespace asteriskcpp {
 
-ManagerResponse *ManagerAction::expectedResponce(const std::string & response) {
-	return (new ManagerResponse(response));
-}
+	ManagerResponse *ManagerAction::expectedResponce(const std::string & response) {
+		return (new ManagerResponse(response));
+	}
 }
 

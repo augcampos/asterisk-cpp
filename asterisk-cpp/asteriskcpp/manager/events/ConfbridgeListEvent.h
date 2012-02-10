@@ -13,64 +13,64 @@
 
 namespace asteriskcpp {
 
-class ConfbridgeListEvent: public ResponseEvent {
-public:
-	inline static std::string getEventName() {
-		return ("ConfbridgeListEvent");
-	}
-	ConfbridgeListEvent(const std::string& values) :
-			ResponseEvent(values) {
-	}
-	virtual ~ConfbridgeListEvent() {
-	}
+	class ConfbridgeListEvent: public ResponseEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("ConfbridgeListEvent");
+		}
+		ConfbridgeListEvent(const std::string& values) :
+				ResponseEvent(values) {
+		}
+		virtual ~ConfbridgeListEvent() {
+		}
 
-	/**
-	 * Returns the id of the conference to be listed.
-	 *
-	 * @return the id of the conference to be listed.
-	 */
-	std::string getConference() const {
-		return (getProperty("Conference"));
-	}
+		/**
+		 * Returns the id of the conference to be listed.
+		 *
+		 * @return the id of the conference to be listed.
+		 */
+		std::string getConference() const {
+			return (getProperty("Conference"));
+		}
 
-	/**
-	 * Returns the Caller*ID Number of the channel in the list of the conference.
-	 *
-	 * @return the Caller*ID Number of the channel in the list of the conference.
-	 */
-	std::string getCallerIDnum() const {
-		return (getProperty("CallerIDnum"));
-	}
+		/**
+		 * Returns the Caller*ID Number of the channel in the list of the conference.
+		 *
+		 * @return the Caller*ID Number of the channel in the list of the conference.
+		 */
+		std::string getCallerIDnum() const {
+			return (getProperty("CallerIDnum"));
+		}
 
-	/**
-	 * Returns the Caller*ID Name of the channel in the list of the conference.
-	 *
-	 * @return the Caller*ID Name of the channel in the list of the conference.
-	 */
-	std::string getCallerIdName() const {
-		return (getProperty("CallerIdName"));
-	}
+		/**
+		 * Returns the Caller*ID Name of the channel in the list of the conference.
+		 *
+		 * @return the Caller*ID Name of the channel in the list of the conference.
+		 */
+		std::string getCallerIdName() const {
+			return (getProperty("CallerIdName"));
+		}
 
-	/**
-	 * Returns the role of the caller in the list admin = yes or no of the conference.
-	 *
-	 * @return the role of the caller in the list admin = yes or no of the conference.
-	 */
-	bool getAdmin() const {
-		return (stringToBool(getProperty("admin")));
-	}
+		/**
+		 * Returns the role of the caller in the list admin = yes or no of the conference.
+		 *
+		 * @return the role of the caller in the list admin = yes or no of the conference.
+		 */
+		bool getAdmin() const {
+			return (stringToBool(getProperty("admin")));
+		}
 
-	std::string getMarkedUser() const {
-		return (getProperty("MarkedUser"));
-	}
+		std::string getMarkedUser() const {
+			return (getProperty("MarkedUser"));
+		}
 
-	/**
-	 * Returns the name of the channel in the list.
-	 */
-	std::string getChannel() const {
-		return (getProperty("Channel"));
-	}
-};
+		/**
+		 * Returns the name of the channel in the list.
+		 */
+		std::string getChannel() const {
+			return (getProperty("Channel"));
+		}
+	};
 
 }
 

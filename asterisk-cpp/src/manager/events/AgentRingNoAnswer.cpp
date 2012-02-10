@@ -9,15 +9,15 @@
 
 namespace asteriskcpp {
 
-AgentRingNoAnswer::AgentRingNoAnswer(const std::string & values) :
-		AbstractAgentEvent(values) {
-}
-AgentRingNoAnswer::~AgentRingNoAnswer() {
-}
+	AgentRingNoAnswer::AgentRingNoAnswer(const std::string & values) :
+			AbstractAgentEvent(values) {
+	}
+	AgentRingNoAnswer::~AgentRingNoAnswer() {
+	}
 
-std::string AgentRingNoAnswer::getRingtime() const {
-	return (getProperty("Ringtime"));
-}
+	std::string AgentRingNoAnswer::getRingtime() const {
+		return (getProperty("Ringtime"));
+	}
 
 } //NS
 

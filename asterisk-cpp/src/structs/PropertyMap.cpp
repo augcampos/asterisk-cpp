@@ -15,83 +15,83 @@
 
 namespace asteriskcpp {
 
-PropertyMap::PropertyMap() {
-}
-
-PropertyMap::PropertyMap(const std::string & str) {
-	convertStr(str);
-}
-
-PropertyMap::~PropertyMap() {
-}
-
-std::string PropertyMap::toString() {
-	std::stringstream stream;
-	for (propertyIndex::iterator it = index.begin(); it != index.end(); it++) {
-		stream << makeStdLine(*it, getProperty(*it));
+	PropertyMap::PropertyMap() {
 	}
-	stream << NEWLINE;
-	return (stream.str());
-}
 
-std::string PropertyMap::toLog() {
-	return (str2Log(toString()));
-}
+	PropertyMap::PropertyMap(const std::string & str) {
+		convertStr(str);
+	}
 
-void PropertyMap::setProperty(const std::string& key, const std::string& value) {
-	propertyMap::const_iterator it = values.find(key);
-	if (it != values.end())
-		editProperty(key, value);
-	else
-		addProperty(key, value);
-}
+	PropertyMap::~PropertyMap() {
+	}
 
-std::string PropertyMap::getProperty(const std::string& key) const {
-	propertyMap::const_iterator it = values.find(key);
-	if (it != values.end())
-		return ((it)->second);
-	else
-		return ("");
-}
+	std::string PropertyMap::toString() {
+		std::stringstream stream;
+		for (propertyIndex::iterator it = index.begin(); it != index.end(); it++) {
+			stream << makeStdLine(*it, getProperty(*it));
+		}
+		stream << NEWLINE;
+		return (stream.str());
+	}
 
-void PropertyMap::convertStr(const std::string& propertyStr) {
-	std::string knull;
-	std::string::size_type lastPos = propertyStr.find_first_not_of(NEWLINE, 0);
-	std::string::size_type pos = propertyStr.find(NEWLINE);
-	while (std::string::npos != pos || std::string::npos != lastPos) {
-		std::string line = propertyStr.substr(lastPos, pos - lastPos);
+	std::string PropertyMap::toLog() {
+		return (str2Log(toString()));
+	}
 
-		size_t sep = line.find(SEP);
-		if (knull.size() == 0 && sep != line.npos && sep < 35) {
-			setProperty(line.substr(0, sep), line.substr(sep + 2));
-		} else {
-			//std::cout << "knull[" << str2Log(line) << "]" << std::endl;
-			knull.append(line);
+	void PropertyMap::setProperty(const std::string& key, const std::string& value) {
+		propertyMap::const_iterator it = values.find(key);
+		if (it != values.end())
+			editProperty(key, value);
+		else
+			addProperty(key, value);
+	}
+
+	std::string PropertyMap::getProperty(const std::string& key) const {
+		propertyMap::const_iterator it = values.find(key);
+		if (it != values.end())
+			return ((it)->second);
+		else
+			return ("");
+	}
+
+	void PropertyMap::convertStr(const std::string& propertyStr) {
+		std::string knull;
+		std::string::size_type lastPos = propertyStr.find_first_not_of(NEWLINE, 0);
+		std::string::size_type pos = propertyStr.find(NEWLINE);
+		while (std::string::npos != pos || std::string::npos != lastPos) {
+			std::string line = propertyStr.substr(lastPos, pos - lastPos);
+
+			size_t sep = line.find(SEP);
+			if (knull.size() == 0 && sep != line.npos && sep < 35) {
+				setProperty(line.substr(0, sep), line.substr(sep + 2));
+			} else {
+				//std::cout << "knull[" << str2Log(line) << "]" << std::endl;
+				knull.append(line);
+			}
+
+			lastPos = propertyStr.find_first_not_of(NEWLINE, pos);
+			pos = propertyStr.find(NEWLINE, lastPos);
 		}
 
-		lastPos = propertyStr.find_first_not_of(NEWLINE, pos);
-		pos = propertyStr.find(NEWLINE, lastPos);
+		if (knull.size())
+			setProperty("", knull);
 	}
 
-	if (knull.size())
-		setProperty("", knull);
-}
-
-void PropertyMap::addProperty(const std::string& key, const std::string& value) {
-	const std::pair<std::string, std::string> p = std::make_pair(key, value);
-	index.push_back(key);
-	values.insert(p);
-}
-
-std::string PropertyMap::makeStdLine(const std::string & key, const std::string & value) {
-	if (key.length() < 2) {
-		return (std::string(value + NEWLINE));
+	void PropertyMap::addProperty(const std::string& key, const std::string& value) {
+		const std::pair<std::string, std::string> p = std::make_pair(key, value);
+		index.push_back(key);
+		values.insert(p);
 	}
-	return (std::string(key + SEP + value + NEWLINE));
-}
 
-void PropertyMap::editProperty(const std::string& key, const std::string& value) {
-	values[key] = value;
-}
+	std::string PropertyMap::makeStdLine(const std::string & key, const std::string & value) {
+		if (key.length() < 2) {
+			return (std::string(value + NEWLINE));
+		}
+		return (std::string(key + SEP + value + NEWLINE));
+	}
+
+	void PropertyMap::editProperty(const std::string& key, const std::string& value) {
+		values[key] = value;
+	}
 
 }

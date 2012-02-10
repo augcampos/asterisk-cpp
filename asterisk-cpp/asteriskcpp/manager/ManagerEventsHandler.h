@@ -15,21 +15,21 @@
 
 namespace asteriskcpp {
 
-class ManagerEventsHandler {
-	typedef std::set<const ManagerEventListener*> EventListenersList;
-public:
-	virtual ~ManagerEventsHandler();
-	void addEventListener(const ManagerEventListener& mel);
-	void removeEventListener(const ManagerEventListener& mel);
+	class ManagerEventsHandler {
+		typedef std::set<const ManagerEventListener*> EventListenersList;
+	public:
+		virtual ~ManagerEventsHandler();
+		void addEventListener(const ManagerEventListener& mel);
+		void removeEventListener(const ManagerEventListener& mel);
 
-protected:
-	EventListenersList listeners;
-	void fireEvent(ManagerEvent* me);
+	protected:
+		EventListenersList listeners;
+		void fireEvent(ManagerEvent* me);
 
-private:
-	void internalFireEvent(ManagerEvent* me);
+	private:
+		void internalFireEvent(ManagerEvent* me);
 
-};
+	};
 
 }
 

@@ -12,105 +12,105 @@
 
 namespace asteriskcpp {
 
-/**
- * An AgentCalledEvent is triggered when an agent is rung.
- * <p/>
- * To enable AgentCalledEvents you have to set
- * <code>eventwhencalled = yes</code> in <code>queues.conf</code>.
- * <p/>
- * This event is implemented in <code>apps/app_queue.c</code>
- */
-class AgentCalledEvent: public ManagerEvent {
-public:
-	inline static std::string getEventName() {
-		return ("AgentCalledEvent");
-	}
-	AgentCalledEvent(const std::string & values);
-	virtual ~AgentCalledEvent();
-
 	/**
-	 * Returns the name of the queue.<p>
-	 * Available since Asterisk 1.6.
-	 *
-	 * @return the name of the queue.
-	 * @since 1.0.0
+	 * An AgentCalledEvent is triggered when an agent is rung.
+	 * <p/>
+	 * To enable AgentCalledEvents you have to set
+	 * <code>eventwhencalled = yes</code> in <code>queues.conf</code>.
+	 * <p/>
+	 * This event is implemented in <code>apps/app_queue.c</code>
 	 */
-	std::string getQueue() const;
+	class AgentCalledEvent: public ManagerEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("AgentCalledEvent");
+		}
+		AgentCalledEvent(const std::string & values);
+		virtual ~AgentCalledEvent();
 
-	/**
-	 * Returns the member interface of the agent that has been called.
-	 *
-	 * @return the member interface of the agent that has been called.
-	 * @see QueueMemberEvent#getLocation()
-	 */
-	std::string getAgentCalled() const;
+		/**
+		 * Returns the name of the queue.<p>
+		 * Available since Asterisk 1.6.
+		 *
+		 * @return the name of the queue.
+		 * @since 1.0.0
+		 */
+		std::string getQueue() const;
 
-	/**
-	 * Returns the name of the agent that has been called.<p>
-	 * Available since Asterisk 1.6.
-	 *
-	 * @return the name of the agent that has been called.
-	 * @since 1.0.0
-	 */
-	std::string getAgentName() const;
+		/**
+		 * Returns the member interface of the agent that has been called.
+		 *
+		 * @return the member interface of the agent that has been called.
+		 * @see QueueMemberEvent#getLocation()
+		 */
+		std::string getAgentCalled() const;
 
-	/**
-	 * Returns the name of the caller's channel that is about to be handled by
-	 * the agent.
-	 *
-	 * @return the name of the caller's channel.
-	 */
-	std::string getChannelCalling() const;
+		/**
+		 * Returns the name of the agent that has been called.<p>
+		 * Available since Asterisk 1.6.
+		 *
+		 * @return the name of the agent that has been called.
+		 * @since 1.0.0
+		 */
+		std::string getAgentName() const;
 
-	/**
-	 * Returns the name of the channel calling the agent.<p>
-	 * Available since Asterisk 1.6
-	 *
-	 * @return the name of the channel calling the agent.
-	 * @since 1.0.0
-	 */
-	std::string getDestinationChannel() const;
+		/**
+		 * Returns the name of the caller's channel that is about to be handled by
+		 * the agent.
+		 *
+		 * @return the name of the caller's channel.
+		 */
+		std::string getChannelCalling() const;
 
-	/**
-	 * Returns the Caller ID number of the caller's channel.
-	 *
-	 * @return the Caller ID number of the caller's channel or "unknown" of none has been set.
-	 * @since 1.0.0
-	 */
-	std::string getCallerIdNum() const;
+		/**
+		 * Returns the name of the channel calling the agent.<p>
+		 * Available since Asterisk 1.6
+		 *
+		 * @return the name of the channel calling the agent.
+		 * @since 1.0.0
+		 */
+		std::string getDestinationChannel() const;
 
-	/**
-	 * Returns the Caller ID number of the caller's channel.
-	 *
-	 * @return the Caller ID number of the caller's channel.
-	 * @deprecated as of 1.0.0, use {@link #getCallerIdNum()} instead.
-	 */
-	std::string getCallerId() const;
+		/**
+		 * Returns the Caller ID number of the caller's channel.
+		 *
+		 * @return the Caller ID number of the caller's channel or "unknown" of none has been set.
+		 * @since 1.0.0
+		 */
+		std::string getCallerIdNum() const;
 
-	/**
-	 * Returns the Caller ID name of the caller's channel.
-	 *
-	 * @return the Caller ID name of the caller's channel or "unknown" if none has been set.
-	 * @since 0.2
-	 */
-	std::string getCallerIdName() const;
+		/**
+		 * Returns the Caller ID number of the caller's channel.
+		 *
+		 * @return the Caller ID number of the caller's channel.
+		 * @deprecated as of 1.0.0, use {@link #getCallerIdNum()} instead.
+		 */
+		std::string getCallerId() const;
 
-	std::string getContext() const;
+		/**
+		 * Returns the Caller ID name of the caller's channel.
+		 *
+		 * @return the Caller ID name of the caller's channel or "unknown" if none has been set.
+		 * @since 0.2
+		 */
+		std::string getCallerIdName() const;
 
-	std::string getExtension() const;
+		std::string getContext() const;
 
-	std::string getPriority() const;
+		std::string getExtension() const;
 
-	/**
-	 * Returns the channel variables if <code>eventwhencalled</code> is set to <code>vars</code>
-	 * in <code>queues.conf</code>.<p>
-	 * Available since Asterisk 1.6
-	 *
-	 * @return the channel variables.
-	 * @since 1.0.0
-	 */
-	std::map<std::string, std::string> getVariables() const;
-};
+		std::string getPriority() const;
+
+		/**
+		 * Returns the channel variables if <code>eventwhencalled</code> is set to <code>vars</code>
+		 * in <code>queues.conf</code>.<p>
+		 * Available since Asterisk 1.6
+		 *
+		 * @return the channel variables.
+		 * @since 1.0.0
+		 */
+		std::map<std::string, std::string> getVariables() const;
+	};
 
 }
 

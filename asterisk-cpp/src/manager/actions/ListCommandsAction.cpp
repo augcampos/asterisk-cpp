@@ -9,12 +9,12 @@
 
 namespace asteriskcpp {
 
-ListCommandsAction::~ListCommandsAction() {
-}
+	ListCommandsAction::~ListCommandsAction() {
+	}
 
-std::string ListCommandsAction::getAction() {
-	return ("ListCommands");
-}
+	std::string ListCommandsAction::getAction() {
+		return ("ListCommands");
+	}
 
 } //NS
 

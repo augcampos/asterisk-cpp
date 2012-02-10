@@ -10,27 +10,27 @@
 
 namespace asteriskcpp {
 
-QueueEvent::QueueEvent(const std::string & values) :
-		ManagerEvent(values) {
-}
+	QueueEvent::QueueEvent(const std::string & values) :
+			ManagerEvent(values) {
+	}
 
-QueueEvent::~QueueEvent() {
-}
+	QueueEvent::~QueueEvent() {
+	}
 
-std::string QueueEvent::getUniqueId() const {
-	return (getProperty("UniqueId"));
-}
+	std::string QueueEvent::getUniqueId() const {
+		return (getProperty("UniqueId"));
+	}
 
-std::string QueueEvent::getChannel() const {
-	return (getProperty("Channel"));
-}
+	std::string QueueEvent::getChannel() const {
+		return (getProperty("Channel"));
+	}
 
-int QueueEvent::getCount() const {
-	return (convertFromString<int>(getProperty("Count")));
-}
+	int QueueEvent::getCount() const {
+		return (convertFromString<int>(getProperty("Count")));
+	}
 
-std::string QueueEvent::getQueue() const {
-	return (getProperty("Queue"));
-}
+	std::string QueueEvent::getQueue() const {
+		return (getProperty("Queue"));
+	}
 
 }/* namespace asterisk_cpp */

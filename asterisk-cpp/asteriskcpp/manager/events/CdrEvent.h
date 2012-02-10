@@ -15,286 +15,286 @@
 
 namespace asteriskcpp {
 
-/**
- * A CdrEvent is triggered when a call detail record is generated, usually at the end of a call.<p>
- * To enable CdrEvents you have to add <code>enabled = yes</code> to the general section in
- * <code>cdr_manager.conf</code>.<p>
- * This event is implemented in <code>cdr/cdr_manager.c</code>
- *
- */
-class CdrEvent: public ManagerEvent {
-public:
-	inline static std::string getEventName() {
-		return ("CdrEvent");
-	}
-
-	CdrEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
-	virtual ~CdrEvent() {
-	}
-
 	/**
-	 * Returns the account number that is usually used to identify the party to bill for the call.<p>
-	 * Corresponds to CDR field <code>accountcode</code>.
+	 * A CdrEvent is triggered when a call detail record is generated, usually at the end of a call.<p>
+	 * To enable CdrEvents you have to add <code>enabled = yes</code> to the general section in
+	 * <code>cdr_manager.conf</code>.<p>
+	 * This event is implemented in <code>cdr/cdr_manager.c</code>
 	 *
-	 * @return the account number.
 	 */
-	std::string getAccountCode() const {
-		return (getProperty("AccountCode"));
-	}
+	class CdrEvent: public ManagerEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("CdrEvent");
+		}
 
-	/**
-	 * Returns the Caller*ID number.<p>
-	 * Corresponds to CDR field <code>src</code>.
-	 *
-	 * @return the Caller*ID number.
-	 */
-	std::string getSrc() const {
-		return (getProperty("Src"));
-	}
+		CdrEvent(const std::string & values) :
+				ManagerEvent(values) {
+		}
+		virtual ~CdrEvent() {
+		}
 
-	/**
-	 * Returns the destination extension.<p>
-	 * Corresponds to CDR field <code>dst</code>.
-	 *
-	 * @return the destination extension.
-	 */
-	std::string getDestination() const {
-		return (getProperty("Destination"));
-	}
+		/**
+		 * Returns the account number that is usually used to identify the party to bill for the call.<p>
+		 * Corresponds to CDR field <code>accountcode</code>.
+		 *
+		 * @return the account number.
+		 */
+		std::string getAccountCode() const {
+			return (getProperty("AccountCode"));
+		}
 
-	/**
-	 * Returns the destination context.<p>
-	 * Corresponds to CDR field <code>dcontext</code>.
-	 *
-	 * @return the destination context.
-	 */
-	std::string getDestinationContext() const {
-		return (getProperty("DestinationContext"));
-	}
+		/**
+		 * Returns the Caller*ID number.<p>
+		 * Corresponds to CDR field <code>src</code>.
+		 *
+		 * @return the Caller*ID number.
+		 */
+		std::string getSrc() const {
+			return (getProperty("Src"));
+		}
 
-	/**
-	 * Returns the Caller*ID with text.<p>
-	 * Corresponds to CDR field <code>clid</code>.
-	 *
-	 * @return the Caller*ID with text
-	 */
-	std::string getCallerId() const {
-		return (getProperty("CallerId"));
-	}
+		/**
+		 * Returns the destination extension.<p>
+		 * Corresponds to CDR field <code>dst</code>.
+		 *
+		 * @return the destination extension.
+		 */
+		std::string getDestination() const {
+			return (getProperty("Destination"));
+		}
 
-	/**
-	 * Returns the name of the channel, for example "SIP/1310-asfe".<p>
-	 * Corresponds to CDR field <code>channel</code>.
-	 *
-	 * @return the name of the channel.
-	 */
-	std::string getChannel() const {
-		return (getProperty("Channel"));
-	}
+		/**
+		 * Returns the destination context.<p>
+		 * Corresponds to CDR field <code>dcontext</code>.
+		 *
+		 * @return the destination context.
+		 */
+		std::string getDestinationContext() const {
+			return (getProperty("DestinationContext"));
+		}
 
-	/**
-	 * Returns the name of the destination channel if appropriate.<p>
-	 * Corresponds to CDR field <code>dstchannel</code>.
-	 *
-	 * @return the name of the destination channel or <code>null</code> if not available.
-	 */
-	std::string getDestinationChannel() const {
-		return (getProperty("DestinationChannel"));
-	}
+		/**
+		 * Returns the Caller*ID with text.<p>
+		 * Corresponds to CDR field <code>clid</code>.
+		 *
+		 * @return the Caller*ID with text
+		 */
+		std::string getCallerId() const {
+			return (getProperty("CallerId"));
+		}
 
-	/**
-	 * Returns the last application if appropriate, for example "VoiceMail".<p>
-	 * Corresponds to CDR field <code>lastapp</code>.
-	 *
-	 * @return the last application or <code>null</code> if not avaialble.
-	 */
-	std::string getLastApplication() const {
-		return (getProperty("LastApplication"));
-	}
+		/**
+		 * Returns the name of the channel, for example "SIP/1310-asfe".<p>
+		 * Corresponds to CDR field <code>channel</code>.
+		 *
+		 * @return the name of the channel.
+		 */
+		std::string getChannel() const {
+			return (getProperty("Channel"));
+		}
 
-	/**
-	 * Returns the last application's data (arguments), for example "s1234".<p>
-	 * Corresponds to CDR field <code>lastdata</code>.
-	 *
-	 * @return the last application's data or <code>null</code> if not avaialble.
-	 */
-	std::string getLastData() const {
-		return (getProperty("LastData"));
-	}
+		/**
+		 * Returns the name of the destination channel if appropriate.<p>
+		 * Corresponds to CDR field <code>dstchannel</code>.
+		 *
+		 * @return the name of the destination channel or <code>null</code> if not available.
+		 */
+		std::string getDestinationChannel() const {
+			return (getProperty("DestinationChannel"));
+		}
 
-	/**
-	 * Returns when the call has started.<p>
-	 * This corresponds to CDR field <code>start</code>.
-	 *
-	 * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
-	 * call has started, for example "2006-05-19 11:54:48".
-	 */
-	std::string getStartTime() const {
-		return (getProperty("StartTime"));
-	}
+		/**
+		 * Returns the last application if appropriate, for example "VoiceMail".<p>
+		 * Corresponds to CDR field <code>lastapp</code>.
+		 *
+		 * @return the last application or <code>null</code> if not avaialble.
+		 */
+		std::string getLastApplication() const {
+			return (getProperty("LastApplication"));
+		}
 
-	/**
-	 * Returns the start time as Date object.<p>
-	 * This method asumes that the Asterisk server's timezone equals the default
-	 * timezone of your JVM.
-	 *
-	 * @return the start time as Date object.
-	 * @since 0.3
-	 */
-	time_t getStartTimeAsDate() const {
-		return (stringToTime(getStartTime(), DATE_TIME_FORMAT));
-	}
+		/**
+		 * Returns the last application's data (arguments), for example "s1234".<p>
+		 * Corresponds to CDR field <code>lastdata</code>.
+		 *
+		 * @return the last application's data or <code>null</code> if not avaialble.
+		 */
+		std::string getLastData() const {
+			return (getProperty("LastData"));
+		}
 
-	/**
-	 * Returns the start time as Date object.
-	 *
-	 * @param tz the timezone of the Asterisk server.
-	 * @return the start time as Date object.
-	 * @since 0.3
-	 */
-	time_t getStartTimeAsDate(int tz) const {
-		//TODO: Implement if needed
-		return (0);
-	}
+		/**
+		 * Returns when the call has started.<p>
+		 * This corresponds to CDR field <code>start</code>.
+		 *
+		 * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
+		 * call has started, for example "2006-05-19 11:54:48".
+		 */
+		std::string getStartTime() const {
+			return (getProperty("StartTime"));
+		}
 
-	/**
-	 * Returns when the call was answered.<p>
-	 * This corresponds to CDR field <code>answered</code>.
-	 *
-	 * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
-	 * call was answered, for example "2006-05-19 11:55:01"
-	 */
-	std::string getAnswerTime() const {
-		return (getProperty("AnswerTime"));
-	}
+		/**
+		 * Returns the start time as Date object.<p>
+		 * This method asumes that the Asterisk server's timezone equals the default
+		 * timezone of your JVM.
+		 *
+		 * @return the start time as Date object.
+		 * @since 0.3
+		 */
+		time_t getStartTimeAsDate() const {
+			return (stringToTime(getStartTime(), DATE_TIME_FORMAT));
+		}
 
-	/**
-	 * Returns the answer time as Date object.<p>
-	 * This method asumes that the Asterisk server's timezone equals the default
-	 * timezone of your JVM.
-	 *
-	 * @return the answer time as Date object.
-	 * @since 0.3
-	 */
-	time_t getAnswerTimeAsDate() const {
-		return (stringToTime(getAnswerTime(), DATE_TIME_FORMAT));
-	}
+		/**
+		 * Returns the start time as Date object.
+		 *
+		 * @param tz the timezone of the Asterisk server.
+		 * @return the start time as Date object.
+		 * @since 0.3
+		 */
+		time_t getStartTimeAsDate(int tz) const {
+			//TODO: Implement if needed
+			return (0);
+		}
 
-	/**
-	 * Returns the answer time as Date object.
-	 *
-	 * @param tz the timezone of the Asterisk server.
-	 * @return the answer time as Date object.
-	 * @since 0.3
-	 */
-	time_t getAnswerTimeAsDate(int tz) const {
-		//TODO: Implement if needed
-		return (0);
-	}
+		/**
+		 * Returns when the call was answered.<p>
+		 * This corresponds to CDR field <code>answered</code>.
+		 *
+		 * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
+		 * call was answered, for example "2006-05-19 11:55:01"
+		 */
+		std::string getAnswerTime() const {
+			return (getProperty("AnswerTime"));
+		}
 
-	/**
-	 * Returns when the call has ended.<p>
-	 * This corresponds to CDR field <code>end</code>.
-	 *
-	 * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
-	 * call has ended, for example "2006-05-19 11:58:21"
-	 */
-	std::string getEndTime() const {
-		return (getProperty("EndTime"));
-	}
+		/**
+		 * Returns the answer time as Date object.<p>
+		 * This method asumes that the Asterisk server's timezone equals the default
+		 * timezone of your JVM.
+		 *
+		 * @return the answer time as Date object.
+		 * @since 0.3
+		 */
+		time_t getAnswerTimeAsDate() const {
+			return (stringToTime(getAnswerTime(), DATE_TIME_FORMAT));
+		}
 
-	/**
-	 * Returns the end time as Date object.<p>
-	 * This method asumes that the Asterisk server's timezone equals the default
-	 * timezone of your JVM.
-	 *
-	 * @return the end time as Date object.
-	 * @since 0.3
-	 */
-	time_t getEndTimeAsDate() const {
-		return (stringToTime(getEndTime(), DATE_TIME_FORMAT));
-	}
+		/**
+		 * Returns the answer time as Date object.
+		 *
+		 * @param tz the timezone of the Asterisk server.
+		 * @return the answer time as Date object.
+		 * @since 0.3
+		 */
+		time_t getAnswerTimeAsDate(int tz) const {
+			//TODO: Implement if needed
+			return (0);
+		}
 
-	/**
-	 * Returns the end time as Date object.
-	 *
-	 * @param tz the timezone of the Asterisk server.
-	 * @return the end time as Date object.
-	 * @since 0.3
-	 */
-	time_t getEndTimeAsDate(int tz) const {
-		//TODO: Implement if needed
-		return (0);
-	}
+		/**
+		 * Returns when the call has ended.<p>
+		 * This corresponds to CDR field <code>end</code>.
+		 *
+		 * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
+		 * call has ended, for example "2006-05-19 11:58:21"
+		 */
+		std::string getEndTime() const {
+			return (getProperty("EndTime"));
+		}
 
-	/**
-	 * Returns the total time (in seconds) the caller spent in the system from dial to hangup.<p>
-	 * Corresponds to CDR field <code>duration</code>.
-	 *
-	 * @return the total time in system in seconds.
-	 */
-	unsigned long getDuration() const {
-		return (convertFromString<unsigned long>(getProperty("Duration")));
-	}
+		/**
+		 * Returns the end time as Date object.<p>
+		 * This method asumes that the Asterisk server's timezone equals the default
+		 * timezone of your JVM.
+		 *
+		 * @return the end time as Date object.
+		 * @since 0.3
+		 */
+		time_t getEndTimeAsDate() const {
+			return (stringToTime(getEndTime(), DATE_TIME_FORMAT));
+		}
 
-	/**
-	 * Returns the total time (in seconds) the call was up from answer to hangup.<p>
-	 * Corresponds to CDR field <code>billsec</code>.
-	 *
-	 * @return the total time in call in seconds.
-	 */
-	unsigned long getBillableSeconds() const {
-		return (convertFromString<unsigned long>(getProperty("BillableSeconds")));
-	}
+		/**
+		 * Returns the end time as Date object.
+		 *
+		 * @param tz the timezone of the Asterisk server.
+		 * @return the end time as Date object.
+		 * @since 0.3
+		 */
+		time_t getEndTimeAsDate(int tz) const {
+			//TODO: Implement if needed
+			return (0);
+		}
 
-	/**
-	 * Returns what happened to the call.<p>
-	 * This is one of
-	 * <ul>
-	 * <li>{@link #DISPOSITION_NO_ANSWER}
-	 * <li>{@link #DISPOSITION_FAILED}
-	 * <li>{@link #DISPOSITION_BUSY}
-	 * <li>{@link #DISPOSITION_ANSWERED}
-	 * <li>{@link #DISPOSITION_UNKNOWN}
-	 * </ul>
-	 * Corresponds to CDR field <code>disposition</code>.
-	 *
-	 * @return the disposition.
-	 */
-	std::string getDisposition() const {
-		return (getProperty("Disposition"));
-	}
+		/**
+		 * Returns the total time (in seconds) the caller spent in the system from dial to hangup.<p>
+		 * Corresponds to CDR field <code>duration</code>.
+		 *
+		 * @return the total time in system in seconds.
+		 */
+		unsigned long getDuration() const {
+			return (convertFromString<unsigned long>(getProperty("Duration")));
+		}
 
-	/**
-	 * Returns the AMA (Automated Message Accounting) flags.<p>
-	 * This is one of
-	 * <ul>
-	 * <li>{@link #AMA_FLAG_OMIT}
-	 * <li>{@link #AMA_FLAG_BILLING}
-	 * <li>{@link #AMA_FLAG_DOCUMENTATION}
-	 * <li>{@link #AMA_FLAG_UNKNOWN}
-	 * </ul>
-	 * Corresponds to CDR field <code>amaflags</code>.
-	 *
-	 * @return the AMA flags.
-	 */
-	std::string getAmaFlags() const {
-		return (getProperty("AMAFlags"));
-	}
+		/**
+		 * Returns the total time (in seconds) the call was up from answer to hangup.<p>
+		 * Corresponds to CDR field <code>billsec</code>.
+		 *
+		 * @return the total time in call in seconds.
+		 */
+		unsigned long getBillableSeconds() const {
+			return (convertFromString<unsigned long>(getProperty("BillableSeconds")));
+		}
 
-	/**
-	 * Returns the user-defined field as set by <code>Set(CDR(userfield)=Value)</code>.<p>
-	 * Corresponds to CDR field <code>userfield</code>.
-	 *
-	 * @return the user-defined field.
-	 */
-	std::string getUserField() const {
-		return (getProperty("UserField"));
-	}
+		/**
+		 * Returns what happened to the call.<p>
+		 * This is one of
+		 * <ul>
+		 * <li>{@link #DISPOSITION_NO_ANSWER}
+		 * <li>{@link #DISPOSITION_FAILED}
+		 * <li>{@link #DISPOSITION_BUSY}
+		 * <li>{@link #DISPOSITION_ANSWERED}
+		 * <li>{@link #DISPOSITION_UNKNOWN}
+		 * </ul>
+		 * Corresponds to CDR field <code>disposition</code>.
+		 *
+		 * @return the disposition.
+		 */
+		std::string getDisposition() const {
+			return (getProperty("Disposition"));
+		}
 
-};
+		/**
+		 * Returns the AMA (Automated Message Accounting) flags.<p>
+		 * This is one of
+		 * <ul>
+		 * <li>{@link #AMA_FLAG_OMIT}
+		 * <li>{@link #AMA_FLAG_BILLING}
+		 * <li>{@link #AMA_FLAG_DOCUMENTATION}
+		 * <li>{@link #AMA_FLAG_UNKNOWN}
+		 * </ul>
+		 * Corresponds to CDR field <code>amaflags</code>.
+		 *
+		 * @return the AMA flags.
+		 */
+		std::string getAmaFlags() const {
+			return (getProperty("AMAFlags"));
+		}
+
+		/**
+		 * Returns the user-defined field as set by <code>Set(CDR(userfield)=Value)</code>.<p>
+		 * Corresponds to CDR field <code>userfield</code>.
+		 *
+		 * @return the user-defined field.
+		 */
+		std::string getUserField() const {
+			return (getProperty("UserField"));
+		}
+
+	};
 
 }
 

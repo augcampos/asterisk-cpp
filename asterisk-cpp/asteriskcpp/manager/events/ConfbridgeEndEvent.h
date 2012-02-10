@@ -12,31 +12,31 @@
 
 namespace asteriskcpp {
 
-/**
- * This event is sent when the last user leaves a conference and it is torn down.
- *
- * @since 1.0.0
- */
-class ConfbridgeEndEvent: public ManagerEvent {
-public:
-	inline static std::string getEventName() {
-		return ("ConfbridgeEndEvent");
-	}
-	ConfbridgeEndEvent(const std::string& values) :
-			ManagerEvent(values) {
-	}
-	virtual ~ConfbridgeEndEvent() {
-	}
-
 	/**
-	 * Returns the id of the conference ended.
+	 * This event is sent when the last user leaves a conference and it is torn down.
 	 *
-	 * @return the id of the conference ended.
+	 * @since 1.0.0
 	 */
-	std::string getConference() const {
-		return (getProperty("Conference"));
-	}
-};
+	class ConfbridgeEndEvent: public ManagerEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("ConfbridgeEndEvent");
+		}
+		ConfbridgeEndEvent(const std::string& values) :
+				ManagerEvent(values) {
+		}
+		virtual ~ConfbridgeEndEvent() {
+		}
+
+		/**
+		 * Returns the id of the conference ended.
+		 *
+		 * @return the id of the conference ended.
+		 */
+		std::string getConference() const {
+			return (getProperty("Conference"));
+		}
+	};
 
 }
 

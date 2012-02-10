@@ -8,19 +8,19 @@
 #include "asteriskcpp/manager/events/AlarmEvent.h"
 
 namespace asteriskcpp {
-AlarmEvent::AlarmEvent(const std::string & values) :
-		ManagerEvent(values) {
-}
-AlarmEvent::~AlarmEvent() {
-}
+	AlarmEvent::AlarmEvent(const std::string & values) :
+			ManagerEvent(values) {
+	}
+	AlarmEvent::~AlarmEvent() {
+	}
 
-std::string AlarmEvent::getAlarm() const {
-	return (getProperty("Alarm"));
-}
+	std::string AlarmEvent::getAlarm() const {
+		return (getProperty("Alarm"));
+	}
 
-std::string AlarmEvent::getChannel() const {
-	return (getProperty("Channel"));
-}
+	std::string AlarmEvent::getChannel() const {
+		return (getProperty("Channel"));
+	}
 
 } //NS
 

@@ -13,45 +13,45 @@
 
 namespace asteriskcpp {
 
-/**
- * Interface that all Actions that can be sent to the Asterisk server must
- * impement.<p>
- * Instances of this class represent a command sent to Asterisk via Manager API,
- * requesting a particular Action be performed. The number of actions available
- * to the client are determined by the modules presently loaded in the Asterisk
- * engine.<p>
- * There is one conrete subclass of ManagerAction per each supported Asterisk
- * Action.
- *
- */
-class ManagerAction: public PropertyMap {
-public:
 	/**
-	 * Returns the name of the action for example "Hangup".
+	 * Interface that all Actions that can be sent to the Asterisk server must
+	 * impement.<p>
+	 * Instances of this class represent a command sent to Asterisk via Manager API,
+	 * requesting a particular Action be performed. The number of actions available
+	 * to the client are determined by the modules presently loaded in the Asterisk
+	 * engine.<p>
+	 * There is one conrete subclass of ManagerAction per each supported Asterisk
+	 * Action.
+	 *
 	 */
-	virtual std::string getAction()=0;
+	class ManagerAction: public PropertyMap {
+	public:
+		/**
+		 * Returns the name of the action for example "Hangup".
+		 */
+		virtual std::string getAction()=0;
 
-	/**
-	 * Generate a valid ID
-	 * @note: generated on every send
-	 */
-	virtual const std::string generateID()=0;
+		/**
+		 * Generate a valid ID
+		 * @note: generated on every send
+		 */
+		virtual const std::string generateID()=0;
 
-	/**
-	 * Returns the action id.
-	 * @return the user provied action id.
-	 */
-	virtual std::string getActionId() const =0;
+		/**
+		 * Returns the action id.
+		 * @return the user provied action id.
+		 */
+		virtual std::string getActionId() const =0;
 
-	/**
-	 * Returns the action string representation action.
-	 * @return the action string representation action.
-	 */
-	virtual std::string toString()=0;
+		/**
+		 * Returns the action string representation action.
+		 * @return the action string representation action.
+		 */
+		virtual std::string toString()=0;
 
-	virtual ManagerResponse* expectedResponce(const std::string& response);
+		virtual ManagerResponse* expectedResponce(const std::string& response);
 
-};
+	};
 
 }
 

@@ -12,83 +12,83 @@
 
 namespace asteriskcpp {
 
-/**
- * A ShowDialplanCompleteEvent is triggered for each priority in the dialplan
- * in response to a ShowDialplanAction.<p>
- * Available since Asterisk 1.6<p>
- * It is implemented in <code>main/pbx.c</code>
- *
- * @see org.asteriskjava.manager.action.ShowDialplanAction
- * @see ShowDialplanCompleteEvent
- * @since 1.0.0
- */
-class ListDialplanEvent: public ResponseEvent {
-public:
-	inline static std::string getEventName() {
-		return ("ListDialplanEvent");
-	}
-	ListDialplanEvent(const std::string & values);
-	virtual ~ListDialplanEvent();
-
 	/**
-	 * Returns the context.
+	 * A ShowDialplanCompleteEvent is triggered for each priority in the dialplan
+	 * in response to a ShowDialplanAction.<p>
+	 * Available since Asterisk 1.6<p>
+	 * It is implemented in <code>main/pbx.c</code>
 	 *
-	 * @return the context.
+	 * @see org.asteriskjava.manager.action.ShowDialplanAction
+	 * @see ShowDialplanCompleteEvent
+	 * @since 1.0.0
 	 */
-	std::string getContext() const;
+	class ListDialplanEvent: public ResponseEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("ListDialplanEvent");
+		}
+		ListDialplanEvent(const std::string & values);
+		virtual ~ListDialplanEvent();
 
-	/**
-	 * Returns the extension or extension pattern.
-	 *
-	 * @return the extension or extension pattern.
-	 */
-	std::string getExtension() const;
+		/**
+		 * Returns the context.
+		 *
+		 * @return the context.
+		 */
+		std::string getContext() const;
 
-	/**
-	 * Returns the extension label.
-	 * @return the extension label or <code>null</code> if none.
-	 */
-	std::string getExtensionLabel() const;
+		/**
+		 * Returns the extension or extension pattern.
+		 *
+		 * @return the extension or extension pattern.
+		 */
+		std::string getExtension() const;
 
-	/**
-	 * Returns the priority.
-	 *
-	 * @return the priority or <code>null</code> if this is a hint.
-	 */
-	int getPriority() const;
+		/**
+		 * Returns the extension label.
+		 * @return the extension label or <code>null</code> if none.
+		 */
+		std::string getExtensionLabel() const;
 
-	/**
-	 * Checks whether this is a hint.
-	 * @return <code>true</code> if this is a hint, <code>false</code> otherwise.
-	 */
-	bool isHint() const;
+		/**
+		 * Returns the priority.
+		 *
+		 * @return the priority or <code>null</code> if this is a hint.
+		 */
+		int getPriority() const;
 
-	/**
-	 * Returns the application configured to handle this priority.
-	 *
-	 * @return the application configured to handle this priority.
-	 */
-	std::string getApplication() const;
+		/**
+		 * Checks whether this is a hint.
+		 * @return <code>true</code> if this is a hint, <code>false</code> otherwise.
+		 */
+		bool isHint() const;
 
-	/**
-	 * Returns the parameters of the application configured to handle this priority.
-	 *
-	 * @return the parameters of the application configured to handle this priority
-	 *         or <code>null</code> if none.
-	 */
-	std::string getAppData() const;
+		/**
+		 * Returns the application configured to handle this priority.
+		 *
+		 * @return the application configured to handle this priority.
+		 */
+		std::string getApplication() const;
 
-	/**
-	 * Returns the registrar that registered this priority.<p>
-	 * Typical values are "features" for the parkedcalls context, "pbx_config" for priorities
-	 * defined in <code>extensions.conf</code> or "app_dial" for the
-	 * app_dial_gosub_virtual_context context.
-	 *
-	 * @return the registrar that registered this priority.
-	 */
-	std::string getRegistrar() const;
+		/**
+		 * Returns the parameters of the application configured to handle this priority.
+		 *
+		 * @return the parameters of the application configured to handle this priority
+		 *         or <code>null</code> if none.
+		 */
+		std::string getAppData() const;
 
-};
+		/**
+		 * Returns the registrar that registered this priority.<p>
+		 * Typical values are "features" for the parkedcalls context, "pbx_config" for priorities
+		 * defined in <code>extensions.conf</code> or "app_dial" for the
+		 * app_dial_gosub_virtual_context context.
+		 *
+		 * @return the registrar that registered this priority.
+		 */
+		std::string getRegistrar() const;
+
+	};
 
 } /* namespace asterisk_cpp */
 #endif /* LISTDIALPLANEVENT_H_ */

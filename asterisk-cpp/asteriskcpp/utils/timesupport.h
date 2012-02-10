@@ -28,7 +28,7 @@ namespace asteriskcpp {
 // Convert a string representation time to a time tm structure.
 // It is the conversion function of strftime().
 // Linux provides this function.
-char *strptime(const char *buf, const char *fmt, struct tm *tm);
+	char *strptime(const char *buf, const char *fmt, struct tm *tm);
 #endif
 
 #if defined(__linux__) || defined(__unix__)
@@ -36,22 +36,22 @@ char *strptime(const char *buf, const char *fmt, struct tm *tm);
 // It is like mktime(), but interprets the fields as GMT rather than local.
 // This is the inverse of gmtime().
 // Windows provides this function.
-time_t mkgmtime(const struct tm *tm);
+	time_t mkgmtime(const struct tm *tm);
 #endif
 
 // Tries various rfc's to convert a buffer to a struct tm.
 // Warning: this function only handles a few cases and completely ignores
 // time zones!
-bool parseRfcTime(const char* buf, struct tm *tm);
+	bool parseRfcTime(const char* buf, struct tm *tm);
 
 // Covert the time to W3C Datetime formats.
 // See http://www.w3.org/TR/NOTE-datetime
-const std::string formatW3CTime(const time_t &time);
+	const std::string formatW3CTime(const time_t &time);
 
 // A helper method used to format HttpDate.
-std::string formatHttpDate(time_t t);
+	std::string formatHttpDate(time_t t);
 
-std::string getCurrentTimeStamp();
+	std::string getCurrentTimeStamp();
 
 }
 

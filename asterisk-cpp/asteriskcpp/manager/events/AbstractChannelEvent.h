@@ -12,46 +12,46 @@
 
 namespace asteriskcpp {
 
-/**
- * Abstract base class providing common properties channel related events.
- *
- */
-class AbstractChannelEvent: public ManagerEvent {
-public:
-	AbstractChannelEvent(const std::string& values);
-	virtual ~AbstractChannelEvent();
-
 	/**
-	 * Returns the name of the channel.
+	 * Abstract base class providing common properties channel related events.
 	 *
-	 * @return the name of the channel.
 	 */
-	std::string getChannel() const;
+	class AbstractChannelEvent: public ManagerEvent {
+	public:
+		AbstractChannelEvent(const std::string& values);
+		virtual ~AbstractChannelEvent();
 
-	/**
-	 * Returns the Caller*ID of the channel if set or <code>null</code> if none has been set.
-	 *
-	 * @return the Caller*ID
-	 * @deprecated
-	 * @see #getCallerIdNum()
-	 */
-	std::string getCallerId() const;
+		/**
+		 * Returns the name of the channel.
+		 *
+		 * @return the name of the channel.
+		 */
+		std::string getChannel() const;
 
-	/**
-	 * Returns the Caller*ID number of the channel if set or <code>null</code> if none has been set.
-	 *
-	 * @return the Caller*ID number
-	 * @since 0.3
-	 */
-	std::string getCallerIdNum() const;
+		/**
+		 * Returns the Caller*ID of the channel if set or <code>null</code> if none has been set.
+		 *
+		 * @return the Caller*ID
+		 * @deprecated
+		 * @see #getCallerIdNum()
+		 */
+		std::string getCallerId() const;
 
-	/**
-	 * Returns the Caller*ID Name of the channel if set or <code>null</code> if none has been set.
-	 *
-	 * @return the Caller*ID Name of the channel.
-	 */
-	std::string getCallerIdName() const;
-};
+		/**
+		 * Returns the Caller*ID number of the channel if set or <code>null</code> if none has been set.
+		 *
+		 * @return the Caller*ID number
+		 * @since 0.3
+		 */
+		std::string getCallerIdNum() const;
+
+		/**
+		 * Returns the Caller*ID Name of the channel if set or <code>null</code> if none has been set.
+		 *
+		 * @return the Caller*ID Name of the channel.
+		 */
+		std::string getCallerIdName() const;
+	};
 
 }
 

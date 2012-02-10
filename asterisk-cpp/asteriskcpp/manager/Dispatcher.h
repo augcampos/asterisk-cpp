@@ -14,15 +14,15 @@
 
 namespace asteriskcpp {
 
-class Dispatcher {
-public:
-	virtual ~Dispatcher() {
-	}
+	class Dispatcher {
+	public:
+		virtual ~Dispatcher() {
+		}
 
-	virtual void dispatchAsteriskVersion(AsteriskVersion* version)=0;
-	virtual void dispatchResponse(const std::string& response)=0;
-	virtual void dispatchEvent(const std::string& event)=0;
-};
+		virtual void dispatchAsteriskVersion(AsteriskVersion* version)=0;
+		virtual void dispatchResponse(const std::string& response)=0;
+		virtual void dispatchEvent(const std::string& event)=0;
+	};
 
 }
 

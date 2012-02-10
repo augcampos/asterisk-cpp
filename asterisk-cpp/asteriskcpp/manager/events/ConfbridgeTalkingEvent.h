@@ -12,49 +12,49 @@
 
 namespace asteriskcpp {
 
-/**
- * This event is sent when the conference detects that a user has either begin or stopped talking.
- *
- * @since 1.0.0
- */
-class ConfbridgeTalkingEvent: public ManagerEvent {
-public:
-	inline static std::string getEventName() {
-		return ("ConfbridgeTalkingEvent");
-	}
-	ConfbridgeTalkingEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
-	virtual ~ConfbridgeTalkingEvent() {
-	}
-
 	/**
-	 * Returns the id of the conference.
+	 * This event is sent when the conference detects that a user has either begin or stopped talking.
 	 *
-	 * @return the id of the conference.
+	 * @since 1.0.0
 	 */
-	std::string getConference() const {
-		return (getProperty("Conference"));
-	}
+	class ConfbridgeTalkingEvent: public ManagerEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("ConfbridgeTalkingEvent");
+		}
+		ConfbridgeTalkingEvent(const std::string & values) :
+				ManagerEvent(values) {
+		}
+		virtual ~ConfbridgeTalkingEvent() {
+		}
 
-	/**
-	 * Returns the name of the channel on which a participant started or stopped talking.
-	 *
-	 * @return the name of the channel on which a participant started or stopped talking.
-	 */
-	std::string getChannel() const {
-		return (getProperty("Channel"));
-	}
+		/**
+		 * Returns the id of the conference.
+		 *
+		 * @return the id of the conference.
+		 */
+		std::string getConference() const {
+			return (getProperty("Conference"));
+		}
 
-	/**
-	 * Returns the talking status.
-	 *
-	 * @return <code>true</code> if the participant started talking, <code>false</code> if the participant stopped talking.
-	 */
-	bool getTalkingStatus() const {
-		return (stringToBool(getProperty("TalkingStatus")));
-	}
-};
+		/**
+		 * Returns the name of the channel on which a participant started or stopped talking.
+		 *
+		 * @return the name of the channel on which a participant started or stopped talking.
+		 */
+		std::string getChannel() const {
+			return (getProperty("Channel"));
+		}
+
+		/**
+		 * Returns the talking status.
+		 *
+		 * @return <code>true</code> if the participant started talking, <code>false</code> if the participant stopped talking.
+		 */
+		bool getTalkingStatus() const {
+			return (stringToBool(getProperty("TalkingStatus")));
+		}
+	};
 
 }
 

@@ -9,23 +9,23 @@
 
 namespace asteriskcpp {
 
-ChallengeAction::~ChallengeAction() {
-}
+	ChallengeAction::~ChallengeAction() {
+	}
 
-ChallengeAction::ChallengeAction(const std::string& authType) {
-	this->setAuthType(authType);
-}
+	ChallengeAction::ChallengeAction(const std::string& authType) {
+		this->setAuthType(authType);
+	}
 
-std::string ChallengeAction::getAction() {
-	return ("Challenge");
-}
+	std::string ChallengeAction::getAction() {
+		return ("Challenge");
+	}
 
-std::string ChallengeAction::getAuthType() const {
-	return (getProperty("AuthType"));
-}
+	std::string ChallengeAction::getAuthType() const {
+		return (getProperty("AuthType"));
+	}
 
-void ChallengeAction::setAuthType(const std::string& authType) {
-	setProperty("AuthType", authType);
-}
+	void ChallengeAction::setAuthType(const std::string& authType) {
+		setProperty("AuthType", authType);
+	}
 
 }/* namespace asterisk_cpp */

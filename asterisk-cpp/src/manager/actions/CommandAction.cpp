@@ -10,30 +10,30 @@
 
 namespace asteriskcpp {
 
-CommandAction::CommandAction() {
-}
+	CommandAction::CommandAction() {
+	}
 
-CommandAction::CommandAction(const std::string & command) {
-	this->setCommand(command);
-}
+	CommandAction::CommandAction(const std::string & command) {
+		this->setCommand(command);
+	}
 
-CommandAction::~CommandAction() {
-}
+	CommandAction::~CommandAction() {
+	}
 
-std::string CommandAction::getAction() {
-	return ("Command");
-}
+	std::string CommandAction::getAction() {
+		return ("Command");
+	}
 
-std::string CommandAction::getCommand() const {
-	return (getProperty("command"));
-}
+	std::string CommandAction::getCommand() const {
+		return (getProperty("command"));
+	}
 
-void CommandAction::setCommand(std::string command) {
-	setProperty("command", command);
-}
+	void CommandAction::setCommand(std::string command) {
+		setProperty("command", command);
+	}
 
-ManagerResponse *CommandAction::expectedResponce(const std::string & response) {
-	return (new CommandResponse(response));
-}
+	ManagerResponse *CommandAction::expectedResponce(const std::string & response) {
+		return (new CommandResponse(response));
+	}
 
 } /* namespace asteriskcpp */

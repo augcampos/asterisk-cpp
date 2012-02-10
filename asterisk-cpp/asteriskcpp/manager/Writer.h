@@ -14,18 +14,18 @@
 
 namespace asteriskcpp {
 
-class Writer: public Thread {
-public:
-	Writer();
-	virtual ~Writer();
+	class Writer: public Thread {
+	public:
+		Writer();
+		virtual ~Writer();
 
-	void start(TCPSocket* s, SynchronisedQueue<std::string>* wq);
-	void run();
+		void start(TCPSocket* s, SynchronisedQueue<std::string>* wq);
+		void run();
 
-private:
-	TCPSocket* m_connectionSocket;
-	SynchronisedQueue<std::string>* m_WriteQueue;
-};
+	private:
+		TCPSocket* m_connectionSocket;
+		SynchronisedQueue<std::string>* m_WriteQueue;
+	};
 
 }
 

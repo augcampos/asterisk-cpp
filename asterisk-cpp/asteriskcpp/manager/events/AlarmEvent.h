@@ -12,39 +12,39 @@
 
 namespace asteriskcpp {
 
-/**
- * An AlarmEvent is triggered when a Zap channel enters or changes alarm state.<p>
- * It is implemented in <code>channels/chan_zap.c</code>
- *
- */
-class AlarmEvent: public ManagerEvent {
-public:
-	inline static std::string getEventName() {
-		return ("AlarmEvent");
-	}
-
-	AlarmEvent(const std::string & values);
-	virtual ~AlarmEvent();
-
 	/**
-	 * Returns the kind of alarm that happened.<p>
-	 * This may be one of
-	 * <ul>
-	 * <li>Red Alarm</li>
-	 * <li>Yellow Alarm</li>
-	 * <li>Blue Alarm</li>
-	 * <li>Recovering</li>
-	 * <li>Loopback</li>
-	 * <li>Not Open</li>
-	 * </ul>
+	 * An AlarmEvent is triggered when a Zap channel enters or changes alarm state.<p>
+	 * It is implemented in <code>channels/chan_zap.c</code>
+	 *
 	 */
-	std::string getAlarm() const;
+	class AlarmEvent: public ManagerEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("AlarmEvent");
+		}
 
-	/**
-	 * Returns the number of the channel the alarm occured on.
-	 */
-	std::string getChannel() const;
-};
+		AlarmEvent(const std::string & values);
+		virtual ~AlarmEvent();
+
+		/**
+		 * Returns the kind of alarm that happened.<p>
+		 * This may be one of
+		 * <ul>
+		 * <li>Red Alarm</li>
+		 * <li>Yellow Alarm</li>
+		 * <li>Blue Alarm</li>
+		 * <li>Recovering</li>
+		 * <li>Loopback</li>
+		 * <li>Not Open</li>
+		 * </ul>
+		 */
+		std::string getAlarm() const;
+
+		/**
+		 * Returns the number of the channel the alarm occured on.
+		 */
+		std::string getChannel() const;
+	};
 
 }
 

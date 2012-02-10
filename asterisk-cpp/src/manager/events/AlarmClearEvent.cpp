@@ -9,15 +9,15 @@
 
 namespace asteriskcpp {
 
-AlarmClearEvent::AlarmClearEvent(const std::string & values) :
-		ManagerEvent(values) {
-}
-AlarmClearEvent::~AlarmClearEvent() {
-}
+	AlarmClearEvent::AlarmClearEvent(const std::string & values) :
+			ManagerEvent(values) {
+	}
+	AlarmClearEvent::~AlarmClearEvent() {
+	}
 
-std::string AlarmClearEvent::getChannel() const {
-	return (getProperty("Channel"));
-}
+	std::string AlarmClearEvent::getChannel() const {
+		return (getProperty("Channel"));
+	}
 
 } //NS
 

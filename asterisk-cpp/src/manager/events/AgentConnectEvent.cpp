@@ -9,22 +9,22 @@
 
 namespace asteriskcpp {
 
-AgentConnectEvent::AgentConnectEvent(const std::string & values) :
-		AbstractAgentEvent(values) {
-}
-AgentConnectEvent::~AgentConnectEvent() {
-}
+	AgentConnectEvent::AgentConnectEvent(const std::string & values) :
+			AbstractAgentEvent(values) {
+	}
+	AgentConnectEvent::~AgentConnectEvent() {
+	}
 
-std::string AgentConnectEvent::getHoldTime() const {
-	return (getProperty("HoldTime"));
-}
+	std::string AgentConnectEvent::getHoldTime() const {
+		return (getProperty("HoldTime"));
+	}
 
-std::string AgentConnectEvent::getBridgedChannel() const {
-	return (getProperty("BridgedChannel"));
-}
+	std::string AgentConnectEvent::getBridgedChannel() const {
+		return (getProperty("BridgedChannel"));
+	}
 
-std::string AgentConnectEvent::getRingtime() const {
-	return (getProperty("Ringtime"));
-}
+	std::string AgentConnectEvent::getRingtime() const {
+		return (getProperty("Ringtime"));
+	}
 
 }

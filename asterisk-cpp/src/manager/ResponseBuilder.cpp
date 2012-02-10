@@ -13,22 +13,22 @@
 
 namespace asteriskcpp {
 
-ResponseBuilder::ResponseBuilder() {
-}
-
-ResponseBuilder::~ResponseBuilder() {
-}
-
-ManagerResponse* ResponseBuilder::buildResponse(ManagerAction* action, const std::string& responseStr) {
-	if (boost::istarts_with(responseStr, "Response: Error")) {
-		return (new ManagerError(responseStr));
+	ResponseBuilder::ResponseBuilder() {
 	}
 
-	if (action != NULL) {
-		return (action->expectedResponce(responseStr));
+	ResponseBuilder::~ResponseBuilder() {
 	}
 
-	return (new ManagerResponse(responseStr));
-}
+	ManagerResponse* ResponseBuilder::buildResponse(ManagerAction* action, const std::string& responseStr) {
+		if (boost::istarts_with(responseStr, "Response: Error")) {
+			return (new ManagerError(responseStr));
+		}
+
+		if (action != NULL) {
+			return (action->expectedResponce(responseStr));
+		}
+
+		return (new ManagerResponse(responseStr));
+	}
 
 }

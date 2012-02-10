@@ -16,20 +16,20 @@
 
 namespace asteriskcpp {
 
-class Reader: public Thread {
-public:
-	void start(TCPSocket* s, Dispatcher* d);
-	void stop();
-	void run();
+	class Reader: public Thread {
+	public:
+		void start(TCPSocket* s, Dispatcher* d);
+		void stop();
+		void run();
 
-private:
-	TCPSocket* connectionSocket;
-	Dispatcher* dispatcher;
-	std::string unprocessedStr;
+	private:
+		TCPSocket* connectionSocket;
+		Dispatcher* dispatcher;
+		std::string unprocessedStr;
 
-	void processIncomming(const std::string& newStr);
+		void processIncomming(const std::string& newStr);
 
-};
+	};
 
 }
 

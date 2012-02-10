@@ -12,35 +12,35 @@
 
 namespace asteriskcpp {
 
-/**
- * With the EventsAction you can specify what kind of events should be sent to
- * this manager connection.
- *
- */
-class EventsAction: public AbstractManagerAction {
-public:
-	EventsAction(const std::string& eventMask);
-
-	virtual ~EventsAction();
-
 	/**
-	 * Returns the name of this action, i.e. "Login".
+	 * With the EventsAction you can specify what kind of events should be sent to
+	 * this manager connection.
+	 *
 	 */
-	virtual std::string getAction();
+	class EventsAction: public AbstractManagerAction {
+	public:
+		EventsAction(const std::string& eventMask);
 
-	/**
-	 * Returns the event mask.
-	 */
-	std::string getEventMask() const;
+		virtual ~EventsAction();
 
-	/**
-	 * Sets the event mask.<p>
-	 * Set to "on" if all events should be send, "off" if not events should be
-	 * sent or a combination of "system", "call" and "log" (separated by ',') to
-	 * specify what kind of events should be sent.
-	 */
-	void setEventMask(const std::string& eventMask);
-};
+		/**
+		 * Returns the name of this action, i.e. "Login".
+		 */
+		virtual std::string getAction();
+
+		/**
+		 * Returns the event mask.
+		 */
+		std::string getEventMask() const;
+
+		/**
+		 * Sets the event mask.<p>
+		 * Set to "on" if all events should be send, "off" if not events should be
+		 * sent or a combination of "system", "call" and "log" (separated by ',') to
+		 * specify what kind of events should be sent.
+		 */
+		void setEventMask(const std::string& eventMask);
+	};
 
 } //NS
 

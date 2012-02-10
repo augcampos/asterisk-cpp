@@ -12,16 +12,16 @@
 
 namespace asteriskcpp {
 
-/**
- * Represents an "Response: Error" response received from the asterisk server.
- * The cause for the error is given in the message attribute.
- *
- */
-class ManagerError: public ManagerResponse {
-public:
-	ManagerError(const std::string& responseStr);
-	virtual ~ManagerError();
-};
+	/**
+	 * Represents an "Response: Error" response received from the asterisk server.
+	 * The cause for the error is given in the message attribute.
+	 *
+	 */
+	class ManagerError: public ManagerResponse {
+	public:
+		ManagerError(const std::string& responseStr);
+		virtual ~ManagerError();
+	};
 
 }
 

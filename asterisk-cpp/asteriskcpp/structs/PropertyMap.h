@@ -38,37 +38,37 @@ typedef std::list<std::string> propertyIndex;
 
 namespace asteriskcpp {
 
-class PropertyMap {
-public:
-	PropertyMap();
-	PropertyMap(const std::string& str);
-	virtual ~PropertyMap();
+	class PropertyMap {
+	public:
+		PropertyMap();
+		PropertyMap(const std::string& str);
+		virtual ~PropertyMap();
 
-	virtual std::string toString();
-	std::string toLog();
+		virtual std::string toString();
+		std::string toLog();
 
-	std::string getProperty(const std::string& key) const;
-	template<class T> T getProperty(const std::string& key) const {
-		return (convertFromString<T>(getProperty(key)));
-	}
-protected:
-	propertyIndex index;
-	propertyMap values;
+		std::string getProperty(const std::string& key) const;
+		template<class T> T getProperty(const std::string& key) const {
+			return (convertFromString<T>(getProperty(key)));
+		}
+	protected:
+		propertyIndex index;
+		propertyMap values;
 
-	void setProperty(const std::string& key, const std::string& value);
-	template<class T> void setProperty(const std::string& key, const T& t) {
-		setProperty(key, convertToString(t));
-	}
+		void setProperty(const std::string& key, const std::string& value);
+		template<class T> void setProperty(const std::string& key, const T& t) {
+			setProperty(key, convertToString(t));
+		}
 
-	static std::string makeStdLine(const std::string& key, const std::string& value);
+		static std::string makeStdLine(const std::string& key, const std::string& value);
 
-	void convertStr(const std::string& propertyStr);
-private:
+		void convertStr(const std::string& propertyStr);
+	private:
 
-	void addProperty(const std::string& key, const std::string& value);
-	void editProperty(const std::string& key, const std::string& value);
+		void addProperty(const std::string& key, const std::string& value);
+		void editProperty(const std::string& key, const std::string& value);
 
-};
+	};
 
 }
 

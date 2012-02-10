@@ -9,11 +9,11 @@
 
 namespace asteriskcpp {
 
-ManagerError::ManagerError(const std::string& responseStr) :
-		ManagerResponse(responseStr) {
+	ManagerError::ManagerError(const std::string& responseStr) :
+			ManagerResponse(responseStr) {
 
-}
-ManagerError::~ManagerError() {
+	}
+	ManagerError::~ManagerError() {
 
-}
+	}
 } //NS

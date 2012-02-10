@@ -12,53 +12,53 @@
 
 namespace asteriskcpp {
 
-/**
- * A DBGetResponseEvent is sent in response to a DBGetAction and contains the
- * entry that was queried.<p>
- * Available since Asterisk 1.2
- *
- * @see org.asteriskjava.manager.action.DbGetAction
- * @since 0.2
- */
-class DbGetResponseEvent: public ResponseEvent {
-public:
-	inline static std::string getEventName() {
-		return ("DbGetResponseEvent");
-	}
-
-	DbGetResponseEvent(const std::string & values) :
-			ResponseEvent(values) {
-	}
-	virtual ~DbGetResponseEvent() {
-	}
-
 	/**
-	 * Returns the family of the database entry that was queried.
+	 * A DBGetResponseEvent is sent in response to a DBGetAction and contains the
+	 * entry that was queried.<p>
+	 * Available since Asterisk 1.2
 	 *
-	 * @return the family of the database entry that was queried.
+	 * @see org.asteriskjava.manager.action.DbGetAction
+	 * @since 0.2
 	 */
-	std::string getFamily() const {
-		return (getProperty("Family"));
-	}
+	class DbGetResponseEvent: public ResponseEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("DbGetResponseEvent");
+		}
 
-	/**
-	 * Returns the key of the database entry that was queried.
-	 *
-	 * @return the key of the database entry that was queried.
-	 */
-	std::string getKey() const {
-		return (getProperty("Key"));
-	}
+		DbGetResponseEvent(const std::string & values) :
+				ResponseEvent(values) {
+		}
+		virtual ~DbGetResponseEvent() {
+		}
 
-	/**
-	 * Returns the value of the database entry that was queried.
-	 *
-	 * @return the value of the database entry that was queried.
-	 */
-	std::string getVal() const {
-		return (getProperty("Val"));
-	}
-};
+		/**
+		 * Returns the family of the database entry that was queried.
+		 *
+		 * @return the family of the database entry that was queried.
+		 */
+		std::string getFamily() const {
+			return (getProperty("Family"));
+		}
+
+		/**
+		 * Returns the key of the database entry that was queried.
+		 *
+		 * @return the key of the database entry that was queried.
+		 */
+		std::string getKey() const {
+			return (getProperty("Key"));
+		}
+
+		/**
+		 * Returns the value of the database entry that was queried.
+		 *
+		 * @return the value of the database entry that was queried.
+		 */
+		std::string getVal() const {
+			return (getProperty("Val"));
+		}
+	};
 
 }
 

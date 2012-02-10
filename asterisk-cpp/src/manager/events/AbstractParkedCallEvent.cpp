@@ -9,19 +9,19 @@
 
 namespace asteriskcpp {
 
-AbstractParkedCallEvent::AbstractParkedCallEvent(const std::string& values) :
-		AbstractChannelEvent(values) {
-}
+	AbstractParkedCallEvent::AbstractParkedCallEvent(const std::string& values) :
+			AbstractChannelEvent(values) {
+	}
 
-AbstractParkedCallEvent::~AbstractParkedCallEvent() {
-}
+	AbstractParkedCallEvent::~AbstractParkedCallEvent() {
+	}
 
-std::string AbstractParkedCallEvent::getExten() const {
-	return (getProperty("Exten"));
-}
+	std::string AbstractParkedCallEvent::getExten() const {
+		return (getProperty("Exten"));
+	}
 
-std::string AbstractParkedCallEvent::getParkingLot() const {
-	return (getProperty("ParkingLot"));
-}
+	std::string AbstractParkedCallEvent::getParkingLot() const {
+		return (getProperty("ParkingLot"));
+	}
 
 } /* namespace asteriskcpp */

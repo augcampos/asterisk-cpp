@@ -12,34 +12,34 @@
 
 namespace asteriskcpp {
 
-class DndStateEvent: public ManagerEvent {
-public:
-	inline static std::string getEventName() {
-		return ("DndStateEvent");
-	}
-	DndStateEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
-	virtual ~DndStateEvent() {
-	}
+	class DndStateEvent: public ManagerEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("DndStateEvent");
+		}
+		DndStateEvent(const std::string & values) :
+				ManagerEvent(values) {
+		}
+		virtual ~DndStateEvent() {
+		}
 
-	/**
-	 * Returns the name of the channel. The channel name is of the form
-	 * "Zap/&lt;channel number&gt;".
-	 */
-	std::string getChannel() const {
-		return (getProperty("Channel"));
-	}
+		/**
+		 * Returns the name of the channel. The channel name is of the form
+		 * "Zap/&lt;channel number&gt;".
+		 */
+		std::string getChannel() const {
+			return (getProperty("Channel"));
+		}
 
-	/**
-	 * Returns DND state of the channel.
-	 *
-	 * @return Boolean.TRUE if do not disturb is on, Boolean.FALSE if it is off.
-	 */
-	int getState() const {
-		return (stringToBool(getProperty("State")));
-	}
-};
+		/**
+		 * Returns DND state of the channel.
+		 *
+		 * @return Boolean.TRUE if do not disturb is on, Boolean.FALSE if it is off.
+		 */
+		int getState() const {
+			return (stringToBool(getProperty("State")));
+		}
+	};
 
 }
 

@@ -9,11 +9,11 @@
 
 namespace asteriskcpp {
 
-LeaveEvent::LeaveEvent(const std::string & values) :
-		QueueEvent(values) {
-}
+	LeaveEvent::LeaveEvent(const std::string & values) :
+			QueueEvent(values) {
+	}
 
-LeaveEvent::~LeaveEvent() {
-}
+	LeaveEvent::~LeaveEvent() {
+	}
 
 } /* namespace asterisk_cpp */

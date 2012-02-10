@@ -18,33 +18,33 @@
 
 namespace asteriskcpp {
 
-class SSLSocket: private TCPSocket {
-private:
-	SSL *ssl;
-	bool certified;
-	SSLContext* sslContext;
+	class SSLSocket: private TCPSocket {
+	private:
+		SSL *ssl;
+		bool certified;
+		SSLContext* sslContext;
 
-public:
-	SSLSocket(SSLContext* sslContext, const int socketFD);
-	SSLSocket(SSLContext* sslContext, const IPAddress& ipAddress);
+	public:
+		SSLSocket(SSLContext* sslContext, const int socketFD);
+		SSLSocket(SSLContext* sslContext, const IPAddress& ipAddress);
 
-	~SSLSocket();
+		~SSLSocket();
 
-	int readEncryptedData(char* buffer, const unsigned int size);
-	void writeEncryptedData(const char* buffer, const unsigned int size);
+		int readEncryptedData(char* buffer, const unsigned int size);
+		void writeEncryptedData(const char* buffer, const unsigned int size);
 
-	void setTimeout(const unsigned long timeout);
-	unsigned long getTimeout();
+		void setTimeout(const unsigned long timeout);
+		unsigned long getTimeout();
 
-	void release();
+		void release();
 
-	bool check4readData(const unsigned long timeout);
+		bool check4readData(const unsigned long timeout);
 
-	IPAddress getLocalAddress();
-	IPAddress getPeerAddress();
+		IPAddress getLocalAddress();
+		IPAddress getPeerAddress();
 
-	bool isCertifiedConnection();
-};
+		bool isCertifiedConnection();
+	};
 
 }
 

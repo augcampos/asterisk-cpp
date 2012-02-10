@@ -12,22 +12,22 @@
 
 namespace asteriskcpp {
 
-/**
- * The ListCommandsAction returns possible commands in the Manager interface.
- * <p>
- * Use the getAttributes method on the ManagerResponse for a map of commands and explanations.
- *
- * @see org.asteriskjava.manager.response.ManagerResponse#getAttributes()
- */
-class ListCommandsAction: public AbstractManagerAction {
-public:
-	virtual ~ListCommandsAction();
-
 	/**
-	 * Returns the name of this action, i.e. "Login".
+	 * The ListCommandsAction returns possible commands in the Manager interface.
+	 * <p>
+	 * Use the getAttributes method on the ManagerResponse for a map of commands and explanations.
+	 *
+	 * @see org.asteriskjava.manager.response.ManagerResponse#getAttributes()
 	 */
-	virtual std::string getAction();
-};
+	class ListCommandsAction: public AbstractManagerAction {
+	public:
+		virtual ~ListCommandsAction();
+
+		/**
+		 * Returns the name of this action, i.e. "Login".
+		 */
+		virtual std::string getAction();
+	};
 
 }
 

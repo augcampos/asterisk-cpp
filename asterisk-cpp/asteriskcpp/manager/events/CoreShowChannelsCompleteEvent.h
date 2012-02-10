@@ -12,45 +12,45 @@
 
 namespace asteriskcpp {
 
-/**
- * A CoreShowChannelsCompleteEvent is triggered after the state of all channels has been reported in response
- * to a CoreShowChannelsAction.
- *
- * @see org.asteriskjava.manager.action.CoreShowChannelsAction
- * @see org.asteriskjava.manager.event.CoreShowChannelEvent
- * @since 1.0.0
- */
-class CoreShowChannelsCompleteEvent: public ResponseEvent {
-public:
-	inline static std::string getEventName() {
-		return ("CoreShowChannelsCompleteEvent");
-	}
-	CoreShowChannelsCompleteEvent(const std::string& values) :
-			ResponseEvent(values) {
-	}
-	virtual ~CoreShowChannelsCompleteEvent() {
-	}
-
 	/**
-	 * Returns if the status of the eventlist (should be Complete).<p>
+	 * A CoreShowChannelsCompleteEvent is triggered after the state of all channels has been reported in response
+	 * to a CoreShowChannelsAction.
 	 *
-	 * @return the status of the list.
+	 * @see org.asteriskjava.manager.action.CoreShowChannelsAction
+	 * @see org.asteriskjava.manager.event.CoreShowChannelEvent
 	 * @since 1.0.0
 	 */
-	std::string getEventlist() const {
-		return (getProperty("Eventlist"));
-	}
+	class CoreShowChannelsCompleteEvent: public ResponseEvent {
+	public:
+		inline static std::string getEventName() {
+			return ("CoreShowChannelsCompleteEvent");
+		}
+		CoreShowChannelsCompleteEvent(const std::string& values) :
+				ResponseEvent(values) {
+		}
+		virtual ~CoreShowChannelsCompleteEvent() {
+		}
 
-	/**
-	 * Returns the number of channels reported.<p>
-	 *
-	 * @return the number of channels reported.
-	 */
-	int getListitems() const {
-		return (convertFromString<int>(getProperty("Listitems")));
-	}
+		/**
+		 * Returns if the status of the eventlist (should be Complete).<p>
+		 *
+		 * @return the status of the list.
+		 * @since 1.0.0
+		 */
+		std::string getEventlist() const {
+			return (getProperty("Eventlist"));
+		}
 
-};
+		/**
+		 * Returns the number of channels reported.<p>
+		 *
+		 * @return the number of channels reported.
+		 */
+		int getListitems() const {
+			return (convertFromString<int>(getProperty("Listitems")));
+		}
+
+	};
 
 }
 

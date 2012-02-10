@@ -9,22 +9,22 @@
 
 namespace asteriskcpp {
 
-AgentCompleteEvent::AgentCompleteEvent(const std::string & values) :
-		AbstractAgentEvent(values) {
-}
-AgentCompleteEvent::~AgentCompleteEvent() {
-}
+	AgentCompleteEvent::AgentCompleteEvent(const std::string & values) :
+			AbstractAgentEvent(values) {
+	}
+	AgentCompleteEvent::~AgentCompleteEvent() {
+	}
 
-std::string AgentCompleteEvent::getHoldTime() const {
-	return (getProperty("HoldTime"));
-}
+	std::string AgentCompleteEvent::getHoldTime() const {
+		return (getProperty("HoldTime"));
+	}
 
-std::string AgentCompleteEvent::getTalkTime() const {
-	return (getProperty("TalkTime"));
-}
+	std::string AgentCompleteEvent::getTalkTime() const {
+		return (getProperty("TalkTime"));
+	}
 
-std::string AgentCompleteEvent::getReason() const {
-	return (getProperty("Reason"));
-}
+	std::string AgentCompleteEvent::getReason() const {
+		return (getProperty("Reason"));
+	}
 }
 

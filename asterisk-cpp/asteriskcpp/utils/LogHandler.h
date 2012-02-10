@@ -71,23 +71,23 @@ enum LogLevel {
 
 namespace asteriskcpp {
 
-class LogHandler: public Singleton<LogHandler> {
-	friend class Singleton<LogHandler> ;
+	class LogHandler: public Singleton<LogHandler> {
+		friend class Singleton<LogHandler> ;
 
-private:
-	std::string confFile;
+	private:
+		std::string confFile;
 
-public:
-	~LogHandler();
+	public:
+		~LogHandler();
 
-	void setLevel(const LogLevel& level);
+		void setLevel(const LogLevel& level);
 
-	void log(const std::string& line, LogLevel level);
+		void log(const std::string& line, LogLevel level);
 
-private:
-	LogHandler();
-	LogHandler(const std::string& confFile);
-};
+	private:
+		LogHandler();
+		LogHandler(const std::string& confFile);
+	};
 
 }
 
