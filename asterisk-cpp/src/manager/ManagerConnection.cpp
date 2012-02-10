@@ -67,6 +67,7 @@ void ManagerConnection::disconnect() {
 void ManagerConnection::send(const std::string& data) {
 	LOG_DEBUG_STR(str2Log(data));
 	this->socket->writeData(data.c_str(), (unsigned int) (data.length()));
+	LOG_TRACE_STR("OUT");
 }
 
 void ManagerConnection::sendAction(ManagerAction & action) {
@@ -79,16 +80,17 @@ void ManagerConnection::sendAction(ManagerAction & action, responseCallbackFunct
 	send(action.toString());
 }
 
-ManagerResponse *ManagerConnection::syncSendAction(ManagerAction & action) {
+ManagerResponse* ManagerConnection::syncSendAction(ManagerAction & action) {
 	return (syncSendAction(action, defaultResponseTimeout));
 }
 
-ManagerResponse *ManagerConnection::syncSendAction(ManagerAction & action, unsigned int timeout) {
-	SyncResponseCallBack *srcb = new SyncResponseCallBack(&action, timeout);
-	addResponsetListener(action.generateID(), srcb);
+ManagerResponse* ManagerConnection::syncSendAction(ManagerAction & action, unsigned int timeout) {
+	LOG_TRACE_STR("IN");
+	SyncResponseCallBack srcb(&action, timeout);
+	addResponsetListener(action.generateID(), &srcb);
 	send(action.toString());
-	srcb->stoll();
-	return (&(*srcb->response));
+	srcb.stoll();
+	return (srcb.response);
 }
 
 ManagerConnection::State ManagerConnection::getState() const {

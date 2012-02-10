@@ -46,7 +46,6 @@ protected:
 };
 
 class SyncResponseCallBack: public ResponseCallBack {
-	typedef boost::unique_lock<boost::mutex> syncLock_t;
 	boost::mutex m_mutex;
 	boost::condition_variable m_cond;
 public:
@@ -60,7 +59,6 @@ public:
 
 class ManagerResponsesHandler: public Thread {
 	typedef std::map<std::string, ResponseCallBack*> listenersList_t;
-	typedef boost::mutex::scoped_lock managerLock_t;
 	boost::mutex m_mutex;
 	boost::condition_variable m_cond;
 	ResponseCallBack* getListener(const std::string& key);

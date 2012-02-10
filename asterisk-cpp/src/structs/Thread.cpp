@@ -16,6 +16,7 @@ Thread::Thread() {
 }
 
 Thread::~Thread() {
+	stop();
 	if (m_thread != NULL) {
 		delete (m_thread);
 	}
@@ -46,15 +47,20 @@ void Thread::run() {
 void Thread::operator ()() {
 	do {
 		run();
-	} while (m_mustStop == false);
+	} while (!isStoped());
 
+}
+
+bool  Thread::isStoped(){
+	boost::mutex::scoped_lock lock(m_mustStopMutex);
+	return (m_mustStop);
 }
 
 void Thread::setMustStop(volatile bool stop) {
-	m_mustStopMutex.lock();
+	boost::mutex::scoped_lock lock(m_mustStopMutex);
 	m_mustStop = stop;
-	m_mustStopMutex.unlock();
-}
 
 }
+
+}// namespace
 

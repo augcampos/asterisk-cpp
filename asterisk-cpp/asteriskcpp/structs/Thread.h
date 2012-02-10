@@ -27,9 +27,10 @@ protected:
 
 private:
 	boost::thread* m_thread; // The thread runs this object
-	// Variable that indicates to stop and the mutex to synchronise "must stop" on (mutex explained later)
-	volatile bool m_mustStop;
 	boost::mutex m_mustStopMutex;
+	// Variable that indicates to stop and the mutex to synchronise "must stop" on (mutex explained later)
+	bool  isStoped();
+	bool m_mustStop;
 };
 
 }
