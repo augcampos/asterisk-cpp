@@ -20,6 +20,7 @@
 #include "asteriskcpp/manager/events/AgentLogoffEvent.h"
 #include "asteriskcpp/manager/events/AgentRingNoAnswer.h"
 #include "asteriskcpp/manager/events/AgentsCompleteEvent.h"
+#include "asteriskcpp/manager/events/AgentsEvent.h"
 #include "asteriskcpp/manager/events/AgiExecEvent.h"
 #include "asteriskcpp/manager/events/AlarmClearEvent.h"
 #include "asteriskcpp/manager/events/AlarmEvent.h"
@@ -78,6 +79,7 @@ namespace asteriskcpp {
 		RegisterClass<AgentLogoffEvent>();
 		RegisterClass<AgentRingNoAnswer>();
 		RegisterClass<AgentsCompleteEvent>();
+		RegisterClass<AgentsEvent>();
 		RegisterClass<AgiExecEvent>();
 		RegisterClass<AlarmClearEvent>();
 		RegisterClass<AlarmEvent>();
