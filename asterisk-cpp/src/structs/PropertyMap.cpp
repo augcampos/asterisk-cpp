@@ -14,6 +14,7 @@
 #define NEWLINE "\r\n"
 
 namespace asteriskcpp {
+	const std::string strEmpty("");
 
 	PropertyMap::PropertyMap() {
 	}
@@ -48,10 +49,11 @@ namespace asteriskcpp {
 
 	std::string PropertyMap::getProperty(const std::string& key) const {
 		propertyMap::const_iterator it = values.find(key);
-		if (it != values.end())
-			return ((it)->second);
-		else
-			return ("");
+		if (it != values.end()) {
+			return (it->second);
+		}
+
+		return	((strEmpty));
 	}
 
 	void PropertyMap::convertStr(const std::string& propertyStr) {
@@ -78,7 +80,7 @@ namespace asteriskcpp {
 	}
 
 	void PropertyMap::addProperty(const std::string& key, const std::string& value) {
-		const std::pair<std::string, std::string> p = std::make_pair(key, value);
+		propertyPair p = std::make_pair(key, value);
 		index.push_back(key);
 		values.insert(p);
 	}

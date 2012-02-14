@@ -19,7 +19,7 @@
  * Comparator for case-insensitive comparison in STL assos. containers
  * case-independent (ci) compare_less binary function
  */
-struct ci_less: std::binary_function<std::string, std::string, bool> {
+struct ci_less: std::binary_function<std::string&, std::string&, bool> {
 
 	struct nocase_compare: public std::binary_function<unsigned char, unsigned char, bool> {
 		bool operator()(const unsigned char& c1, const unsigned char& c2) const {
@@ -34,6 +34,7 @@ struct ci_less: std::binary_function<std::string, std::string, bool> {
 };
 
 typedef std::map<const std::string, std::string, ci_less> propertyMap;
+typedef const std::pair<const std::string, std::string> propertyPair;
 typedef std::list<std::string> propertyIndex;
 
 namespace asteriskcpp {
