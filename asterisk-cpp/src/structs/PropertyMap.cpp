@@ -47,7 +47,7 @@ namespace asteriskcpp {
 			addProperty(key, value);
 	}
 
-	std::string PropertyMap::getProperty(const std::string& key) const {
+	const std::string& PropertyMap::getProperty(const std::string& key) const {
 		propertyMap::const_iterator it = values.find(key);
 		if (it != values.end()) {
 			return (it->second);

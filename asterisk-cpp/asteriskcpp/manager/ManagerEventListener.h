@@ -15,7 +15,7 @@ namespace asteriskcpp {
 	class ManagerEventListener {
 	public:
 		virtual ~ManagerEventListener();
-		virtual void onManagerEvent(const ManagerEvent* me)=0;
+		virtual void onManagerEvent(ManagerEvent* me)=0;
 	};
 
 }

@@ -42,6 +42,8 @@
 #include "asteriskcpp/manager/events/ConnectEvent.h"
 #include "asteriskcpp/manager/events/CoreShowChannelEvent.h"
 #include "asteriskcpp/manager/events/CoreShowChannelsCompleteEvent.h"
+#include "asteriskcpp/manager/events/DahdiShowChannelsCompleteEvent.h"
+#include "asteriskcpp/manager/events/DahdiShowChannelsEvent.h"
 #include "asteriskcpp/manager/events/DbGetResponseEvent.h"
 #include "asteriskcpp/manager/events/DialEvent.h"
 #include "asteriskcpp/manager/events/DisconnectEvent.h"
@@ -101,6 +103,8 @@ namespace asteriskcpp {
 		RegisterClass<ConnectEvent>();
 		RegisterClass<CoreShowChannelEvent>();
 		RegisterClass<CoreShowChannelsCompleteEvent>();
+		RegisterClass<DahdiShowChannelsCompleteEvent>();
+		RegisterClass<DahdiShowChannelsEvent>();
 		RegisterClass<DbGetResponseEvent>();
 		RegisterClass<DialEvent>();
 		RegisterClass<DisconnectEvent>();

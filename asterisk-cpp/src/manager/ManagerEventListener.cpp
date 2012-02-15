@@ -13,7 +13,7 @@ namespace asteriskcpp {
 
 	}
 
-	void ManagerEventListener::onManagerEvent(const ManagerEvent* me) {
+	void ManagerEventListener::onManagerEvent(ManagerEvent* me) {
 
 	}
 

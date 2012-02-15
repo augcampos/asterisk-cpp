@@ -45,6 +45,8 @@ namespace asteriskcpp {
 		ManagerResponse* syncSendAction(ManagerAction& action);
 		ManagerResponse* syncSendAction(ManagerAction& action, unsigned int timeout);
 
+		void addEventCallback(onManagerEventCallback_t callback);
+
 		State getState() const;
 		unsigned int getDefaultResponseTimeout() const;
 		std::string getHostname() const;

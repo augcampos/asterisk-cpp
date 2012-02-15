@@ -14,6 +14,21 @@
 
 namespace asteriskcpp {
 
+	ASyncEventCallBack::ASyncEventCallBack(onManagerEventCallback_t f) {
+		function = f;
+	}
+
+	ASyncEventCallBack::~ASyncEventCallBack() {
+
+	}
+
+	void ASyncEventCallBack::onManagerEvent(ManagerEvent* me) {
+		LOG_TRACE_STR("ASyncEventCallBack :" + me->toLog());
+		if (function != NULL) {
+			(function)(me);
+		}LOG_TRACE_STR("OUT");
+	}
+
 	ManagerEventsHandler::~ManagerEventsHandler() {
 
 	}

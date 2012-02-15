@@ -27,7 +27,7 @@ namespace asteriskcpp {
 	}
 
 	void ASyncResponseCallBack::fireCallBack(ManagerResponse* mr) {
-		LOG_TRACE_STR("ASyncResponseCallBack :" + (*mr).toLog());
+		LOG_TRACE_STR("ASyncResponseCallBack :" + mr->toLog());
 		if (function != NULL) {
 			(function)(mr);
 		}LOG_TRACE_STR("OUT");

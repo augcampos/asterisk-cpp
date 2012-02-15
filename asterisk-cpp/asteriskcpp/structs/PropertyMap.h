@@ -48,7 +48,7 @@ namespace asteriskcpp {
 		virtual std::string toString();
 		std::string toLog();
 
-		std::string getProperty(const std::string& key) const;
+		const std::string& getProperty(const std::string& key) const;
 		template<class T> T getProperty(const std::string& key) const {
 			return (convertFromString<T>(getProperty(key)));
 		}

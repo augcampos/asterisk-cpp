@@ -93,6 +93,12 @@ namespace asteriskcpp {
 		return (srcb.response);
 	}
 
+	void ManagerConnection::addEventCallback(onManagerEventCallback_t callback){
+		ASyncEventCallBack *asecb = new ASyncEventCallBack(callback);
+		addEventListener(*asecb);
+	}
+
+
 	ManagerConnection::State ManagerConnection::getState() const {
 		return (state);
 	}
