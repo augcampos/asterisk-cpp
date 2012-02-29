@@ -43,7 +43,7 @@ namespace asteriskcpp {
 		TCPSocket();
 		TCPSocket(const int socketFD);
 		TCPSocket(const IPAddress& ipAddress);
-		~TCPSocket();
+		virtual ~TCPSocket();
 
 		int readData(char* buf, const unsigned int size);
 		void writeData(const char* buf, const unsigned int size);
@@ -52,6 +52,7 @@ namespace asteriskcpp {
 		unsigned long getTimeout();
 
 		void release();
+		void close();
 
 		bool check4readData(const unsigned long timeout);
 

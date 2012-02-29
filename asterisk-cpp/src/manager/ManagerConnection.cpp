@@ -7,6 +7,7 @@
 
 #include "asteriskcpp/manager/ManagerConnection.h"
 #include <exception>
+#include <memory>
 #include <boost/format.hpp>
 #include <boost/regex.hpp>
 #include "asteriskcpp/exceptions/Exception.h"
@@ -50,8 +51,7 @@ namespace asteriskcpp {
 			LOG_INFO_STR("Success");
 			this->setState(CONNECTED);
 			return (true);
-		} catch (Exception& E) {
-			LOG_ERROR_STR((boost::format("Fail %1%:%2% - %3%") % this->getHostname() % this->getPort() % E.getMessage()).str());
+		} catch (...) {
 		}
 		disconnect();
 		return (false);
@@ -93,11 +93,10 @@ namespace asteriskcpp {
 		return (srcb.response);
 	}
 
-	void ManagerConnection::addEventCallback(onManagerEventCallback_t callback){
+	void ManagerConnection::addEventCallback(onManagerEventCallback_t callback) {
 		ASyncEventCallBack *asecb = new ASyncEventCallBack(callback);
 		addEventListener(*asecb);
 	}
-
 
 	ManagerConnection::State ManagerConnection::getState() const {
 		return (state);
@@ -221,7 +220,11 @@ namespace asteriskcpp {
 
 	void ManagerConnection::dispatchEvent(const std::string& event) {
 		LOG_TRACE_STR(str2Log(event));
-		this->fireEvent(this->eventBuilder.buildEvent(event));
+		ManagerEvent *me = this->eventBuilder.buildEvent(event);
+		if (me != NULL) {
+			this->fireEvent(*me);
+		}
+		delete (me);
 	}
 
 	bool ManagerConnection::login() {
@@ -285,12 +288,12 @@ namespace asteriskcpp {
 	void ManagerConnection::logoff() {
 		if (this->isAuthenticated()) {
 			LogoffAction la;
-			ManagerResponse *mr = syncSendAction(la);
+			std::unique_ptr<ManagerResponse> mr(syncSendAction(la));
 			if (mr->getType() == ManagerResponse::Type_SUCCESS) {
 				this->setState(CONNECTED);
 			}
 
-			delete (mr);
+			//delete (mr);
 		}
 	}
 
@@ -303,4 +306,3 @@ namespace asteriskcpp {
 	}
 
 }
-

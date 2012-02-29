@@ -50,10 +50,11 @@ namespace asteriskcpp {
 				}
 			}
 		} catch (SocketException& e) {
+			stop();
 			std::cout << "___CATCH SocketException" << std::endl;
 			LOG_ERROR_STR(e.getMessage());
-			stop();
 		} catch (Exception& e) {
+			stop();
 			std::cout << "___CATCH Exception" << std::endl;
 			LOG_ERROR_STR(e.getMessage());
 		}

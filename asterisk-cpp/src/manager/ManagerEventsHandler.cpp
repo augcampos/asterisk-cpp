@@ -22,8 +22,8 @@ namespace asteriskcpp {
 
 	}
 
-	void ASyncEventCallBack::onManagerEvent(ManagerEvent* me) {
-		LOG_TRACE_STR("ASyncEventCallBack :" + me->toLog());
+	void ASyncEventCallBack::onManagerEvent(const ManagerEvent& me) {
+		LOG_TRACE_STR("ASyncEventCallBack :" + me.toLog());
 		if (function != NULL) {
 			(function)(me);
 		}LOG_TRACE_STR("OUT");
@@ -41,21 +41,20 @@ namespace asteriskcpp {
 		listeners.erase(&mel);
 	}
 
-	void ManagerEventsHandler::fireEvent(ManagerEvent* me) {
+	void ManagerEventsHandler::fireEvent(const ManagerEvent& me) {
 		boost::thread t(boost::bind(&ManagerEventsHandler::internalFireEvent, this, me));
 	}
 
-	void ManagerEventsHandler::internalFireEvent(ManagerEvent* me) {
-		LOG_DEBUG_STR("FIRE EVENT " + typeid(*me).name() + ":: " + me->toLog());
+	void ManagerEventsHandler::internalFireEvent(const ManagerEvent& me) {
+		LOG_DEBUG_STR("FIRE EVENT " + typeid(me).name() + ":: " + me.toLog());
 
-		for (EventListenersList::iterator iter = listeners.begin(); iter != listeners.end(); ++iter) {
+		for (EventListenersList::const_iterator iter = listeners.begin(); iter != listeners.end(); ++iter) {
 			try {
 				(const_cast<ManagerEventListener *>(*iter))->onManagerEvent(me);
 			} catch (Exception& E) {
 				LOG_ERROR_STR( E.getMessage());
 			}
 		}
-		delete (me);
 	}
 
 }

@@ -5,6 +5,7 @@
  *      Author: augcampos
  */
 
+//http://tldp.org/LDP/LG/issue74/tougher.html
 #include "asteriskcpp/net/TCPSocket.h"
 #include "asteriskcpp/exceptions/IOException.h"
 
@@ -24,7 +25,7 @@ namespace asteriskcpp {
 		struct sockaddr_in addr;
 
 		if ((socketFD = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) == -1) {
-			Throw(SocketException(std::string("Error creating the socket - ")+strerror(errno)));
+			Throw(SocketException(std::string("Error creating the socket - ").append(strerror(errno))));
 		}
 
 		memset(&addr, 0, sizeof(addr));
@@ -34,15 +35,8 @@ namespace asteriskcpp {
 		addr.sin_addr.s_addr = htonl(peerAddress.getIP());
 
 		//Open the socket
-		if (::connect(socketFD, (struct sockaddr *) &addr, sizeof(addr)) != 0) {
-#ifdef _WIN32
-			shutdown(socketFD, SD_BOTH);
-			closesocket(socketFD);
-#else
-			shutdown(socketFD, SHUT_RDWR);
-			close(socketFD);
-#endif
-			Throw(SocketException(std::string("Error creating the socket - ")+strerror(errno)));
+		if (::connect(this->socketFD, (struct sockaddr *) &addr, sizeof(addr)) != 0) {
+			Throw(SocketException(std::string("Error creating the socket - ").append(strerror(errno))));
 		}
 
 		timeout.tv_usec = NO_TIMEOUT;
@@ -52,20 +46,14 @@ namespace asteriskcpp {
 	}
 
 	TCPSocket::~TCPSocket() {
-		boost::mutex::scoped_lock lockRead(mutRead);
-		boost::mutex::scoped_lock lockWrite(mutWrite);
-
-#ifdef _WIN32
-		shutdown(socketFD, SD_BOTH);
-		closesocket(socketFD);
-#else
-		shutdown(socketFD, SHUT_RDWR);
-		close(socketFD);
-#endif
+		boost::mutex::scoped_lock lockRead(this->mutRead);
+		boost::mutex::scoped_lock lockWrite(this->mutWrite);
+		this->release();
+		this->close();
 	}
 
 	int TCPSocket::readData(char* buf, const unsigned int length) {
-		boost::mutex::scoped_lock lock(mutRead);
+		boost::mutex::scoped_lock lock(this->mutRead);
 
 		fd_set fdList;
 
@@ -84,7 +72,7 @@ namespace asteriskcpp {
 		if (value == 0) {
 			Throw(SocketException(std::string("Error reading from socket - Timeout exception")));
 		} else if (value == -1) {
-			Throw(SocketException(std::string("Error reading from socket - ")+strerror(errno)));
+			Throw(SocketException(std::string("Error reading from socket - ").append(strerror(errno))));
 		}
 
 		if (this->releaseForced)
@@ -99,17 +87,18 @@ namespace asteriskcpp {
 		if (readSize == 0) {
 			Throw(SocketException(std::string("Error reading from socket - Disconnected")));
 		} else if (readSize == -1) {
-			Throw(SocketException(std::string("Error reading from socket - ")+strerror(errno)));
+			Throw(SocketException(std::string("Error reading from socket - ").append(strerror(errno))));
 		}
 
 		return (readSize);
 	}
 
 	void TCPSocket::writeData(const char* buf, const unsigned int length) {
-		if (!length)
+		if (!length){
 			return;
+		}
 
-		boost::mutex::scoped_lock lock(mutWrite);
+		boost::mutex::scoped_lock lock(this->mutWrite);
 
 #ifndef _WIN32
 		int writeSize = ::send(socketFD, buf, length, MSG_NOSIGNAL);
@@ -118,7 +107,7 @@ namespace asteriskcpp {
 #endif
 
 		if (writeSize <= 0) {
-			Throw(SocketException(std::string("Error wrinting to socket - ")+strerror(errno)));
+			Throw(SocketException(std::string("Error writing to socket - ").append(strerror(errno))));
 		}
 	}
 
@@ -141,12 +130,20 @@ namespace asteriskcpp {
 #ifdef _WIN32
 		shutdown(socketFD, SD_BOTH);
 #else
-		shutdown(socketFD, SHUT_RDWR);
+		::shutdown(this->socketFD, SHUT_RDWR);
+#endif
+	}
+
+	void TCPSocket::close() {
+#ifdef _WIN32
+		closesocket(socketFD);
+#else
+		::close(this->socketFD);
 #endif
 	}
 
 	bool TCPSocket::check4readData(const unsigned long timeout) {
-		boost::mutex::scoped_lock lock(mutRead);
+		boost::mutex::scoped_lock lock(this->mutRead);
 
 		struct timeval time;
 		fd_set fdList;
@@ -157,18 +154,18 @@ namespace asteriskcpp {
 		FD_ZERO(&fdList);
 		FD_SET(socketFD, &fdList);
 
-		if (select(socketFD + 1, &fdList, NULL, NULL, &time) <= 0)
+		if (select(this->socketFD + 1, &fdList, NULL, NULL, &time) <= 0)
 			return (false);
 		else
 			return (true);
 	}
 
 	IPAddress TCPSocket::getLocalAddress() {
-		return (ipAddress);
+		return (this->ipAddress);
 	}
 
 	IPAddress TCPSocket::getPeerAddress() {
-		return (peerAddress);
+		return (this->peerAddress);
 	}
 
 	void TCPSocket::resolvePeerAddr() {
@@ -179,19 +176,12 @@ namespace asteriskcpp {
 		socklen_t size = sizeof(client_addr);
 #endif
 
-		if (::getpeername(socketFD, (struct sockaddr *) &client_addr, &size) == -1) {
-#ifdef _WIN32
-			shutdown(socketFD, SD_BOTH);
-			closesocket(socketFD);
-#else
-			shutdown(socketFD, SHUT_RDWR);
-			close(socketFD);
-#endif
-			Throw(SocketException(std::string("Error getting socket addr - ")+strerror(errno)));
+		if (::getpeername(this->socketFD, (struct sockaddr *) &client_addr, &size) == -1) {
+			Throw(SocketException(std::string("Error getting socket addr - ").append(strerror(errno))));
 		}
 
-		peerAddress.setIP(ntohl(client_addr.sin_addr.s_addr));
-		peerAddress.setPort(ntohs(client_addr.sin_port));
+		this->peerAddress.setIP(ntohl(client_addr.sin_addr.s_addr));
+		this->peerAddress.setPort(ntohs(client_addr.sin_port));
 	}
 
 	int TCPSocket::getSocketFD() {
@@ -206,17 +196,10 @@ namespace asteriskcpp {
 		socklen_t size = sizeof(local_addr);
 #endif
 
-		if (::getsockname(socketFD, (struct sockaddr *) &local_addr, &size) == -1) {
-#ifdef _WIN32
-			shutdown(socketFD, SD_BOTH);
-			closesocket(socketFD);
-#else
-			shutdown(socketFD, SHUT_RDWR);
-			close(socketFD);
-#endif
-			Throw(SocketException(std::string("Error getting socket addr - ")+strerror(errno)));
+		if (::getsockname(this->socketFD, (struct sockaddr *) &local_addr, &size) == -1) {
+			Throw(SocketException(std::string("Error getting socket addr - ").append(strerror(errno))));
 		}
 
-		ipAddress.setPort(ntohs(local_addr.sin_port));
+		this->ipAddress.setPort(ntohs(local_addr.sin_port));
 	}
 }

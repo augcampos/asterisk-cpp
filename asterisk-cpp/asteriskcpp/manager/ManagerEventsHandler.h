@@ -15,12 +15,12 @@
 
 namespace asteriskcpp {
 
-	typedef void (*onManagerEventCallback_t)(ManagerEvent* me);
+	typedef void (*onManagerEventCallback_t)(const ManagerEvent& me);
 	class ASyncEventCallBack: public ManagerEventListener {
 	public:
 		ASyncEventCallBack(onManagerEventCallback_t f);
 		virtual ~ASyncEventCallBack();
-		void onManagerEvent(ManagerEvent* me);
+		void onManagerEvent(const ManagerEvent& me);
 	protected:
 		onManagerEventCallback_t function;
 	};
@@ -34,10 +34,10 @@ namespace asteriskcpp {
 
 	protected:
 		EventListenersList listeners;
-		void fireEvent(ManagerEvent* me);
+		void fireEvent(const ManagerEvent& me);
 
 	private:
-		void internalFireEvent(ManagerEvent* me);
+		void internalFireEvent(const ManagerEvent& me);
 
 	};
 

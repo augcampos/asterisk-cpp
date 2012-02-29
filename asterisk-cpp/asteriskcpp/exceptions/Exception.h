@@ -9,10 +9,11 @@
 #define EXCEPTION_H_
 
 #include <string>
+#include <exception>
 
 namespace asteriskcpp {
 
-	class Exception {
+	class Exception: std::exception {
 	private:
 		std::string name;
 		std::string message;

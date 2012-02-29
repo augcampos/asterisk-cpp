@@ -19,4 +19,6 @@
 #include "asteriskcpp/manager/responses/ManagerResponse.h"
 #include "asteriskcpp/manager/responses/CommandResponse.h"
 
+#include "asteriskcpp/exceptions/Exception.h"
+
 #endif /* MANAGER_HPP_ */

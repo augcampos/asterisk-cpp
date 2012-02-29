@@ -24,13 +24,7 @@ namespace asteriskcpp {
 				SSL_shutdown(ssl);
 				SSL_free(ssl);
 			}
-#ifdef _WIN32
-			shutdown(socketFD,SD_BOTH);
-			closesocket(socketFD);
-#else
-			shutdown(socketFD, SHUT_RDWR);
-			close(socketFD);
-#endif
+			this->close();
 			Throw(SocketException(std::string("Unable to set ssl protocol - ")+ERR_error_string(SSL_get_verify_result(ssl),NULL)));
 		}
 
@@ -54,13 +48,7 @@ namespace asteriskcpp {
 				SSL_shutdown(ssl);
 				SSL_free(ssl);
 			}
-#ifdef _WIN32
-			shutdown(socketFD,SD_BOTH);
-			closesocket(socketFD);
-#else
-			shutdown(socketFD, SHUT_RDWR);
-			close(socketFD);
-#endif
+			this->close();
 			Throw(SocketException(std::string("Unable to set ssl protocol - ")+ERR_error_string(SSL_get_verify_result(ssl),NULL)));
 		}
 
