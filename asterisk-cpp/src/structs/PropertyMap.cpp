@@ -26,17 +26,17 @@ namespace asteriskcpp {
 	PropertyMap::~PropertyMap() {
 	}
 
-	std::string PropertyMap::toString() {
+	std::string PropertyMap::toString() const {
 		std::stringstream stream;
-		for (propertyIndex::iterator it = index.begin(); it != index.end(); it++) {
+		for (propertyIndex::const_iterator it = index.begin(); it != index.end(); it++) {
 			stream << makeStdLine(*it, getProperty(*it));
 		}
 		stream << NEWLINE;
 		return (stream.str());
 	}
 
-	std::string PropertyMap::toLog() {
-		return (str2Log(toString()));
+	std::string PropertyMap::toLog() const {
+		return (str2Log(this->toString()));
 	}
 
 	void PropertyMap::setProperty(const std::string& key, const std::string& value) {

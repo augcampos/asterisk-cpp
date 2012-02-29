@@ -52,6 +52,7 @@ namespace asteriskcpp {
 		unsigned long getTimeout();
 
 		void release();
+		void close();
 
 		bool check4readData(const unsigned long timeout);
 

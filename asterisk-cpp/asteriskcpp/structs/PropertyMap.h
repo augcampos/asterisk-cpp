@@ -45,8 +45,8 @@ namespace asteriskcpp {
 		PropertyMap(const std::string& str);
 		virtual ~PropertyMap();
 
-		virtual std::string toString();
-		std::string toLog();
+		virtual std::string toString() const ;
+		std::string toLog() const;
 
 		const std::string& getProperty(const std::string& key) const;
 		template<class T> T getProperty(const std::string& key) const {
