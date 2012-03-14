@@ -29,28 +29,24 @@ namespace asteriskcpp {
 
 		/**
 		 * Returns the name of the channel.
-		 *
 		 * @return the name of the channel.
 		 */
 		std::string getChannel() const;
 
 		/**
 		 * Returns the unique id of the channel.
-		 *
 		 * @return the unique id of the channel.
 		 */
 		std::string getUniqueId() const;
 
 		/**
 		 * Returns the new account code.
-		 *
 		 * @return the new account code.
 		 */
 		std::string getAccountCode() const;
 
 		/**
 		 * Returns the old account code.
-		 *
 		 * @return the old account code.
 		 */
 		std::string getOldAccountCode() const;

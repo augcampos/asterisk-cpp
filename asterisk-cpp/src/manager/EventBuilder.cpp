@@ -78,6 +78,8 @@
 #include "asteriskcpp/manager/events/MonitorStopEvent.h"
 #include "asteriskcpp/manager/events/MusicOnHoldEvent.h"
 #include "asteriskcpp/manager/events/NewAccountCodeEvent.h"
+#include "asteriskcpp/manager/events/NewCallerIdEvent.h"
+#include "asteriskcpp/manager/events/NewChannelEvent.h"
 
 namespace asteriskcpp {
 
@@ -150,6 +152,8 @@ namespace asteriskcpp {
 		RegisterClass<MonitorStopEvent>();
 		RegisterClass<MusicOnHoldEvent>();
 		RegisterClass<NewAccountCodeEvent>();
+		RegisterClass<NewCallerIdEvent>();
+		RegisterClass<NewChannelEvent>();
 
 	}
 
