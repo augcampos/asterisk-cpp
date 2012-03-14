@@ -67,6 +67,17 @@
 #include "asteriskcpp/manager/events/MasqueradeEvent.h"
 #include "asteriskcpp/manager/events/MeetMeEndEvent.h"
 #include "asteriskcpp/manager/events/MeetMeJoinEvent.h"
+#include "asteriskcpp/manager/events/MeetMeLeaveEvent.h"
+#include "asteriskcpp/manager/events/MeetMeMuteEvent.h"
+#include "asteriskcpp/manager/events/MeetMeTalkingEvent.h"
+#include "asteriskcpp/manager/events/MeetMeStopTalkingEvent.h"
+#include "asteriskcpp/manager/events/MeetMeTalkingRequestEvent.h"
+#include "asteriskcpp/manager/events/MessageWaitingEvent.h"
+#include "asteriskcpp/manager/events/ModuleLoadReportEvent.h"
+#include "asteriskcpp/manager/events/MonitorStartEvent.h"
+#include "asteriskcpp/manager/events/MonitorStopEvent.h"
+#include "asteriskcpp/manager/events/MusicOnHoldEvent.h"
+#include "asteriskcpp/manager/events/NewAccountCodeEvent.h"
 
 namespace asteriskcpp {
 
@@ -128,6 +139,17 @@ namespace asteriskcpp {
 		RegisterClass<MasqueradeEvent>();
 		RegisterClass<MeetMeEndEvent>();
 		RegisterClass<MeetMeJoinEvent>();
+		RegisterClass<MeetMeLeaveEvent>();
+		RegisterClass<MeetMeMuteEvent>();
+		RegisterClass<MeetMeTalkingEvent>();
+		RegisterClass<MeetMeStopTalkingEvent>();
+		RegisterClass<MeetMeTalkingRequestEvent>();
+		RegisterClass<MessageWaitingEvent>();
+		RegisterClass<ModuleLoadReportEvent>();
+		RegisterClass<MonitorStartEvent>();
+		RegisterClass<MonitorStopEvent>();
+		RegisterClass<MusicOnHoldEvent>();
+		RegisterClass<NewAccountCodeEvent>();
 
 	}
 

@@ -7,7 +7,6 @@
 
 #include "asteriskcpp/manager/ManagerConnection.h"
 #include <exception>
-#include <memory>
 #include <boost/format.hpp>
 #include <boost/regex.hpp>
 #include "asteriskcpp/exceptions/Exception.h"
@@ -288,12 +287,10 @@ namespace asteriskcpp {
 	void ManagerConnection::logoff() {
 		if (this->isAuthenticated()) {
 			LogoffAction la;
-			std::unique_ptr<ManagerResponse> mr(syncSendAction(la));
+			std::auto_ptr<ManagerResponse> mr(syncSendAction(la));
 			if (mr->getType() == ManagerResponse::Type_SUCCESS) {
 				this->setState(CONNECTED);
 			}
-
-			//delete (mr);
 		}
 	}
 
