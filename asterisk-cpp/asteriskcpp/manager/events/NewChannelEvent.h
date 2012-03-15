@@ -10,7 +10,7 @@
 
 #include "AbstractChannelStateEvent.h"
 
-namespace AsteriskCpp {
+namespace asteriskcpp {
 
 /**
  * A NewChannelEvent is triggered when a new channel is created.<p>
@@ -53,5 +53,5 @@ public:
 	std::string getExten() const;
 };
 
-} /* namespace AsteriskCpp */
+} /* namespace asteriskcpp */
 #endif /* NEWCHANNELEVENT_H_ */

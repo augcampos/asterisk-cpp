@@ -8,12 +8,14 @@
 #ifndef PROPERTYMAP_H_
 #define PROPERTYMAP_H_
 
+#include "asteriskcpp/utils/StringUtils.h"
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <list>
 #include <map>
-#include "asteriskcpp/utils/StringUtils.h"
+#include <typeinfo>
+
 
 /*
  * Comparator for case-insensitive comparison in STL assos. containers
@@ -45,11 +47,14 @@ namespace asteriskcpp {
 		PropertyMap(const std::string& str);
 		virtual ~PropertyMap();
 
-		virtual std::string toString() const ;
+		virtual std::string toString() const;
 		std::string toLog() const;
 
 		const std::string& getProperty(const std::string& key) const;
 		template<class T> T getProperty(const std::string& key) const {
+			if (typeid(T) == typeid(bool)) {
+				return (stringToBool(getProperty(key)));
+			}
 			return (convertFromString<T>(getProperty(key)));
 		}
 	protected:
@@ -64,7 +69,7 @@ namespace asteriskcpp {
 		static std::string makeStdLine(const std::string& key, const std::string& value);
 
 		void convertStr(const std::string& propertyStr);
-	private:
+		private:
 
 		void addProperty(const std::string& key, const std::string& value);
 		void editProperty(const std::string& key, const std::string& value);

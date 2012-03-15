@@ -52,7 +52,7 @@ namespace asteriskcpp {
 		 * @return <code>true</code> if the participant started talking, <code>false</code> if the participant stopped talking.
 		 */
 		bool getTalkingStatus() const {
-			return (stringToBool(getProperty("TalkingStatus")));
+			return (getProperty<bool>("TalkingStatus"));
 		}
 	};
 

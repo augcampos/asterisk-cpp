@@ -80,6 +80,17 @@
 #include "asteriskcpp/manager/events/NewAccountCodeEvent.h"
 #include "asteriskcpp/manager/events/NewCallerIdEvent.h"
 #include "asteriskcpp/manager/events/NewChannelEvent.h"
+#include "asteriskcpp/manager/events/NewExtenEvent.h"
+#include "asteriskcpp/manager/events/NewStateEvent.h"
+#include "asteriskcpp/manager/events/OriginateFailureEvent.h"
+#include "asteriskcpp/manager/events/OriginateResponseEvent.h"
+#include "asteriskcpp/manager/events/OriginateSuccessEvent.h"
+#include "asteriskcpp/manager/events/ParkedCallEvent.h"
+#include "asteriskcpp/manager/events/ParkedCallGiveUpEvent.h"
+#include "asteriskcpp/manager/events/ParkedCallTimeOutEvent.h"
+#include "asteriskcpp/manager/events/ParkedCallsCompleteEvent.h"
+#include "asteriskcpp/manager/events/PeerEntryEvent.h"
+#include "asteriskcpp/manager/events/PeerStatusEvent.h"
 
 namespace asteriskcpp {
 
@@ -154,6 +165,17 @@ namespace asteriskcpp {
 		RegisterClass<NewAccountCodeEvent>();
 		RegisterClass<NewCallerIdEvent>();
 		RegisterClass<NewChannelEvent>();
+		RegisterClass<NewExtenEvent>();
+		RegisterClass<NewStateEvent>();
+		RegisterClass<OriginateFailureEvent>();
+		RegisterClass<OriginateResponseEvent>();
+		RegisterClass<OriginateSuccessEvent>();
+		RegisterClass<ParkedCallEvent>();
+		RegisterClass<ParkedCallGiveUpEvent>();
+		RegisterClass<ParkedCallTimeOutEvent>();
+		RegisterClass<ParkedCallsCompleteEvent>();
+		RegisterClass<PeerEntryEvent>();
+		RegisterClass<PeerStatusEvent>();
 
 	}
 

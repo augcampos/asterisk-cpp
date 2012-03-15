@@ -49,7 +49,7 @@ namespace asteriskcpp {
 		}
 
 		int getLocked() const {
-			return (stringToBool(getProperty("Locked")));
+			return (getProperty<bool>("Locked"));
 		}
 	};
 

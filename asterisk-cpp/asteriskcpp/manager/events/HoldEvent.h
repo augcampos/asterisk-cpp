@@ -85,7 +85,7 @@ namespace asteriskcpp {
 		 * @since 1.0.0
 		 */
 		bool isHold() const {
-			return (getStatus() != "" && stringToBool(getStatus()));
+			return (stringToBool(getStatus()));
 		}
 
 		/**
@@ -95,10 +95,9 @@ namespace asteriskcpp {
 		 * @since 1.0.0
 		 */
 		bool isUnhold() const {
-			return (getStatus() != "" && !stringToBool(getStatus()));
+			return (!stringToBool(getStatus()));
 		}
-	}
-	;
+	};
 
 } /* namespace asterisk_cpp */
 #endif /* HOLDEVENT_H_ */

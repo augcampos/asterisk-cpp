@@ -10,7 +10,7 @@
 
 #include "AbstractChannelEvent.h"
 
-namespace AsteriskCpp {
+namespace asteriskcpp {
 
 /**
  * A NewCallerIdEvent is triggered when the caller id of a channel changes.<p>
@@ -43,5 +43,5 @@ public:
 
 };
 
-} /* namespace AsteriskCpp */
+} /* namespace asteriskcpp */
 #endif /* NEWCALLERIDEVENT_H_ */

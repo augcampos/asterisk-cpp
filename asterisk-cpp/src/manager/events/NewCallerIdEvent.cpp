@@ -7,7 +7,7 @@
 
 #include "asteriskcpp/manager/events/NewCallerIdEvent.h"
 
-namespace AsteriskCpp {
+namespace asteriskcpp {
 
 NewCallerIdEvent::NewCallerIdEvent(const std::string & values) :
 		AbstractChannelEvent(values) {

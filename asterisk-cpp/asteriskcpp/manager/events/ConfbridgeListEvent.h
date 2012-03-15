@@ -57,7 +57,7 @@ namespace asteriskcpp {
 		 * @return the role of the caller in the list admin = yes or no of the conference.
 		 */
 		bool getAdmin() const {
-			return (stringToBool(getProperty("admin")));
+			return (getProperty<bool>("admin"));
 		}
 
 		std::string getMarkedUser() const {

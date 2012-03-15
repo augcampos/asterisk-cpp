@@ -34,7 +34,7 @@ namespace asteriskcpp {
 	}
 
 	bool ListDialplanEvent::isHint() const {
-		return (stringToBool(getProperty("Hint")));
+		return (getProperty<bool>("Hint"));
 	}
 
 	std::string ListDialplanEvent::getApplication() const {

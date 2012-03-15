@@ -61,7 +61,7 @@ namespace asteriskcpp {
 	}
 
 	void Reader::processIncomming(const std::string& newStr) {
-		int cutAt, endAt;
+		size_t cutAt, endAt;
 
 		LOG_TRACE_STR(str2Log(newStr));
 

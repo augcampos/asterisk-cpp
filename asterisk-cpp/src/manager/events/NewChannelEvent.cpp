@@ -7,7 +7,7 @@
 
 #include "asteriskcpp/manager/events/NewChannelEvent.h"
 
-namespace AsteriskCpp {
+namespace asteriskcpp {
 
 NewChannelEvent::NewChannelEvent(const std::string & values) :
 		AbstractChannelStateEvent(values) {
@@ -28,4 +28,4 @@ std::string NewChannelEvent::getExten() const {
 	return (getProperty("Exten"));
 }
 
-} /* namespace AsteriskCpp */
+} /* namespace asteriskcpp */

@@ -22,7 +22,7 @@ namespace asteriskcpp {
 	}
 
 	bool LogChannelEvent::getEnabled() const {
-		return (stringToBool(getProperty("Enabled")));
+		return (getProperty<bool>("Enabled"));
 	}
 
 	int LogChannelEvent::getReason() const {

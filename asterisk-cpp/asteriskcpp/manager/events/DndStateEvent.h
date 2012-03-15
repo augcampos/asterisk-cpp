@@ -37,7 +37,7 @@ namespace asteriskcpp {
 		 * @return Boolean.TRUE if do not disturb is on, Boolean.FALSE if it is off.
 		 */
 		int getState() const {
-			return (stringToBool(getProperty("State")));
+			return (getProperty<bool>("State"));
 		}
 	};
 
