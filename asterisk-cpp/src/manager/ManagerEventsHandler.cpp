@@ -26,7 +26,8 @@ namespace asteriskcpp {
 		LOG_TRACE_STR("ASyncEventCallBack :" + me.toLog());
 		if (function != NULL) {
 			(function)(me);
-		}LOG_TRACE_STR("OUT");
+		}
+		LOG_TRACE_STR("OUT");
 	}
 
 	ManagerEventsHandler::~ManagerEventsHandler() {

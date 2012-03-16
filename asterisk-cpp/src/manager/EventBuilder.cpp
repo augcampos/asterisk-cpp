@@ -91,6 +91,10 @@
 #include "asteriskcpp/manager/events/ParkedCallsCompleteEvent.h"
 #include "asteriskcpp/manager/events/PeerEntryEvent.h"
 #include "asteriskcpp/manager/events/PeerStatusEvent.h"
+#include "asteriskcpp/manager/events/PeerlistCompleteEvent.h"
+#include "asteriskcpp/manager/events/PriEventEvent.h"
+#include "asteriskcpp/manager/events/ProtocolIdentifierReceivedEvent.h"
+#include "asteriskcpp/manager/events/QueueCallerAbandonEvent.h"
 
 namespace asteriskcpp {
 
@@ -176,6 +180,10 @@ namespace asteriskcpp {
 		RegisterClass<ParkedCallsCompleteEvent>();
 		RegisterClass<PeerEntryEvent>();
 		RegisterClass<PeerStatusEvent>();
+		RegisterClass<PeerlistCompleteEvent>();
+		RegisterClass<PriEventEvent>();
+		RegisterClass<ProtocolIdentifierReceivedEvent>();
+		RegisterClass<QueueCallerAbandonEvent>();
 
 	}
 

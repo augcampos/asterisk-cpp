@@ -16,7 +16,6 @@
 #include <map>
 #include <typeinfo>
 
-
 /*
  * Comparator for case-insensitive comparison in STL assos. containers
  * case-independent (ci) compare_less binary function
@@ -49,6 +48,15 @@ namespace asteriskcpp {
 
 		virtual std::string toString() const;
 		std::string toLog() const;
+
+		const std::string& getGetterValue(const char *functionName) const;
+		template<class T> T getGetterValue(const char *functionName) const {
+			std::string fn(functionName);
+			if (fn.at(0) == 'g' && fn.at(1) == 'e' && fn.at(2) == 't') {
+				fn.erase(0, 3);
+			}
+			return (convertFromString<T>(getProperty(fn)));
+		}
 
 		const std::string& getProperty(const std::string& key) const;
 		template<class T> T getProperty(const std::string& key) const {

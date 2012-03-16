@@ -11,7 +11,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <time.h>
+#include <ctime>
 #ifdef WIN32
 #include "timesupport.h"
 #endif

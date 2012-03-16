@@ -53,7 +53,7 @@ namespace asteriskcpp {
 		}
 
 		ManagerEvent* buildEvent(const std::string& eventStr);
-	private:
+		private:
 		EnventFactoryMapType eventFactoryMap;
 
 	};

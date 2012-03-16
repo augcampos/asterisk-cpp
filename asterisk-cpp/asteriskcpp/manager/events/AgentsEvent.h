@@ -107,7 +107,7 @@ namespace asteriskcpp {
 		 * @since 1.0.0
 		 */
 		std::string getTalkingToChan() const;
-		};
+	};
 
 } /* namespace asteriskcpp */
 #endif /* AGENTSEVENT_H_ */

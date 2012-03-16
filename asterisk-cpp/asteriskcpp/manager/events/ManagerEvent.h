@@ -9,7 +9,7 @@
 #define MANAGEREVENT_H_
 
 #include "../../structs/PropertyMap.h"
-#include <time.h>
+#include <ctime>
 
 namespace asteriskcpp {
 
@@ -39,7 +39,7 @@ namespace asteriskcpp {
 		 * (for example ConnectEvent and DisconnectEvent) may return
 		 * <code>null</code>.
 		 */
-		time_t getDateReceived() const;
+		std::time_t getDateReceived() const;
 
 		/**
 		 * Returns the AMI authorization class of this event.
@@ -135,7 +135,7 @@ namespace asteriskcpp {
 		unsigned long getSequenceNumber() const;
 
 		std::string getUniqueID() const;
-	protected:
+		protected:
 		time_t received;
 		unsigned long internalNumber;
 	};

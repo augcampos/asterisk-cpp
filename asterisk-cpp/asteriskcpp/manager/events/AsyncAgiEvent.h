@@ -108,7 +108,7 @@ namespace asteriskcpp {
 		 * @see #getEnv()
 		 */
 		std::vector<std::string> decodeEnv();
-	private:
+		private:
 		std::vector<std::string> decode(std::string s);
 	};
 

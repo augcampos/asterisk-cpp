@@ -107,7 +107,7 @@ namespace asteriskcpp {
 				}
 					break;
 				case 2:
-				case 3: {
+					case 3: {
 					dispatcher->dispatchResponse(nstr);
 				}
 					break;

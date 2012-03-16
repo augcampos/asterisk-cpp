@@ -9,7 +9,7 @@
 
 namespace asteriskcpp {
 
-	ManagerEventListener::~ManagerEventListener(){
+	ManagerEventListener::~ManagerEventListener() {
 
 	}
 

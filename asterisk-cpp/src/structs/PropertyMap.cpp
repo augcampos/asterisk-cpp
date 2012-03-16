@@ -9,6 +9,7 @@
 #include <vector>
 #include <boost/algorithm/string.hpp>
 #include <boost/regex.hpp>
+#include "asteriskcpp/utils/LogHandler.h"
 
 #define SEP ": "
 #define NEWLINE "\r\n"
@@ -47,13 +48,21 @@ namespace asteriskcpp {
 			addProperty(key, value);
 	}
 
+	const std::string& PropertyMap::getGetterValue(const char *functionName) const {
+		std::string fn(functionName);
+		if (fn.at(0) == 'g' && fn.at(1) == 'e' && fn.at(2) == 't') {
+			fn.erase(0, 3);
+		}
+		return (getProperty(fn));
+	}
+
 	const std::string& PropertyMap::getProperty(const std::string& key) const {
 		propertyMap::const_iterator it = values.find(key);
 		if (it != values.end()) {
 			return (it->second);
 		}
 
-		return	((strEmpty));
+		return ((strEmpty));
 	}
 
 	void PropertyMap::convertStr(const std::string& propertyStr) {

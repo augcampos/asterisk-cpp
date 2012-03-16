@@ -42,7 +42,7 @@ namespace asteriskcpp {
 		 * @return a List of strings representing the lines returned by the CLI command.
 		 */
 		const std::vector<std::string>& getResult();
-	private:
+		private:
 		std::vector<std::string> result;
 	};
 

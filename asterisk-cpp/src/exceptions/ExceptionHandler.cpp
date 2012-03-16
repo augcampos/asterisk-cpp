@@ -78,7 +78,7 @@ namespace asteriskcpp {
 			free(funcName);
 			free(symbolList);
 		}
-		#endif
+#endif
 		std::string result = stream.str();
 		return (result);
 	}

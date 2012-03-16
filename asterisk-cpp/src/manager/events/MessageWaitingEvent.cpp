@@ -19,21 +19,21 @@ namespace asteriskcpp {
 
 	std::string MessageWaitingEvent::getMailbox() const
 	{
-		return (getProperty("Mailbox"));
+		return (getGetterValue(__FUNCTION__));
 	}
 
 	int MessageWaitingEvent::getWaiting() const
 	{
-		return (getProperty<int>("Waiting"));
+		return (getGetterValue<int>(__FUNCTION__));
 	}
 
 	int MessageWaitingEvent::getNew() const
 	{
-		return (getProperty<int>("New"));
+		return (getGetterValue<int>(__FUNCTION__));
 	}
 
 	int MessageWaitingEvent::getOld() const
 	{
-		return (getProperty<int>("Old"));
+		return (getGetterValue<int>(__FUNCTION__));
 	}
 } /* namespace asteriskcpp */

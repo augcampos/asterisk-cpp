@@ -21,7 +21,7 @@ namespace asteriskcpp {
 		ASyncEventCallBack(onManagerEventCallback_t f);
 		virtual ~ASyncEventCallBack();
 		void onManagerEvent(const ManagerEvent& me);
-	protected:
+		protected:
 		onManagerEventCallback_t function;
 	};
 

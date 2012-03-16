@@ -20,7 +20,7 @@ namespace asteriskcpp {
 		void setManagerValues(const std::string& value);
 
 		std::string toString() const;
-	private:
+		private:
 		ManagerType type;
 		float managerVersion;
 		float version;

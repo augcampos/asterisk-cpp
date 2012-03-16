@@ -9,19 +9,19 @@
 
 namespace asteriskcpp {
 
-NewCallerIdEvent::NewCallerIdEvent(const std::string & values) :
-		AbstractChannelEvent(values) {
-}
+	NewCallerIdEvent::NewCallerIdEvent(const std::string & values) :
+			AbstractChannelEvent(values) {
+	}
 
-NewCallerIdEvent::~NewCallerIdEvent() {
-}
+	NewCallerIdEvent::~NewCallerIdEvent() {
+	}
 
-int NewCallerIdEvent::getCidCallingPres() const {
-	return (getProperty<int>("CidCallingPres"));
-}
+	int NewCallerIdEvent::getCidCallingPres() const {
+		return (getProperty<int>("CidCallingPres"));
+	}
 
-std::string NewCallerIdEvent::getCidCallingPresTxt() const {
-	return (getProperty("CidCallingPresTxt"));
-}
+	std::string NewCallerIdEvent::getCidCallingPresTxt() const {
+		return (getProperty("CidCallingPresTxt"));
+	}
 
 } /* namespace AsteriskCpp */

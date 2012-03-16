@@ -19,7 +19,7 @@
 #ifndef COMMON_TIMESUPPORT_H__
 #define COMMON_TIMESUPPORT_H__
 
-#include <time.h>
+#include <ctime>
 #include <string>
 
 namespace asteriskcpp {

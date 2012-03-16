@@ -6,6 +6,7 @@
  */
 
 #include "asteriskcpp/manager/events/ManagerEvent.h"
+#include "asteriskcpp/utils/LogHandler.h"
 
 static unsigned long nextSequenceNumber = 0;
 
@@ -16,7 +17,7 @@ namespace asteriskcpp {
 
 	ManagerEvent::ManagerEvent(const std::string& values) {
 		internalNumber = (nextSequenceNumber++);
-		received = time(0);
+		received = std::time(0);
 		convertStr(values);
 	}
 
@@ -29,7 +30,7 @@ namespace asteriskcpp {
 
 	std::string ManagerEvent::getPrivilege() const {
 		//TODO: Verify name
-		return (getProperty("Privilege"));
+		return (getGetterValue(__FUNCTION__));
 	}
 
 	double ManagerEvent::getTimestamp() const {
@@ -38,8 +39,7 @@ namespace asteriskcpp {
 	}
 
 	std::string ManagerEvent::getServer() const {
-		//TODO: Verify name
-		return (getProperty("Server"));
+		return (getGetterValue(__FUNCTION__));
 	}
 
 	std::string ManagerEvent::getFile() const {

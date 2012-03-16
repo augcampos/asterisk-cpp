@@ -94,7 +94,7 @@ namespace asteriskcpp {
 	}
 
 	void TCPSocket::writeData(const char* buf, const unsigned int length) {
-		if (!length){
+		if (!length) {
 			return;
 		}
 

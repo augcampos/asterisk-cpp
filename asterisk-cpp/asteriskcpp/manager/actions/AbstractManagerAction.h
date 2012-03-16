@@ -53,7 +53,7 @@ namespace asteriskcpp {
 		 * @see org.asteriskjava.manager.event.ResponseEvent#getActionId()
 		 */
 		void setActionId(const std::string& id);
-	private:
+		private:
 		std::string actionID;
 	};
 

@@ -30,7 +30,8 @@ namespace asteriskcpp {
 		LOG_TRACE_STR("ASyncResponseCallBack :" + mr->toLog());
 		if (function != NULL) {
 			(function)(mr);
-		}LOG_TRACE_STR("OUT");
+		}
+		LOG_TRACE_STR("OUT");
 	}
 
 	SyncResponseCallBack::SyncResponseCallBack(ManagerAction* a, unsigned int timeOut) :
@@ -89,7 +90,8 @@ namespace asteriskcpp {
 		listeners.erase(key);
 		if (m) {
 			//delete (m);
-		}LOG_TRACE_STR("OUT" + key);
+		}
+		LOG_TRACE_STR("OUT" + key);
 	}
 
 	bool ManagerResponsesHandler::isEmpty() {

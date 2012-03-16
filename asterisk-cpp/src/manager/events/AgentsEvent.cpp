@@ -9,7 +9,7 @@
 
 namespace asteriskcpp {
 
-	const std::string STATUS[] {
+	const std::string STATUS[] = {
 			"AGENT_LOGGEDOFF", "AGENT_IDLE", "AGENT_ONCALL", "AGENT_UNKNOWN"
 	};
 
@@ -20,39 +20,39 @@ namespace asteriskcpp {
 	AgentsEvent::~AgentsEvent() {
 	}
 
-    std::string AgentsEvent::getAgent() const
-    {
-    	return (getProperty("Agent"));
-    }
+	std::string AgentsEvent::getAgent() const
+	{
+		return (getProperty("Agent"));
+	}
 
-    std::string AgentsEvent::getName() const
-    {
-    	return (getProperty("Name"));
-    }
+	std::string AgentsEvent::getName() const
+	{
+		return (getProperty("Name"));
+	}
 
-    std::string AgentsEvent::getStatus() const
-    {
-    	return (getProperty("Status"));
-    }
+	std::string AgentsEvent::getStatus() const
+	{
+		return (getProperty("Status"));
+	}
 
-    std::string AgentsEvent::getLoggedInChan() const
-    {
-    	return (getProperty("LoggedInChan"));
-    }
+	std::string AgentsEvent::getLoggedInChan() const
+	{
+		return (getProperty("LoggedInChan"));
+	}
 
-    long AgentsEvent::getLoggedInTime() const
-    {
-    	return (getProperty<long>("LoggedInTime"));
-    }
+	long AgentsEvent::getLoggedInTime() const
+	{
+		return (getProperty<long>("LoggedInTime"));
+	}
 
-    std::string AgentsEvent::getTalkingTo() const
-    {
-    	return (getProperty("TalkingTo"));
-    }
+	std::string AgentsEvent::getTalkingTo() const
+	{
+		return (getProperty("TalkingTo"));
+	}
 
-    std::string AgentsEvent::getTalkingToChan() const
-    {
-    	return (getProperty("TalkingToChan"));
-    }
+	std::string AgentsEvent::getTalkingToChan() const
+	{
+		return (getProperty("TalkingToChan"));
+	}
 
 } /* namespace asteriskcpp */
