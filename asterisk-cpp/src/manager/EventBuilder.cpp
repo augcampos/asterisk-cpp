@@ -95,6 +95,10 @@
 #include "asteriskcpp/manager/events/PriEventEvent.h"
 #include "asteriskcpp/manager/events/ProtocolIdentifierReceivedEvent.h"
 #include "asteriskcpp/manager/events/QueueCallerAbandonEvent.h"
+#include "asteriskcpp/manager/events/QueueEntryEvent.h"
+#include "asteriskcpp/manager/events/QueueEvent.h"
+#include "asteriskcpp/manager/events/QueueMemberAddedEvent.h"
+#include "asteriskcpp/manager/events/QueueMemberEvent.h"
 
 namespace asteriskcpp {
 
@@ -184,6 +188,10 @@ namespace asteriskcpp {
 		RegisterClass<PriEventEvent>();
 		RegisterClass<ProtocolIdentifierReceivedEvent>();
 		RegisterClass<QueueCallerAbandonEvent>();
+		RegisterClass<QueueEntryEvent>();
+		RegisterClass<QueueEvent>();
+		RegisterClass<QueueMemberAddedEvent>();
+		RegisterClass<QueueMemberEvent>();
 
 	}
 

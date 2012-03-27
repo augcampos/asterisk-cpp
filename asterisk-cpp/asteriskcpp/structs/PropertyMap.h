@@ -55,6 +55,9 @@ namespace asteriskcpp {
 			if (fn.at(0) == 'g' && fn.at(1) == 'e' && fn.at(2) == 't') {
 				fn.erase(0, 3);
 			}
+			else if (fn.at(0) == 'i' && fn.at(1) == 'i') {
+				fn.erase(0, 2);
+			}
 			return (convertFromString<T>(getProperty(fn)));
 		}
 
