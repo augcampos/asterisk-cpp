@@ -99,6 +99,18 @@
 #include "asteriskcpp/manager/events/QueueEvent.h"
 #include "asteriskcpp/manager/events/QueueMemberAddedEvent.h"
 #include "asteriskcpp/manager/events/QueueMemberEvent.h"
+#include "asteriskcpp/manager/events/QueueMemberPausedEvent.h"
+#include "asteriskcpp/manager/events/QueueMemberPenaltyEvent.h"
+#include "asteriskcpp/manager/events/QueueMemberRemovedEvent.h"
+#include "asteriskcpp/manager/events/QueueMemberStatusEvent.h"
+#include "asteriskcpp/manager/events/QueueParamsEvent.h"
+#include "asteriskcpp/manager/events/QueueStatusCompleteEvent.h"
+#include "asteriskcpp/manager/events/QueueSummaryCompleteEvent.h"
+#include "asteriskcpp/manager/events/QueueSummaryEvent.h"
+#include "asteriskcpp/manager/events/ReceiveFaxEvent.h"
+#include "asteriskcpp/manager/events/RegistrationsCompleteEvent.h"
+#include "asteriskcpp/manager/events/RegistryEntryEvent.h"
+#include "asteriskcpp/manager/events/RegistryEvent.h"
 
 namespace asteriskcpp {
 
@@ -192,6 +204,18 @@ namespace asteriskcpp {
 		RegisterClass<QueueEvent>();
 		RegisterClass<QueueMemberAddedEvent>();
 		RegisterClass<QueueMemberEvent>();
+		RegisterClass<QueueMemberPausedEvent>();
+		RegisterClass<QueueMemberPenaltyEvent>();
+		RegisterClass<QueueMemberRemovedEvent>();
+		RegisterClass<QueueMemberStatusEvent>();
+		RegisterClass<QueueParamsEvent>();
+		RegisterClass<QueueStatusCompleteEvent>();
+		RegisterClass<QueueSummaryCompleteEvent>();
+		RegisterClass<QueueSummaryEvent>();
+		RegisterClass<ReceiveFaxEvent>();
+		RegisterClass<RegistrationsCompleteEvent>();
+		RegisterClass<RegistryEntryEvent>();
+		RegisterClass<RegistryEvent>();
 
 	}
 
