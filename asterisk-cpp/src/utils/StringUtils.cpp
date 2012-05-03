@@ -32,5 +32,4 @@ namespace asteriskcpp {
 	std::string str2Log(const std::string& str) {
 		return (search_and_replace(search_and_replace(str, "\r", "\\r"), "\n", "\\n"));
 	}
-
 }
