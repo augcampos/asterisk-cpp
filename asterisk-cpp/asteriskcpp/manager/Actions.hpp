@@ -8,16 +8,16 @@
 #ifndef ACTIONS_HPP_
 #define ACTIONS_HPP_
 
-#include "asteriskcpp/manager/events/AbsoluteTimeoutAction.h"
-#include "asteriskcpp/manager/events/AbstractManagerAction.h"
-#include "asteriskcpp/manager/events/AbstractMeetMeMuteAction.h"
-#include "asteriskcpp/manager/events/ChallengeAction.h"
-#include "asteriskcpp/manager/events/CommandAction.h"
-#include "asteriskcpp/manager/events/EventsAction.h"
-#include "asteriskcpp/manager/events/ListCommandsAction.h"
-#include "asteriskcpp/manager/events/LoginAction.h"
-#include "asteriskcpp/manager/events/LogoffAction.h"
-#include "asteriskcpp/manager/events/ManagerAction.h"
+#include "asteriskcpp/manager/actions/AbsoluteTimeoutAction.h"
+#include "asteriskcpp/manager/actions/AbstractManagerAction.h"
+#include "asteriskcpp/manager/actions/AbstractMeetMeMuteAction.h"
+#include "asteriskcpp/manager/actions/ChallengeAction.h"
+#include "asteriskcpp/manager/actions/CommandAction.h"
+#include "asteriskcpp/manager/actions/EventsAction.h"
+#include "asteriskcpp/manager/actions/ListCommandsAction.h"
+#include "asteriskcpp/manager/actions/LoginAction.h"
+#include "asteriskcpp/manager/actions/LogoffAction.h"
+#include "asteriskcpp/manager/actions/ManagerAction.h"
 
 
 #endif /* ACTIONS_HPP_ */
