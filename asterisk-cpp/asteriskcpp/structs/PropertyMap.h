@@ -51,14 +51,7 @@ namespace asteriskcpp {
 
 		const std::string& getGetterValue(const char *functionName) const;
 		template<class T> T getGetterValue(const char *functionName) const {
-			std::string fn(functionName);
-			if (fn.at(0) == 'g' && fn.at(1) == 'e' && fn.at(2) == 't') {
-				fn.erase(0, 3);
-			}
-			else if (fn.at(0) == 'i' && fn.at(1) == 'i') {
-				fn.erase(0, 2);
-			}
-			return (convertFromString<T>(getProperty(fn)));
+			return (convertFromString<T>(getProperty(func2property(functionName))));
 		}
 
 		const std::string& getProperty(const std::string& key) const;
@@ -72,6 +65,11 @@ namespace asteriskcpp {
 		propertyIndex index;
 		propertyMap values;
 
+		void setSetterValue(const char *functionName, const std::string& value);
+		template<class T> void setSetterValue(const char *functionName, T value) {
+			setProperty(func2property(functionName), value);
+		}
+
 		void setProperty(const std::string& key, const std::string& value);
 		template<class T> void setProperty(const std::string& key, const T& t) {
 			setProperty(key, convertToString(t));
@@ -84,6 +82,7 @@ namespace asteriskcpp {
 
 		void addProperty(const std::string& key, const std::string& value);
 		void editProperty(const std::string& key, const std::string& value);
+		static const std::string func2property(const char *functionName);
 
 	};
 

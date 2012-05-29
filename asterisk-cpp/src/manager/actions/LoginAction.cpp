@@ -39,39 +39,39 @@ namespace asteriskcpp {
 	}
 
 	std::string LoginAction::getUsername() const {
-		return (getProperty("Username"));
+		return (getGetterValue(__FUNCTION__));
 	}
 	void LoginAction::setUsername(const std::string& username) {
-		setProperty("Username", username);
+		setSetterValue(__FUNCTION__, username);
 	}
 
 	std::string LoginAction::getSecret() const {
-		return (getProperty("Secret"));
+		return (getGetterValue(__FUNCTION__));
 	}
 	void LoginAction::setSecret(const std::string& secret) {
-		setProperty("Secret", secret);
+		setSetterValue(__FUNCTION__, secret);
 	}
 
 	std::string LoginAction::getAuthType() const {
-		return (getProperty("AuthType"));
+		return (getGetterValue(__FUNCTION__));
 	}
 	void LoginAction::setAuthType(const std::string& authType) {
-		setProperty("AuthType", authType);
+		setSetterValue(__FUNCTION__, authType);
 	}
 
 	std::string LoginAction::getKey() const {
-		return (getProperty("Key"));
+		return (getGetterValue(__FUNCTION__));
 	}
 	void LoginAction::setKey(const std::string& key) {
-		setProperty("Key", key);
+		setSetterValue(__FUNCTION__, key);
 	}
 
 	std::string LoginAction::getEvents() const {
-		return (getProperty("Events"));
+		return (getGetterValue(__FUNCTION__));
 	}
 
 	void LoginAction::setEvents(const std::string& events) {
-		setProperty("Events", events);
+		setSetterValue(__FUNCTION__, events);
 	}
 
 }

@@ -25,11 +25,11 @@ namespace asteriskcpp {
 	}
 
 	std::string CommandAction::getCommand() const {
-		return (getProperty("command"));
+		return (getGetterValue(__FUNCTION__));
 	}
 
 	void CommandAction::setCommand(std::string command) {
-		setProperty("command", command);
+		setSetterValue(__FUNCTION__, command);
 	}
 
 	ManagerResponse *CommandAction::expectedResponce(const std::string & response) {

@@ -28,21 +28,21 @@ namespace asteriskcpp {
 	 * Returns the name of the channel.
 	 */
 	std::string AbsoluteTimeoutAction::getChannel() const {
-		return (getProperty("Channel"));
+		return (getGetterValue(__FUNCTION__));
 	}
 
 	/**
 	 * Sets the name of the channel.
 	 */
 	void AbsoluteTimeoutAction::setChannel(const std::string& channel) {
-		setProperty("Channel", channel);
+		setSetterValue(__FUNCTION__, channel);
 	}
 
 	/**
 	 * Returns the the maximum duation of the call (in seconds) to set.
 	 */
 	int AbsoluteTimeoutAction::getTimeout() const {
-		return (getProperty<int>("Timeout"));
+		return (getGetterValue<int>(__FUNCTION__));
 	}
 
 	/**
@@ -50,7 +50,7 @@ namespace asteriskcpp {
 	 * Setting the timeout to 0 cancels the timeout.
 	 */
 	void AbsoluteTimeoutAction::setTimeout(int timeout) {
-		setProperty("Timeout", timeout);
+		setSetterValue(__FUNCTION__, timeout);
 	}
 
 } //NS

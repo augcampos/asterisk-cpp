@@ -79,7 +79,7 @@ namespace asteriskcpp {
 		send(action.toString());
 	}
 
-	ManagerResponse* ManagerConnection::syncSendAction(ManagerAction & action) {
+	ManagerResponse* ManagerConnection::syncSendAction(ManagerAction & action)  {
 		return (syncSendAction(action, defaultResponseTimeout));
 	}
 

@@ -21,11 +21,11 @@ namespace asteriskcpp {
 	}
 
 	std::string ChallengeAction::getAuthType() const {
-		return (getProperty("AuthType"));
+		return (getGetterValue(__FUNCTION__));
 	}
 
 	void ChallengeAction::setAuthType(const std::string& authType) {
-		setProperty("AuthType", authType);
+		setSetterValue(__FUNCTION__, authType);
 	}
 
 }/* namespace asterisk_cpp */

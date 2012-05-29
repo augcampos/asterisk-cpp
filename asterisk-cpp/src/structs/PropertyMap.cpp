@@ -49,11 +49,11 @@ namespace asteriskcpp {
 	}
 
 	const std::string& PropertyMap::getGetterValue(const char *functionName) const {
-		std::string fn(functionName);
-		if (fn.at(0) == 'g' && fn.at(1) == 'e' && fn.at(2) == 't') {
-			fn.erase(0, 3);
-		}
-		return (getProperty(fn));
+		return (getProperty(func2property(functionName)));
+	}
+
+	void PropertyMap::setSetterValue(const char *functionName, const std::string& value) {
+		setProperty(func2property(functionName), value);
 	}
 
 	const std::string& PropertyMap::getProperty(const std::string& key) const {
@@ -103,6 +103,16 @@ namespace asteriskcpp {
 
 	void PropertyMap::editProperty(const std::string& key, const std::string& value) {
 		values[key] = value;
+	}
+
+	const std::string PropertyMap::func2property(const char *functionName) {
+		std::string fn(functionName);
+		if ((fn.at(0) == 'g' || fn.at(0) == 's') && fn.at(1) == 'e' && fn.at(2) == 't') {
+			fn.erase(0, 3);
+		} else if (fn.at(0) == 'i' && fn.at(1) == 's') {
+			fn.erase(0, 2);
+		}
+		return (fn);
 	}
 
 }

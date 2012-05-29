@@ -16,19 +16,19 @@ namespace asteriskcpp {
 	}
 
 	std::string AbstractMeetMeMuteAction::getMeetMe() const {
-		return (getProperty("MeetMe"));
+		return (getGetterValue(__FUNCTION__));
 	}
 
 	void AbstractMeetMeMuteAction::setMeetMe(const std::string & meetMe) {
-		setProperty("MeetMe", meetMe);
+		setSetterValue(__FUNCTION__, meetMe);
 	}
 
 	int AbstractMeetMeMuteAction::getUserNum() const {
-		return (getProperty<int>("MeetMe"));
+		return (getGetterValue<int>(__FUNCTION__));
 	}
 
 	void AbstractMeetMeMuteAction::setUserNum(int userNum) {
-		setProperty("UserNum", userNum);
+		setSetterValue(__FUNCTION__, userNum);
 	}
 
 } /* namespace asterisk_cpp */

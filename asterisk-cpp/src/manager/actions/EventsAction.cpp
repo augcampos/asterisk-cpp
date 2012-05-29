@@ -20,11 +20,11 @@ namespace asteriskcpp {
 	}
 
 	std::string EventsAction::getEventMask() const {
-		return (getProperty("EventMask"));
+		return (getGetterValue(__FUNCTION__));
 	}
 
 	void EventsAction::setEventMask(const std::string& eventMask) {
-		setProperty("EventMask", eventMask);
+		setSetterValue(__FUNCTION__, eventMask);
 	}
 
 } //NS
