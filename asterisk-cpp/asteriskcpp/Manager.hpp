@@ -25,4 +25,7 @@
 
 #include "asteriskcpp/exceptions/Exception.h"
 
+#include "asteriskcpp/utils/LogHandler.h"
+#include "asteriskcpp/utils/timesupport.h"
+
 #endif /* MANAGER_HPP_ */
