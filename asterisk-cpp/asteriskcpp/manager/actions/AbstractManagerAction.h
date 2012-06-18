@@ -20,18 +20,18 @@ namespace asteriskcpp {
 	 */
 	class AbstractManagerAction: public ManagerAction {
 	public:
+		AbstractManagerAction(const std::string& action_name);
+
 		virtual ~AbstractManagerAction();
 
-		virtual std::string getAction()=0;
+		virtual const std::string& toString();
 
-		virtual std::string toString();
-
-		const std::string generateID();
+		const std::string& generateID();
 
 		/**
 		 *@see
 		 */
-		std::string getActionId() const;
+		const std::string& getActionId() const;
 
 	protected:
 		/**
@@ -53,8 +53,11 @@ namespace asteriskcpp {
 		 * @see org.asteriskjava.manager.event.ResponseEvent#getActionId()
 		 */
 		void setActionId(const std::string& id);
-		private:
+
+	private:
+
 		std::string actionID;
+		std::string to_string;
 	};
 
 }

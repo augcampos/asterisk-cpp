@@ -38,31 +38,32 @@ namespace asteriskcpp {
 		 * @see #getUser()
 		 * @see #getBuddySkypename()
 		 */
-		std::string getBuddy() const;
+		const std::string& getBuddy() const;
 
 		/**
 		 * Returns the Skype username of the Skype for Asterisk user whose buddy changed his status.
 		 *
 		 * @return the Skype username of the Skype for Asterisk user.
 		 */
-		std::string getUser() const;
+		const std::string& getUser() const;
 
 		/**
 		 * Returns the Skype username of the buddy who changed his status.
 		 *
 		 * @return the Skype username of the buddy who changed his status.
 		 */
-		std::string getBuddySkypename() const;
+		const std::string& getBuddySkypename() const;
 
 		/**
 		 * Returns the status of the buddy.
 		 *
 		 * @return the status of the buddy.
 		 */
-		std::string getBuddyStatus() const;
+		const std::string& getBuddyStatus() const;
 
 	private:
-		std::string buddyGroup(const int group) const;
+		const std::string& buddyGroup(const int group) const;
+		std::string buddy_group;
 	};
 
 } /* namespace asteriskcpp */

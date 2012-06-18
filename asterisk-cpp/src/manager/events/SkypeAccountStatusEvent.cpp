@@ -18,12 +18,12 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string SkypeAccountStatusEvent::getUsername() const
+	const std::string& SkypeAccountStatusEvent::getUsername() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeAccountStatusEvent::getStatus() const
+	const std::string& SkypeAccountStatusEvent::getStatus() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

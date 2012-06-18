@@ -40,7 +40,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the account number.
 		 */
-		std::string getAccountCode() const {
+		const std::string& getAccountCode() const {
 			return (getProperty("AccountCode"));
 		}
 
@@ -50,7 +50,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the Caller*ID number.
 		 */
-		std::string getSrc() const {
+		const std::string& getSrc() const {
 			return (getProperty("Src"));
 		}
 
@@ -60,7 +60,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the destination extension.
 		 */
-		std::string getDestination() const {
+		const std::string& getDestination() const {
 			return (getProperty("Destination"));
 		}
 
@@ -70,7 +70,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the destination context.
 		 */
-		std::string getDestinationContext() const {
+		const std::string& getDestinationContext() const {
 			return (getProperty("DestinationContext"));
 		}
 
@@ -80,7 +80,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the Caller*ID with text
 		 */
-		std::string getCallerId() const {
+		const std::string& getCallerId() const {
 			return (getProperty("CallerId"));
 		}
 
@@ -90,7 +90,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the channel.
 		 */
-		std::string getChannel() const {
+		const std::string& getChannel() const {
 			return (getProperty("Channel"));
 		}
 
@@ -100,7 +100,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the destination channel or <code>null</code> if not available.
 		 */
-		std::string getDestinationChannel() const {
+		const std::string& getDestinationChannel() const {
 			return (getProperty("DestinationChannel"));
 		}
 
@@ -110,7 +110,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the last application or <code>null</code> if not avaialble.
 		 */
-		std::string getLastApplication() const {
+		const std::string& getLastApplication() const {
 			return (getProperty("LastApplication"));
 		}
 
@@ -120,7 +120,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the last application's data or <code>null</code> if not avaialble.
 		 */
-		std::string getLastData() const {
+		const std::string& getLastData() const {
 			return (getProperty("LastData"));
 		}
 
@@ -131,7 +131,7 @@ namespace asteriskcpp {
 		 * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
 		 * call has started, for example "2006-05-19 11:54:48".
 		 */
-		std::string getStartTime() const {
+		const std::string& getStartTime() const {
 			return (getProperty("StartTime"));
 		}
 
@@ -166,7 +166,7 @@ namespace asteriskcpp {
 		 * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
 		 * call was answered, for example "2006-05-19 11:55:01"
 		 */
-		std::string getAnswerTime() const {
+		const std::string& getAnswerTime() const {
 			return (getProperty("AnswerTime"));
 		}
 
@@ -201,7 +201,7 @@ namespace asteriskcpp {
 		 * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
 		 * call has ended, for example "2006-05-19 11:58:21"
 		 */
-		std::string getEndTime() const {
+		const std::string& getEndTime() const {
 			return (getProperty("EndTime"));
 		}
 
@@ -263,7 +263,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the disposition.
 		 */
-		std::string getDisposition() const {
+		const std::string& getDisposition() const {
 			return (getProperty("Disposition"));
 		}
 
@@ -280,7 +280,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the AMA flags.
 		 */
-		std::string getAmaFlags() const {
+		const std::string& getAmaFlags() const {
 			return (getProperty("AMAFlags"));
 		}
 
@@ -290,7 +290,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the user-defined field.
 		 */
-		std::string getUserField() const {
+		const std::string& getUserField() const {
 			return (getProperty("UserField"));
 		}
 

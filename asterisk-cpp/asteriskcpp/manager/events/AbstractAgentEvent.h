@@ -22,21 +22,21 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the name of the queue.
 		 *
 		 * @return the name of the queue.
 		 */
-		std::string getQueue() const;
+		const std::string& getQueue() const;
 
 		/**
 		 * Returns the name of the member's interface.
 		 *
 		 * @return the name of the member's interface.
 		 */
-		std::string getMember() const;
+		const std::string& getMember() const;
 
 		/**
 		 * Returns the member name supplied for logging when the member is added.
@@ -45,7 +45,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the member name supplied for logging when the member is added.
 		 */
-		std::string getMemberName() const;
+		const std::string& getMemberName() const;
 
 		/**
 		 * Returns the channel variables if <code>eventwhencalled</code> is set to <code>vars</code>

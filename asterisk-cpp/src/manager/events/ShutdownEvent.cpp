@@ -18,7 +18,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string ShutdownEvent::getShutdown() const
+	const std::string& ShutdownEvent::getShutdown() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

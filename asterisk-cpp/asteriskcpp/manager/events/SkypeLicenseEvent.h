@@ -34,23 +34,23 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the file this license is stored in.
 		 */
-		std::string getFile() const;
+		const std::string& getFile() const;
 
 		/**
 		 * Returns the license key.
 		 *
 		 * @return the license key.
 		 */
-		std::string getKey() const;
+		const std::string& getKey() const;
 
 		/**
 		 * Returns the date the license expires in the format "YYYY-MM-DD".
 		 *
 		 * @return the date the license expires in the format "YYYY-MM-DD".
 		 */
-		std::string getExpires() const;
+		const std::string& getExpires() const;
 
-		std::string getHostId() const;
+		const std::string& getHostId() const;
 
 		/**
 		 * Returns the number of licensed channels.
@@ -59,7 +59,7 @@ namespace asteriskcpp {
 		 */
 		int getChannels() const;
 
-		std::string getStatus() const;
+		const std::string& getStatus() const;
 	};
 
 } /* namespace asteriskcpp */

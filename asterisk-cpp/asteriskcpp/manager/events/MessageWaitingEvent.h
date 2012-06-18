@@ -32,7 +32,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the mailbox that has waiting messages
 		 */
-		std::string getMailbox() const;
+		const std::string& getMailbox() const;
 
 		/**
 		 * Returns the number of new messages in the mailbox.

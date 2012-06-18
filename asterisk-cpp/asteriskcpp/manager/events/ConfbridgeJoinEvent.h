@@ -34,7 +34,7 @@ namespace asteriskcpp {
 		 *
 		 * @return id of the conference the participant joined.
 		 */
-		std::string getConference() const {
+		const std::string& getConference() const {
 			return (getProperty("Conference"));
 		}
 	};

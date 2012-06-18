@@ -21,7 +21,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string OriginateResponseEvent::getResponse() const
+	const std::string& OriginateResponseEvent::getResponse() const
 	{
 		return (getProperty("Response"));
 	}
@@ -31,17 +31,17 @@ namespace asteriskcpp {
 		return (boost::iequals(getResponse(), RESPONSE_SUCCESS));
 	}
 
-	std::string OriginateResponseEvent::getChannel() const
+	const std::string& OriginateResponseEvent::getChannel() const
 	{
 		return (getProperty("Channel"));
 	}
 
-	std::string OriginateResponseEvent::getContext() const
+	const std::string& OriginateResponseEvent::getContext() const
 	{
 		return (getProperty("Context"));
 	}
 
-	std::string OriginateResponseEvent::getExten() const
+	const std::string& OriginateResponseEvent::getExten() const
 	{
 		return (getProperty("Exten"));
 	}
@@ -51,17 +51,17 @@ namespace asteriskcpp {
 		return (getProperty<int>("Reason"));
 	}
 
-	std::string OriginateResponseEvent::getUniqueId() const
+	const std::string& OriginateResponseEvent::getUniqueId() const
 	{
 		return (getProperty("UniqueId"));
 	}
 
-	std::string OriginateResponseEvent::getCallerIdNum() const
+	const std::string& OriginateResponseEvent::getCallerIdNum() const
 	{
 		return (getProperty("CallerIdNum"));
 	}
 
-	std::string OriginateResponseEvent::getCallerIdName() const
+	const std::string& OriginateResponseEvent::getCallerIdName() const
 	{
 		return (getProperty("CallerIdName"));
 	}

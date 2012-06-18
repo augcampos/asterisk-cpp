@@ -41,7 +41,7 @@ namespace asteriskcpp {
 		 * @see #RESPONSE_FAILED
 		 * @see #RESPONSE_SUCCESS
 		 */
-		std::string getResponse() const {
+		const std::string& getResponse() const {
 			return (getProperty("Response"));
 		}
 
@@ -56,7 +56,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the reason for failure or <code>null</code> on success.
 		 */
-		std::string getReason() const {
+		const std::string& getReason() const {
 			return (getProperty("Reason"));
 		}
 
@@ -65,7 +65,7 @@ namespace asteriskcpp {
 		 *
 		 * @return name of the first channel.
 		 */
-		std::string getChannel1() const {
+		const std::string& getChannel1() const {
 			return (getProperty("Channel1"));
 		}
 
@@ -74,7 +74,7 @@ namespace asteriskcpp {
 		 *
 		 * @return name of the second channel.
 		 */
-		std::string getChannel2() const {
+		const std::string& getChannel2() const {
 			return (getProperty("Channel2"));
 		}
 	};

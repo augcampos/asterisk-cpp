@@ -39,7 +39,7 @@ namespace asteriskcpp {
 		 * @return the textual respresentation of the CallerId presentation/screening.
 		 * @since 0.2
 		 */
-		std::string getCidCallingPresTxt() const;
+		const std::string& getCidCallingPresTxt() const;
 
 	};
 

@@ -44,7 +44,7 @@ namespace asteriskcpp {
 		 * @return always returns "Complete" confirming that all PeerEntry events have been sent.
 		 * @since 1.0.0
 		 */
-		std::string getEventList() const;
+		const std::string& getEventList() const;
 
 	};
 

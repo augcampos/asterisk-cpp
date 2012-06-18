@@ -31,7 +31,7 @@ namespace asteriskcpp {
 		 * @return the load status.
 		 * @see #MODULE_LOAD_STATUS_DONE
 		 */
-		std::string getModuleLoadStatus() const;
+		const std::string& getModuleLoadStatus() const;
 
 		/**
 		 * Returns whether loading the pre-load modules has been completed or all modules
@@ -41,7 +41,7 @@ namespace asteriskcpp {
 		 * @see #MODULE_SELECTION_PRELOAD
 		 * @see #MODULE_SELECTION_ALL
 		 */
-		std::string getModuleSelection() const;
+		const std::string& getModuleSelection() const;
 
 		bool isPreload() const;
 		bool isAll() const;

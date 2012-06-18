@@ -17,7 +17,7 @@ namespace asteriskcpp {
 	MasqueradeEvent::~MasqueradeEvent() {
 	}
 
-	std::string MasqueradeEvent::getClone() const {
+	const std::string& MasqueradeEvent::getClone() const {
 		return (getProperty("Application"));
 	}
 
@@ -25,11 +25,11 @@ namespace asteriskcpp {
 		return (convertFromString<int>(getProperty("CloneState")));
 	}
 
-	std::string MasqueradeEvent::getCloneStateDesc() const {
+	const std::string& MasqueradeEvent::getCloneStateDesc() const {
 		return (getProperty("CloneStateDesc"));
 	}
 
-	std::string MasqueradeEvent::getOriginal() const {
+	const std::string& MasqueradeEvent::getOriginal() const {
 		return (getProperty("Original"));
 	}
 
@@ -37,7 +37,7 @@ namespace asteriskcpp {
 		return (convertFromString<int>(getProperty("OriginalState")));
 	}
 
-	std::string MasqueradeEvent::getOriginalStateDesc() const {
+	const std::string& MasqueradeEvent::getOriginalStateDesc() const {
 		return (getProperty("OriginalStateDesc"));
 	}
 

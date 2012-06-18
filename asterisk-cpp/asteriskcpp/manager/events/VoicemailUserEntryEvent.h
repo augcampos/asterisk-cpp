@@ -36,28 +36,28 @@ namespace asteriskcpp {
 		 *
 		 * @return the voicemail context.
 		 */
-		std::string getVmContext() const;
+		const std::string& getVmContext() const;
 
 		/**
 		 * Returns the mailbox id. The mailbox is unique within the voicemail context.
 		 *
 		 * @return the mailbox id.
 		 */
-		std::string getVoicemailbox() const;
+		const std::string& getVoicemailbox() const;
 
 		/**
 		 * Returns the full name of the voicemail user that is used for the directory application.
 		 *
 		 * @return the full name of the voicemail user.
 		 */
-		std::string getFullname() const;
+		const std::string& getFullname() const;
 
 		/**
 		 * Returns the email address of the voicemail user.
 		 *
 		 * @return the email address of the voicemail user.
 		 */
-		std::string getEmail() const;
+		const std::string& getEmail() const;
 
 		/**
 		 * Returns the email adress of pager of the voicemail user.
@@ -65,25 +65,25 @@ namespace asteriskcpp {
 		 *
 		 * @return the email adress of pager of the voicemail user.
 		 */
-		std::string getPager() const;
+		const std::string& getPager() const;
 
 		/**
 		 * Returns the email address used for the "from" header when sending notification emails.
 		 *
 		 * @return the email address used for the "from" header when sending notification emails.
 		 */
-		std::string getServerEmail() const;
+		const std::string& getServerEmail() const;
 
 		/**
 		 * Returns the custom mail command used to send notifications to the voicemail user.
 		 *
 		 * @return the custom mail command used to send notifications to the voicemail user.
 		 */
-		std::string getMailCommand() const;
+		const std::string& getMailCommand() const;
 
-		std::string getLanguage() const;
+		const std::string& getLanguage() const;
 
-		std::string getTimezone() const;
+		const std::string& getTimezone() const;
 
 		/**
 		 * Returns the dialplan context used by the "return phone call" feature in the advanced
@@ -92,7 +92,7 @@ namespace asteriskcpp {
 		 * @return the dialplan context used by the "return phone call" feature in the advanced
 		 *         voicemail features menu.
 		 */
-		std::string getCallback() const;
+		const std::string& getCallback() const;
 
 		/**
 		 * Returns the dialplan context used by the "place an outgoing call" feature in the advanced
@@ -101,16 +101,16 @@ namespace asteriskcpp {
 		 * @return the dialplan context used by the "place an outgoing call" feature in the advanced
 		 *         voicemail features menu.
 		 */
-		std::string getDialout() const;
+		const std::string& getDialout() const;
 
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the dialplan context the user is dropped into after he has pressed * or 0 to exit voicemail.
 		 *
 		 * @return the dialplan context the user is dropped into after he has pressed * or 0 to exit voicemail.
 		 */
-		std::string getExitContext() const;
+		const std::string& getExitContext() const;
 
 		int getSayDurationMinimum() const;
 
@@ -126,7 +126,7 @@ namespace asteriskcpp {
 		 */
 		bool getAttachMessage() const;
 
-		std::string getAttachmentFormat() const;
+		const std::string& getAttachmentFormat() const;
 
 		/**
 		 * Returns whether messages will be deleted from the voicemailbox (after having been emailed).
@@ -177,7 +177,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the username of the IMAP account associated with this mailbox.
 		 */
-		std::string getImapUser() const;
+		const std::string& getImapUser() const;
 	};
 
 } /* namespace asteriskcpp */

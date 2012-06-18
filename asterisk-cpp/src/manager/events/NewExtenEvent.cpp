@@ -17,32 +17,32 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string NewExtenEvent::getUniqueId() const
+	const std::string& NewExtenEvent::getUniqueId() const
 	{
 		return (getProperty("UniqueId"));
 	}
 
-	std::string NewExtenEvent::getApplication() const
+	const std::string& NewExtenEvent::getApplication() const
 	{
 		return (getProperty("Application"));
 	}
 
-	std::string NewExtenEvent::getAppData() const
+	const std::string& NewExtenEvent::getAppData() const
 	{
 		return (getProperty("AppData"));
 	}
 
-	std::string NewExtenEvent::getChannel() const
+	const std::string& NewExtenEvent::getChannel() const
 	{
 		return (getProperty("Channel"));
 	}
 
-	std::string NewExtenEvent::getContext() const
+	const std::string& NewExtenEvent::getContext() const
 	{
 		return (getProperty("Context"));
 	}
 
-	std::string NewExtenEvent::getExtension() const
+	const std::string& NewExtenEvent::getExtension() const
 	{
 		return (getProperty("Extension"));
 	}

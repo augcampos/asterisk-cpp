@@ -26,24 +26,24 @@ namespace asteriskcpp {
 			return ("AgentCallbackLogoffEvent");
 		}
 
-		AgentCallbackLogoffEvent(const std::string & values);
+		AgentCallbackLogoffEvent(const std::string& values);
 		virtual ~AgentCallbackLogoffEvent();
 
 		/**
 		 * Returns the name of the agent that logged off.
 		 */
-		std::string getAgent() const;
+		const std::string& getAgent() const;
 
-		std::string getLoginChan() const;
+		const std::string& getLoginChan() const;
 
-		std::string getLoginTime() const;
+		const std::string& getLoginTime() const;
 
 		/**
 		 * Returns the reason for the logoff.
 		 * The reason is set to Autologoff if the agent has been logged off due to not answering the phone in time.
 		 * Autologoff is configured by setting <code>autologoff</code> to the appropriate number of seconds in <code>agents.conf</code>.
 		 */
-		std::string getReason() const;
+		const std::string& getReason() const;
 
 	};
 

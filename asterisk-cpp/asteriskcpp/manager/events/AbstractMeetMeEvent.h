@@ -20,7 +20,7 @@ namespace asteriskcpp {
 	 */
 	class AbstractMeetMeEvent: public ManagerEvent {
 	public:
-		AbstractMeetMeEvent(const std::string & values);
+		AbstractMeetMeEvent(const std::string& values);
 		virtual ~AbstractMeetMeEvent();
 
 		/**
@@ -29,7 +29,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the unique id of the channel.<p>
@@ -37,14 +37,14 @@ namespace asteriskcpp {
 		 *
 		 * @return the unique id of the channel.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the conference number.
 		 *
 		 * @return the conference number.
 		 */
-		std::string getMeetMe() const;
+		const std::string& getMeetMe() const;
 
 		/**
 		 * Returns the index of the user in the conference.<p>

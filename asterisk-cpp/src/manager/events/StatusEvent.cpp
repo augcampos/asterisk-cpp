@@ -17,32 +17,32 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string StatusEvent::getChannel() const
+	const std::string& StatusEvent::getChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getCallerId() const
+	const std::string& StatusEvent::getCallerId() const
 	{
 		return (getCallerIdNum());
 	}
 
-	std::string StatusEvent::getCallerIdNum() const
+	const std::string& StatusEvent::getCallerIdNum() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getCallerIdName() const
+	const std::string& StatusEvent::getCallerIdName() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getAccountCode() const
+	const std::string& StatusEvent::getAccountCode() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getAccount() const
+	const std::string& StatusEvent::getAccount() const
 	{
 		return (getAccountCode());
 	}
@@ -52,22 +52,22 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getChannelStateDesc() const
+	const std::string& StatusEvent::getChannelStateDesc() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getState() const
+	const std::string& StatusEvent::getState() const
 	{
 		return (getChannelStateDesc());
 	}
 
-	std::string StatusEvent::getContext() const
+	const std::string& StatusEvent::getContext() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getExtension() const
+	const std::string& StatusEvent::getExtension() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -82,22 +82,22 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getBridgedChannel() const
+	const std::string& StatusEvent::getBridgedChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getLink() const
+	const std::string& StatusEvent::getLink() const
 	{
 		return (getBridgedChannel());
 	}
 
-	std::string StatusEvent::getBridgedUniqueId() const
+	const std::string& StatusEvent::getBridgedUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string StatusEvent::getUniqueId() const
+	const std::string& StatusEvent::getUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

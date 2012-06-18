@@ -30,7 +30,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of this channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the Caller*ID Number of this channel.<p>
@@ -39,7 +39,7 @@ namespace asteriskcpp {
 		 * @return the Caller*ID Number of this channel or <code>null</code> if none is available.
 		 * @deprecated
 		 */
-		std::string getCallerId() const;
+		const std::string& getCallerId() const;
 
 		/**
 		 * Returns the Caller*ID Number of this channel.
@@ -47,14 +47,14 @@ namespace asteriskcpp {
 		 * @return the Caller*ID Number of this channel or <code>null</code> if none is available.
 		 * @since 0.3
 		 */
-		std::string getCallerIdNum() const;
+		const std::string& getCallerIdNum() const;
 
 		/**
 		 * Returns the Caller*ID Name of this channel.
 		 *
 		 * @return the Caller*ID Name of this channel or <code>null</code> if none is available.
 		 */
-		std::string getCallerIdName() const;
+		const std::string& getCallerIdName() const;
 
 		/**
 		 * Returns the account code of this channel.
@@ -62,7 +62,7 @@ namespace asteriskcpp {
 		 * @return the account code of this channel.
 		 * @since 1.0.0
 		 */
-		std::string getAccountCode() const;
+		const std::string& getAccountCode() const;
 
 		/**
 		 * Returns the account code of this channel.
@@ -70,7 +70,7 @@ namespace asteriskcpp {
 		 * @return the account code of this channel.
 		 * @deprecated since 1.0.0, use {@link #getAccountCode()} instead.
 		 */
-		std::string getAccount() const;
+		const std::string& getAccount() const;
 
 		/**
 		 * Returns the state of the channel.<p>
@@ -88,7 +88,7 @@ namespace asteriskcpp {
 		 * @return the state of the channel as a descriptive text.
 		 * @since 1.0.0
 		 */
-		std::string getChannelStateDesc() const;
+		const std::string& getChannelStateDesc() const;
 
 		/**
 		 * Returns the state of the channel as a descriptive text.
@@ -96,11 +96,11 @@ namespace asteriskcpp {
 		 * @return the state of the channel as a descriptive text.
 		 * @deprecated use {@link #getChannelStateDesc()} instead.
 		 */
-		std::string getState() const;
+		const std::string& getState() const;
 
-		std::string getContext() const;
+		const std::string& getContext() const;
 
-		std::string getExtension() const;
+		const std::string& getExtension() const;
 
 		int getPriority() const;
 
@@ -117,7 +117,7 @@ namespace asteriskcpp {
 		 * @return the name of the linked channel if this channel is bridged.
 		 * @since 1.0.0
 		 */
-		std::string getBridgedChannel() const;
+		const std::string& getBridgedChannel() const;
 
 		/**
 		 * Returns the name of the linked channel if this channel is bridged.
@@ -125,7 +125,7 @@ namespace asteriskcpp {
 		 * @return the name of the linked channel if this channel is bridged.
 		 * @deprecated as of 1.0.0, use {@link #getBridgedChannel()} instead.
 		 */
-		std::string getLink() const;
+		const std::string& getLink() const;
 
 		/**
 		 * Returns the unique id of the linked channel if this channel is bridged.<p>
@@ -134,14 +134,14 @@ namespace asteriskcpp {
 		 * @return the unique id of the linked channel if this channel is bridged.
 		 * @since 1.0.0
 		 */
-		std::string getBridgedUniqueId() const;
+		const std::string& getBridgedUniqueId() const;
 
 		/**
 		 * Returns the unique id of this channel.
 		 *
 		 * @return the unique id of this channel.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the channel variables if the {@link org.asteriskjava.manager.action.StatusAction#setVariables(String)}

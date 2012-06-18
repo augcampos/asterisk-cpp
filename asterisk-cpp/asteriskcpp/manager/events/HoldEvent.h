@@ -45,7 +45,7 @@ namespace asteriskcpp {
 		 *
 		 * @return channel the name of the channel.
 		 */
-		std::string getChannel() const {
+		const std::string& getChannel() const {
 			return (getProperty("Channel"));
 		}
 
@@ -54,7 +54,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the unique id of the channel.
 		 */
-		std::string getUniqueId() const {
+		const std::string& getUniqueId() const {
 			return (getProperty("UniqueId"));
 		}
 
@@ -64,7 +64,7 @@ namespace asteriskcpp {
 		 * @return <code>true</code> if this a hold event, <code>false</code> if it's an unhold event.
 		 * @since 1.0.0
 		 */
-		std::string getStatus() const {
+		const std::string& getStatus() const {
 			return (getProperty("Status"));
 		}
 

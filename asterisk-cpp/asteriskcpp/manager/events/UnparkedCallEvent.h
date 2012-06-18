@@ -31,7 +31,7 @@ namespace asteriskcpp {
 		/**
 		 * Returns the name of the channel that parked the call.
 		 */
-		std::string getFrom() const;
+		const std::string& getFrom() const;
 	};
 
 } /* namespace asteriskcpp */

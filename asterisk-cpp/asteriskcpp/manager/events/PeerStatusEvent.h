@@ -34,7 +34,7 @@ namespace asteriskcpp {
 		 * @return the type of channel that registers.
 		 * @since 1.0.0
 		 */
-		std::string getChannelType() const;
+		const std::string& getChannelType() const;
 
 		/**
 		 * Returns the name of the peer that registered.<p>
@@ -45,7 +45,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the peer's name including the channel type.
 		 */
-		std::string getPeer() const;
+		const std::string& getPeer() const;
 
 		/**
 		 * Returns the registration state.<p>
@@ -59,7 +59,7 @@ namespace asteriskcpp {
 		 * <li>Rejected (IAX only)</li>
 		 * </ul>
 		 */
-		std::string getPeerStatus() const;
+		const std::string& getPeerStatus() const;
 
 		/**
 		 * Returns the cause of a rejection or unregistration.<p>
@@ -69,7 +69,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the cause of a rejection or unregistration.
 		 */
-		std::string getCause() const;
+		const std::string& getCause() const;
 
 		/**
 		 * Returns the ping time of the client if status equals "Reachable" or "Lagged"; if the status
@@ -85,7 +85,7 @@ namespace asteriskcpp {
 		 * @return the IP address of the peer that registered or <code>null</code> if not available.
 		 * @since 1.0.0
 		 */
-		std::string getAddress() const;
+		const std::string& getAddress() const;
 
 		/**
 		 * Returns the port of the peer that registered. Only available for SIP channels.<p>

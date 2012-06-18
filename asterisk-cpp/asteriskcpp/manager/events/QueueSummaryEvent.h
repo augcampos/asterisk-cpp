@@ -37,7 +37,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of queue.
 		 */
-		std::string getQueue() const;
+		const std::string& getQueue() const;
 
 		/**
 		 * Returns the number of members logged in.

@@ -23,7 +23,7 @@ namespace asteriskcpp {
 		return (getGetterValue<bool>(__FUNCTION__));
 	}
 
-	std::string QueueMemberPausedEvent::getReason() const
+	const std::string& QueueMemberPausedEvent::getReason() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

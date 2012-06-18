@@ -35,7 +35,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the version of the protocol.
 		 */
-		std::string getProtocolIdentifier() const {
+		const std::string& getProtocolIdentifier() const {
 			return (getProperty("ProtocolIdentifier"));
 		}
 	};

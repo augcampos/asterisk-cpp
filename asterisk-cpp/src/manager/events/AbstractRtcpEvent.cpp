@@ -9,7 +9,7 @@
 
 namespace asteriskcpp {
 
-	AbstractRtcpEvent::AbstractRtcpEvent(const std::string & values) :
+	AbstractRtcpEvent::AbstractRtcpEvent(const std::string& values) :
 			ManagerEvent(values) {
 	}
 

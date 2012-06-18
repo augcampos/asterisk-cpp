@@ -17,7 +17,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string PriEventEvent::getPriEvent() const
+	const std::string& PriEventEvent::getPriEvent() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -27,7 +27,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string PriEventEvent::getDChannel() const
+	const std::string& PriEventEvent::getDChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

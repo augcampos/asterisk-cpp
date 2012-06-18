@@ -16,15 +16,15 @@ namespace asteriskcpp {
 	NewChannelEvent::~NewChannelEvent() {
 	}
 
-	std::string NewChannelEvent::getAccountCode() const {
+	const std::string& NewChannelEvent::getAccountCode() const {
 		return (getProperty("Channel"));
 	}
 
-	std::string NewChannelEvent::getContext() const {
+	const std::string& NewChannelEvent::getContext() const {
 		return (getProperty("Channel"));
 	}
 
-	std::string NewChannelEvent::getExten() const {
+	const std::string& NewChannelEvent::getExten() const {
 		return (getProperty("Exten"));
 	}
 

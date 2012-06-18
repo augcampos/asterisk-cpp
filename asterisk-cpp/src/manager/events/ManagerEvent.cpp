@@ -28,7 +28,7 @@ namespace asteriskcpp {
 		return (received);
 	}
 
-	std::string ManagerEvent::getPrivilege() const {
+	const std::string& ManagerEvent::getPrivilege() const {
 		//TODO: Verify name
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -38,11 +38,11 @@ namespace asteriskcpp {
 		return (0);
 	}
 
-	std::string ManagerEvent::getServer() const {
+	const std::string& ManagerEvent::getServer() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string ManagerEvent::getFile() const {
+	const std::string& ManagerEvent::getFile() const {
 		//TODO: Verify name
 		return (getProperty("File"));
 	}
@@ -53,7 +53,7 @@ namespace asteriskcpp {
 		return (0);
 	}
 
-	std::string ManagerEvent::getFunc() const {
+	const std::string& ManagerEvent::getFunc() const {
 		//TODO: Verify name
 		return (getProperty("Func"));
 	}
@@ -68,7 +68,7 @@ namespace asteriskcpp {
 		return (internalNumber);
 	}
 
-	std::string ManagerEvent::getUniqueID() const {
+	const std::string& ManagerEvent::getUniqueID() const {
 		return (getProperty("Uniqueid"));
 	}
 

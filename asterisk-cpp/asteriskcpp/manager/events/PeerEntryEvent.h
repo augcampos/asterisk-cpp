@@ -35,29 +35,29 @@ namespace asteriskcpp {
 		 * @see #CHANNEL_TYPE_SIP
 		 * @see #CHANNEL_TYPE_IAX
 		 */
-		std::string getChannelType() const;
+		const std::string& getChannelType() const;
 
-		std::string getObjectName() const;
+		const std::string& getObjectName() const;
 
 		/**
 		 * @return
 		 * @since 1.0.0
 		 */
-		std::string getObjectUserName() const;
+		const std::string& getObjectUserName() const;
 
 		/**
 		 * For SIP peers this is either "peer" or "user".
 		 *
 		 * @return "peer" or "user".
 		 */
-		std::string getChanObjectType() const;
+		const std::string& getChanObjectType() const;
 
 		/**
 		 * Returns the IP address of the peer.
 		 *
 		 * @return the IP address of the peer or "-none-" if none is available.
 		 */
-		std::string getIpAddress() const;
+		const std::string& getIpAddress() const;
 
 		/**
 		 * Returns the port of the peer.
@@ -116,14 +116,14 @@ namespace asteriskcpp {
 		 *
 		 * @return the status of this peer.
 		 */
-		std::string getStatus() const;
+		const std::string& getStatus() const;
 
 		/**
 		 * Available since Asterisk 1.4.
 		 *
 		 * @since 0.3
 		 */
-		std::string getRealtimeDevice() const;
+		const std::string& getRealtimeDevice() const;
 
 		/**
 		 * Returns whether to use IAX2 trunking with this peer.<p>
@@ -134,7 +134,7 @@ namespace asteriskcpp {
 		 */
 		bool getTrunk() const;
 
-		std::string getEncryption() const;
+		const std::string& getEncryption() const;
 	};
 
 } /* namespace asteriskcpp */

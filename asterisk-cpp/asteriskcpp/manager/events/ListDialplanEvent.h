@@ -35,20 +35,20 @@ namespace asteriskcpp {
 		 *
 		 * @return the context.
 		 */
-		std::string getContext() const;
+		const std::string& getContext() const;
 
 		/**
 		 * Returns the extension or extension pattern.
 		 *
 		 * @return the extension or extension pattern.
 		 */
-		std::string getExtension() const;
+		const std::string& getExtension() const;
 
 		/**
 		 * Returns the extension label.
 		 * @return the extension label or <code>null</code> if none.
 		 */
-		std::string getExtensionLabel() const;
+		const std::string& getExtensionLabel() const;
 
 		/**
 		 * Returns the priority.
@@ -68,7 +68,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the application configured to handle this priority.
 		 */
-		std::string getApplication() const;
+		const std::string& getApplication() const;
 
 		/**
 		 * Returns the parameters of the application configured to handle this priority.
@@ -76,7 +76,7 @@ namespace asteriskcpp {
 		 * @return the parameters of the application configured to handle this priority
 		 *         or <code>null</code> if none.
 		 */
-		std::string getAppData() const;
+		const std::string& getAppData() const;
 
 		/**
 		 * Returns the registrar that registered this priority.<p>
@@ -86,7 +86,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the registrar that registered this priority.
 		 */
-		std::string getRegistrar() const;
+		const std::string& getRegistrar() const;
 
 	};
 

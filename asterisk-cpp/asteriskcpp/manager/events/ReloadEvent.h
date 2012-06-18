@@ -33,7 +33,7 @@ namespace asteriskcpp {
 		 * @return the name of the module that has been reloaded.
 		 * @since 1.0.0
 		 */
-		std::string getModule() const;
+		const std::string& getModule() const;
 
 		/**
 		 * Returns the new status of the module.<p>
@@ -46,9 +46,9 @@ namespace asteriskcpp {
 		 * @see #isEnabled()
 		 * @see #isDisabled()
 		 */
-		std::string getStatus() const;
+		const std::string& getStatus() const;
 
-		std::string getMessage() const;
+		const std::string& getMessage() const;
 
 		/**
 		 * Returns whether the module is now enabled.<p>

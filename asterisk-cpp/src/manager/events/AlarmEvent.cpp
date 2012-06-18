@@ -14,11 +14,11 @@ namespace asteriskcpp {
 	AlarmEvent::~AlarmEvent() {
 	}
 
-	std::string AlarmEvent::getAlarm() const {
+	const std::string& AlarmEvent::getAlarm() const {
 		return (getProperty("Alarm"));
 	}
 
-	std::string AlarmEvent::getChannel() const {
+	const std::string& AlarmEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 

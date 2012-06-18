@@ -38,7 +38,7 @@ namespace asteriskcpp {
 		 * @return the status of the list.
 		 * @since 1.0.0
 		 */
-		std::string getEventlist() const;
+		const std::string& getEventlist() const;
 
 		/**
 		 * Returns the number of channels reported.<p>

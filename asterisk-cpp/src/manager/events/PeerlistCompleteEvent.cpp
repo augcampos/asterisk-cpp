@@ -22,7 +22,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string PeerlistCompleteEvent::getEventList() const
+	const std::string& PeerlistCompleteEvent::getEventList() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

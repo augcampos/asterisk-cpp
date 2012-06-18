@@ -18,32 +18,32 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string SendFaxStatusEvent::getContext() const
+	const std::string& SendFaxStatusEvent::getContext() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxStatusEvent::getExten() const
+	const std::string& SendFaxStatusEvent::getExten() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxStatusEvent::getStatus() const
+	const std::string& SendFaxStatusEvent::getStatus() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxStatusEvent::getCallerId() const
+	const std::string& SendFaxStatusEvent::getCallerId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxStatusEvent::getLocalStationId() const
+	const std::string& SendFaxStatusEvent::getLocalStationId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxStatusEvent::getFileName() const
+	const std::string& SendFaxStatusEvent::getFileName() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

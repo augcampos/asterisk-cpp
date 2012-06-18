@@ -29,7 +29,7 @@ namespace asteriskcpp {
 		 * Returns the kind of shutdown or restart. Possible values are "Uncleanly" and "Cleanly". A
 		 * shutdown is considered unclean if there are any active channels when the system is shut down.
 		 */
-		std::string getShutdown() const;
+		const std::string& getShutdown() const;
 
 		/**
 		 * Returns <code>true</code> if the server has been restarted; <code>false</code> if it has

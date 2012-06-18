@@ -17,13 +17,13 @@ namespace asteriskcpp {
 	 */
 	class AbstractFaxEvent: public ManagerEvent {
 	public:
-		AbstractFaxEvent(const std::string & values);
+		AbstractFaxEvent(const std::string& values);
 		virtual ~AbstractFaxEvent();
 
 		/**
 		 * @return the channel
 		 */
-		std::string getChannelType() const;
+		const std::string& getChannelType() const;
 
 		/**
 		 * @return the faxSession

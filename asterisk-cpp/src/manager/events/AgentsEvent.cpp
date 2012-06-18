@@ -20,22 +20,22 @@ namespace asteriskcpp {
 	AgentsEvent::~AgentsEvent() {
 	}
 
-	std::string AgentsEvent::getAgent() const
+	const std::string& AgentsEvent::getAgent() const
 	{
 		return (getProperty("Agent"));
 	}
 
-	std::string AgentsEvent::getName() const
+	const std::string& AgentsEvent::getName() const
 	{
 		return (getProperty("Name"));
 	}
 
-	std::string AgentsEvent::getStatus() const
+	const std::string& AgentsEvent::getStatus() const
 	{
 		return (getProperty("Status"));
 	}
 
-	std::string AgentsEvent::getLoggedInChan() const
+	const std::string& AgentsEvent::getLoggedInChan() const
 	{
 		return (getProperty("LoggedInChan"));
 	}
@@ -45,12 +45,12 @@ namespace asteriskcpp {
 		return (getProperty<long>("LoggedInTime"));
 	}
 
-	std::string AgentsEvent::getTalkingTo() const
+	const std::string& AgentsEvent::getTalkingTo() const
 	{
 		return (getProperty("TalkingTo"));
 	}
 
-	std::string AgentsEvent::getTalkingToChan() const
+	const std::string& AgentsEvent::getTalkingToChan() const
 	{
 		return (getProperty("TalkingToChan"));
 	}

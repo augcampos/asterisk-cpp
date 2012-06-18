@@ -32,28 +32,28 @@ namespace asteriskcpp {
 		 *
 		 * @return the Skype username of the recipient of this chat message.
 		 */
-		std::string getTo() const;
+		const std::string& getTo() const;
 
 		/**
 		 * Returns the Skype username of the sender of this chat message.
 		 *
 		 * @return the Skype username of the sender of this chat message.
 		 */
-		std::string getFrom() const;
+		const std::string& getFrom() const;
 
 		/**
 		 * Returns the Base64 encoded message.
 		 *
 		 * @return the Base64 encoded message.
 		 */
-		std::string getMessage() const;
+		const std::string& getMessage() const;
 
 		/**
 		 * Returns the decoded message.
 		 *
 		 * @return the decoded message.
 		 */
-		std::string getDecodedMessage() const;
+		const std::string& getDecodedMessage() const;
 	};
 
 } /* namespace asteriskcpp */

@@ -21,12 +21,9 @@ namespace asteriskcpp {
 	 */
 	class ListCommandsAction: public AbstractManagerAction {
 	public:
-		virtual ~ListCommandsAction();
+		ListCommandsAction();
 
-		/**
-		 * Returns the name of this action, i.e. "Login".
-		 */
-		virtual std::string getAction();
+		virtual ~ListCommandsAction();
 	};
 
 }

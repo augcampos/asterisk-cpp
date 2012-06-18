@@ -48,17 +48,13 @@ namespace asteriskcpp {
 		CommandAction(const std::string& command);
 		virtual ~CommandAction();
 
-		/**
-		 * Returns the name of this action, i.e. "Login".
-		 */
-		virtual std::string getAction();
 
 		virtual ManagerResponse* expectedResponce(const std::string& reponse);
 
 		/**
 		 * Returns the command.
 		 */
-		std::string getCommand() const;
+		const std::string& getCommand() const;
 
 		/**
 		 * Sets the CLI command to send to the Asterisk server.

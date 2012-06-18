@@ -85,7 +85,7 @@ namespace asteriskcpp {
 		/**
 		 * @return the transferDuration
 		 */
-		std::string getTransferDuration() const {
+		const std::string& getTransferDuration() const {
 			return (getProperty("TransferDuration"));
 		}
 
@@ -99,42 +99,42 @@ namespace asteriskcpp {
 		/**
 		 * @return the ProcessedStatus
 		 */
-		std::string getProcessedStatus() const {
+		const std::string& getProcessedStatus() const {
 			return (getProperty("ProcessedStatus"));
 		}
 
 		/**
 		 * @return the DocumentTime
 		 */
-		std::string getDocumentTime() const {
+		const std::string& getDocumentTime() const {
 			return (getProperty("DocumentTime"));
 		}
 
 		/**
 		 * @return the LocalSid
 		 */
-		std::string getLocalSid() const {
+		const std::string& getLocalSid() const {
 			return (getProperty("LocalSid"));
 		}
 
 		/**
 		 * @return the LocalDis
 		 */
-		std::string getLocalDis() const {
+		const std::string& getLocalDis() const {
 			return (getProperty("LocalDis"));
 		}
 
 		/**
 		 * @return the RemoteSid
 		 */
-		std::string getRemoteSid() const {
+		const std::string& getRemoteSid() const {
 			return (getProperty("RemoteSid"));
 		}
 
 		/**
 		 * @return the RemoteDis
 		 */
-		std::string getRemoteDis() const {
+		const std::string& getRemoteDis() const {
 			return (getProperty("RemoteDis"));
 		}
 	};

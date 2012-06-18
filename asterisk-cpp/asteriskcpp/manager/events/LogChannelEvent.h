@@ -32,7 +32,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the log channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns if logging has been enabled or disabled.
@@ -54,7 +54,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the textual representation of the reason for disabling logging.
 		 */
-		std::string getReasonTxt() const;
+		const std::string& getReasonTxt() const;
 	};
 
 } /* namespace asterisk_cpp */

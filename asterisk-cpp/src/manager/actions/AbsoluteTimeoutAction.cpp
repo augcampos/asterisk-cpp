@@ -9,7 +9,8 @@
 
 namespace asteriskcpp {
 
-	AbsoluteTimeoutAction::AbsoluteTimeoutAction(const std::string& channel, unsigned int timeout) {
+	AbsoluteTimeoutAction::AbsoluteTimeoutAction(const std::string& channel, unsigned int timeout):
+					AbstractManagerAction("AbsoluteTimeout") {
 		setChannel(channel);
 		setTimeout(timeout);
 	}
@@ -18,16 +19,9 @@ namespace asteriskcpp {
 	}
 
 	/**
-	 * Returns the name of this action, i.e. "Login".
-	 */
-	std::string AbsoluteTimeoutAction::getAction() {
-		return ("AbsoluteTimeout");
-	}
-
-	/**
 	 * Returns the name of the channel.
 	 */
-	std::string AbsoluteTimeoutAction::getChannel() const {
+	const std::string& AbsoluteTimeoutAction::getChannel() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 

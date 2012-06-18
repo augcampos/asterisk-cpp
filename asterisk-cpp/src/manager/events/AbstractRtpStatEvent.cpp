@@ -10,7 +10,7 @@
 
 namespace asteriskcpp {
 
-	AbstractRtpStatEvent::AbstractRtpStatEvent(const std::string & values) :
+	AbstractRtpStatEvent::AbstractRtpStatEvent(const std::string& values) :
 			ManagerEvent(values) {
 
 	}

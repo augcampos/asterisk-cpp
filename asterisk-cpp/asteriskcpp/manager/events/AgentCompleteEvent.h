@@ -25,7 +25,7 @@ namespace asteriskcpp {
 		inline static std::string getEventName() {
 			return ("AgentCompleteEvent");
 		}
-		AgentCompleteEvent(const std::string & values);
+		AgentCompleteEvent(const std::string& values);
 		virtual ~AgentCompleteEvent();
 
 		/**
@@ -33,14 +33,14 @@ namespace asteriskcpp {
 		 *
 		 * @return the amount of time the caller was on hold in seconds.
 		 */
-		std::string getHoldTime() const;
+		const std::string& getHoldTime() const;
 
 		/**
 		 * Returns the amount of time the caller talked to the agent.
 		 *
 		 * @return the amount of time the caller talked to the agent in seconds.
 		 */
-		std::string getTalkTime() const;
+		const std::string& getTalkTime() const;
 
 		/**
 		 * Returns if the agent or the caller terminated the call.
@@ -48,7 +48,7 @@ namespace asteriskcpp {
 		 * @return "agent" if the agent terminated the call, "caller" if the caller
 		 *         terminated the call.
 		 */
-		std::string getReason() const;
+		const std::string& getReason() const;
 
 	};
 

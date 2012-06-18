@@ -21,39 +21,39 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string SkypeBuddyStatusEvent::getBuddy() const
+	const std::string& SkypeBuddyStatusEvent::getBuddy() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeBuddyStatusEvent::getUser() const
+	const std::string& SkypeBuddyStatusEvent::getUser() const
 	{
 		return (buddyGroup(1));
 	}
 
-	std::string SkypeBuddyStatusEvent::getBuddySkypename() const
+	const std::string& SkypeBuddyStatusEvent::getBuddySkypename() const
 	{
 		return (buddyGroup(2));
 	}
 
-	std::string SkypeBuddyStatusEvent::getBuddyStatus() const
+	const std::string& SkypeBuddyStatusEvent::getBuddyStatus() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeBuddyStatusEvent::buddyGroup(const int group) const
-	{
+	const std::string& SkypeBuddyStatusEvent::buddyGroup(const int group) const {
 		//TODO: verify code
-		std::string buddy = getBuddy();
-		if (buddy.empty())
-		{
-			return ("");
-		}
+		if (!buddy_group.empty()) {
+			std::string buddy = getBuddy();
+			if (!buddy.empty())
+			{
 
-		boost::cmatch buddyMatcher;
-		if (boost::regex_match(buddy.c_str(), buddyMatcher, BUDDY_PATTERN)) {
-			return (buddyMatcher[group]);
+				boost::cmatch buddyMatcher;
+				if (boost::regex_match(buddy.c_str(), buddyMatcher, BUDDY_PATTERN)) {
+					buddy_group = (std::string)(buddyMatcher[group]);
+				}
+			}
 		}
-		return ("");
+		return (buddy_group);
 	}
 } /* namespace asteriskcpp */

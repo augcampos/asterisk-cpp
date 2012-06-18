@@ -9,13 +9,14 @@
 
 namespace asteriskcpp {
 
-	AbstractMeetMeMuteAction::AbstractMeetMeMuteAction(const std::string& meetMe, int userNum) {
+	AbstractMeetMeMuteAction::AbstractMeetMeMuteAction(const std::string& action_name, const std::string& meetMe, int userNum) :
+			AbstractManagerAction(action_name) {
 	}
 
 	AbstractMeetMeMuteAction::~AbstractMeetMeMuteAction() {
 	}
 
-	std::string AbstractMeetMeMuteAction::getMeetMe() const {
+	const std::string& AbstractMeetMeMuteAction::getMeetMe() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 

@@ -20,7 +20,7 @@ namespace asteriskcpp {
 		return (getProperty<int>("CidCallingPres"));
 	}
 
-	std::string NewCallerIdEvent::getCidCallingPresTxt() const {
+	const std::string& NewCallerIdEvent::getCidCallingPresTxt() const {
 		return (getProperty("CidCallingPresTxt"));
 	}
 

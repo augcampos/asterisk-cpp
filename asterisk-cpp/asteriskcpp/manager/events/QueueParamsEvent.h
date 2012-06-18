@@ -32,7 +32,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the queue.
 		 */
-		std::string getQueue() const;
+		const std::string& getQueue() const;
 
 		/**
 		 * Returns the maximum number of people waiting in the queue or 0 for unlimited.<p>
@@ -58,7 +58,7 @@ namespace asteriskcpp {
 		 * @return the strategy used for this queue.
 		 * @since 1.0.0
 		 */
-		std::string getStrategy() const;
+		const std::string& getStrategy() const;
 
 		/**
 		 * Returns the number of calls currently waiting in the queue.

@@ -23,7 +23,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string RegistrationsCompleteEvent::getEventList() const
+	const std::string& RegistrationsCompleteEvent::getEventList() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

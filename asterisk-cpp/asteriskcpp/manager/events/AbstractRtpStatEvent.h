@@ -22,7 +22,7 @@ namespace asteriskcpp {
 	 */
 	class AbstractRtpStatEvent: public ManagerEvent {
 	public:
-		AbstractRtpStatEvent(const std::string & values);
+		AbstractRtpStatEvent(const std::string& values);
 		virtual ~AbstractRtpStatEvent();
 
 		/**

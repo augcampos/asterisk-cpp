@@ -33,7 +33,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the id of the conference.
 		 */
-		std::string getConference() const {
+		const std::string& getConference() const {
 			return (getProperty("Conference"));
 		}
 
@@ -42,7 +42,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the channel on which a participant started or stopped talking.
 		 */
-		std::string getChannel() const {
+		const std::string& getChannel() const {
 			return (getProperty("Channel"));
 		}
 

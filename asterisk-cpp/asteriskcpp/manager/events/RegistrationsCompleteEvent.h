@@ -41,7 +41,7 @@ namespace asteriskcpp {
 		 *
 		 * @return always returns "Complete" confirming that all RegistryEntry events have been sent.
 		 */
-		std::string getEventList() const;
+		const std::string& getEventList() const;
 	};
 
 } /* namespace asteriskcpp */

@@ -34,7 +34,7 @@ namespace asteriskcpp {
 		 *
 		 * @return channel state
 		 */
-		std::string getChannelState() const {
+		const std::string& getChannelState() const {
 			return (getProperty("ChannelState"));
 		}
 
@@ -43,7 +43,7 @@ namespace asteriskcpp {
 		 *
 		 * @return accountcode
 		 */
-		std::string getAccountcode() const {
+		const std::string& getAccountcode() const {
 			return (getProperty("Accountcode"));
 		}
 
@@ -52,7 +52,7 @@ namespace asteriskcpp {
 		 *
 		 * @return aplication name
 		 */
-		std::string getApplication() const {
+		const std::string& getApplication() const {
 			return (getProperty("Application"));
 		}
 
@@ -62,7 +62,7 @@ namespace asteriskcpp {
 		 *
 		 * @return aplication data
 		 */
-		std::string getApplicationdata() const {
+		const std::string& getApplicationdata() const {
 			return (getProperty("Applicationdata"));
 		}
 
@@ -71,7 +71,7 @@ namespace asteriskcpp {
 		 *
 		 * @return Channel name
 		 */
-		std::string getBridgedChannel() const {
+		const std::string& getBridgedChannel() const {
 			return (getProperty("BridgedChannel"));
 		}
 
@@ -80,7 +80,7 @@ namespace asteriskcpp {
 		 *
 		 * @return uniqueid
 		 */
-		std::string getBridgeduniqueid() const {
+		const std::string& getBridgeduniqueid() const {
 			return (getProperty("Bridgeduniqueid"));
 		}
 
@@ -89,7 +89,7 @@ namespace asteriskcpp {
 		 *
 		 * @return callerid
 		 */
-		std::string getCalleridnum() const {
+		const std::string& getCalleridnum() const {
 			return (getProperty("Calleridnum"));
 		}
 
@@ -98,7 +98,7 @@ namespace asteriskcpp {
 		 *
 		 * @return Channel name
 		 */
-		std::string getChannel() const {
+		const std::string& getChannel() const {
 			return (getProperty("Channel"));
 		}
 
@@ -107,7 +107,7 @@ namespace asteriskcpp {
 		 *
 		 * @return description
 		 */
-		std::string getChannelstatedesc() const {
+		const std::string& getChannelstatedesc() const {
 			return (getProperty("Channelstatedesc"));
 		}
 
@@ -116,7 +116,7 @@ namespace asteriskcpp {
 		 *
 		 * @return context
 		 */
-		std::string getContext() const {
+		const std::string& getContext() const {
 			return (getProperty("Context"));
 		}
 
@@ -125,7 +125,7 @@ namespace asteriskcpp {
 		 *
 		 * @return duration
 		 */
-		std::string getDuration() const {
+		const std::string& getDuration() const {
 			return (getProperty("Duration"));
 		}
 
@@ -134,7 +134,7 @@ namespace asteriskcpp {
 		 *
 		 * @return extension
 		 */
-		std::string getExtension() const {
+		const std::string& getExtension() const {
 			return (getProperty("Extension"));
 		}
 
@@ -143,7 +143,7 @@ namespace asteriskcpp {
 		 *
 		 * @return priority
 		 */
-		std::string getPriority() const {
+		const std::string& getPriority() const {
 			return (getProperty("Priority"));
 		}
 	};

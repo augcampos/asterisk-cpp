@@ -25,16 +25,16 @@ namespace asteriskcpp {
 			return ("AgentCallbackLoginEvent");
 		}
 
-		AgentCallbackLoginEvent(const std::string & values);
+		AgentCallbackLoginEvent(const std::string& values);
 
 		virtual ~AgentCallbackLoginEvent();
 
 		/**
 		 * Returns the name of the agent that logged in.
 		 */
-		std::string getAgent() const;
+		const std::string& getAgent() const;
 
-		std::string getLoginChan() const;
+		const std::string& getLoginChan() const;
 	};
 
 }

@@ -15,11 +15,11 @@ namespace asteriskcpp {
 	AgentLoginEvent::~AgentLoginEvent() {
 	}
 
-	std::string AgentLoginEvent::getAgent() const {
+	const std::string& AgentLoginEvent::getAgent() const {
 		return (getProperty("Agent"));
 	}
 
-	std::string AgentLoginEvent::getChannel() const {
+	const std::string& AgentLoginEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 

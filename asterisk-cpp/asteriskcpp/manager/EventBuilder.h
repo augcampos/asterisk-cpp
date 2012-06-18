@@ -8,6 +8,7 @@
 #ifndef EVENTBUILDER_H_
 #define EVENTBUILDER_H_
 
+#include <typeinfo>
 #include "asteriskcpp/manager/events/ManagerEvent.h"
 #include <boost/shared_ptr.hpp>
 #include "asteriskcpp/utils/LogHandler.h"

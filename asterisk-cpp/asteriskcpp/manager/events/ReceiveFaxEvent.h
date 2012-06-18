@@ -23,25 +23,25 @@ namespace asteriskcpp {
 		ReceiveFaxEvent(const std::string & values);
 		virtual ~ReceiveFaxEvent();
 
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
-		std::string getContext() const;
+		const std::string& getContext() const;
 
-		std::string getExten() const;
+		const std::string& getExten() const;
 
-		std::string getCallerId() const;
+		const std::string& getCallerId() const;
 
-		std::string getRemoteStationId() const;
+		const std::string& getRemoteStationId() const;
 
-		std::string getLocalStationId() const;
+		const std::string& getLocalStationId() const;
 
 		int getPagesTransferred() const;
 
-		std::string getResolution() const;
+		const std::string& getResolution() const;
 
 		int getTransferRate() const;
 
-		std::string getFileName() const;
+		const std::string& getFileName() const;
 	};
 
 } /* namespace asteriskcpp */

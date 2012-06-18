@@ -34,21 +34,21 @@ namespace asteriskcpp {
 		 *
 		 * @return the Skype username of the buddy.
 		 */
-		std::string getBuddy() const;
+		const std::string& getBuddy() const;
 
 		/**
 		 * Returns the status of the buddy.
 		 *
 		 * @return the status of the buddy.
 		 */
-		std::string getStatus() const;
+		const std::string& getStatus() const;
 
 		/**
 		 * Returns the full name of the buddy.
 		 *
 		 * @return the full name of the buddy.
 		 */
-		std::string getFullname() const;
+		const std::string& getFullname() const;
 	};
 
 } /* namespace asteriskcpp */

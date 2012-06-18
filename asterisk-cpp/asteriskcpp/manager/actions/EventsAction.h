@@ -24,14 +24,9 @@ namespace asteriskcpp {
 		virtual ~EventsAction();
 
 		/**
-		 * Returns the name of this action, i.e. "Login".
-		 */
-		virtual std::string getAction();
-
-		/**
 		 * Returns the event mask.
 		 */
-		std::string getEventMask() const;
+		const std::string& getEventMask() const;
 
 		/**
 		 * Sets the event mask.<p>
@@ -40,6 +35,7 @@ namespace asteriskcpp {
 		 * specify what kind of events should be sent.
 		 */
 		void setEventMask(const std::string& eventMask);
+
 	};
 
 } //NS

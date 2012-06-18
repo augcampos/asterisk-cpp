@@ -18,12 +18,12 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string UserEvent::getChannel() const
+	const std::string& UserEvent::getChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string UserEvent::getUniqueId() const
+	const std::string& UserEvent::getUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

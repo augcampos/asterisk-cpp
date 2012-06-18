@@ -21,7 +21,7 @@ namespace asteriskcpp {
 	 */
 	class AbstractRtcpEvent: public asteriskcpp::ManagerEvent {
 	public:
-		AbstractRtcpEvent(const std::string & values);
+		AbstractRtcpEvent(const std::string& values);
 		virtual ~AbstractRtcpEvent();
 
 		/**

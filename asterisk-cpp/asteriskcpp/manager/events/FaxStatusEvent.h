@@ -29,21 +29,21 @@ namespace asteriskcpp {
 		/**
 		 * @return the operatingMode
 		 */
-		std::string getOperatingMode() const {
+		const std::string& getOperatingMode() const {
 			return (getProperty("OperatingMode"));
 		}
 
 		/**
 		 * @return the result
 		 */
-		std::string getResult() const {
+		const std::string& getResult() const {
 			return (getProperty("Result"));
 		}
 
 		/**
 		 * @return the error
 		 */
-		std::string getError() const {
+		const std::string& getError() const {
 			return (getProperty("Error"));
 		}
 
@@ -57,7 +57,7 @@ namespace asteriskcpp {
 		/**
 		 * @return the ecmMode
 		 */
-		std::string getEcmMode() const {
+		const std::string& getEcmMode() const {
 			return (getProperty("EcmMode"));
 		}
 
@@ -71,21 +71,21 @@ namespace asteriskcpp {
 		/**
 		 * @return the imageResolution
 		 */
-		std::string getImageResolution() const {
+		const std::string& getImageResolution() const {
 			return (getProperty("ImageResolution"));
 		}
 
 		/**
 		 * @return the imageEncoding
 		 */
-		std::string getImageEncoding() const {
+		const std::string& getImageEncoding() const {
 			return (getProperty("ImageEncoding"));
 		}
 
 		/**
 		 * @return the pageSize
 		 */
-		std::string getPageSize() const {
+		const std::string& getPageSize() const {
 			return (getProperty("PageSize"));
 		}
 
@@ -106,7 +106,7 @@ namespace asteriskcpp {
 		/**
 		 * @return the fileName
 		 */
-		std::string getFileName() const {
+		const std::string& getFileName() const {
 			return (getProperty("FileName"));
 		}
 
@@ -211,7 +211,7 @@ namespace asteriskcpp {
 		/**
 		 * @return the remoteStationId
 		 */
-		std::string getRemoteStationId() const {
+		const std::string& getRemoteStationId() const {
 			return (getProperty("RemoteStationId"));
 		}
 

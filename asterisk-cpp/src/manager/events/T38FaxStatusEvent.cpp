@@ -18,17 +18,17 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string T38FaxStatusEvent::getMaxLag() const
+	const std::string& T38FaxStatusEvent::getMaxLag() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string T38FaxStatusEvent::getTotalLag() const
+	const std::string& T38FaxStatusEvent::getTotalLag() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string T38FaxStatusEvent::getAverageLag() const
+	const std::string& T38FaxStatusEvent::getAverageLag() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -38,7 +38,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string T38FaxStatusEvent::getT38SessionDuration() const
+	const std::string& T38FaxStatusEvent::getT38SessionDuration() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -53,7 +53,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string T38FaxStatusEvent::getAverageTxDataRate() const
+	const std::string& T38FaxStatusEvent::getAverageTxDataRate() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -68,7 +68,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string T38FaxStatusEvent::getAverageRxDataRate() const
+	const std::string& T38FaxStatusEvent::getAverageRxDataRate() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

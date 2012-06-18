@@ -22,12 +22,12 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string ModuleLoadReportEvent::getModuleLoadStatus() const
+	const std::string& ModuleLoadReportEvent::getModuleLoadStatus() const
 	{
 		return (getProperty("ModuleLoadStatus"));
 	}
 
-	std::string ModuleLoadReportEvent::getModuleSelection() const
+	const std::string& ModuleLoadReportEvent::getModuleSelection() const
 	{
 		return (getProperty("ModuleSelection"));
 	}

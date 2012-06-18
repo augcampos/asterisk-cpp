@@ -17,7 +17,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string ParkedCallEvent::getFrom() const
+	const std::string& ParkedCallEvent::getFrom() const
 	{
 		return (getProperty("From"));
 	}

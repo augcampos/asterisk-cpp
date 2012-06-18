@@ -18,7 +18,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string UnparkedCallEvent::getFrom() const
+	const std::string& UnparkedCallEvent::getFrom() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

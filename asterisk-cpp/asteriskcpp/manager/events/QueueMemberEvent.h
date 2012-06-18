@@ -33,7 +33,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the queue.
 		 */
-		std::string getQueue() const;
+		const std::string& getQueue() const;
 
 		/**
 		 * Returns the name of the member's interface.
@@ -42,7 +42,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the member's interface.
 		 */
-		std::string getLocation() const;
+		const std::string& getLocation() const;
 
 		/**
 		 * Returns if this member has been dynamically added by the QueueAdd command
@@ -52,7 +52,7 @@ namespace asteriskcpp {
 		 * @return "dynamic" if the added member is a dynamic queue member, "static"
 		 *         if the added member is a static queue member.
 		 */
-		std::string getMembership() const;
+		const std::string& getMembership() const;
 
 		/**
 		 * Convenience method that checks whether this member has been statically
@@ -150,7 +150,7 @@ namespace asteriskcpp {
 		 * @return the name of the member supplied for logging when the member is added
 		 * @since 1.0.0
 		 */
-		std::string getName() const;
+		const std::string& getName() const;
 
 		/**
 		 * Returns the name of the member.
@@ -158,7 +158,7 @@ namespace asteriskcpp {
 		 * @return the name of the member supplied for logging when the member is added
 		 * @deprecated since 1.0.0. Use {@link #getName()} instead.
 		 */
-		std::string getMemberName() const;
+		const std::string& getMemberName() const;
 	};
 
 } /* namespace asteriskcpp */

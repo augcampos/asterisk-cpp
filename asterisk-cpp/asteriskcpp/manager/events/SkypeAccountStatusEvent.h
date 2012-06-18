@@ -33,14 +33,14 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the Skype user.
 		 */
-		std::string getUsername() const;
+		const std::string& getUsername() const;
 
 		/**
 		 * Returns the Skype user status.
 		 *
 		 * @return the Skype user status.
 		 */
-		std::string getStatus() const;
+		const std::string& getStatus() const;
 	};
 
 } /* namespace asteriskcpp */

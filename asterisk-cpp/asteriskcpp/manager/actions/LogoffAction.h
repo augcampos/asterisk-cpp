@@ -14,13 +14,9 @@ namespace asteriskcpp {
 
 	class LogoffAction: public AbstractManagerAction {
 	public:
+		LogoffAction();
+
 		virtual ~LogoffAction();
-
-		/**
-		 * Returns the name of this action, i.e. "Login".
-		 */
-		std::string getAction();
-
 	};
 
 }

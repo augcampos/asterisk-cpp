@@ -32,21 +32,21 @@ namespace asteriskcpp {
 		 *
 		 * @return channel the name of the transfering channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the unique id of the transfering channel.
 		 *
 		 * @return the unique id of the transfering channel.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the transfer method. Currently this is always "SIP".
 		 *
 		 * @return the transfer method ("SIP").
 		 */
-		std::string getTransferMethod() const;
+		const std::string& getTransferMethod() const;
 
 		/**
 		 * Returns whether this is an attended or a blind transfer. Possible values are
@@ -56,7 +56,7 @@ namespace asteriskcpp {
 		 * @see #TRANSFER_TYPE_ATTENDED
 		 * @see #TRANSFER_TYPE_BLIND
 		 */
-		std::string getTransferType() const;
+		const std::string& getTransferType() const;
 
 		/**
 		 * Checks whether this is an attended transfer or not.
@@ -77,21 +77,21 @@ namespace asteriskcpp {
 		 *
 		 * @return the SIP call id.
 		 */
-		std::string getSipCallId() const;
+		const std::string& getSipCallId() const;
 
 		/**
 		 * Returns the name of the target channel.
 		 *
 		 * @return the name of the target channel.
 		 */
-		std::string getTargetChannel() const;
+		const std::string& getTargetChannel() const;
 
 		/**
 		 * Returns the unique id of the target channel.
 		 *
 		 * @return the unique id of the target channel.
 		 */
-		std::string getTargetUniqueId() const;
+		const std::string& getTargetUniqueId() const;
 
 		/**
 		 * Returns the target extension the call is transfered to. This is only available for
@@ -101,7 +101,7 @@ namespace asteriskcpp {
 		 * @return the target extension the call is transfered to or <code>null</code> for attended
 		 *         transfers.
 		 */
-		std::string getTransferExten() const;
+		const std::string& getTransferExten() const;
 
 		/**
 		 * Returns the target context (in the dialplan) the call is transfered to. This is only available for
@@ -110,7 +110,7 @@ namespace asteriskcpp {
 		 * @return the target context the call is transfered to or <code>null</code> for attended
 		 *         transfers and transfers to a parking extension.
 		 */
-		std::string getTransferContext() const;
+		const std::string& getTransferContext() const;
 
 		/**
 		 * Returns whether this is a transfer to a parking extension.

@@ -21,22 +21,22 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string TransferEvent::getChannel() const
+	const std::string& TransferEvent::getChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string TransferEvent::getUniqueId() const
+	const std::string& TransferEvent::getUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string TransferEvent::getTransferMethod() const
+	const std::string& TransferEvent::getTransferMethod() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string TransferEvent::getTransferType() const
+	const std::string& TransferEvent::getTransferType() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -51,27 +51,27 @@ namespace asteriskcpp {
 		return (boost::iequals(getTransferType(), TRANSFER_TYPE_BLIND));
 	}
 
-	std::string TransferEvent::getSipCallId() const
+	const std::string& TransferEvent::getSipCallId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string TransferEvent::getTargetChannel() const
+	const std::string& TransferEvent::getTargetChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string TransferEvent::getTargetUniqueId() const
+	const std::string& TransferEvent::getTargetUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string TransferEvent::getTransferExten() const
+	const std::string& TransferEvent::getTransferExten() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string TransferEvent::getTransferContext() const
+	const std::string& TransferEvent::getTransferContext() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

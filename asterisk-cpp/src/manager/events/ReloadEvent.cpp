@@ -22,17 +22,17 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string ReloadEvent::getModule() const
+	const std::string& ReloadEvent::getModule() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string ReloadEvent::getStatus() const
+	const std::string& ReloadEvent::getStatus() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string ReloadEvent::getMessage() const
+	const std::string& ReloadEvent::getMessage() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

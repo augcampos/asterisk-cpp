@@ -10,21 +10,19 @@
 
 namespace asteriskcpp {
 
-	CommandAction::CommandAction() {
+	CommandAction::CommandAction() :
+			AbstractManagerAction("Command") {
 	}
 
-	CommandAction::CommandAction(const std::string & command) {
+	CommandAction::CommandAction(const std::string & command) :
+			AbstractManagerAction("Command") {
 		this->setCommand(command);
 	}
 
 	CommandAction::~CommandAction() {
 	}
 
-	std::string CommandAction::getAction() {
-		return ("Command");
-	}
-
-	std::string CommandAction::getCommand() const {
+	const std::string& CommandAction::getCommand() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 

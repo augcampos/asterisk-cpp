@@ -19,22 +19,22 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string SkypeChatMessageEvent::getTo() const
+	const std::string& SkypeChatMessageEvent::getTo() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeChatMessageEvent::getFrom() const
+	const std::string& SkypeChatMessageEvent::getFrom() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeChatMessageEvent::getMessage() const
+	const std::string& SkypeChatMessageEvent::getMessage() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeChatMessageEvent::getDecodedMessage() const
+	const std::string& SkypeChatMessageEvent::getDecodedMessage() const
 	{
 		return (Base64::decode(getMessage()));
 	}

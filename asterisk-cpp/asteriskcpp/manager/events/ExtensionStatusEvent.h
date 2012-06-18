@@ -30,14 +30,14 @@ namespace asteriskcpp {
 		/**
 		 * Returns the extension.
 		 */
-		std::string getExten() const {
+		const std::string& getExten() const {
 			return (getProperty("Exten"));
 		}
 
 		/**
 		 * Returns the context of the extension.
 		 */
-		std::string getContext() const {
+		const std::string& getContext() const {
 			return (getProperty("Context"));
 		}
 
@@ -49,7 +49,7 @@ namespace asteriskcpp {
 		 * @return the hint (channel name) assigned to the extension.
 		 * @since 1.0.0
 		 */
-		std::string getHint() const {
+		const std::string& getHint() const {
 			return (getProperty("Hint"));
 		}
 
@@ -77,7 +77,7 @@ namespace asteriskcpp {
 		 * @return the Caller*ID.
 		 * @since 0.3
 		 */
-		std::string getCallerId() const {
+		const std::string& getCallerId() const {
 			return (getProperty("CallerId"));
 		}
 

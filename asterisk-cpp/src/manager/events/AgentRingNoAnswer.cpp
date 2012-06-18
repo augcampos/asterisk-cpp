@@ -15,7 +15,7 @@ namespace asteriskcpp {
 	AgentRingNoAnswer::~AgentRingNoAnswer() {
 	}
 
-	std::string AgentRingNoAnswer::getRingtime() const {
+	const std::string& AgentRingNoAnswer::getRingtime() const {
 		return (getProperty("Ringtime"));
 	}
 

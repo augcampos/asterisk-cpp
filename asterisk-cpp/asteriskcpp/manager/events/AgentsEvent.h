@@ -43,14 +43,14 @@ namespace asteriskcpp {
 		/**
 		 * Returns the agentid.
 		 */
-		std::string getAgent() const;
+		const std::string& getAgent() const;
 
 		/**
 		 * Returns the name of this agent.
 		 *
 		 * @return the name of this agent
 		 */
-		std::string getName() const;
+		const std::string& getName() const;
 
 		/**
 		 * Returns the status of this agent.
@@ -73,7 +73,7 @@ namespace asteriskcpp {
 		 * @see #AGENT_STATUS_ONCALL
 		 * @see #AGENT_STATUS_UNKNOWN
 		 */
-		std::string getStatus() const;
+		const std::string& getStatus() const;
 
 		/**
 		 * Returns the name of channel this agent logged in from.
@@ -81,7 +81,7 @@ namespace asteriskcpp {
 		 * @return the name of the channel this agent logged in from or "n/a" if the
 		 *         agent is not logged in.
 		 */
-		std::string getLoggedInChan() const;
+		const std::string& getLoggedInChan() const;
 
 		/**
 		 * Returns the time (in seconds since 01/01/1970) when the agent logged in.
@@ -97,7 +97,7 @@ namespace asteriskcpp {
 		 * @return the numerical Caller*ID of the channel this agent is talking to
 		 *         or "n/a" if this agent is talking to nobody.
 		 */
-		std::string getTalkingTo() const;
+		const std::string& getTalkingTo() const;
 
 		/**
 		 * Returns the name of the channel this agent is talking to.<p>
@@ -106,7 +106,7 @@ namespace asteriskcpp {
 		 * @return the name of the channel this agent is talking to.
 		 * @since 1.0.0
 		 */
-		std::string getTalkingToChan() const;
+		const std::string& getTalkingToChan() const;
 	};
 
 } /* namespace asteriskcpp */

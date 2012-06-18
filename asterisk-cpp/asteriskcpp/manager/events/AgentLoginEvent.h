@@ -29,7 +29,7 @@ namespace asteriskcpp {
 		/**
 		 * Returns the name of the agent that logged in.
 		 */
-		std::string getAgent() const;
+		const std::string& getAgent() const;
 
 		/**
 		 * Returns the name of the channel associated with the logged in agent.
@@ -37,7 +37,7 @@ namespace asteriskcpp {
 		 * @return the name of the channel associated with the logged in agent.
 		 * @since 0.3
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 	};
 
 }

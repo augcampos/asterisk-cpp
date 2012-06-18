@@ -36,14 +36,9 @@ namespace asteriskcpp {
 		virtual ~ChallengeAction();
 
 		/**
-		 * Returns Returns the name of this action, i.e. "Challenge".
-		 */
-		virtual std::string getAction();
-
-		/**
 		 * Returns the digest alogrithm to use.
 		 */
-		std::string getAuthType() const;
+		const std::string& getAuthType() const;
 
 		/**
 		 * Sets the digest alogrithm to use. Currently asterisk only supports "MD5".

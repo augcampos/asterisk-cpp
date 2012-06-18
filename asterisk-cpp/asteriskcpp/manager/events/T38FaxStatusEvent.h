@@ -26,17 +26,17 @@ namespace asteriskcpp {
 		/**
 		 * @return the maxLag
 		 */
-		std::string getMaxLag() const;
+		const std::string& getMaxLag() const;
 
 		/**
 		 * @return the totalLag
 		 */
-		std::string getTotalLag() const;
+		const std::string& getTotalLag() const;
 
 		/**
 		 * @return the averageLag
 		 */
-		std::string getAverageLag() const;
+		const std::string& getAverageLag() const;
 
 		/**
 		 * @return the totalEvents
@@ -46,7 +46,7 @@ namespace asteriskcpp {
 		/**
 		 * @return the t38SessionDuration
 		 */
-		std::string getT38SessionDuration() const;
+		const std::string& getT38SessionDuration() const;
 
 		/**
 		 * @return the t38PacketsSent
@@ -61,7 +61,7 @@ namespace asteriskcpp {
 		/**
 		 * @return the averageTxDataRate
 		 */
-		std::string getAverageTxDataRate() const;
+		const std::string& getAverageTxDataRate() const;
 
 		/**
 		 * @return the t38PacketsReceived
@@ -76,7 +76,7 @@ namespace asteriskcpp {
 		/**
 		 * @return the averageRxDataRate
 		 */
-		std::string getAverageRxDataRate() const;
+		const std::string& getAverageRxDataRate() const;
 
 		/**
 		 * @return the jitterBufferOverflows

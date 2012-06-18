@@ -24,7 +24,7 @@ namespace asteriskcpp {
 		inline static std::string getEventName() {
 			return ("AgentConnectEvent");
 		}
-		AgentConnectEvent(const std::string & values);
+		AgentConnectEvent(const std::string& values);
 		virtual ~AgentConnectEvent();
 
 		/**
@@ -32,7 +32,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the amount of time the caller was on hold in seconds.
 		 */
-		std::string getHoldTime() const;
+		const std::string& getHoldTime() const;
 
 		/**
 		 * Returns the unique ID of the queue member channel that is taking the
@@ -42,7 +42,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the unique ID of the queue member channel that is taking the call.
 		 */
-		std::string getBridgedChannel() const;
+		const std::string& getBridgedChannel() const;
 
 		/**
 		 * Returns the amount of time the agent's channel was ringing before answered.<p>
@@ -51,7 +51,7 @@ namespace asteriskcpp {
 		 * @return the amount of time the agent's channel was ringing before answered in seconds.
 		 * @since 1.0.0
 		 */
-		std::string getRingtime() const;
+		const std::string& getRingtime() const;
 
 	};
 

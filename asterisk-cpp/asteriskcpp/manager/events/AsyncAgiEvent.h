@@ -41,14 +41,14 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the channel this event occurred on.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the sub event type. This is either "Start", "Exec" or "End".
 		 *
 		 * @return the sub event type.
 		 */
-		std::string getSubEvent() const;
+		const std::string& getSubEvent() const;
 
 		/**
 		 * Returns the command id of the corresponding {@link org.asteriskjava.manager.action.AgiAction}.<p>
@@ -57,7 +57,7 @@ namespace asteriskcpp {
 		 * @return the command id.
 		 * @see org.asteriskjava.manager.action.AgiAction#setCommandId(String)
 		 */
-		std::string getCommandId() const;
+		const std::string& getCommandId() const;
 
 		/**
 		 * Returns the raw result of a command execution in response to the corresponding
@@ -71,7 +71,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the URL encoded result.
 		 */
-		std::string getResult() const;
+		const std::string& getResult() const;
 
 		/**
 		 * Decodes the result.
@@ -98,7 +98,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the URL encoded AGI environment.
 		 */
-		std::string getEnv() const;
+		const std::string& getEnv() const;
 
 		/**
 		 * Decodes the AGI environment and returns a list of lines.

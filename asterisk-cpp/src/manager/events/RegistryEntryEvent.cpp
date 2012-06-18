@@ -27,17 +27,17 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string RegistryEntryEvent::getUsername() const
+	const std::string& RegistryEntryEvent::getUsername() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RegistryEntryEvent::getHost() const
+	const std::string& RegistryEntryEvent::getHost() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RegistryEntryEvent::getState() const
+	const std::string& RegistryEntryEvent::getState() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

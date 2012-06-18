@@ -17,7 +17,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string ProtocolIdentifierReceivedEvent::getProtocolIdentifier() const
+	const std::string& ProtocolIdentifierReceivedEvent::getProtocolIdentifier() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

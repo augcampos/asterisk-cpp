@@ -16,11 +16,11 @@ namespace asteriskcpp {
 	MeetMeJoinEvent::~MeetMeJoinEvent() {
 	}
 
-	std::string MeetMeJoinEvent::getCallerIdNum() const {
+	const std::string& MeetMeJoinEvent::getCallerIdNum() const {
 		return (getProperty("CallerIdNum"));
 	}
 
-	std::string MeetMeJoinEvent::getCallerIdName() const {
+	const std::string& MeetMeJoinEvent::getCallerIdName() const {
 		return (getProperty("CallerIdName"));
 	}
 

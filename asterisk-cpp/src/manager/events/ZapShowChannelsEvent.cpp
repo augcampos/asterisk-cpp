@@ -23,12 +23,12 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string ZapShowChannelsEvent::getSignalling() const
+	const std::string& ZapShowChannelsEvent::getSignalling() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string ZapShowChannelsEvent::getContext() const
+	const std::string& ZapShowChannelsEvent::getContext() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -38,7 +38,7 @@ namespace asteriskcpp {
 		return (getGetterValue<bool>(__FUNCTION__));
 	}
 
-	std::string ZapShowChannelsEvent::getAlarm() const
+	const std::string& ZapShowChannelsEvent::getAlarm() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

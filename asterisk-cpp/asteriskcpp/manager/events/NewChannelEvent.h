@@ -32,7 +32,7 @@ namespace asteriskcpp {
 		 * @return the account code of the new channel.
 		 * @since 1.0.0
 		 */
-		std::string getAccountCode() const;
+		const std::string& getAccountCode() const;
 
 		/**
 		 * Returns the context of the dialplan entry the channel started at.<p>
@@ -41,7 +41,7 @@ namespace asteriskcpp {
 		 * @return the context of the dialplan entry the channel started at.
 		 * @since 1.0.0
 		 */
-		std::string getContext() const;
+		const std::string& getContext() const;
 
 		/**
 		 * Returns the extension of the dialplan entry the channel started at.<p>
@@ -50,7 +50,7 @@ namespace asteriskcpp {
 		 * @return the extension of the dialplan entry the channel started at.
 		 * @since 1.0.0
 		 */
-		std::string getExten() const;
+		const std::string& getExten() const;
 	};
 
 } /* namespace asteriskcpp */

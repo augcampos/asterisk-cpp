@@ -9,18 +9,18 @@
 
 namespace asteriskcpp {
 
-	AgentCallbackLoginEvent::AgentCallbackLoginEvent(const std::string & values) :
+	AgentCallbackLoginEvent::AgentCallbackLoginEvent(const std::string& values) :
 			ManagerEvent(values) {
 	}
 
 	AgentCallbackLoginEvent::~AgentCallbackLoginEvent() {
 	}
 
-	std::string AgentCallbackLoginEvent::getAgent() const {
+	const std::string& AgentCallbackLoginEvent::getAgent() const {
 		return (getProperty("Agent"));
 	}
 
-	std::string AgentCallbackLoginEvent::getLoginChan() const {
+	const std::string& AgentCallbackLoginEvent::getLoginChan() const {
 		return (getProperty("Loginchan"));
 	}
 

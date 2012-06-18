@@ -27,8 +27,8 @@ namespace asteriskcpp {
 		JabberEventEvent(const std::string & values);
 		virtual ~JabberEventEvent();
 
-		std::string getAccount() const;
-		std::string getPacket() const;
+		const std::string& getAccount() const;
+		const std::string& getPacket() const;
 
 	};
 

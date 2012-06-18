@@ -27,33 +27,33 @@ namespace asteriskcpp {
 		/**
 		 * Returns the unique id of the channel.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the name of the application that is executed.
 		 */
-		std::string getApplication() const;
+		const std::string& getApplication() const;
 
 		/**
 		 * Returns the parameters passed to the application that is executed. The parameters are
 		 * separated by a '|' character.
 		 */
-		std::string getAppData() const;
+		const std::string& getAppData() const;
 
 		/**
 		 * Returns the name of the channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the name of the context of the connected extension.
 		 */
-		std::string getContext() const;
+		const std::string& getContext() const;
 
 		/**
 		 * Returns the extension.
 		 */
-		std::string getExtension() const;
+		const std::string& getExtension() const;
 
 		/**
 		 * Returns the priority.

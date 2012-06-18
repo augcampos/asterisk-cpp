@@ -15,11 +15,11 @@ namespace asteriskcpp {
 	AgentLogoffEvent::~AgentLogoffEvent() {
 	}
 
-	std::string AgentLogoffEvent::getAgent() const {
+	const std::string& AgentLogoffEvent::getAgent() const {
 		return (getProperty("Agent"));
 	}
 
-	std::string AgentLogoffEvent::getLoginTime() const {
+	const std::string& AgentLogoffEvent::getLoginTime() const {
 		return (getProperty("Logintime"));
 	}
 

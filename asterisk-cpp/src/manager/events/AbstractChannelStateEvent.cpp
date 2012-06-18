@@ -21,11 +21,11 @@ namespace asteriskcpp {
 		return (convertFromString<int>(getProperty("ChannelState")));
 	}
 
-	std::string AbstractChannelStateEvent::getChannelStateDesc() const {
+	const std::string& AbstractChannelStateEvent::getChannelStateDesc() const {
 		return (getProperty("ChannelStateDesc"));
 	}
 
-	std::string AbstractChannelStateEvent::getState() const {
+	const std::string& AbstractChannelStateEvent::getState() const {
 		return (getProperty("ChannelStateDesc"));
 	}
 

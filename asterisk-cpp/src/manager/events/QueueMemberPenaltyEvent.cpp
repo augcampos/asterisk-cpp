@@ -18,12 +18,12 @@ namespace asteriskcpp {
 
 	}
 
-	std::string QueueMemberPenaltyEvent::getQueue() const
+	const std::string& QueueMemberPenaltyEvent::getQueue() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string QueueMemberPenaltyEvent::getLocation() const
+	const std::string& QueueMemberPenaltyEvent::getLocation() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

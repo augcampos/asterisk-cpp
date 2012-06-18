@@ -42,7 +42,7 @@ namespace asteriskcpp {
 		 * @return "Begin" or "End" for Asterisk since 1.6, "Begin" for Asterisk prior to 1.6.
 		 * @since 1.0.0
 		 */
-		std::string getSubEvent() const {
+		const std::string& getSubEvent() const {
 			return (getProperty("SubEvent"));
 		}
 
@@ -52,7 +52,7 @@ namespace asteriskcpp {
 		 * @return the name of the source channel.
 		 * @since 1.0.0
 		 */
-		std::string getChannel() const {
+		const std::string& getChannel() const {
 			return (getProperty("Channel"));
 		}
 
@@ -62,7 +62,7 @@ namespace asteriskcpp {
 		 * @return the name of the source channel.
 		 * @deprecated as of 1.0.0, use {@link #getChannel()} instead.
 		 */
-		std::string getSrc() const {
+		const std::string& getSrc() const {
 			return (getChannel());
 		}
 
@@ -71,7 +71,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the destination channel.
 		 */
-		std::string getDestination() const {
+		const std::string& getDestination() const {
 			return (getProperty("Destination"));
 		}
 
@@ -81,7 +81,7 @@ namespace asteriskcpp {
 		 * @return the the Caller*ID Number or "<unknown>" if none has been set.
 		 * @since 1.0.0
 		 */
-		std::string getCallerIdNum() const {
+		const std::string& getCallerIdNum() const {
 			return (getProperty("CallerIdNum"));
 		}
 
@@ -91,7 +91,7 @@ namespace asteriskcpp {
 		 * @return the Caller*ID or "<unknown>" if none has been set.
 		 * @deprecated as of 1.0.0, use {@link #getCallerIdNum()} instead.
 		 */
-		std::string getCallerId() const {
+		const std::string& getCallerId() const {
 			return (getCallerIdNum());
 		}
 
@@ -100,7 +100,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the Caller*ID Name or "<unknown>" if none has been set.
 		 */
-		std::string getCallerIdName() const {
+		const std::string& getCallerIdName() const {
 			return (getProperty("CallerIdName"));
 		}
 
@@ -110,7 +110,7 @@ namespace asteriskcpp {
 		 * @return the unique ID of the source channel.
 		 * @deprecated as of 1.0.0, use {@link #getUniqueId()} instead.
 		 */
-		std::string getSrcUniqueId() const {
+		const std::string& getSrcUniqueId() const {
 			return (getUniqueID());
 		}
 
@@ -119,7 +119,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the unique ID of the destination channel.
 		 */
-		std::string getDestUniqueId() const {
+		const std::string& getDestUniqueId() const {
 			return (getProperty("DestUniqueId"));
 		}
 
@@ -130,7 +130,7 @@ namespace asteriskcpp {
 		 * @return the dial string passed to the Dial application.
 		 * @since 1.0.0
 		 */
-		std::string getDialString() const {
+		const std::string& getDialString() const {
 			return (getProperty("DialString"));
 		}
 
@@ -154,7 +154,7 @@ namespace asteriskcpp {
 		 * @return the completion status of the dial application.
 		 * @since 1.0.0
 		 */
-		std::string getDialStatus() const {
+		const std::string& getDialStatus() const {
 			return (getProperty("DialStatus"));
 		}
 

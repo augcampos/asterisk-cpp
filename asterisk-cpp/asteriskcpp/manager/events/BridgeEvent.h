@@ -43,7 +43,7 @@ namespace asteriskcpp {
 		 * @see #BRIDGE_STATE_UNLINK
 		 * @since 1.0.0
 		 */
-		std::string getBridgeState() const {
+		const std::string& getBridgeState() const {
 			return (getProperty("BridgeState"));
 		}
 
@@ -58,7 +58,7 @@ namespace asteriskcpp {
 		 * @see #BRIDGE_TYPE_RTP_REMOTE
 		 * @since 1.0.0
 		 */
-		std::string getBridgeType() const {
+		const std::string& getBridgeType() const {
 			return (getProperty("BridgeType"));
 		}
 
@@ -67,7 +67,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the unique id of the first channel.
 		 */
-		std::string getUniqueId1() const {
+		const std::string& getUniqueId1() const {
 			return (getProperty("UniqueId1"));
 		}
 
@@ -76,7 +76,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the unique id of the second channel.
 		 */
-		std::string getUniqueId2() const {
+		const std::string& getUniqueId2() const {
 			return (getProperty("UniqueId2"));
 		}
 
@@ -85,7 +85,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the first channel.
 		 */
-		std::string getChannel1() const {
+		const std::string& getChannel1() const {
 			return (getProperty("Channel1"));
 		}
 
@@ -94,7 +94,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the second channel.
 		 */
-		std::string getChannel2() const {
+		const std::string& getChannel2() const {
 			return (getProperty("Channel2"));
 		}
 
@@ -104,7 +104,7 @@ namespace asteriskcpp {
 		 * @return the Caller*Id number of the first channel.
 		 * @since 0.2
 		 */
-		std::string getCallerId1() const {
+		const std::string& getCallerId1() const {
 			return (getProperty("CallerId1"));
 		}
 
@@ -114,7 +114,7 @@ namespace asteriskcpp {
 		 * @return the Caller*Id number of the second channel.
 		 * @since 0.2
 		 */
-		std::string getCallerId2() const {
+		const std::string& getCallerId2() const {
 			return (getProperty("CallerId2"));
 		}
 

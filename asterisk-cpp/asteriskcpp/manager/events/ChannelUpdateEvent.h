@@ -39,7 +39,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the type of channel that is registered.
 		 */
-		std::string getChannelType() const {
+		const std::string& getChannelType() const {
 			return (getProperty("ChannelType"));
 		}
 
@@ -50,7 +50,7 @@ namespace asteriskcpp {
 		 * @return the type of channel that was reloaded (e.g. SIP)
 		 * @deprecated use {@link #getChannelType()} instead.
 		 */
-		std::string getChannel() const {
+		const std::string& getChannel() const {
 			return (getProperty("ChannelType"));
 		}
 
@@ -83,7 +83,7 @@ namespace asteriskcpp {
 		 * @see #getReloadReasonCode()
 		 * @see #getReloadReasonDescription()
 		 */
-		std::string getReloadReason() const {
+		const std::string& getReloadReason() const {
 			return (getProperty("ReloadReason"));
 		}
 
@@ -103,7 +103,7 @@ namespace asteriskcpp {
 		 * @see org.asteriskjava.manager.event.ChannelReloadEvent#REASON_RELOAD
 		 * @see org.asteriskjava.manager.event.ChannelReloadEvent#REASON_MANAGER_RELOAD
 		 */
-		std::string getReloadReasonCode() const {
+		const std::string& getReloadReasonCode() const {
 			return (getProperty("ReloadReasonCode"));
 		}
 
@@ -113,7 +113,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the descriptive version of the reason for the reload.
 		 */
-		std::string getReloadReasonDescription() const {
+		const std::string& getReloadReasonDescription() const {
 			return (getProperty("ReloadReasonDescription"));
 		}
 

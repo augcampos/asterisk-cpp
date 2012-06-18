@@ -32,7 +32,7 @@ namespace asteriskcpp {
 		 * @return the Caller Id number or "<unknown>" if not set.
 		 * @since 1.0.0
 		 */
-		std::string getCallerIdNum() const;
+		const std::string& getCallerIdNum() const;
 
 		/**
 		 * Returns the Caller Id name.
@@ -40,7 +40,7 @@ namespace asteriskcpp {
 		 * @return the Caller Id name or "<unknown>" if not set.
 		 * @since 1.0.0
 		 */
-		std::string getCallerIdName() const;
+		const std::string& getCallerIdName() const;
 	};
 
 } /* namespace asterisk_cpp */

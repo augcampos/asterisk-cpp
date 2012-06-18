@@ -18,22 +18,22 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string VarSetEvent::getChannel() const
+	const std::string& VarSetEvent::getChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VarSetEvent::getUniqueId() const
+	const std::string& VarSetEvent::getUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VarSetEvent::getVariable() const
+	const std::string& VarSetEvent::getVariable() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VarSetEvent::getValue() const
+	const std::string& VarSetEvent::getValue() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

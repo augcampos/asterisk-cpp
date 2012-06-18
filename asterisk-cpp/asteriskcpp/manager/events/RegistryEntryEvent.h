@@ -46,21 +46,21 @@ namespace asteriskcpp {
 		 *
 		 * @return the username.
 		 */
-		std::string getUsername() const;
+		const std::string& getUsername() const;
 
 		/**
 		 * Returns the IP address or hostname used for the registration.
 		 *
 		 * @return the IP address or the hostname.
 		 */
-		std::string getHost() const;
+		const std::string& getHost() const;
 
 		/**
 		 * Returns the value of state.
 		 *
 		 * @return the value of state
 		 */
-		std::string getState() const;
+		const std::string& getState() const;
 
 		/**
 		 * Returns the value of refresh.

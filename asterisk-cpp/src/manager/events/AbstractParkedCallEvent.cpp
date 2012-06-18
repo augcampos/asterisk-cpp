@@ -16,11 +16,11 @@ namespace asteriskcpp {
 	AbstractParkedCallEvent::~AbstractParkedCallEvent() {
 	}
 
-	std::string AbstractParkedCallEvent::getExten() const {
+	const std::string& AbstractParkedCallEvent::getExten() const {
 		return (getProperty("Exten"));
 	}
 
-	std::string AbstractParkedCallEvent::getParkingLot() const {
+	const std::string& AbstractParkedCallEvent::getParkingLot() const {
 		return (getProperty("ParkingLot"));
 	}
 

@@ -26,31 +26,36 @@ namespace asteriskcpp {
 	 */
 	class ManagerAction: public PropertyMap {
 	public:
+
+		ManagerAction(const std::string action_name);
+
 		/**
 		 * Returns the name of the action for example "Hangup".
 		 */
-		virtual std::string getAction()=0;
+		const std::string& getAction();
 
 		/**
 		 * Generate a valid ID
 		 * @note: generated on every send
 		 */
-		virtual const std::string generateID()=0;
+		virtual const std::string& generateID()=0;
 
 		/**
 		 * Returns the action id.
 		 * @return the user provied action id.
 		 */
-		virtual std::string getActionId() const =0;
+		virtual const std::string& getActionId() const =0;
 
 		/**
 		 * Returns the action string representation action.
 		 * @return the action string representation action.
 		 */
-		virtual std::string toString()=0;
+		virtual const std::string& toString()=0;
 
 		virtual ManagerResponse* expectedResponce(const std::string& response);
 
+	protected:
+		const std::string action;
 	};
 
 }

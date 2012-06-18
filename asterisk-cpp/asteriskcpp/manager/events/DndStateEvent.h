@@ -27,7 +27,7 @@ namespace asteriskcpp {
 		 * Returns the name of the channel. The channel name is of the form
 		 * "Zap/&lt;channel number&gt;".
 		 */
-		std::string getChannel() const {
+		const std::string& getChannel() const {
 			return (getProperty("Channel"));
 		}
 

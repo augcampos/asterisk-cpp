@@ -33,14 +33,14 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the unique id of the channel.
 		 *
 		 * @return the unique id of the channel.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 	};
 

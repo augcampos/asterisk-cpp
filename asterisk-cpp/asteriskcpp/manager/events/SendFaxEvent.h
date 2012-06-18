@@ -26,47 +26,47 @@ namespace asteriskcpp {
 		/**
 		 * @return the context
 		 */
-		std::string getContext() const;
+		const std::string& getContext() const;
 
 		/**
 		 * @return the exten
 		 */
-		std::string getExten() const;
+		const std::string& getExten() const;
 
 		/**
 		 * @return the callerId
 		 */
-		std::string getCallerId() const;
+		const std::string& getCallerId() const;
 
 		/**
 		 * @return the localStationId
 		 */
-		std::string getLocalStationId() const;
+		const std::string& getLocalStationId() const;
 
 		/**
 		 * @return the remoteStationId
 		 */
-		std::string getRemoteStationId() const;
+		const std::string& getRemoteStationId() const;
 
 		/**
 		 * @return the pagesTransferred
 		 */
-		std::string getPagesTransferred() const;
+		const std::string& getPagesTransferred() const;
 
 		/**
 		 * @return the resolution
 		 */
-		std::string getResolution() const;
+		const std::string& getResolution() const;
 
 		/**
 		 * @return the transferRate
 		 */
-		std::string getTransferRate() const;
+		const std::string& getTransferRate() const;
 
 		/**
 		 * @return the fileName
 		 */
-		std::string getFileName() const;
+		const std::string& getFileName() const;
 	};
 
 } /* namespace asteriskcpp */

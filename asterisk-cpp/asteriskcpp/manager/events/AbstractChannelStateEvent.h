@@ -50,7 +50,7 @@ namespace asteriskcpp {
 		 * @return the new state of the channel as a descriptive text.
 		 * @since 1.0.0
 		 */
-		std::string getChannelStateDesc() const;
+		const std::string& getChannelStateDesc() const;
 
 		/**
 		 * Returns the new state of the channel as a descriptive text.<p>
@@ -60,7 +60,7 @@ namespace asteriskcpp {
 		 * @deprecated as of 1.0.0, use {@link #getChannelStateDesc()} instead or even better switch to numeric
 		 *             values as returned by {@link #getChannelState()}.
 		 */
-		std::string getState() const;
+		const std::string& getState() const;
 
 	};
 

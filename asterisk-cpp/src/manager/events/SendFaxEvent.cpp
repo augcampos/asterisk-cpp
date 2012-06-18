@@ -18,47 +18,47 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string SendFaxEvent::getContext() const
+	const std::string& SendFaxEvent::getContext() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxEvent::getExten() const
+	const std::string& SendFaxEvent::getExten() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxEvent::getCallerId() const
+	const std::string& SendFaxEvent::getCallerId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxEvent::getLocalStationId() const
+	const std::string& SendFaxEvent::getLocalStationId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxEvent::getRemoteStationId() const
+	const std::string& SendFaxEvent::getRemoteStationId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxEvent::getPagesTransferred() const
+	const std::string& SendFaxEvent::getPagesTransferred() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxEvent::getResolution() const
+	const std::string& SendFaxEvent::getResolution() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxEvent::getTransferRate() const
+	const std::string& SendFaxEvent::getTransferRate() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SendFaxEvent::getFileName() const
+	const std::string& SendFaxEvent::getFileName() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

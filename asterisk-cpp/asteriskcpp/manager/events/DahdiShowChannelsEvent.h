@@ -29,11 +29,11 @@ namespace asteriskcpp {
 		DahdiShowChannelsEvent(const std::string& values);
 		virtual ~DahdiShowChannelsEvent();
 
-		std::string getAccountcode() const;
-		std::string getChannel() const;
+		const std::string& getAccountcode() const;
+		const std::string& getChannel() const;
 		int getDahdichannel() const;
-		std::string getSignallingcode() const;
-		std::string getUniqueid() const;
+		const std::string& getSignallingcode() const;
+		const std::string& getUniqueid() const;
 
 		/**
 		 * Returns the signalling of this Dahdi channel.<p>
@@ -64,12 +64,12 @@ namespace asteriskcpp {
 		 * <li>Pseudo Signalling</li>
 		 * </ul>
 		 */
-		std::string getSignalling() const;
+		const std::string& getSignalling() const;
 
 		/**
 		 * Returns the context of this Dahdi channel as defined in <code>chan_Dahdi.conf</code>.
 		 */
-		std::string getContext() const;
+		const std::string& getContext() const;
 
 		/**
 		 * Returns whether dnd (do not disturb) is enabled for this Dahdi channel.
@@ -93,7 +93,7 @@ namespace asteriskcpp {
 		 * <li>No Alarm</li>
 		 * </ul>
 		 */
-		std::string getAlarm() const;
+		const std::string& getAlarm() const;
 	};
 
 } /* namespace asteriskcpp */

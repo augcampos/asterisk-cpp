@@ -32,7 +32,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the queue.
 		 */
-		std::string getQueue() const;
+		const std::string& getQueue() const;
 
 		/**
 		 * Returns the name of the member's interface.<p>
@@ -40,7 +40,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the member's interface.
 		 */
-		std::string getLocation() const;
+		const std::string& getLocation() const;
 
 		/**
 		 * Retruns the name of the queue member.
@@ -50,7 +50,7 @@ namespace asteriskcpp {
 		 * @return the name of the queue member.
 		 * @since 0.3
 		 */
-		std::string getMemberName() const;
+		const std::string& getMemberName() const;
 
 	};
 

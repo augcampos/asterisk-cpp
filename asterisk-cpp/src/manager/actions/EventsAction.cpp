@@ -8,18 +8,15 @@
 
 namespace asteriskcpp {
 
-	EventsAction::EventsAction(const std::string& eventMask) {
+	EventsAction::EventsAction(const std::string& eventMask) :
+			AbstractManagerAction("Events") {
 		setEventMask(eventMask);
 	}
 
 	EventsAction::~EventsAction() {
 	}
 
-	std::string EventsAction::getAction() {
-		return ("Events");
-	}
-
-	std::string EventsAction::getEventMask() const {
+	const std::string& EventsAction::getEventMask() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 

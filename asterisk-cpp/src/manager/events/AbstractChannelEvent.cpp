@@ -16,19 +16,19 @@ namespace asteriskcpp {
 
 	}
 
-	std::string AbstractChannelEvent::getChannel() const {
+	const std::string& AbstractChannelEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 
-	std::string AbstractChannelEvent::getCallerId() const {
+	const std::string& AbstractChannelEvent::getCallerId() const {
 		return (getProperty("CallerId"));
 	}
 
-	std::string AbstractChannelEvent::getCallerIdNum() const {
+	const std::string& AbstractChannelEvent::getCallerIdNum() const {
 		return (getProperty("CallerIdNum"));
 	}
 
-	std::string AbstractChannelEvent::getCallerIdName() const {
+	const std::string& AbstractChannelEvent::getCallerIdName() const {
 		return (getProperty("CallerIdName"));
 	}
 }

@@ -7,6 +7,7 @@
 
 #include "asteriskcpp/manager/ManagerConnection.h"
 #include <exception>
+#include <memory>
 #include <boost/format.hpp>
 #include <boost/regex.hpp>
 #include "asteriskcpp/exceptions/Exception.h"
@@ -79,11 +80,11 @@ namespace asteriskcpp {
 		send(action.toString());
 	}
 
-	ManagerResponse* ManagerConnection::syncSendAction(ManagerAction & action)  {
+	ManagerResponse* ManagerConnection::syncSendAction(ManagerAction& action)  {
 		return (syncSendAction(action, defaultResponseTimeout));
 	}
 
-	ManagerResponse* ManagerConnection::syncSendAction(ManagerAction & action, unsigned int timeout) {
+	ManagerResponse* ManagerConnection::syncSendAction(ManagerAction& action, unsigned int timeout) {
 		LOG_TRACE_STR("IN");
 		SyncResponseCallBack srcb(&action, timeout);
 		addResponsetListener(action.generateID(), &srcb);

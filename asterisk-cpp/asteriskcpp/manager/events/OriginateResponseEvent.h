@@ -33,24 +33,24 @@ namespace asteriskcpp {
 		 *
 		 * @return "Success" or "Failure"
 		 */
-		std::string getResponse() const;
+		const std::string& getResponse() const;
 
 		bool isSuccess() const;
 
 		/**
 		 * Returns the name of the channel to connect to the outgoing call.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the name of the context of the extension to connect to.
 		 */
-		std::string getContext() const;
+		const std::string& getContext() const;
 
 		/**
 		 * Returns the the extension to connect to.
 		 */
-		std::string getExten() const;
+		const std::string& getExten() const;
 
 		int getReason() const;
 
@@ -60,7 +60,7 @@ namespace asteriskcpp {
 		 * @return the unique id of the originated channel or "&lt;null&gt;" if none
 		 *         is available.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the Caller*ID Number of the originated channel.
@@ -70,7 +70,7 @@ namespace asteriskcpp {
 		 * @return the Caller*ID Number of the originated channel or <code>null</code> if none was set.
 		 * @since 0.3
 		 */
-		std::string getCallerIdNum() const;
+		const std::string& getCallerIdNum() const;
 
 		/**
 		 * Returns the Caller*ID Name of the originated channel.
@@ -79,7 +79,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the Caller*ID Name of the originated channel or <code>null</code> if none was set.
 		 */
-		std::string getCallerIdName() const;
+		const std::string& getCallerIdName() const;
 
 	};
 

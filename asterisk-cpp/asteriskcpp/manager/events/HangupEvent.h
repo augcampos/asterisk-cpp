@@ -44,7 +44,7 @@ namespace asteriskcpp {
 		 * @return the textual representation of the hangup cause.
 		 * @since 0.2
 		 */
-		std::string getCauseTxt() const {
+		const std::string& getCauseTxt() const {
 			return (getProperty("CauseTxt"));
 		}
 	};

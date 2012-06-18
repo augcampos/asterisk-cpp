@@ -32,28 +32,28 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the channel or <code>null</code> for global variables.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the unique id of the channel or <code>null</code> for global variables.
 		 *
 		 * @return the unique id of the channel or <code>null</code> for global variables.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the name of the variable that has been set.
 		 *
 		 * @return the name of the variable that has been set.
 		 */
-		std::string getVariable() const;
+		const std::string& getVariable() const;
 
 		/**
 		 * Returns the new value of the variable.
 		 *
 		 * @return the new value of the variable.
 		 */
-		std::string getValue() const;
+		const std::string& getValue() const;
 	};
 
 } /* namespace asteriskcpp */

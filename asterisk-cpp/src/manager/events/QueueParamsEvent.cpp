@@ -17,7 +17,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string QueueParamsEvent::getQueue() const
+	const std::string& QueueParamsEvent::getQueue() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -27,7 +27,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string QueueParamsEvent::getStrategy() const
+	const std::string& QueueParamsEvent::getStrategy() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

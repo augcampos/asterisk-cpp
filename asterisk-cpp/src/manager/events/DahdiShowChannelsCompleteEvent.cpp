@@ -23,7 +23,7 @@ namespace asteriskcpp {
 		return (getProperty<int>("Items"));
 	}
 
-	std::string DahdiShowChannelsCompleteEvent::getEventlist() const
+	const std::string& DahdiShowChannelsCompleteEvent::getEventlist() const
 	{
 		return (getProperty("Eventlist"));
 	}

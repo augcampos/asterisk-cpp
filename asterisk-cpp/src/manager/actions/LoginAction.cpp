@@ -9,21 +9,25 @@
 
 namespace asteriskcpp {
 
-	LoginAction::LoginAction() {
+	LoginAction::LoginAction() :
+			AbstractManagerAction("Login") {
 	}
 
-	LoginAction::LoginAction(const std::string & username, const std::string & secret) {
+	LoginAction::LoginAction(const std::string & username, const std::string & secret) :
+			AbstractManagerAction("Login") {
 		this->setUsername(username);
 		this->setSecret(secret);
 	}
 
-	LoginAction::LoginAction(const std::string & username, const std::string & authType, const std::string & key) {
+	LoginAction::LoginAction(const std::string & username, const std::string & authType, const std::string & key) :
+			AbstractManagerAction("Login") {
 		this->setUsername(username);
 		this->setAuthType(authType);
 		this->setKey(key);
 	}
 
-	LoginAction::LoginAction(const std::string & username, const std::string & authType, const std::string & key, const std::string & events) {
+	LoginAction::LoginAction(const std::string & username, const std::string & authType, const std::string & key, const std::string & events) :
+			AbstractManagerAction("Login") {
 		this->setUsername(username);
 		this->setUsername(username);
 		this->setAuthType(authType);
@@ -34,39 +38,35 @@ namespace asteriskcpp {
 	LoginAction::~LoginAction() {
 	}
 
-	std::string LoginAction::getAction() {
-		return ("Login");
-	}
-
-	std::string LoginAction::getUsername() const {
+	const std::string& LoginAction::getUsername() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 	void LoginAction::setUsername(const std::string& username) {
 		setSetterValue(__FUNCTION__, username);
 	}
 
-	std::string LoginAction::getSecret() const {
+	const std::string& LoginAction::getSecret() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 	void LoginAction::setSecret(const std::string& secret) {
 		setSetterValue(__FUNCTION__, secret);
 	}
 
-	std::string LoginAction::getAuthType() const {
+	const std::string& LoginAction::getAuthType() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 	void LoginAction::setAuthType(const std::string& authType) {
 		setSetterValue(__FUNCTION__, authType);
 	}
 
-	std::string LoginAction::getKey() const {
+	const std::string& LoginAction::getKey() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 	void LoginAction::setKey(const std::string& key) {
 		setSetterValue(__FUNCTION__, key);
 	}
 
-	std::string LoginAction::getEvents() const {
+	const std::string& LoginAction::getEvents() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 

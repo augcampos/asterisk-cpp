@@ -17,11 +17,11 @@ namespace asteriskcpp {
 	QueueEvent::~QueueEvent() {
 	}
 
-	std::string QueueEvent::getUniqueId() const {
+	const std::string& QueueEvent::getUniqueId() const {
 		return (getProperty("UniqueId"));
 	}
 
-	std::string QueueEvent::getChannel() const {
+	const std::string& QueueEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 
@@ -29,7 +29,7 @@ namespace asteriskcpp {
 		return (convertFromString<int>(getProperty("Count")));
 	}
 
-	std::string QueueEvent::getQueue() const {
+	const std::string& QueueEvent::getQueue() const {
 		return (getProperty("Queue"));
 	}
 

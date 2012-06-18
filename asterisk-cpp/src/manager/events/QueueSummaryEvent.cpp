@@ -18,7 +18,7 @@ namespace asteriskcpp {
 
 	}
 
-	std::string QueueSummaryEvent::getQueue() const
+	const std::string& QueueSummaryEvent::getQueue() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

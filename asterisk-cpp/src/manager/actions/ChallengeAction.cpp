@@ -9,18 +9,14 @@
 
 namespace asteriskcpp {
 
-	ChallengeAction::~ChallengeAction() {
-	}
-
-	ChallengeAction::ChallengeAction(const std::string& authType) {
+	ChallengeAction::ChallengeAction(const std::string& authType):AbstractManagerAction("Challenge") {
 		this->setAuthType(authType);
 	}
 
-	std::string ChallengeAction::getAction() {
-		return ("Challenge");
+	ChallengeAction::~ChallengeAction() {
 	}
 
-	std::string ChallengeAction::getAuthType() const {
+	const std::string& ChallengeAction::getAuthType() const {
 		return (getGetterValue(__FUNCTION__));
 	}
 

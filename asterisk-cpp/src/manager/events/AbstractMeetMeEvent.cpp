@@ -10,22 +10,22 @@
 
 namespace asteriskcpp {
 
-	AbstractMeetMeEvent::AbstractMeetMeEvent(const std::string & values) :
+	AbstractMeetMeEvent::AbstractMeetMeEvent(const std::string& values) :
 			ManagerEvent(values) {
 	}
 
 	AbstractMeetMeEvent::~AbstractMeetMeEvent() {
 	}
 
-	std::string AbstractMeetMeEvent::getChannel() const {
+	const std::string& AbstractMeetMeEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 
-	std::string AbstractMeetMeEvent::getUniqueId() const {
+	const std::string& AbstractMeetMeEvent::getUniqueId() const {
 		return (getProperty("UniqueId"));
 	}
 
-	std::string AbstractMeetMeEvent::getMeetMe() const {
+	const std::string& AbstractMeetMeEvent::getMeetMe() const {
 		return (getProperty("MeetMe"));
 	}
 

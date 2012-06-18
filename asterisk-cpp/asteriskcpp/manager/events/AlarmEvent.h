@@ -38,12 +38,12 @@ namespace asteriskcpp {
 		 * <li>Not Open</li>
 		 * </ul>
 		 */
-		std::string getAlarm() const;
+		const std::string& getAlarm() const;
 
 		/**
 		 * Returns the number of the channel the alarm occured on.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 	};
 
 }

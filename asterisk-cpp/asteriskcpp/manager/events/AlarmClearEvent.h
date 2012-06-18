@@ -30,7 +30,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the number of the zap channel that left alarm state.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 	};
 

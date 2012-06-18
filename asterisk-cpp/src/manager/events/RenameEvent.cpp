@@ -19,27 +19,27 @@ namespace asteriskcpp {
 
 	}
 
-	std::string RenameEvent::getNewname() const
+	const std::string& RenameEvent::getNewname() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RenameEvent::getChannel() const
+	const std::string& RenameEvent::getChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RenameEvent::getOldname() const
+	const std::string& RenameEvent::getOldname() const
 	{
 		return (getChannel());
 	}
 
-	std::string RenameEvent::getUniqueId() const
+	const std::string& RenameEvent::getUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RenameEvent::getNewUniqueId() const
+	const std::string& RenameEvent::getNewUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

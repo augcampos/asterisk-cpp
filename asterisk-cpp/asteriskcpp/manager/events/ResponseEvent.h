@@ -39,7 +39,7 @@ namespace asteriskcpp {
 		 *         <code>null</code> if none was set.
 		 * @see org.asteriskjava.manager.action.ManagerAction#setActionId(String)
 		 */
-		std::string getActionId() const {
+		const std::string& getActionId() const {
 			return (getProperty("ActionId"));
 		}
 
@@ -52,7 +52,7 @@ namespace asteriskcpp {
 		 * @return the internal action id of the ManagerAction that caused this event.
 		 * @since 0.2
 		 */
-		std::string getInternalActionId() const {
+		const std::string& getInternalActionId() const {
 			return (getProperty("InternalActionId"));
 		}
 	};

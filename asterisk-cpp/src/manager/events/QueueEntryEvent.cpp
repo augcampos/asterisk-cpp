@@ -17,7 +17,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string QueueEntryEvent::getQueue() const
+	const std::string& QueueEntryEvent::getQueue() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -27,27 +27,27 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string QueueEntryEvent::getChannel() const
+	const std::string& QueueEntryEvent::getChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string QueueEntryEvent::getUniqueId() const
+	const std::string& QueueEntryEvent::getUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string QueueEntryEvent::getCallerId() const
+	const std::string& QueueEntryEvent::getCallerId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string QueueEntryEvent::getCallerIdName() const
+	const std::string& QueueEntryEvent::getCallerIdName() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string QueueEntryEvent::getCallerIdNum() const
+	const std::string& QueueEntryEvent::getCallerIdNum() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

@@ -61,12 +61,12 @@ namespace asteriskcpp {
 		 * <li>Pseudo Signalling</li>
 		 * </ul>
 		 */
-		std::string getSignalling() const;
+		const std::string& getSignalling() const;
 
 		/**
 		 * Returns the context of this zap channel as defined in <code>zapata.conf</code>.
 		 */
-		std::string getContext() const;
+		const std::string& getContext() const;
 
 		/**
 		 * Returns whether dnd (do not disturb) is enabled for this zap channel.
@@ -90,7 +90,7 @@ namespace asteriskcpp {
 		 * <li>No Alarm</li>
 		 * </ul>
 		 */
-		std::string getAlarm() const;
+		const std::string& getAlarm() const;
 	};
 
 } /* namespace asteriskcpp */

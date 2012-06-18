@@ -38,14 +38,9 @@ namespace asteriskcpp {
 		virtual ~AbsoluteTimeoutAction();
 
 		/**
-		 * Returns the name of this action, i.e. "Login".
-		 */
-		std::string getAction();
-
-		/**
 		 * Returns the name of the channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Sets the name of the channel.

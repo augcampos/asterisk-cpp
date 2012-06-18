@@ -17,7 +17,7 @@ namespace asteriskcpp {
 	LogChannelEvent::~LogChannelEvent() {
 	}
 
-	std::string LogChannelEvent::getChannel() const {
+	const std::string& LogChannelEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 
@@ -29,7 +29,7 @@ namespace asteriskcpp {
 		return (convertFromString<int>(getProperty("Reason")));
 	}
 
-	std::string LogChannelEvent::getReasonTxt() const {
+	const std::string& LogChannelEvent::getReasonTxt() const {
 		return (getProperty("ReasonTxt"));
 	}
 

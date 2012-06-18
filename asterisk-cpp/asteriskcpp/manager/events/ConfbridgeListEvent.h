@@ -29,7 +29,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the id of the conference to be listed.
 		 */
-		std::string getConference() const {
+		const std::string& getConference() const {
 			return (getProperty("Conference"));
 		}
 
@@ -38,7 +38,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the Caller*ID Number of the channel in the list of the conference.
 		 */
-		std::string getCallerIDnum() const {
+		const std::string& getCallerIDnum() const {
 			return (getProperty("CallerIDnum"));
 		}
 
@@ -47,7 +47,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the Caller*ID Name of the channel in the list of the conference.
 		 */
-		std::string getCallerIdName() const {
+		const std::string& getCallerIdName() const {
 			return (getProperty("CallerIdName"));
 		}
 
@@ -60,14 +60,14 @@ namespace asteriskcpp {
 			return (getProperty<bool>("admin"));
 		}
 
-		std::string getMarkedUser() const {
+		const std::string& getMarkedUser() const {
 			return (getProperty("MarkedUser"));
 		}
 
 		/**
 		 * Returns the name of the channel in the list.
 		 */
-		std::string getChannel() const {
+		const std::string& getChannel() const {
 			return (getProperty("Channel"));
 		}
 	};

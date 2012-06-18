@@ -26,14 +26,14 @@ namespace asteriskcpp {
 		/**
 		 * Returns the status of the list e.g. complete.
 		 */
-		std::string getEventList() const {
+		const std::string& getEventList() const {
 			return (getProperty("EventList"));
 		}
 
 		/**
 		 * Returns the number listitems.
 		 */
-		std::string getListItems() const {
+		const std::string& getListItems() const {
 			return (getProperty("ListItems"));
 		}
 

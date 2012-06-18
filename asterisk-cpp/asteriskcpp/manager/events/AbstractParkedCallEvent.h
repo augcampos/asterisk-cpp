@@ -29,7 +29,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the extension the channel is or was parked at.
 		 */
-		std::string getExten() const;
+		const std::string& getExten() const;
 
 		/**
 		 * Returns the parking lot.<p>
@@ -38,7 +38,7 @@ namespace asteriskcpp {
 		 * @return the parking lot.
 		 * @since 1.0.0
 		 */
-		std::string getParkingLot() const;
+		const std::string& getParkingLot() const;
 	};
 
 } /* namespace asteriskcpp */

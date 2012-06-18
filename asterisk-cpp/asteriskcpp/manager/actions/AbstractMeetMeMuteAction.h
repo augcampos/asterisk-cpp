@@ -18,7 +18,7 @@ namespace asteriskcpp {
 	 */
 	class AbstractMeetMeMuteAction: public AbstractManagerAction {
 	public:
-		AbstractMeetMeMuteAction(const std::string& meetMe, int userNum);
+		AbstractMeetMeMuteAction(const std::string& action_name, const std::string& meetMe, int userNum);
 		virtual ~AbstractMeetMeMuteAction();
 
 		/**
@@ -26,7 +26,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the conference number.
 		 */
-		std::string getMeetMe() const;
+		const std::string& getMeetMe() const;
 
 		/**
 		 * Sets the conference number.<p>

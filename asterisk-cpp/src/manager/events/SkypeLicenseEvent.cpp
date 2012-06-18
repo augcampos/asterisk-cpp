@@ -17,22 +17,22 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string SkypeLicenseEvent::getFile() const
+	const std::string& SkypeLicenseEvent::getFile() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeLicenseEvent::getKey() const
+	const std::string& SkypeLicenseEvent::getKey() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeLicenseEvent::getExpires() const
+	const std::string& SkypeLicenseEvent::getExpires() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeLicenseEvent::getHostId() const
+	const std::string& SkypeLicenseEvent::getHostId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -42,7 +42,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string SkypeLicenseEvent::getStatus() const
+	const std::string& SkypeLicenseEvent::getStatus() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

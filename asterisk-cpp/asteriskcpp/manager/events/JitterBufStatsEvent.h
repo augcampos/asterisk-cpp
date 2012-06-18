@@ -33,7 +33,7 @@ namespace asteriskcpp {
 		 *
 		 * @return channel the name of the channel.
 		 */
-		std::string getOwner() const;
+		const std::string& getOwner() const;
 		int getPing() const;
 		int getLocalJitter() const;
 		int getLocalJbDelay() const;

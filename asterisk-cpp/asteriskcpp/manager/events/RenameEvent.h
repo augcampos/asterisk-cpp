@@ -31,7 +31,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the new name of the channel.
 		 */
-		std::string getNewname() const;
+		const std::string& getNewname() const;
 
 		/**
 		 * Returns the old name of the channel.
@@ -39,7 +39,7 @@ namespace asteriskcpp {
 		 * @return the old name of the channel.
 		 * @since 1.0.0
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the old name of the channel.
@@ -47,14 +47,14 @@ namespace asteriskcpp {
 		 * @return the old name of the channel.
 		 * @deprecated use {@link @getChannel} instead.
 		 */
-		std::string getOldname() const;
+		const std::string& getOldname() const;
 
 		/**
 		 * Returns the unique id of the channel.
 		 *
 		 * @return the unique id of the channel.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the new unique id of the channel.
@@ -67,7 +67,7 @@ namespace asteriskcpp {
 		 * @return the new unique id of the channel.
 		 * @since 0.3
 		 */
-		std::string getNewUniqueId() const;
+		const std::string& getNewUniqueId() const;
 	};
 
 } /* namespace asteriskcpp */

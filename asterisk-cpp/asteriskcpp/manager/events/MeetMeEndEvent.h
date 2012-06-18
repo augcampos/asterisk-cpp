@@ -32,7 +32,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the conference number.
 		 */
-		std::string getMeetMe() const;
+		const std::string& getMeetMe() const;
 	};
 
 } /* namespace asterisk_cpp */

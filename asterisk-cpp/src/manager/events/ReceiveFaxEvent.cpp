@@ -18,32 +18,32 @@ namespace asteriskcpp {
 
 	}
 
-	std::string ReceiveFaxEvent::getChannel() const
+	const std::string& ReceiveFaxEvent::getChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string ReceiveFaxEvent::getContext() const
+	const std::string& ReceiveFaxEvent::getContext() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string ReceiveFaxEvent::getExten() const
+	const std::string& ReceiveFaxEvent::getExten() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string ReceiveFaxEvent::getCallerId() const
+	const std::string& ReceiveFaxEvent::getCallerId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string ReceiveFaxEvent::getRemoteStationId() const
+	const std::string& ReceiveFaxEvent::getRemoteStationId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string ReceiveFaxEvent::getLocalStationId() const
+	const std::string& ReceiveFaxEvent::getLocalStationId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -53,7 +53,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string ReceiveFaxEvent::getResolution() const
+	const std::string& ReceiveFaxEvent::getResolution() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -63,7 +63,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string ReceiveFaxEvent::getFileName() const
+	const std::string& ReceiveFaxEvent::getFileName() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

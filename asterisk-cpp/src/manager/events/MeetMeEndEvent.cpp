@@ -16,7 +16,7 @@ namespace asteriskcpp {
 	MeetMeEndEvent::~MeetMeEndEvent() {
 	}
 
-	std::string MeetMeEndEvent::getMeetMe() const {
+	const std::string& MeetMeEndEvent::getMeetMe() const {
 		return (getProperty("MeetMe"));
 	}
 

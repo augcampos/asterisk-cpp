@@ -43,7 +43,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the reason specified for the pause.
 		 */
-		std::string getReason() const;
+		const std::string& getReason() const;
 	};
 
 } /* namespace asteriskcpp */

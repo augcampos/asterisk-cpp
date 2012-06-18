@@ -74,14 +74,9 @@ namespace asteriskcpp {
 		virtual ~LoginAction();
 
 		/**
-		 * Returns the name of this action, i.e. "Login".
-		 */
-		virtual std::string getAction();
-
-		/**
 		 * Returns the username.
 		 */
-		std::string getUsername() const;
+		const std::string& getUsername() const;
 
 		/**
 		 * Sets the username as configured in asterik's <code>manager.conf</code>.
@@ -91,7 +86,7 @@ namespace asteriskcpp {
 		/**
 		 * Returns the secret.
 		 */
-		std::string getSecret() const;
+		const std::string& getSecret() const;
 
 		/**
 		 * Sets the secret to use when using cleartext login.<p>
@@ -104,7 +99,7 @@ namespace asteriskcpp {
 		/**
 		 * Returns the digest alogrithm when using challenge/response.
 		 */
-		std::string getAuthType() const;
+		const std::string& getAuthType() const;
 
 		/**
 		 * Sets the digest alogrithm when using challenge/response.<p>
@@ -117,7 +112,7 @@ namespace asteriskcpp {
 		/**
 		 * @return Returns the key.
 		 */
-		std::string getKey() const;
+		const std::string& getKey() const;
 
 		/**
 		 * @param key The key to set.
@@ -129,7 +124,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the event mask.
 		 */
-		std::string getEvents() const;
+		const std::string& getEvents() const;
 
 		/**
 		 * Sets the event mask.

@@ -16,15 +16,15 @@ namespace asteriskcpp {
 	AbstractQueueMemberEvent::~AbstractQueueMemberEvent() {
 	}
 
-	std::string AbstractQueueMemberEvent::getQueue() const {
+	const std::string& AbstractQueueMemberEvent::getQueue() const {
 		return (getProperty("Queue"));
 	}
 
-	std::string AbstractQueueMemberEvent::getLocation() const {
+	const std::string& AbstractQueueMemberEvent::getLocation() const {
 		return (getProperty("Location"));
 	}
 
-	std::string AbstractQueueMemberEvent::getMemberName() const {
+	const std::string& AbstractQueueMemberEvent::getMemberName() const {
 		return (getProperty("MemberName"));
 	}
 

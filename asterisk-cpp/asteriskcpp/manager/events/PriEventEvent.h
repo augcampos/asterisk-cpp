@@ -53,7 +53,7 @@ namespace asteriskcpp {
 		 * @return the textual representation of the event code.
 		 * @see #getPriEventCode()
 		 */
-		std::string getPriEvent() const;
+		const std::string& getPriEvent() const;
 
 		/**
 		 * Returns the numerical pri event code.
@@ -68,7 +68,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the D-Channel the event occurred on.
 		 */
-		std::string getDChannel() const;
+		const std::string& getDChannel() const;
 
 		/**
 		 * Returns the span the event occurred on.

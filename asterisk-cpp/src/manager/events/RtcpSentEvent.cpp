@@ -18,7 +18,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string RtcpSentEvent::getToAddress() const
+	const std::string& RtcpSentEvent::getToAddress() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

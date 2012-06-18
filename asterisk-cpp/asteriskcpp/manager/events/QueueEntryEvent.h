@@ -30,7 +30,7 @@ namespace asteriskcpp {
 		/**
 		 * Returns the name of the queue that contains this entry.
 		 */
-		std::string getQueue() const;
+		const std::string& getQueue() const;
 
 		/**
 		 * Returns the position of this entry in the queue.
@@ -40,7 +40,7 @@ namespace asteriskcpp {
 		/**
 		 * Returns the name of the channel of this entry.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the unique id of the channel of this entry.<p>
@@ -49,14 +49,14 @@ namespace asteriskcpp {
 		 * @return the unique id of the channel of this entry.
 		 * @since 1.0.0
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the the Caller*ID number of this entry.
 		 *
 		 * @return the the Caller*ID number of this entry.
 		 */
-		std::string getCallerId() const;
+		const std::string& getCallerId() const;
 
 		/**
 		 * Returns the Caller*ID name of this entry.
@@ -64,7 +64,7 @@ namespace asteriskcpp {
 		 * @return the Caller*ID name of this entry.
 		 * @since 0.2
 		 */
-		std::string getCallerIdName() const;
+		const std::string& getCallerIdName() const;
 
 		/**
 		 * Gets the Caller*ID num of this entry.
@@ -72,7 +72,7 @@ namespace asteriskcpp {
 		 * @return the Caller*ID num of this entry.
 		 * @since 1.0.0
 		 */
-		std::string getCallerIdNum() const;
+		const std::string& getCallerIdNum() const;
 
 		/**
 		 * Returns the number of seconds this entry has spent in the queue.

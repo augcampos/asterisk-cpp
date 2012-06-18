@@ -17,15 +17,15 @@ namespace asteriskcpp {
 	ListDialplanEvent::~ListDialplanEvent() {
 	}
 
-	std::string ListDialplanEvent::getContext() const {
+	const std::string& ListDialplanEvent::getContext() const {
 		return (getProperty("Context"));
 	}
 
-	std::string ListDialplanEvent::getExtension() const {
+	const std::string& ListDialplanEvent::getExtension() const {
 		return (getProperty("Extension"));
 	}
 
-	std::string ListDialplanEvent::getExtensionLabel() const {
+	const std::string& ListDialplanEvent::getExtensionLabel() const {
 		return (getProperty("ExtensionLabel"));
 	}
 
@@ -37,15 +37,15 @@ namespace asteriskcpp {
 		return (getProperty<bool>("Hint"));
 	}
 
-	std::string ListDialplanEvent::getApplication() const {
+	const std::string& ListDialplanEvent::getApplication() const {
 		return (getProperty("Application"));
 	}
 
-	std::string ListDialplanEvent::getAppData() const {
+	const std::string& ListDialplanEvent::getAppData() const {
 		return (getProperty("AppData"));
 	}
 
-	std::string ListDialplanEvent::getRegistrar() const {
+	const std::string& ListDialplanEvent::getRegistrar() const {
 		return (getProperty("Registrar"));
 	}
 

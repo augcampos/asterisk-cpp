@@ -9,11 +9,11 @@
 
 namespace asteriskcpp {
 
-	ListCommandsAction::~ListCommandsAction() {
+	ListCommandsAction::ListCommandsAction() :
+			AbstractManagerAction("ListCommands") {
 	}
 
-	std::string ListCommandsAction::getAction() {
-		return ("ListCommands");
+	ListCommandsAction::~ListCommandsAction() {
 	}
 
 } //NS

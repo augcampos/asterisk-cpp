@@ -33,7 +33,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the amount of time the agent's channel was ringing in seconds.
 		 */
-		std::string getRingtime() const;
+		const std::string& getRingtime() const;
 	};
 
 }

@@ -17,37 +17,37 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string RegistryEvent::getChannelType() const
+	const std::string& RegistryEvent::getChannelType() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RegistryEvent::getChannelDriver() const
+	const std::string& RegistryEvent::getChannelDriver() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RegistryEvent::getChannel() const
+	const std::string& RegistryEvent::getChannel() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RegistryEvent::getDomain() const
+	const std::string& RegistryEvent::getDomain() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RegistryEvent::getUsername() const
+	const std::string& RegistryEvent::getUsername() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RegistryEvent::getStatus() const
+	const std::string& RegistryEvent::getStatus() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string RegistryEvent::getCause() const
+	const std::string& RegistryEvent::getCause() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

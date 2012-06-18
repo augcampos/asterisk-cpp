@@ -37,7 +37,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the family of the database entry that was queried.
 		 */
-		std::string getFamily() const {
+		const std::string& getFamily() const {
 			return (getProperty("Family"));
 		}
 
@@ -46,7 +46,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the key of the database entry that was queried.
 		 */
-		std::string getKey() const {
+		const std::string& getKey() const {
 			return (getProperty("Key"));
 		}
 
@@ -55,7 +55,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the value of the database entry that was queried.
 		 */
-		std::string getVal() const {
+		const std::string& getVal() const {
 			return (getProperty("Val"));
 		}
 	};

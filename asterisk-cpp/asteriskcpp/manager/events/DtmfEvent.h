@@ -50,7 +50,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the channel name.
 		 */
-		std::string getChannel() const {
+		const std::string& getChannel() const {
 			return (getProperty("Channel"));
 		}
 
@@ -59,7 +59,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the DTMF digit that was sent or received.
 		 */
-		std::string getDigit() const {
+		const std::string& getDigit() const {
 			return (getProperty("Digit"));
 		}
 
@@ -76,7 +76,7 @@ namespace asteriskcpp {
 		 * @see #DIRECTION_RECEIVED
 		 * @see #DIRECTION_SENT
 		 */
-		std::string getDirection() const {
+		const std::string& getDirection() const {
 			return (getProperty("Direction"));
 		}
 

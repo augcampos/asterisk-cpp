@@ -40,7 +40,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the extension the fax was received through.
 		 */
-		std::string getExten() const {
+		const std::string& getExten() const {
 			return (getProperty("Exten"));
 		}
 
@@ -50,7 +50,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the Caller*ID of the calling party.
 		 */
-		std::string getCallerId() const {
+		const std::string& getCallerId() const {
 			return (getProperty("CallerId"));
 		}
 
@@ -59,7 +59,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the identifier of the remote fax station.
 		 */
-		std::string getRemoteStationId() const {
+		const std::string& getRemoteStationId() const {
 			return (getProperty("RemoteStationId"));
 		}
 
@@ -68,7 +68,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the identifier of the local fax station.
 		 */
-		std::string getLocalStationId() const {
+		const std::string& getLocalStationId() const {
 			return (getProperty("LocalStationId"));
 		}
 
@@ -105,7 +105,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the filename of the received fax
 		 */
-		std::string getFilename() const {
+		const std::string& getFilename() const {
 			return (getProperty("Filename"));
 		}
 	};

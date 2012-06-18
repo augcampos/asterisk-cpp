@@ -17,24 +17,24 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string NewAccountCodeEvent::getChannel() const
+	const std::string& NewAccountCodeEvent::getChannel() const
 	{
 		return (getProperty("Channel"));
 	}
 
-	std::string NewAccountCodeEvent::getUniqueId() const
+	const std::string& NewAccountCodeEvent::getUniqueId() const
 	{
 		return (getProperty("UniqueId"));
 
 	}
 
-	std::string NewAccountCodeEvent::getAccountCode() const
+	const std::string& NewAccountCodeEvent::getAccountCode() const
 	{
 		return (getProperty("AccountCode"));
 
 	}
 
-	std::string NewAccountCodeEvent::getOldAccountCode() const
+	const std::string& NewAccountCodeEvent::getOldAccountCode() const
 	{
 		return (getProperty("OldAccountCode"));
 	}

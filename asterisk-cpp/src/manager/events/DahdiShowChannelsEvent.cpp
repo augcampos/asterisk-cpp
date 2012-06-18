@@ -20,12 +20,12 @@ namespace asteriskcpp {
 
 	}
 
-	std::string DahdiShowChannelsEvent::getAccountcode() const
+	const std::string& DahdiShowChannelsEvent::getAccountcode() const
 	{
 		return (getProperty("Accountcode"));
 	}
 
-	std::string DahdiShowChannelsEvent::getChannel() const
+	const std::string& DahdiShowChannelsEvent::getChannel() const
 	{
 		return (getProperty("Channel"));
 	}
@@ -35,22 +35,22 @@ namespace asteriskcpp {
 		return (getProperty<int>("Dahdichannel"));
 	}
 
-	std::string DahdiShowChannelsEvent::getSignallingcode() const
+	const std::string& DahdiShowChannelsEvent::getSignallingcode() const
 	{
 		return (getProperty("Signallingcode"));
 	}
 
-	std::string DahdiShowChannelsEvent::getUniqueid() const
+	const std::string& DahdiShowChannelsEvent::getUniqueid() const
 	{
 		return (getProperty("Uniqueid"));
 	}
 
-	std::string DahdiShowChannelsEvent::getSignalling() const
+	const std::string& DahdiShowChannelsEvent::getSignalling() const
 	{
 		return (getProperty("Signalling"));
 	}
 
-	std::string DahdiShowChannelsEvent::getContext() const
+	const std::string& DahdiShowChannelsEvent::getContext() const
 	{
 		return (getProperty("Context"));
 	}
@@ -60,7 +60,7 @@ namespace asteriskcpp {
 		return (getProperty<bool>("Dnd"));
 	}
 
-	std::string DahdiShowChannelsEvent::getAlarm() const
+	const std::string& DahdiShowChannelsEvent::getAlarm() const
 	{
 		return (getProperty("Alarm"));
 	}

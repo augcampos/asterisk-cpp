@@ -21,17 +21,17 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string QueueMemberEvent::getQueue() const
+	const std::string& QueueMemberEvent::getQueue() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string QueueMemberEvent::getLocation() const
+	const std::string& QueueMemberEvent::getLocation() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string QueueMemberEvent::getMembership() const
+	const std::string& QueueMemberEvent::getMembership() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -71,12 +71,12 @@ namespace asteriskcpp {
 		return (getGetterValue<bool>(__FUNCTION__));
 	}
 
-	std::string QueueMemberEvent::getName() const
+	const std::string& QueueMemberEvent::getName() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string QueueMemberEvent::getMemberName() const
+	const std::string& QueueMemberEvent::getMemberName() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

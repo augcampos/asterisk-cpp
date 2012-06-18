@@ -26,32 +26,32 @@ namespace asteriskcpp {
 		/**
 		 * @return the context
 		 */
-		std::string getContext() const;
+		const std::string& getContext() const;
 
 		/**
 		 * @return the exten
 		 */
-		std::string getExten() const;
+		const std::string& getExten() const;
 
 		/**
 		 * @return the status
 		 */
-		std::string getStatus() const;
+		const std::string& getStatus() const;
 
 		/**
 		 * @return the callerId
 		 */
-		std::string getCallerId() const;
+		const std::string& getCallerId() const;
 
 		/**
 		 * @return the localStationId
 		 */
-		std::string getLocalStationId() const;
+		const std::string& getLocalStationId() const;
 
 		/**
 		 * @return the fileName
 		 */
-		std::string getFileName() const;
+		const std::string& getFileName() const;
 	};
 
 } /* namespace asteriskcpp */

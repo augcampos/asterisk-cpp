@@ -33,7 +33,7 @@ namespace asteriskcpp {
 		 * @return the type of channel that is registered.
 		 * @since 1.0.0
 		 */
-		std::string getChannelType() const;
+		const std::string& getChannelType() const;
 
 		/**
 		 * Returns the type of channel that is registered, that is "IAX2" for an IAX2
@@ -43,7 +43,7 @@ namespace asteriskcpp {
 		 * @since 0.3
 		 * @deprecated
 		 */
-		std::string getChannelDriver() const;
+		const std::string& getChannelDriver() const;
 
 		/**
 		 * Returns the type of channel that is registered, that is "IAX2" for an IAX2
@@ -52,7 +52,7 @@ namespace asteriskcpp {
 		 * @see #getChannelType()
 		 * @deprecated
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the domain or host name of the SIP or IAX2 server.<p>
@@ -61,7 +61,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the domain or host name of the SIP or IAX2 server.
 		 */
-		std::string getDomain() const;
+		const std::string& getDomain() const;
 
 		/**
 		 * Returns the username used for registration.<p>
@@ -70,7 +70,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the username used for registration.
 		 */
-		std::string getUsername() const;
+		const std::string& getUsername() const;
 
 		/**
 		 * Returns the registration state.<p>
@@ -94,7 +94,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the registration state.
 		 */
-		std::string getStatus() const;
+		const std::string& getStatus() const;
 
 		/**
 		 * Returns the cause of a rejected registration.
@@ -102,7 +102,7 @@ namespace asteriskcpp {
 		 * @return the cause of a rejected registration or <code>null</code> if the cause is unknown.
 		 * @since 0.2
 		 */
-		std::string getCause() const;
+		const std::string& getCause() const;
 
 	};
 

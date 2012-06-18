@@ -17,19 +17,19 @@ namespace asteriskcpp {
 	AsyncAgiEvent::~AsyncAgiEvent() {
 	}
 
-	std::string AsyncAgiEvent::getChannel() const {
+	const std::string& AsyncAgiEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 
-	std::string AsyncAgiEvent::getSubEvent() const {
+	const std::string& AsyncAgiEvent::getSubEvent() const {
 		return (getProperty("SubEvent"));
 	}
 
-	std::string AsyncAgiEvent::getCommandId() const {
+	const std::string& AsyncAgiEvent::getCommandId() const {
 		return (getProperty("CommandId"));
 	}
 
-	std::string AsyncAgiEvent::getResult() const {
+	const std::string& AsyncAgiEvent::getResult() const {
 		return (getProperty("Result"));
 	}
 
@@ -37,7 +37,7 @@ namespace asteriskcpp {
 		return (decode(getResult()));
 	}
 
-	std::string AsyncAgiEvent::getEnv() const {
+	const std::string& AsyncAgiEvent::getEnv() const {
 		return (getProperty("Env"));
 	}
 

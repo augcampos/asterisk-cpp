@@ -17,11 +17,11 @@ namespace asteriskcpp {
 
 	}
 
-	std::string AbstractMonitorEvent::getChannel() const {
+	const std::string& AbstractMonitorEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 
-	std::string AbstractMonitorEvent::getUniqueId() const {
+	const std::string& AbstractMonitorEvent::getUniqueId() const {
 		return (getProperty("UniqueId"));
 	}
 

@@ -30,13 +30,13 @@ namespace asteriskcpp {
 		 * Returns the name of the channel.
 		 * @return channel the name of the channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the unique id of the channel.
 		 * @return the unique id of the channel.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the state. This is either "Start" or "Stop" depending on whether music on hold
@@ -48,7 +48,7 @@ namespace asteriskcpp {
 		 * @see #isStart()
 		 * @see #isStop()
 		 */
-		std::string getState() const;
+		const std::string& getState() const;
 
 		/**
 		 * Returns whether this is a start event.

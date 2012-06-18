@@ -34,12 +34,12 @@ namespace asteriskcpp {
 		 *         <code>null</code> if not supported by your Asterisk server.
 		 * @since 0.3
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 
 		/**
 		 * Returns the name of the channel that joines or leaves the queue.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the number of elements in the queue, i.e. the number of calls waiting to be answered
@@ -50,7 +50,7 @@ namespace asteriskcpp {
 		/**
 		 * Returns the name of the queue.
 		 */
-		std::string getQueue() const;
+		const std::string& getQueue() const;
 
 	};
 

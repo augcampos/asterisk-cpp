@@ -17,67 +17,67 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string VoicemailUserEntryEvent::getVmContext() const
+	const std::string& VoicemailUserEntryEvent::getVmContext() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getVoicemailbox() const
+	const std::string& VoicemailUserEntryEvent::getVoicemailbox() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getFullname() const
+	const std::string& VoicemailUserEntryEvent::getFullname() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getEmail() const
+	const std::string& VoicemailUserEntryEvent::getEmail() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getPager() const
+	const std::string& VoicemailUserEntryEvent::getPager() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getServerEmail() const
+	const std::string& VoicemailUserEntryEvent::getServerEmail() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getMailCommand() const
+	const std::string& VoicemailUserEntryEvent::getMailCommand() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getLanguage() const
+	const std::string& VoicemailUserEntryEvent::getLanguage() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getTimezone() const
+	const std::string& VoicemailUserEntryEvent::getTimezone() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getCallback() const
+	const std::string& VoicemailUserEntryEvent::getCallback() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getDialout() const
+	const std::string& VoicemailUserEntryEvent::getDialout() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getUniqueId() const
+	const std::string& VoicemailUserEntryEvent::getUniqueId() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getExitContext() const
+	const std::string& VoicemailUserEntryEvent::getExitContext() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -103,7 +103,7 @@ namespace asteriskcpp {
 		return (getGetterValue<bool>(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getAttachmentFormat() const
+	const std::string& VoicemailUserEntryEvent::getAttachmentFormat() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
@@ -148,7 +148,7 @@ namespace asteriskcpp {
 		return (getGetterValue<int>(__FUNCTION__));
 	}
 
-	std::string VoicemailUserEntryEvent::getImapUser() const
+	const std::string& VoicemailUserEntryEvent::getImapUser() const
 	{
 		return (getGetterValue(__FUNCTION__));
 

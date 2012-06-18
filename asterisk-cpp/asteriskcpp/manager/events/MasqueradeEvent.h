@@ -32,7 +32,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the clone channel.
 		 */
-		std::string getClone() const;
+		const std::string& getClone() const;
 
 		/**
 		 * Returns the state of the clone channel.
@@ -47,14 +47,14 @@ namespace asteriskcpp {
 		 *
 		 * @return the state of the clone channel as a descriptive text.
 		 */
-		std::string getCloneStateDesc() const;
+		const std::string& getCloneStateDesc() const;
 
 		/**
 		 * Returns the name of the original channel.
 		 *
 		 * @return the name of the original channel.
 		 */
-		std::string getOriginal() const;
+		const std::string& getOriginal() const;
 
 		/**
 		 * Returns the state of the original channel.
@@ -69,7 +69,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the state of the original channel as a descriptive text.
 		 */
-		std::string getOriginalStateDesc() const;
+		const std::string& getOriginalStateDesc() const;
 	};
 
 } /* namespace asterisk_cpp */

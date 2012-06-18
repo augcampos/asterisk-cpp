@@ -33,7 +33,7 @@ namespace asteriskcpp {
 		 * @return "dynamic" if the added member is a dynamic queue member, "static"
 		 *         if the added member is a static queue member.
 		 */
-		std::string getMembership() const;
+		const std::string& getMembership() const;
 
 		/**
 		 * Returns the penalty for the added member. When calls are distributed

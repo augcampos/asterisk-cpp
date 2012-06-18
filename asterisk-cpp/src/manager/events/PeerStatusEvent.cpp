@@ -17,22 +17,22 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string PeerStatusEvent::getChannelType() const
+	const std::string& PeerStatusEvent::getChannelType() const
 	{
 		return (getProperty("ChannelType"));
 	}
 
-	std::string PeerStatusEvent::getPeer() const
+	const std::string& PeerStatusEvent::getPeer() const
 	{
 		return (getProperty("Peer"));
 	}
 
-	std::string PeerStatusEvent::getPeerStatus() const
+	const std::string& PeerStatusEvent::getPeerStatus() const
 	{
 		return (getProperty("PeerStatus"));
 	}
 
-	std::string PeerStatusEvent::getCause() const
+	const std::string& PeerStatusEvent::getCause() const
 	{
 		return (getProperty("Cause"));
 	}
@@ -42,7 +42,7 @@ namespace asteriskcpp {
 		return (getProperty<int>("Time"));
 	}
 
-	std::string PeerStatusEvent::getAddress() const
+	const std::string& PeerStatusEvent::getAddress() const
 	{
 		return (getProperty("Address"));
 	}

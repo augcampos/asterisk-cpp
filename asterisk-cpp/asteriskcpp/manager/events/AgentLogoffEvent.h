@@ -23,9 +23,9 @@ namespace asteriskcpp {
 		/**
 		 * Gets the name of the agent that logged off.
 		 */
-		std::string getAgent() const;
+		const std::string& getAgent() const;
 
-		std::string getLoginTime() const;
+		const std::string& getLoginTime() const;
 
 	};
 

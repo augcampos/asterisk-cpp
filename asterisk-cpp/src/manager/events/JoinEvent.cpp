@@ -17,15 +17,15 @@ namespace asteriskcpp {
 	JoinEvent::~JoinEvent() {
 	}
 
-	std::string JoinEvent::getCallerId() const {
+	const std::string& JoinEvent::getCallerId() const {
 		return (getProperty("CallerId"));
 	}
 
-	std::string JoinEvent::getCallerIdNum() const {
+	const std::string& JoinEvent::getCallerIdNum() const {
 		return (getProperty("CallerIdNum"));
 	}
 
-	std::string JoinEvent::getCallerIdName() const {
+	const std::string& JoinEvent::getCallerIdName() const {
 		return (getProperty("CallerIdName"));
 	}
 

@@ -15,15 +15,15 @@ namespace asteriskcpp {
 	AgentConnectEvent::~AgentConnectEvent() {
 	}
 
-	std::string AgentConnectEvent::getHoldTime() const {
+	const std::string& AgentConnectEvent::getHoldTime() const {
 		return (getProperty("HoldTime"));
 	}
 
-	std::string AgentConnectEvent::getBridgedChannel() const {
+	const std::string& AgentConnectEvent::getBridgedChannel() const {
 		return (getProperty("BridgedChannel"));
 	}
 
-	std::string AgentConnectEvent::getRingtime() const {
+	const std::string& AgentConnectEvent::getRingtime() const {
 		return (getProperty("Ringtime"));
 	}
 

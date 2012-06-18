@@ -17,7 +17,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string MessageWaitingEvent::getMailbox() const
+	const std::string& MessageWaitingEvent::getMailbox() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

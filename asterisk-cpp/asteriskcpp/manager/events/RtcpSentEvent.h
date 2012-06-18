@@ -31,7 +31,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the IP address the RTCP message has been sent to.
 		 */
-		std::string getToAddress() const;
+		const std::string& getToAddress() const;
 
 		/**
 		 * Returns the port the RTCP message has been sent to.

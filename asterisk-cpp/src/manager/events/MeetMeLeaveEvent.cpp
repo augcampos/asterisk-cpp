@@ -17,12 +17,12 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string MeetMeLeaveEvent::getCallerIdName() const
+	const std::string& MeetMeLeaveEvent::getCallerIdName() const
 	{
 		return (getProperty("CallerIdName"));
 	}
 
-	std::string MeetMeLeaveEvent::getCallerIdNum() const
+	const std::string& MeetMeLeaveEvent::getCallerIdNum() const
 	{
 		return (getProperty("CallerIdNum"));
 	}

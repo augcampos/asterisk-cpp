@@ -34,7 +34,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the Caller*ID Name of the channel that left the conference.
 		 */
-		std::string getCallerIdName() const;
+		const std::string& getCallerIdName() const;
 
 		/**
 		 * Returns the Caller*ID Number of the channel that left the conference.<p>
@@ -42,7 +42,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the Caller*ID Number of the channel that left the conference.
 		 */
-		std::string getCallerIdNum() const;
+		const std::string& getCallerIdNum() const;
 
 		/**
 		 * Returns how long the user spent in the conference.<p>

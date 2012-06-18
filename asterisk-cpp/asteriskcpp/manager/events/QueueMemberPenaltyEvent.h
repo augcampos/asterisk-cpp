@@ -33,7 +33,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the queue.
 		 */
-		std::string getQueue() const;
+		const std::string& getQueue() const;
 
 		/**
 		 * Returns the name of the member's interface.<p>
@@ -41,7 +41,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the member's interface.
 		 */
-		std::string getLocation() const;
+		const std::string& getLocation() const;
 
 		/**
 		 * Returns the new penalty.

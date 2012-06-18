@@ -68,14 +68,14 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the channel this event occured in.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the unqiue id of the channel this event occured in.
 		 *
 		 * @return the unqiue id of the channel this event occured in.
 		 */
-		std::string getUniqueId() const;
+		const std::string& getUniqueId() const;
 	};
 
 } /* namespace asteriskcpp */

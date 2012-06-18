@@ -51,7 +51,7 @@ namespace asteriskcpp {
 		 *
 		 * @since 0.2
 		 */
-		std::string getPrivilege() const;
+		const std::string& getPrivilege() const;
 
 		/**
 		 * Returns the timestamp for this event.
@@ -78,7 +78,7 @@ namespace asteriskcpp {
 		 *         instead of AstManProxy.
 		 * @since 1.0.0
 		 */
-		std::string getServer() const;
+		const std::string& getServer() const;
 
 		/**
 		 * Returns the name of the file in Asterisk's source code that triggered this event. For example
@@ -92,7 +92,7 @@ namespace asteriskcpp {
 		 * @see #getLine()
 		 * @since 1.0.0
 		 */
-		std::string getFile() const;
+		const std::string& getFile() const;
 
 		/**
 		 * Returns the line number in Asterisk's source code where this event was triggered.<p>
@@ -119,7 +119,7 @@ namespace asteriskcpp {
 		 * @see #getLine()
 		 * @since 1.0.0
 		 */
-		std::string getFunc() const;
+		const std::string& getFunc() const;
 
 		/**
 		 * Returns the sequence numbers of this event. Sequence numbers are only incremented while debugging is enabled.<p>
@@ -134,7 +134,7 @@ namespace asteriskcpp {
 		 */
 		unsigned long getSequenceNumber() const;
 
-		std::string getUniqueID() const;
+		const std::string& getUniqueID() const;
 		protected:
 		time_t received;
 		unsigned long internalNumber;

@@ -18,17 +18,17 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string SkypeBuddyEntryEvent::getBuddy() const
+	const std::string& SkypeBuddyEntryEvent::getBuddy() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeBuddyEntryEvent::getStatus() const
+	const std::string& SkypeBuddyEntryEvent::getStatus() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	std::string SkypeBuddyEntryEvent::getFullname() const
+	const std::string& SkypeBuddyEntryEvent::getFullname() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

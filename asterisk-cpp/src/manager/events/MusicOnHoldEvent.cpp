@@ -21,17 +21,17 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string MusicOnHoldEvent::getChannel() const
+	const std::string& MusicOnHoldEvent::getChannel() const
 	{
 		return (getProperty("Channel"));
 	}
 
-	std::string MusicOnHoldEvent::getUniqueId() const
+	const std::string& MusicOnHoldEvent::getUniqueId() const
 	{
 		return (getProperty("UniqueId"));
 	}
 
-	std::string MusicOnHoldEvent::getState() const
+	const std::string& MusicOnHoldEvent::getState() const
 	{
 		return (getProperty("State"));
 	}

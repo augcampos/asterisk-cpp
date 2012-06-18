@@ -17,7 +17,7 @@ namespace asteriskcpp {
 	{
 	}
 
-	std::string QueueMemberAddedEvent::getMembership() const
+	const std::string& QueueMemberAddedEvent::getMembership() const
 	{
 		return (getGetterValue(__FUNCTION__));
 	}

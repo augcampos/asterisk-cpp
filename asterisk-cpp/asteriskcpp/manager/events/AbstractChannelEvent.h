@@ -26,7 +26,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the channel.
 		 */
-		std::string getChannel() const;
+		const std::string& getChannel() const;
 
 		/**
 		 * Returns the Caller*ID of the channel if set or <code>null</code> if none has been set.
@@ -35,7 +35,7 @@ namespace asteriskcpp {
 		 * @deprecated
 		 * @see #getCallerIdNum()
 		 */
-		std::string getCallerId() const;
+		const std::string& getCallerId() const;
 
 		/**
 		 * Returns the Caller*ID number of the channel if set or <code>null</code> if none has been set.
@@ -43,14 +43,14 @@ namespace asteriskcpp {
 		 * @return the Caller*ID number
 		 * @since 0.3
 		 */
-		std::string getCallerIdNum() const;
+		const std::string& getCallerIdNum() const;
 
 		/**
 		 * Returns the Caller*ID Name of the channel if set or <code>null</code> if none has been set.
 		 *
 		 * @return the Caller*ID Name of the channel.
 		 */
-		std::string getCallerIdName() const;
+		const std::string& getCallerIdName() const;
 	};
 
 }

@@ -34,7 +34,7 @@ namespace asteriskcpp {
 		void disconnect();
 		bool login();
 		bool login(const std::string& eventMask);
-		bool login(const std::string& user, const std::string& pass, const std::string& eventMask = "");
+		bool login(const std::string& user, const std::string& pass, const std::string& eventMask = "ON");
 		void logoff();
 
 		bool isConnected() const;

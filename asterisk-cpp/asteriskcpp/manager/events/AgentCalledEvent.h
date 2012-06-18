@@ -25,7 +25,7 @@ namespace asteriskcpp {
 		inline static std::string getEventName() {
 			return ("AgentCalledEvent");
 		}
-		AgentCalledEvent(const std::string & values);
+		AgentCalledEvent(const std::string& values);
 		virtual ~AgentCalledEvent();
 
 		/**
@@ -35,7 +35,7 @@ namespace asteriskcpp {
 		 * @return the name of the queue.
 		 * @since 1.0.0
 		 */
-		std::string getQueue() const;
+		const std::string& getQueue() const;
 
 		/**
 		 * Returns the member interface of the agent that has been called.
@@ -43,7 +43,7 @@ namespace asteriskcpp {
 		 * @return the member interface of the agent that has been called.
 		 * @see QueueMemberEvent#getLocation()
 		 */
-		std::string getAgentCalled() const;
+		const std::string& getAgentCalled() const;
 
 		/**
 		 * Returns the name of the agent that has been called.<p>
@@ -52,7 +52,7 @@ namespace asteriskcpp {
 		 * @return the name of the agent that has been called.
 		 * @since 1.0.0
 		 */
-		std::string getAgentName() const;
+		const std::string& getAgentName() const;
 
 		/**
 		 * Returns the name of the caller's channel that is about to be handled by
@@ -60,7 +60,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the name of the caller's channel.
 		 */
-		std::string getChannelCalling() const;
+		const std::string& getChannelCalling() const;
 
 		/**
 		 * Returns the name of the channel calling the agent.<p>
@@ -69,7 +69,7 @@ namespace asteriskcpp {
 		 * @return the name of the channel calling the agent.
 		 * @since 1.0.0
 		 */
-		std::string getDestinationChannel() const;
+		const std::string& getDestinationChannel() const;
 
 		/**
 		 * Returns the Caller ID number of the caller's channel.
@@ -77,7 +77,7 @@ namespace asteriskcpp {
 		 * @return the Caller ID number of the caller's channel or "unknown" of none has been set.
 		 * @since 1.0.0
 		 */
-		std::string getCallerIdNum() const;
+		const std::string& getCallerIdNum() const;
 
 		/**
 		 * Returns the Caller ID number of the caller's channel.
@@ -85,7 +85,7 @@ namespace asteriskcpp {
 		 * @return the Caller ID number of the caller's channel.
 		 * @deprecated as of 1.0.0, use {@link #getCallerIdNum()} instead.
 		 */
-		std::string getCallerId() const;
+		const std::string& getCallerId() const;
 
 		/**
 		 * Returns the Caller ID name of the caller's channel.
@@ -93,13 +93,13 @@ namespace asteriskcpp {
 		 * @return the Caller ID name of the caller's channel or "unknown" if none has been set.
 		 * @since 0.2
 		 */
-		std::string getCallerIdName() const;
+		const std::string& getCallerIdName() const;
 
-		std::string getContext() const;
+		const std::string& getContext() const;
 
-		std::string getExtension() const;
+		const std::string& getExtension() const;
 
-		std::string getPriority() const;
+		const std::string& getPriority() const;
 
 		/**
 		 * Returns the channel variables if <code>eventwhencalled</code> is set to <code>vars</code>

@@ -11,34 +11,40 @@
 #define ACTION "Action"
 #define ACTION_ID "ActionID"
 
-static int lastId;
-
 namespace asteriskcpp {
+	static int lastId;
+
+	AbstractManagerAction::AbstractManagerAction(const std::string& action_name) :
+			ManagerAction(action_name) {
+	}
 
 	AbstractManagerAction::~AbstractManagerAction() {
 
 	}
 
-	std::string AbstractManagerAction::getActionId() const {
+	const std::string& AbstractManagerAction::getActionId() const {
 		return (this->actionID);
 	}
 
-	void AbstractManagerAction::setActionId(const std::string & id) {
+	void AbstractManagerAction::setActionId(const std::string& id) {
 		this->actionID = id;
 	}
 
-	const std::string AbstractManagerAction::generateID() {
-		const std::string rt = convertToString(lastId++);
-		setActionId(rt);
-		return (rt);
+	const std::string& AbstractManagerAction::generateID() {
+		this->actionID = convertToString(lastId++);
+		return (this->actionID);
 	}
 
-	std::string AbstractManagerAction::toString() {
+	const std::string& AbstractManagerAction::toString() {
 		std::stringstream stream;
 		stream << makeStdLine(ACTION, this->getAction());
 		stream << makeStdLine(ACTION_ID, this->getActionId());
 		stream << PropertyMap::toString();
-		return (stream.str());
+
+		this->to_string = stream.str();
+		return (this->to_string);
 	}
 
-} //NS
+}
+
+//NS

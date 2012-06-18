@@ -18,7 +18,7 @@ namespace asteriskcpp {
 	JitterBufStatsEvent::~JitterBufStatsEvent() {
 	}
 
-	std::string JitterBufStatsEvent::getOwner() const {
+	const std::string& JitterBufStatsEvent::getOwner() const {
 		return (getProperty("Owner"));
 	}
 

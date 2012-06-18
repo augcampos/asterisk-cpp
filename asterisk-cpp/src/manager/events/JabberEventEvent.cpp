@@ -15,11 +15,11 @@ namespace asteriskcpp {
 	JabberEventEvent::~JabberEventEvent() {
 	}
 
-	std::string JabberEventEvent::getAccount() const {
+	const std::string& JabberEventEvent::getAccount() const {
 		return (getProperty("Account"));
 	}
 
-	std::string JabberEventEvent::getPacket() const {
+	const std::string& JabberEventEvent::getPacket() const {
 		return (getProperty("Packet"));
 	}
 

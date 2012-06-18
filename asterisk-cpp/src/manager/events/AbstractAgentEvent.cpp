@@ -16,17 +16,19 @@ namespace asteriskcpp {
 	AbstractAgentEvent::~AbstractAgentEvent() {
 	}
 
-	std::string AbstractAgentEvent::getChannel() const {
+	const std::string& AbstractAgentEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 
-	std::string AbstractAgentEvent::getQueue() const {
+	const std::string& AbstractAgentEvent::getQueue() const {
 		return (getProperty("Queue"));
 	}
-	std::string AbstractAgentEvent::getMember() const {
+
+	const std::string& AbstractAgentEvent::getMember() const {
 		return (getProperty("Member"));
 	}
-	std::string AbstractAgentEvent::getMemberName() const {
+
+	const std::string& AbstractAgentEvent::getMemberName() const {
 		return (getProperty("MemberName"));
 	}
 

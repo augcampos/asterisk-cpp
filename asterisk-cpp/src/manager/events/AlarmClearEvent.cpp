@@ -15,7 +15,7 @@ namespace asteriskcpp {
 	AlarmClearEvent::~AlarmClearEvent() {
 	}
 
-	std::string AlarmClearEvent::getChannel() const {
+	const std::string& AlarmClearEvent::getChannel() const {
 		return (getProperty("Channel"));
 	}
 
