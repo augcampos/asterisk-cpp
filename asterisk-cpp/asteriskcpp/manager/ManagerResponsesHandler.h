@@ -12,6 +12,7 @@
 #include <typeinfo>
 #include <string>
 #include <ctime>
+#include <memory>
 #include <boost/thread/thread.hpp>
 #include <boost/date_time.hpp>
 #include "asteriskcpp/manager/responses/ManagerResponse.h"
@@ -29,8 +30,9 @@ namespace asteriskcpp {
 
 		void fireTimeout();
 		virtual void fireCallBack(ManagerResponse* mr)=0;
-		ManagerAction *getAction() const;
-		protected:
+		ManagerAction* getAction() const;
+
+	protected:
 		ManagerAction* action;
 		void setAction(ManagerAction *action);
 	};
@@ -41,14 +43,16 @@ namespace asteriskcpp {
 	public:
 		ASyncResponseCallBack(ManagerAction* a, unsigned int tout, responseCallbackFunction_t f);
 		virtual void fireCallBack(ManagerResponse* mr);
-		protected:
+
+	protected:
 		responseCallbackFunction_t function;
 	};
 
 	class SyncResponseCallBack: public ResponseCallBack {
 		boost::mutex m_mutex;
 		boost::condition_variable m_cond;
-		public:
+
+	public:
 		virtual ~SyncResponseCallBack();
 
 		ManagerResponse *response;
@@ -62,7 +66,8 @@ namespace asteriskcpp {
 		boost::mutex m_mutex;
 		boost::condition_variable m_cond;
 		ResponseCallBack* getListener(const std::string& key);
-		public:
+
+	public:
 		virtual ~ManagerResponsesHandler();
 		void addResponsetListener(const std::string& key, ResponseCallBack* bcb);
 		void removeResponseListener(const std::string& key);
