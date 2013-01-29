@@ -1,20 +1,26 @@
 AC_INIT(asterisk-cpp,1.0)
+AM_INIT_AUTOMAKE(asterisk-cpp, 1.0)
 AC_LANG(C++)
-AM_INIT_AUTOMAKE
-AC_PROG_LIBTOOL
 AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+AC_PROG_LIBTOOL
+AC_SUBST(LIBTOOL_DEPS)
 
 LT_INIT([disable-static])
 
 
 AC_CONFIG_MACRO_DIR([m4])
 
+AC_CHECK_LIB([log4cplus], [main])
+AC_CHECK_LIB([ssl], [main])
+AC_CHECK_LIB([boost_regex], [main])
+AC_CHECK_LIB([boost_thread], [main])
+AC_CHECK_LIB([boost_filesystem], [main])
+
 AC_OUTPUT([
-Makefile
-src/Makefile
-src/exceptions/Makefile
-src/manager/Makefile
-src/net/Makefile
-src/structs/Makefile
-src/utils/Makefile
+	Makefile
 ])

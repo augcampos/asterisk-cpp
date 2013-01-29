@@ -43,17 +43,16 @@ namespace asteriskcpp {
 
 	const std::string& SkypeBuddyStatusEvent::buddyGroup(const int group) const {
 		//TODO: verify code
-		if (!buddy_group.empty()) {
+		/*if (!buddy_group.empty()) {
 			std::string buddy = getBuddy();
 			if (!buddy.empty())
 			{
-
 				boost::cmatch buddyMatcher;
 				if (boost::regex_match(buddy.c_str(), buddyMatcher, BUDDY_PATTERN)) {
 					buddy_group = (std::string)(buddyMatcher[group]);
 				}
 			}
-		}
+		}*/
 		return (buddy_group);
 	}
 } /* namespace asteriskcpp */
