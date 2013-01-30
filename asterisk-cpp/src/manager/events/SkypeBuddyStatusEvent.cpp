@@ -42,17 +42,15 @@ namespace asteriskcpp {
 	}
 
 	const std::string& SkypeBuddyStatusEvent::buddyGroup(const int group) const {
-		//TODO: verify code
-		/*if (!buddy_group.empty()) {
-			std::string buddy = getBuddy();
-			if (!buddy.empty())
-			{
-				boost::cmatch buddyMatcher;
-				if (boost::regex_match(buddy.c_str(), buddyMatcher, BUDDY_PATTERN)) {
-					buddy_group = (std::string)(buddyMatcher[group]);
-				}
-			}
-		}*/
-		return (buddy_group);
+            //TODO: verify code
+            std::string buddy = getBuddy();
+            if (!buddy.empty()) {
+                boost::smatch buddyMatcher;
+                if (boost::regex_match(buddy, buddyMatcher, BUDDY_PATTERN)) {
+                    return (buddyMatcher[group]);
+                }
+            }
+
+            return ("");
 	}
 } /* namespace asteriskcpp */

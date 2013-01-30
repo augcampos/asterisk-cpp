@@ -62,8 +62,7 @@ namespace asteriskcpp {
 		const std::string& getBuddyStatus() const;
 
 	private:
-		const std::string& buddyGroup(const int group) const;
-		std::string buddy_group;
+		const std::string& buddyGroup(const int group) const ;
 	};
 
 } /* namespace asteriskcpp */
