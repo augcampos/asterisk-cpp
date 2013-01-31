@@ -1,8 +1,9 @@
 AUTOMAKE_OPTIONS = foreign
 
-AM_CXXFLAGS=-I$(abs_top_builddir)
+AM_CXXFLAGS=-I$(abs_top_builddir) -Wall -g3
+AM_CFLAGS= $(DEFINES) -Wall -g3
 AM_DEFAULT_SOURCE_EXT = .cpp
-ACLOCAL_AMFLAGS = -I m4 
+ACLOCAL_AMFLAGS = -I m4
 
 libasteriskcpp_LDADD = -lcurl -lboost_date_time -lboost_iostreams -lboost_system -lboost_regex -lboost_thread -lboost_filesystem -llog4cplus -lssl -lcrypto
 
