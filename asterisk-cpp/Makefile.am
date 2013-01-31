@@ -8,6 +8,10 @@ ACLOCAL_AMFLAGS = -I m4
 libasteriskcpp_LDADD = -lcurl -lboost_date_time -lboost_iostreams -lboost_system -lboost_regex -lboost_thread -lboost_filesystem -llog4cplus -lssl -lcrypto
 
 lib_LTLIBRARIES=libasteriskcpp.la
+libasteriskcpp_la_CFLAGS=-fPIC
+libasteriskcpp_la_CPPFLAGS=-fPIC
+libasteriskcpp_la_CXXFLAGS=-fPIC
+libasteriskcpp_la_LDFLAGS= -shared -fPIC
 
 libasteriskcpp_la_SOURCES= \
 	src/structs/Singleton.cpp \
