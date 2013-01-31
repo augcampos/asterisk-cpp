@@ -26,12 +26,12 @@ namespace asteriskcpp {
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	const std::string& SkypeBuddyStatusEvent::getUser() const
+	std::string SkypeBuddyStatusEvent::getUser() const
 	{
 		return (buddyGroup(1));
 	}
 
-	const std::string& SkypeBuddyStatusEvent::getBuddySkypename() const
+	std::string SkypeBuddyStatusEvent::getBuddySkypename() const
 	{
 		return (buddyGroup(2));
 	}
@@ -41,7 +41,7 @@ namespace asteriskcpp {
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	const std::string& SkypeBuddyStatusEvent::buddyGroup(const int group) const {
+	std::string SkypeBuddyStatusEvent::buddyGroup(const int group) const {
             //TODO: verify code
             std::string buddy = getBuddy();
             if (!buddy.empty()) {

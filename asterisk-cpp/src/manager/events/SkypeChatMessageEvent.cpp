@@ -34,7 +34,7 @@ namespace asteriskcpp {
 		return (getGetterValue(__FUNCTION__));
 	}
 
-	const std::string& SkypeChatMessageEvent::getDecodedMessage() const
+	std::string SkypeChatMessageEvent::getDecodedMessage()
 	{
 		return (Base64::decode(getMessage()));
 	}

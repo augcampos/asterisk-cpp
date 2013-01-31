@@ -53,7 +53,7 @@ namespace asteriskcpp {
 		 *
 		 * @return the decoded message.
 		 */
-		const std::string& getDecodedMessage() const;
+		std::string getDecodedMessage();
 	};
 
 } /* namespace asteriskcpp */
