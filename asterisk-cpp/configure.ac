@@ -1,5 +1,5 @@
-AC_INIT([asterisk-cpp],[1.0])
-AM_INIT_AUTOMAKE([asterisk-cpp], [1.0.0], [augcampos@augcampos.com])
+AC_INIT([asteriskcpp], [1.0.0], [augcampos@augcampos.com])
+AM_INIT_AUTOMAKE
 AC_LANG(C++)
 AC_PROG_CXX
 AC_PROG_CC
@@ -19,7 +19,5 @@ AC_CHECK_LIB([boost_regex], [main])
 AC_CHECK_LIB([boost_thread], [main])
 AC_CHECK_LIB([boost_date_time], [main])
 
-AC_CONFIG_FILES([
-	Makefile
-])
+AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

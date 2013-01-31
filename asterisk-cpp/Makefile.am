@@ -5,7 +5,7 @@ AM_CFLAGS= $(DEFINES) -Wall -g3
 AM_DEFAULT_SOURCE_EXT = .cpp
 ACLOCAL_AMFLAGS = -I m4
 
-libasteriskcpp_LDADD = -lcurl -lboost_date_time -lboost_iostreams -lboost_system -lboost_regex -lboost_thread -lboost_filesystem -llog4cplus -lssl -lcrypto
+libasteriskcpp_LDADD=-lcurl -lboost_date_time -lboost_iostreams -lboost_system -lboost_regex -lboost_thread -lboost_filesystem -llog4cplus -lssl -lcrypto
 
 lib_LTLIBRARIES=libasteriskcpp.la
 libasteriskcpp_la_CFLAGS=-fPIC
