@@ -46,7 +46,9 @@ namespace asteriskcpp {
 		virtual ~TCPSocket();
 
 		int readData(char* buf, const unsigned int size);
+		const std::string& readData();
 		void writeData(const char* buf, const unsigned int size);
+		void writeData(const std::string& data);
 
 		void setTimeout(const unsigned long timeout);
 		unsigned long getTimeout();

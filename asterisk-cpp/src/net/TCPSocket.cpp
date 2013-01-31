@@ -9,6 +9,8 @@
 #include "asteriskcpp/net/TCPSocket.h"
 #include "asteriskcpp/exceptions/IOException.h"
 
+#define RCVBUFSIZE 65536
+
 namespace asteriskcpp {
 
 	TCPSocket::TCPSocket(const int fd) :
@@ -93,6 +95,16 @@ namespace asteriskcpp {
 		return (readSize);
 	}
 
+	const std::string& TCPSocket::readData(){
+		char buffer[(RCVBUFSIZE + 1)] = "\0";
+		int bytesRead = this->readData(buffer, RCVBUFSIZE);
+		if (bytesRead > 0) {
+			std::string rsv(buffer, bytesRead);
+			return (rsv);
+		}
+		return ("");
+	}
+
 	void TCPSocket::writeData(const char* buf, const unsigned int length) {
 		if (!length) {
 			return;
@@ -109,6 +121,10 @@ namespace asteriskcpp {
 		if (writeSize <= 0) {
 			Throw(SocketException(std::string("Error writing to socket - ").append(strerror(errno))));
 		}
+	}
+
+	void TCPSocket::writeData(const std::string& data){
+		this->writeData(data.c_str(), (unsigned int) (data.length()));
 	}
 
 	void TCPSocket::setTimeout(const unsigned long timeout) {

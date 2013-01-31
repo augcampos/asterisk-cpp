@@ -66,7 +66,7 @@ namespace asteriskcpp {
 
 	void ManagerConnection::send(const std::string& data) {
 		LOG_DEBUG_STR(str2Log(data));
-		this->socket->writeData(data.c_str(), (unsigned int) (data.length()));
+		this->socket->writeData(data);
 		LOG_TRACE_STR("OUT");
 	}
 

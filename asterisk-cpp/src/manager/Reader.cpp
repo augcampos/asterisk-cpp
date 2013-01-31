@@ -43,8 +43,7 @@ namespace asteriskcpp {
 			if (connectionSocket != NULL && connectionSocket->check4readData(SOCKET_WAIT)) {
 				int bytesRead = connectionSocket->readData(buffer, RCVBUFSIZE);
 				if (bytesRead > 0) {
-					std::string rsv;
-					rsv.assign(buffer, bytesRead);
+					std::string rsv(buffer, bytesRead);
 					processIncomming(rsv);
 					rsv.clear();
 				}
