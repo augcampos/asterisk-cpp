@@ -20,7 +20,7 @@ namespace asteriskcpp {
 	 */
 	class AbstractManagerAction: public ManagerAction {
 	public:
-		AbstractManagerAction(const std::string& action_name);
+		AbstractManagerAction();
 
 		virtual ~AbstractManagerAction();
 

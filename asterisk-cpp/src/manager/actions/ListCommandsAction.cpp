@@ -9,8 +9,7 @@
 
 namespace asteriskcpp {
 
-	ListCommandsAction::ListCommandsAction() :
-			AbstractManagerAction("ListCommands") {
+	ListCommandsAction::ListCommandsAction()  {
 	}
 
 	ListCommandsAction::~ListCommandsAction() {

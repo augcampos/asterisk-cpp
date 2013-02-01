@@ -7,21 +7,30 @@
 
 #include "asteriskcpp/manager/actions/ManagerAction.h"
 #include "asteriskcpp/utils/StringUtils.h"
+#include <stdio.h>
+
+#include <cxxabi.h>
 
 namespace asteriskcpp {
 
-	ManagerAction::ManagerAction(const std::string action_name) :
-			action(action_name) {
+    ManagerAction::ManagerAction() {
+    }
 
-	}
+    const std::string& ManagerAction::getAction() {
+        if (this->action.empty()) {
+            char str[128];
+            int i;
+            const char *realname = typeid (*this).name();
+            sscanf(realname, "N11asteriskcpp%d%s", &i, str);
+            this->action.assign(str, i - 6);
+        }
 
-	const std::string& ManagerAction::getAction() {
-		return (this->action);
-	}
+        return (this->action);
+    }
 
-	ManagerResponse *ManagerAction::expectedResponce(const std::string & response) {
-		return (new ManagerResponse(response));
-	}
+    ManagerResponse *ManagerAction::expectedResponce(const std::string & response) {
+        return (new ManagerResponse(response));
+    }
 
 }
 

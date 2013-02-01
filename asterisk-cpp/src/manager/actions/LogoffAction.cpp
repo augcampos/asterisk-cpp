@@ -8,8 +8,7 @@
 
 namespace asteriskcpp {
 
-	LogoffAction::LogoffAction() :
-			AbstractManagerAction("logoff") {
+	LogoffAction::LogoffAction()  {
 	}
 
 	LogoffAction::~LogoffAction() {

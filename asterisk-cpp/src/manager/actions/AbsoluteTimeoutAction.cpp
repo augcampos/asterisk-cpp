@@ -9,8 +9,7 @@
 
 namespace asteriskcpp {
 
-	AbsoluteTimeoutAction::AbsoluteTimeoutAction(const std::string& channel, unsigned int timeout):
-					AbstractManagerAction("AbsoluteTimeout") {
+	AbsoluteTimeoutAction::AbsoluteTimeoutAction(const std::string& channel, unsigned int timeout) {
 		setChannel(channel);
 		setTimeout(timeout);
 	}

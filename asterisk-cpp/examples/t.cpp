@@ -1,48 +1,60 @@
 #include <iostream>
+#include <stdio.h>
 #include <typeinfo>
+
 
 class Action
 {
 public:
-    Action(const char* actionName) {
-    	this->fn.assin(actionName);
-    }
-    ~Action() {}
+    Action(){}
+    virtual ~Action() {}
 
-    std::string getClassName(const char* fname)
+    virtual const std::string& getClassName()
     {
-        //return  (typeid(this).name());
+        if (fn.empty()){
+            char str [20];
+            int i;
+            sscanf( (typeid(*this).name()) ,"%d%s" ,&i ,str);
+            fn.assign(str,i-6);
+        } 
+        return  (fn);
         //return (__PRETTY_FUNCTION__);
-        
-        return ( this->fn );
     }
-
+private:
     std::string fn;
     /* data */
 };
 
 class TesteAction : public Action
 {
-public:
-    TesteAction() {}
-    ~TesteAction() {}
+};
 
-    std::string getClassName()
-    {
-    	//return  (typeid(*this).name());
-    	return (__PRETTY_FUNCTION__);
-    }
 
-    /* data */
+class NovoTesteAction : public TesteAction
+{
 };
 
 int main()
 {
-    Action a;
-    TesteAction ta;
+    for (int i = 0; i < 1; ++i)
+    {
+        Action a;
+        TesteAction ta;
+        NovoTesteAction nta;
+        Action& ra = a;
+        TesteAction& rta = ta;
+        Action* pa = &a;
+        TesteAction* pta = &ta;
 
-    //std::cout << "Class  A[" <<  a.getClassName() << "]" << std::endl;
-    std::cout << "Class TA[" << ta.getClassName() << "]" << std::endl;
 
+        std::cout << "Class  A[" <<   a.getClassName() << "]" << std::endl;
+        std::cout << "Class  RA[" <<  ra.getClassName() << "]" << std::endl;
+        std::cout << "Class  PA[" <<  pa->getClassName() << "]" << std::endl;
+        std::cout << "Class  TA[" <<  ta.getClassName() << "]" << std::endl;
+        std::cout << "Class RTA[" <<  rta.getClassName() << "]" << std::endl;
+        std::cout << "Class PTA[" <<  pta->getClassName() << "]" << std::endl;
+        std::cout << "Cast TA->A[" << ((Action)ta).getClassName() << "]" << std::endl;
+        std::cout << "Class NTA[" << nta.getClassName() << "]" << std::endl;
+    }
     return 0;
 }

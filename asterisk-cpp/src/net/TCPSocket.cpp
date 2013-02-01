@@ -95,7 +95,7 @@ namespace asteriskcpp {
 		return (readSize);
 	}
 
-	const std::string& TCPSocket::readData(){
+	std::string TCPSocket::readData(){
 		char buffer[(RCVBUFSIZE + 1)] = "\0";
 		int bytesRead = this->readData(buffer, RCVBUFSIZE);
 		if (bytesRead > 0) {

@@ -9,7 +9,7 @@
 
 namespace asteriskcpp {
 
-	ChallengeAction::ChallengeAction(const std::string& authType):AbstractManagerAction("Challenge") {
+	ChallengeAction::ChallengeAction(const std::string& authType){
 		this->setAuthType(authType);
 	}
 

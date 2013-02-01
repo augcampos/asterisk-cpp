@@ -10,12 +10,10 @@
 
 namespace asteriskcpp {
 
-	CommandAction::CommandAction() :
-			AbstractManagerAction("Command") {
+	CommandAction::CommandAction()  {
 	}
 
-	CommandAction::CommandAction(const std::string & command) :
-			AbstractManagerAction("Command") {
+	CommandAction::CommandAction(const std::string & command) {
 		this->setCommand(command);
 	}
 

@@ -9,25 +9,21 @@
 
 namespace asteriskcpp {
 
-	LoginAction::LoginAction() :
-			AbstractManagerAction("Login") {
+	LoginAction::LoginAction() {
 	}
 
-	LoginAction::LoginAction(const std::string & username, const std::string & secret) :
-			AbstractManagerAction("Login") {
+	LoginAction::LoginAction(const std::string & username, const std::string & secret) {
 		this->setUsername(username);
 		this->setSecret(secret);
 	}
 
-	LoginAction::LoginAction(const std::string & username, const std::string & authType, const std::string & key) :
-			AbstractManagerAction("Login") {
+	LoginAction::LoginAction(const std::string & username, const std::string & authType, const std::string & key) {
 		this->setUsername(username);
 		this->setAuthType(authType);
 		this->setKey(key);
 	}
 
-	LoginAction::LoginAction(const std::string & username, const std::string & authType, const std::string & key, const std::string & events) :
-			AbstractManagerAction("Login") {
+	LoginAction::LoginAction(const std::string & username, const std::string & authType, const std::string & key, const std::string & events)  {
 		this->setUsername(username);
 		this->setUsername(username);
 		this->setAuthType(authType);

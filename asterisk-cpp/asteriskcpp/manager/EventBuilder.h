@@ -39,7 +39,7 @@ namespace asteriskcpp {
 
 		template<class C>
 		void RegisterClass() {
-			LOG_TRACE_DATA("REGISTER EVENT CLASS " << C::getEventName());
+			//LOG_TRACE_DATA("REGISTER EVENT CLASS " << C::getEventName());
 			eventFactoryMap.insert(std::make_pair(C::getEventName(), new factory<C>()));
 		}
 

@@ -27,12 +27,12 @@ namespace asteriskcpp {
 	class ManagerAction: public PropertyMap {
 	public:
 
-		ManagerAction(const std::string action_name);
+		ManagerAction();
 
 		/**
 		 * Returns the name of the action for example "Hangup".
 		 */
-		const std::string& getAction();
+		virtual const std::string& getAction();
 
 		/**
 		 * Generate a valid ID
@@ -55,7 +55,7 @@ namespace asteriskcpp {
 		virtual ManagerResponse* expectedResponce(const std::string& response);
 
 	protected:
-		const std::string action;
+		std::string action;
 	};
 
 }

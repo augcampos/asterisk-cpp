@@ -14,8 +14,7 @@
 namespace asteriskcpp {
 	static int lastId;
 
-	AbstractManagerAction::AbstractManagerAction(const std::string& action_name) :
-			ManagerAction(action_name) {
+	AbstractManagerAction::AbstractManagerAction() {
 	}
 
 	AbstractManagerAction::~AbstractManagerAction() {
