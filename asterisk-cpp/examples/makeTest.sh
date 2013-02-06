@@ -1,2 +1,2 @@
 # /bin/bash
-g++ -Wall Test.cpp -o teste -l../.libs/asteriskcpp 
+g++ -Wall Test.cpp -o teste -lasteriskcpp 
