@@ -11,6 +11,7 @@
 #include "asteriskcpp/manager/actions/AbsoluteTimeoutAction.h"
 #include "asteriskcpp/manager/actions/AbstractManagerAction.h"
 #include "asteriskcpp/manager/actions/AbstractMeetMeMuteAction.h"
+#include "asteriskcpp/manager/actions/AgentCallbackLoginAction.h"
 #include "asteriskcpp/manager/actions/ChallengeAction.h"
 #include "asteriskcpp/manager/actions/CommandAction.h"
 #include "asteriskcpp/manager/actions/EventsAction.h"

@@ -32,6 +32,13 @@ libasteriskcpp_la_SOURCES= \
 	src/utils/LogHandler.cpp \
 	src/manager/ResponseBuilder.cpp \
 	src/manager/AsteriskVersion.cpp \
+	src/manager/Writer.cpp \
+	src/manager/Reader.cpp \
+	src/manager/ManagerResponsesHandler.cpp \
+	src/manager/ManagerEventListener.cpp \
+	src/manager/ManagerEventsHandler.cpp \
+	src/manager/ManagerConnection.cpp \
+	src/manager/EventBuilder.cpp \
 	src/manager/events/SkypeBuddyEntryEvent.cpp \
 	src/manager/events/AsyncAgiEvent.cpp \
 	src/manager/events/NewExtenEvent.cpp \
@@ -148,23 +155,17 @@ libasteriskcpp_la_SOURCES= \
 	src/manager/responses/ManagerResponse.cpp \
 	src/manager/responses/ManagerError.cpp \
 	src/manager/responses/CommandResponse.cpp \
-	src/manager/Writer.cpp \
-	src/manager/Reader.cpp \
-	src/manager/ManagerResponsesHandler.cpp \
-	src/manager/ManagerEventListener.cpp \
-	src/manager/ManagerEventsHandler.cpp \
-	src/manager/ManagerConnection.cpp \
-	src/manager/actions/CommandAction.cpp \
 	src/manager/actions/AbstractManagerAction.cpp \
-	src/manager/actions/ManagerAction.cpp \
-	src/manager/actions/LoginAction.cpp \
-	src/manager/actions/AbstractMeetMeMuteAction.cpp \
 	src/manager/actions/AbsoluteTimeoutAction.cpp \
-	src/manager/actions/LogoffAction.cpp \
-	src/manager/actions/ListCommandsAction.cpp \
-	src/manager/actions/EventsAction.cpp \
+	src/manager/actions/AbstractMeetMeMuteAction.cpp \
+	src/manager/actions/AgentCallbackLoginAction.cpp \
 	src/manager/actions/ChallengeAction.cpp \
-	src/manager/EventBuilder.cpp
+	src/manager/actions/CommandAction.cpp \
+	src/manager/actions/EventsAction.cpp \
+	src/manager/actions/ListCommandsAction.cpp \
+	src/manager/actions/LoginAction.cpp \
+	src/manager/actions/LogoffAction.cpp \
+	src/manager/actions/ManagerAction.cpp 
 
 instdir = $(includedir)
 
@@ -187,8 +188,18 @@ nobase_inst_HEADERS= \
 	asteriskcpp/utils/MD5.h \
 	asteriskcpp/utils/StringUtils.h \
 	asteriskcpp/utils/timesupport.h \
+	asteriskcpp/manager/Actions.hpp \
+	asteriskcpp/manager/AsteriskVersion.h \
+	asteriskcpp/manager/ManagerEventListener.h \
+	asteriskcpp/manager/ResponseBuilder.h \
+	asteriskcpp/manager/Reader.h \
+	asteriskcpp/manager/ManagerResponsesHandler.h \
+	asteriskcpp/manager/ManagerConnection.h \
+	asteriskcpp/manager/Dispatcher.h \
 	asteriskcpp/manager/Writer.h \
 	asteriskcpp/manager/ManagerEventsHandler.h \
+	asteriskcpp/manager/Events.hpp \
+	asteriskcpp/manager/EventBuilder.h \
 	asteriskcpp/manager/events/StatusEvent.h \
 	asteriskcpp/manager/events/QueueMemberPausedEvent.h \
 	asteriskcpp/manager/events/DtmfEvent.h \
@@ -336,23 +347,15 @@ nobase_inst_HEADERS= \
 	asteriskcpp/manager/responses/CommandResponse.h \
 	asteriskcpp/manager/responses/ChallengeResponse.h \
 	asteriskcpp/manager/responses/ManagerResponse.h \
-	asteriskcpp/manager/Actions.hpp \
-	asteriskcpp/manager/AsteriskVersion.h \
-	asteriskcpp/manager/ManagerEventListener.h \
-	asteriskcpp/manager/ResponseBuilder.h \
-	asteriskcpp/manager/Reader.h \
-	asteriskcpp/manager/ManagerResponsesHandler.h \
-	asteriskcpp/manager/ManagerConnection.h \
-	asteriskcpp/manager/Dispatcher.h \
-	asteriskcpp/manager/actions/AbstractMeetMeMuteAction.h \
-	asteriskcpp/manager/actions/ManagerAction.h \
-	asteriskcpp/manager/actions/ChallengeAction.h \
-	asteriskcpp/manager/actions/LogoffAction.h \
-	asteriskcpp/manager/actions/ListCommandsAction.h \
-	asteriskcpp/manager/actions/CommandAction.h \
-	asteriskcpp/manager/actions/LoginAction.h \
 	asteriskcpp/manager/actions/AbsoluteTimeoutAction.h \
 	asteriskcpp/manager/actions/AbstractManagerAction.h \
+	asteriskcpp/manager/actions/AbstractMeetMeMuteAction.h \
+	asteriskcpp/manager/actions/AgentCallbackLoginAction.h \
+	asteriskcpp/manager/actions/ChallengeAction.h \
+	asteriskcpp/manager/actions/CommandAction.h \
 	asteriskcpp/manager/actions/EventsAction.h \
-	asteriskcpp/manager/Events.hpp \
-	asteriskcpp/manager/EventBuilder.h
+	asteriskcpp/manager/actions/ListCommandsAction.h \
+	asteriskcpp/manager/actions/LoginAction.h \
+	asteriskcpp/manager/actions/LogoffAction.h \
+	asteriskcpp/manager/actions/ManagerAction.h 
+
