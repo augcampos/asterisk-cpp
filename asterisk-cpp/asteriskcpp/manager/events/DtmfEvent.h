@@ -35,9 +35,6 @@ namespace asteriskcpp {
 	 */
 	class DtmfEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("DtmfEvent");
-		}
 		DtmfEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

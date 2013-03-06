@@ -24,9 +24,6 @@ namespace asteriskcpp {
 	 */
 	class PeerlistCompleteEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("PeerlistCompleteEvent");
-		}
 		PeerlistCompleteEvent(const std::string & values);
 		virtual ~PeerlistCompleteEvent();
 

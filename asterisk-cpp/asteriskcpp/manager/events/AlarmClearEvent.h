@@ -19,9 +19,6 @@ namespace asteriskcpp {
 	 */
 	class AlarmClearEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("AlarmClearEvent");
-		}
 		AlarmClearEvent(const std::string & values);
 		virtual ~AlarmClearEvent();
 

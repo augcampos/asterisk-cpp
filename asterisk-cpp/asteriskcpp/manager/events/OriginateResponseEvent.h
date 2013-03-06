@@ -22,9 +22,6 @@ namespace asteriskcpp {
 		static const std::string RESPONSE_FAILURE;
 
 	public:
-		inline static std::string getEventName() {
-			return ("OriginateResponseEvent");
-		}
 		OriginateResponseEvent(const std::string & values);
 		virtual ~OriginateResponseEvent();
 

@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class AgentRingNoAnswer: public AbstractAgentEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("AgentRingNoAnswer");
-		}
 		AgentRingNoAnswer(const std::string & values);
 		virtual ~AgentRingNoAnswer();
 

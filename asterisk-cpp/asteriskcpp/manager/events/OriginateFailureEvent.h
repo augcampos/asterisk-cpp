@@ -23,9 +23,6 @@ namespace asteriskcpp {
 	 */
 	class OriginateFailureEvent: public OriginateResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("OriginateFailureEvent");
-		}
 		OriginateFailureEvent(const std::string & values);
 		virtual ~OriginateFailureEvent();
 	};

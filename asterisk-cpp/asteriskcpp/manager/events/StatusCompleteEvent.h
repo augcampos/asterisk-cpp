@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class StatusCompleteEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("StatusCompleteEvent");
-		}
 		StatusCompleteEvent(const std::string & values);
 		virtual ~StatusCompleteEvent();
 

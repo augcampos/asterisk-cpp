@@ -23,9 +23,6 @@ namespace asteriskcpp {
 	 */
 	class ChannelUpdateEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ChannelUpdateEvent");
-		}
 		ChannelUpdateEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class RtpReceiverStatEvent: public AbstractRtpStatEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("RtpReceiverStatEvent");
-		}
 		RtpReceiverStatEvent(const std::string & values);
 		virtual ~RtpReceiverStatEvent();
 

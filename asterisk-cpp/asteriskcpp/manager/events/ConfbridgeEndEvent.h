@@ -19,9 +19,6 @@ namespace asteriskcpp {
 	 */
 	class ConfbridgeEndEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ConfbridgeEndEvent");
-		}
 		ConfbridgeEndEvent(const std::string& values) :
 				ManagerEvent(values) {
 		}

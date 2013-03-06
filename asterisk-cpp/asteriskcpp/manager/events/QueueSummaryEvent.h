@@ -26,9 +26,6 @@ namespace asteriskcpp {
 	 */
 	class QueueSummaryEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("QueueSummaryEvent");
-		}
 		QueueSummaryEvent(const std::string & values);
 		virtual ~QueueSummaryEvent();
 

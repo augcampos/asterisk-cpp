@@ -21,9 +21,6 @@ namespace asteriskcpp {
 	 */
 	class JabberEventEvent: public asteriskcpp::ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("JabberEventEvent");
-		}
 		JabberEventEvent(const std::string & values);
 		virtual ~JabberEventEvent();
 

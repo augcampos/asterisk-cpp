@@ -19,9 +19,6 @@ namespace asteriskcpp {
 	 */
 	class StatusEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("StatusEvent");
-		}
 		StatusEvent(const std::string & values);
 		virtual ~StatusEvent();
 

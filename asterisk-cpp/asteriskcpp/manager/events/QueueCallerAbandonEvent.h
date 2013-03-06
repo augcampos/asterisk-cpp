@@ -23,9 +23,6 @@ namespace asteriskcpp {
 	 */
 	class QueueCallerAbandonEvent: public QueueEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("QueueCallerAbandonEvent");
-		}
 		QueueCallerAbandonEvent(const std::string & values);
 		virtual ~QueueCallerAbandonEvent();
 

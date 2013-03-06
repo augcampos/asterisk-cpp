@@ -17,9 +17,6 @@ namespace asteriskcpp {
 	 */
 	class ReceiveFaxEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ReceiveFaxEvent");
-		}
 		ReceiveFaxEvent(const std::string & values);
 		virtual ~ReceiveFaxEvent();
 

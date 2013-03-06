@@ -25,10 +25,6 @@ namespace asteriskcpp {
 	 */
 	class BridgeEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("BridgeEvent");
-		}
-
 		BridgeEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

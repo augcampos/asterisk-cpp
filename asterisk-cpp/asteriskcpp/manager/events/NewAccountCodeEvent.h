@@ -21,9 +21,6 @@ namespace asteriskcpp {
 	 */
 	class NewAccountCodeEvent: public asteriskcpp::ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("NewAccountCodeEvent");
-		}
 		NewAccountCodeEvent(const std::string & values);
 		virtual ~NewAccountCodeEvent();
 

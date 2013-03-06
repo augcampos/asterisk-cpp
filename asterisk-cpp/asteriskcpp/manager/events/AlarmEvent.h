@@ -19,10 +19,6 @@ namespace asteriskcpp {
 	 */
 	class AlarmEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("AlarmEvent");
-		}
-
 		AlarmEvent(const std::string & values);
 		virtual ~AlarmEvent();
 

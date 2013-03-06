@@ -19,9 +19,6 @@ namespace asteriskcpp {
 	 */
 	class ShutdownEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ShutdownEvent");
-		}
 		ShutdownEvent(const std::string & values);
 		virtual ~ShutdownEvent();
 

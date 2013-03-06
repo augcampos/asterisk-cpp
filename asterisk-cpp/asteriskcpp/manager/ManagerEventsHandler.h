@@ -37,7 +37,7 @@ namespace asteriskcpp {
 		void fireEvent(const ManagerEvent& me);
 
 	private:
-		void internalFireEvent(const ManagerEvent& me);
+		void internalFireEvent(ManagerEvent& me);
 
 	};
 

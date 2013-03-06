@@ -14,9 +14,6 @@ namespace asteriskcpp {
 
 	class ConfbridgeListRoomsCompleteEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ConfbridgeListRoomsCompleteEvent");
-		}
 		ConfbridgeListRoomsCompleteEvent(const std::string& values) :
 				ResponseEvent(values) {
 		}

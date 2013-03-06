@@ -21,9 +21,6 @@ namespace asteriskcpp {
 	 */
 	class VarSetEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("VarSetEvent");
-		}
 		VarSetEvent(const std::string & values);
 		virtual ~VarSetEvent();
 

@@ -57,9 +57,6 @@ namespace asteriskcpp {
 	 */
 	class UserEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("UserEvent");
-		}
 		UserEvent(const std::string & values);
 		virtual ~UserEvent();
 

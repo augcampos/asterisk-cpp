@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class AgentsCompleteEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("AgentsCompleteEvent");
-		}
 		AgentsCompleteEvent(const std::string & values);
 		virtual ~AgentsCompleteEvent();
 	};

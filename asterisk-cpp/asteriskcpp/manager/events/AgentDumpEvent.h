@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class AgentDumpEvent: public AbstractAgentEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("AgentDumpEvent");
-		}
 		AgentDumpEvent(const std::string & values);
 		virtual ~AgentDumpEvent();
 	};

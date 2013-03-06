@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class QueueMemberPausedEvent: public AbstractQueueMemberEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("QueueMemberPausedEvent");
-		}
 		QueueMemberPausedEvent(const std::string & values);
 		virtual ~QueueMemberPausedEvent();
 

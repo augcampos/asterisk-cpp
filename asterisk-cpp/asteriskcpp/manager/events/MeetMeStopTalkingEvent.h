@@ -30,9 +30,6 @@ namespace asteriskcpp {
 	 */
 	class MeetMeStopTalkingEvent: public MeetMeTalkingEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("MeetMeStopTalkingEvent");
-		}
 		MeetMeStopTalkingEvent(const std::string & values);
 		virtual ~MeetMeStopTalkingEvent();
 	};

@@ -29,9 +29,6 @@ namespace asteriskcpp {
 	 */
 	class AgiExecEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("AgiExecEvent");
-		}
 		AgiExecEvent(const std::string & values);
 		virtual ~AgiExecEvent();
 

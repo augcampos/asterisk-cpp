@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class PeerEntryEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("PeerEntryEvent");
-		}
 		PeerEntryEvent(const std::string & values);
 		virtual ~PeerEntryEvent();
 

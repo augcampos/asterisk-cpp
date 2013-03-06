@@ -21,9 +21,6 @@ namespace asteriskcpp {
 	 */
 	class ParkedCallTimeOutEvent: public AbstractParkedCallEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ParkedCallTimeOutEvent");
-		}
 		ParkedCallTimeOutEvent(const std::string & values);
 		virtual ~ParkedCallTimeOutEvent();
 	};

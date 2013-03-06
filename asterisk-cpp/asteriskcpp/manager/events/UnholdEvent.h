@@ -27,9 +27,6 @@ namespace asteriskcpp {
 
 	class UnholdEvent: public HoldEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("UnholdEvent");
-		}
 		UnholdEvent(const std::string & values);
 		virtual ~UnholdEvent();
 	};

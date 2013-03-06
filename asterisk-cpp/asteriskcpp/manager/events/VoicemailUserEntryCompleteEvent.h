@@ -25,9 +25,6 @@ namespace asteriskcpp {
 	 */
 	class VoicemailUserEntryCompleteEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("VoicemailUserEntryCompleteEvent");
-		}
 		VoicemailUserEntryCompleteEvent(const std::string & values);
 		virtual ~VoicemailUserEntryCompleteEvent();
 	};

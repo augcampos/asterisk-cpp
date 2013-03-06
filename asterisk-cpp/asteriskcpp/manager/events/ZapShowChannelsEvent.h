@@ -19,11 +19,8 @@ namespace asteriskcpp {
 	 * @see org.asteriskjava.manager.action.ZapShowChannelsAction
 	 *
 	 */
-	class ZapShowChannelsEvent: public ResponseEvent {
+	class ZapShowChannelsEvent: public ResponseEvent {           
 	public:
-		inline static std::string getEventName() {
-			return ("ZapShowChannelsEvent");
-		}
 		ZapShowChannelsEvent(const std::string & values);
 		virtual ~ZapShowChannelsEvent();
 

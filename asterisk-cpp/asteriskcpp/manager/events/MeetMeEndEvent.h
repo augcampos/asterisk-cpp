@@ -21,9 +21,6 @@ namespace asteriskcpp {
 	 */
 	class MeetMeEndEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("MeetMeEndEvent");
-		}
 		MeetMeEndEvent(const std::string & values);
 		virtual ~MeetMeEndEvent();
 

@@ -14,9 +14,6 @@ namespace asteriskcpp {
 
 	class DndStateEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("DndStateEvent");
-		}
 		DndStateEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

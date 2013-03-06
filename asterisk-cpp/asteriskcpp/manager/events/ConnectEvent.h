@@ -20,9 +20,6 @@ namespace asteriskcpp {
 	 */
 	class ConnectEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ConnectEvent");
-		}
 		ConnectEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

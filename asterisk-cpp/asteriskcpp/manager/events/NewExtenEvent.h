@@ -18,9 +18,6 @@ namespace asteriskcpp {
 	 */
 	class NewExtenEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("NewExtenEvent");
-		}
 		NewExtenEvent(const std::string & values);
 		virtual ~NewExtenEvent();
 

@@ -21,9 +21,6 @@ namespace asteriskcpp {
 	 */
 	class TransferEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("TransferEvent");
-		}
 		TransferEvent(const std::string & values);
 		virtual ~TransferEvent();
 

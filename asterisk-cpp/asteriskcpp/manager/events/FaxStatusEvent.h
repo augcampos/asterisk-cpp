@@ -17,9 +17,6 @@ namespace asteriskcpp {
 	 */
 	class FaxStatusEvent: public asteriskcpp::AbstractFaxEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("FaxStatusEvent");
-		}
 		FaxStatusEvent(const std::string & values) :
 				AbstractFaxEvent(values) {
 		}

@@ -32,10 +32,6 @@ namespace asteriskcpp {
 		//Don't know anything about agent. Shouldn't ever get this.
 
 		};
-		inline static std::string getEventName() {
-			return ("AgentsEvent");
-		}
-
 		AgentsEvent(const std::string & values);
 
 		virtual ~AgentsEvent();

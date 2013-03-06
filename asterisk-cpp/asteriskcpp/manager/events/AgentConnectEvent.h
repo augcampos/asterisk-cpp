@@ -21,9 +21,6 @@ namespace asteriskcpp {
 	 */
 	class AgentConnectEvent: public AbstractAgentEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("AgentConnectEvent");
-		}
 		AgentConnectEvent(const std::string& values);
 		virtual ~AgentConnectEvent();
 

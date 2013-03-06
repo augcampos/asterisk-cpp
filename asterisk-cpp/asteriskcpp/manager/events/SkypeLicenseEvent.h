@@ -23,9 +23,6 @@ namespace asteriskcpp {
 	 */
 	class SkypeLicenseEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("SkypeLicenseEvent");
-		}
 		SkypeLicenseEvent(const std::string & values);
 		virtual ~SkypeLicenseEvent();
 

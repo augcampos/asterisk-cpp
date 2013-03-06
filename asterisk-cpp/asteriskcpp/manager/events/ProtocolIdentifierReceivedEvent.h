@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class ProtocolIdentifierReceivedEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ProtocolIdentifierReceivedEvent");
-		}
 		ProtocolIdentifierReceivedEvent(const std::string & values);
 		virtual ~ProtocolIdentifierReceivedEvent();
 

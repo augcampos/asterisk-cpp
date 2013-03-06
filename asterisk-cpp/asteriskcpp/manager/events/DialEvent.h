@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class DialEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("DialEvent");
-		}
 		DialEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

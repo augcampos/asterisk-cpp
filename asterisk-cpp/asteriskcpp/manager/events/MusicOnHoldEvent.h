@@ -20,9 +20,6 @@ namespace asteriskcpp {
 	 */
 	class MusicOnHoldEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("MusicOnHoldEvent");
-		}
 		MusicOnHoldEvent(const std::string & values);
 		virtual ~MusicOnHoldEvent();
 

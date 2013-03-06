@@ -24,9 +24,6 @@ namespace asteriskcpp {
 	 */
 	class DahdiShowChannelsCompleteEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("DahdiShowChannelsCompleteEvent");
-		}
 		DahdiShowChannelsCompleteEvent(const std::string& values);
 		virtual ~DahdiShowChannelsCompleteEvent();
 

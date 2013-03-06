@@ -15,49 +15,53 @@
 
 namespace asteriskcpp {
 
-	class EventFactory {
-	public:
-		virtual ~EventFactory() {
-		}
-		virtual ManagerEvent* create(const std::string& s) =0;
-	};
+    class EventFactory {
+    public:
 
-	template<class C>
-	class factory: public EventFactory {
-	public:
-		ManagerEvent* create(const std::string& s) {
-			return (new C(s));
-		}
-	};
+        virtual ~EventFactory() {
+        }
+        virtual ManagerEvent* create(const std::string& s) = 0;
+    };
 
-	typedef std::map<const std::string, boost::shared_ptr<EventFactory> > EnventFactoryMapType;
+    template<class C>
+    class factory : public EventFactory {
+    public:
 
-	class EventBuilder {
-	public:
-		EventBuilder();
-		virtual ~EventBuilder();
+        ManagerEvent* create(const std::string& s) {
+            return (new C(s));
+        }
+    };
 
-		template<class C>
-		void RegisterClass() {
-			//LOG_TRACE_DATA("REGISTER EVENT CLASS " << C::getEventName());
-			eventFactoryMap.insert(std::make_pair(C::getEventName(), new factory<C>()));
-		}
+    typedef std::map<const std::string, boost::shared_ptr<EventFactory> > EnventFactoryMapType;
 
-		template<class C>
-		void UnegisterClass() {
-			LOG_TRACE_STR("UNREGISTER EVENT CLASS " + C::getEventName());
-			EnventFactoryMapType::iterator it = eventFactoryMap.find(C::getEventName());
-			if (it != eventFactoryMap.end()) {
-				eventFactoryMap.erase(it);
-			}
-			eventFactoryMap.insert(std::make_pair(C::getEventName(), new factory<C>()));
-		}
+    class EventBuilder {
+    public:
+        EventBuilder();
+        virtual ~EventBuilder();
 
-		ManagerEvent* buildEvent(const std::string& eventStr);
-		private:
-		EnventFactoryMapType eventFactoryMap;
+        template<class C>
+        void RegisterClass() {
+            //LOG_TRACE_DATA("REGISTER EVENT CLASS " << C::getEventName());
+            C tmlEvent("");
+            eventFactoryMap.insert(std::make_pair(tmlEvent.getEventName(), new factory<C>()));
+        }
 
-	};
+        template<class C>
+        void UnegisterClass() {
+            C tmpEvent("");
+            LOG_TRACE_STR("UNREGISTER EVENT CLASS " + tmpEvent.getEventName());
+            EnventFactoryMapType::iterator it = eventFactoryMap.find(tmpEvent.getEventName());
+            if (it != eventFactoryMap.end()) {
+                eventFactoryMap.erase(it);
+            }
+            eventFactoryMap.insert(std::make_pair(tmpEvent.getEventName(), new factory<C>()));
+        }
+
+        ManagerEvent* buildEvent(const std::string& eventStr);
+    private:
+        EnventFactoryMapType eventFactoryMap;
+
+    };
 
 }
 

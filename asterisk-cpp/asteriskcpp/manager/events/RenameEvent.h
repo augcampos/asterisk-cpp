@@ -20,9 +20,6 @@ namespace asteriskcpp {
 	 */
 	class RenameEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("RenameEvent");
-		}
 		RenameEvent(const std::string & values);
 		virtual ~RenameEvent();
 

@@ -22,9 +22,6 @@ namespace asteriskcpp {
 	 */
 	class AgentCalledEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("AgentCalledEvent");
-		}
 		AgentCalledEvent(const std::string& values);
 		virtual ~AgentCalledEvent();
 

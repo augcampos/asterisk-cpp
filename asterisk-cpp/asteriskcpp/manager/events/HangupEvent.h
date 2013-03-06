@@ -19,9 +19,6 @@ namespace asteriskcpp {
 	 */
 	class HangupEvent: public asteriskcpp::AbstractChannelEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("HangupEvent");
-		}
 		HangupEvent(const std::string & values) :
 				AbstractChannelEvent(values) {
 		}

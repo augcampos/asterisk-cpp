@@ -21,9 +21,6 @@ namespace asteriskcpp {
 	 */
 	class MonitorStartEvent: public AbstractMonitorEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("MonitorStartEvent");
-		}
 		MonitorStartEvent(const std::string & values);
 		virtual ~MonitorStartEvent();
 	};

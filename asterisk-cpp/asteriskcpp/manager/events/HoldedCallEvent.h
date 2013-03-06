@@ -19,9 +19,6 @@ namespace asteriskcpp {
 	 */
 	class HoldedCallEvent: public asteriskcpp::ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("HoldedCallEvent");
-		}
 		HoldedCallEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

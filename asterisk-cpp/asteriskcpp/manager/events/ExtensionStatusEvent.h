@@ -18,9 +18,6 @@ namespace asteriskcpp {
 			NOT_INUSE = 0, INUSE = 1, BUSY = 1 << 1, UNAVAILABLE = 1 << 2, RINGING = 1 << 3
 		};
 
-		inline static std::string getEventName() {
-			return ("ExtensionStatusEvent");
-		}
 		ExtensionStatusEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

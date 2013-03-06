@@ -21,9 +21,6 @@ namespace asteriskcpp {
 	 */
 	class RegistryEntryEvent: public ResponseEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("RegistryEntryEvent");
-		}
 		RegistryEntryEvent(const std::string & values);
 		virtual ~RegistryEntryEvent();
 

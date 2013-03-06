@@ -28,10 +28,6 @@ namespace asteriskcpp {
 	 */
 	class ChannelReloadEvent: public ManagerEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ChannelReloadEvent");
-		}
-
 		ChannelReloadEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

@@ -19,9 +19,6 @@ namespace asteriskcpp {
 	 */
 	class ConfbridgeLeaveEvent: public AbstractChannelEvent {
 	public:
-		inline static std::string getEventName() {
-			return ("ConfbridgeLeaveEvent");
-		}
 		ConfbridgeLeaveEvent(const std::string& values) :
 				AbstractChannelEvent(values) {
 		}
