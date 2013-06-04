@@ -19,6 +19,9 @@ namespace asteriskcpp {
 	 */
 	class MessageWaitingEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("MessageWaitingEvent");
+		}
 		MessageWaitingEvent(const std::string & values);
 		virtual ~MessageWaitingEvent();
 

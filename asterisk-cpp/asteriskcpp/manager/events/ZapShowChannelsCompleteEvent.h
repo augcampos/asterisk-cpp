@@ -22,6 +22,9 @@ namespace asteriskcpp {
 	 */
 	class ZapShowChannelsCompleteEvent: public ResponseEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("ZapShowChannelsCompleteEvent");
+		}
 		ZapShowChannelsCompleteEvent(const std::string & values);
 		virtual ~ZapShowChannelsCompleteEvent();
 	};

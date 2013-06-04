@@ -20,6 +20,9 @@ namespace asteriskcpp {
 	 */
 	class RegistryEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("RegistryEvent");
+		}
 		RegistryEvent(const std::string & values);
 		virtual ~RegistryEvent();
 

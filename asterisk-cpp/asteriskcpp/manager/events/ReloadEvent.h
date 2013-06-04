@@ -20,6 +20,9 @@ namespace asteriskcpp {
 	 */
 	class ReloadEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("ReloadEvent");
+		}
 		ReloadEvent(const std::string & values);
 		virtual ~ReloadEvent();
 

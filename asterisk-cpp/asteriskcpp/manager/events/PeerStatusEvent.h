@@ -20,6 +20,9 @@ namespace asteriskcpp {
 	 */
 	class PeerStatusEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("PeerStatusEvent");
+		}
 		PeerStatusEvent(const std::string & values);
 		virtual ~PeerStatusEvent();
 

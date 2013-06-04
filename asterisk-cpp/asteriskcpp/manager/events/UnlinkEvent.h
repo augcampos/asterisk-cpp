@@ -22,6 +22,9 @@ namespace asteriskcpp {
 	 */
 	class UnlinkEvent: public BridgeEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("UnlinkEvent");
+		}
 		UnlinkEvent(const std::string & values);
 		virtual ~UnlinkEvent();
 	};

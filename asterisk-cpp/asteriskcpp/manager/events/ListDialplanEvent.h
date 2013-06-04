@@ -24,6 +24,9 @@ namespace asteriskcpp {
 	 */
 	class ListDialplanEvent: public ResponseEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("ListDialplanEvent");
+		}
 		ListDialplanEvent(const std::string & values);
 		virtual ~ListDialplanEvent();
 

@@ -21,6 +21,9 @@ namespace asteriskcpp {
 	 */
 	class MonitorStopEvent: public asteriskcpp::AbstractMonitorEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("MonitorStopEvent");
+		}
 		MonitorStopEvent(const std::string & values);
 		virtual ~MonitorStopEvent();
 	};

@@ -19,6 +19,9 @@ namespace asteriskcpp {
 	 */
 	class ModuleLoadReportEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("ModuleLoadReportEvent");
+		}
 		ModuleLoadReportEvent(const std::string & values);
 		virtual ~ModuleLoadReportEvent();
 

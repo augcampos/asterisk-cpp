@@ -21,6 +21,9 @@ namespace asteriskcpp {
 	 */
 	class ParkedCallsCompleteEvent: public ResponseEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("ParkedCallsCompleteEvent");
+		}
 		ParkedCallsCompleteEvent(const std::string & values);
 		virtual ~ParkedCallsCompleteEvent();
 	};

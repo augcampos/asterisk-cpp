@@ -20,6 +20,9 @@ namespace asteriskcpp {
 	 */
 	class DisconnectEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("ChannelUpdateEvent");
+		}
 		DisconnectEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

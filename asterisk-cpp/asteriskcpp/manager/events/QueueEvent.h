@@ -18,6 +18,9 @@ namespace asteriskcpp {
 	 */
 	class QueueEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("QueueEvent");
+		}
 		QueueEvent(const std::string & values);
 		virtual ~QueueEvent();
 

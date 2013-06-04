@@ -24,6 +24,9 @@ namespace asteriskcpp {
 	 */
 	class HoldEvent: public asteriskcpp::ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("HoldEvent");
+		}
 		HoldEvent(const std::string & values) :
 				ManagerEvent(values) {
 			/* Asterisk prior to 1.6 uses Hold and Unhold events instead of the status

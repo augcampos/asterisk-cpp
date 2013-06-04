@@ -22,6 +22,9 @@ namespace asteriskcpp {
 	 */
 	class ParkedCallGiveUpEvent: public AbstractParkedCallEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("ParkedCallGiveUpEvent");
+		}
 		ParkedCallGiveUpEvent(const std::string & values);
 		virtual ~ParkedCallGiveUpEvent();
 	};

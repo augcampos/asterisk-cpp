@@ -21,6 +21,9 @@ namespace asteriskcpp {
 	 */
 	class QueueParamsEvent: public ResponseEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("QueueParamsEvent");
+		}
 		QueueParamsEvent(const std::string & values);
 		virtual ~QueueParamsEvent();
 

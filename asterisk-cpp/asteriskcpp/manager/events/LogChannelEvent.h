@@ -21,6 +21,9 @@ namespace asteriskcpp {
 	 */
 	class LogChannelEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("LogChannelEvent");
+		}
 		LogChannelEvent(const std::string & values);
 		virtual ~LogChannelEvent();
 

@@ -7,7 +7,6 @@
 
 #include "asteriskcpp/manager/events/ManagerEvent.h"
 #include "asteriskcpp/utils/LogHandler.h"
-#include <stdio.h>
 
 static unsigned long nextSequenceNumber = 0;
 
@@ -22,19 +21,6 @@ namespace asteriskcpp {
 		convertStr(values);
 	}
 
-        const std::string& ManagerEvent::getEventName() {
-        if (this->eventName.empty()) {
-            char str[128];
-            int i;
-            const char *realname = typeid (*this).name();
-            sscanf(realname, "N11asteriskcpp%d%s", &i, str);
-            this->eventName.assign(str, i - 6);
-        }
-
-        return (this->eventName);
-    }
-        
-        
 	ManagerEvent::~ManagerEvent() {
 	}
 

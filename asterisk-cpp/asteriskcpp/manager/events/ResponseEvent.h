@@ -21,6 +21,9 @@ namespace asteriskcpp {
 	 */
 	class ResponseEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("ResponseEvent");
+		}
 		ResponseEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}

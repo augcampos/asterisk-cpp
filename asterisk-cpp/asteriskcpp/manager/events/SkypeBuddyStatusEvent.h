@@ -22,6 +22,9 @@ namespace asteriskcpp {
 	 */
 	class SkypeBuddyStatusEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("SkypeBuddyStatusEvent");
+		}
 		SkypeBuddyStatusEvent(const std::string & values);
 		virtual ~SkypeBuddyStatusEvent();
 

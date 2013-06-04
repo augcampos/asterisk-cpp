@@ -19,6 +19,9 @@ namespace asteriskcpp {
 	 */
 	class JoinEvent: public QueueEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("JoinEvent");
+		}
 		JoinEvent(const std::string & values);
 		virtual ~JoinEvent();
 

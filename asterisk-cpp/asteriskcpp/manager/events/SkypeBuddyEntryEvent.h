@@ -23,6 +23,9 @@ namespace asteriskcpp {
 	 */
 	class SkypeBuddyEntryEvent: public ResponseEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("SkypeBuddyEntryEvent");
+		}
 		SkypeBuddyEntryEvent(const std::string & values);
 		virtual ~SkypeBuddyEntryEvent();
 

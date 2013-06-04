@@ -22,6 +22,10 @@ namespace asteriskcpp {
 	 */
 	class DbGetResponseEvent: public ResponseEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("DbGetResponseEvent");
+		}
+
 		DbGetResponseEvent(const std::string & values) :
 				ResponseEvent(values) {
 		}

@@ -17,6 +17,9 @@ namespace asteriskcpp {
 	 */
 	class T38FaxStatusEvent: public asteriskcpp::AbstractFaxEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("T38FaxStatusEvent");
+		}
 		T38FaxStatusEvent(const std::string & values);
 		virtual ~T38FaxStatusEvent();
 

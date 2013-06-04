@@ -21,6 +21,9 @@ namespace asteriskcpp {
 	 */
 	class MasqueradeEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("MasqueradeEvent");
+		}
 		MasqueradeEvent(const std::string & values);
 		virtual ~MasqueradeEvent();
 

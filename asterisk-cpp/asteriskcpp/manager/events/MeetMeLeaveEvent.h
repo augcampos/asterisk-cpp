@@ -22,6 +22,9 @@ namespace asteriskcpp {
 	 */
 	class MeetMeLeaveEvent: public asteriskcpp::AbstractMeetMeEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("MeetMeLeaveEvent");
+		}
 		MeetMeLeaveEvent(const std::string & values);
 		virtual ~MeetMeLeaveEvent();
 

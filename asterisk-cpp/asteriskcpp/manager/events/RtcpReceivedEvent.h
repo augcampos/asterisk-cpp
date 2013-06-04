@@ -21,6 +21,9 @@ namespace asteriskcpp {
 	 */
 	class RtcpReceivedEvent: public AbstractRtcpEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("RtcpReceivedEvent");
+		}
 		RtcpReceivedEvent(const std::string & values);
 		virtual ~RtcpReceivedEvent();
 

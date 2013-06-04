@@ -22,6 +22,9 @@ namespace asteriskcpp {
 	 */
 	class QueueMemberRemovedEvent: public AbstractQueueMemberEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("QueueMemberRemovedEvent");
+		}
 		QueueMemberRemovedEvent(const std::string & values);
 		virtual ~QueueMemberRemovedEvent();
 	};

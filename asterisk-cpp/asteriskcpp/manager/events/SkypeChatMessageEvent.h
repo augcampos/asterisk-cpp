@@ -21,6 +21,9 @@ namespace asteriskcpp {
 	 */
 	class SkypeChatMessageEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("SkypeChatMessageEvent");
+		}
 		SkypeChatMessageEvent(const std::string & values);
 		virtual ~SkypeChatMessageEvent();
 

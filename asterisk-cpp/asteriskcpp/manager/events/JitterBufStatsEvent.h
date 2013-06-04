@@ -22,6 +22,9 @@ namespace asteriskcpp {
 	 */
 	class JitterBufStatsEvent: public asteriskcpp::ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("JitterBufStatsEvent");
+		}
 		JitterBufStatsEvent(const std::string & values);
 		virtual ~JitterBufStatsEvent();
 

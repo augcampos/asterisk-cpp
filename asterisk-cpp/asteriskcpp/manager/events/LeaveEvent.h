@@ -19,6 +19,9 @@ namespace asteriskcpp {
 	 */
 	class LeaveEvent: public asteriskcpp::QueueEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("LeaveEvent");
+		}
 		LeaveEvent(const std::string & values);
 		virtual ~LeaveEvent();
 	};

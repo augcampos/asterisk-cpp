@@ -20,6 +20,9 @@ namespace asteriskcpp {
 	 */
 	class ConfbridgeJoinEvent: public AbstractChannelEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("ConfbridgeJoinEvent");
+		}
 		ConfbridgeJoinEvent(const std::string& values) :
 				AbstractChannelEvent(values) {
 		}

@@ -26,6 +26,9 @@ namespace asteriskcpp {
 	 */
 	class MeetMeTalkingEvent: public asteriskcpp::AbstractMeetMeEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("MeetMeTalkingEvent");
+		}
 		MeetMeTalkingEvent(const std::string & values);
 		virtual ~MeetMeTalkingEvent();
 		/**

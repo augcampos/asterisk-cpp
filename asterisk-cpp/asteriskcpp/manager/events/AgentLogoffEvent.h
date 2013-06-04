@@ -14,6 +14,9 @@ namespace asteriskcpp {
 
 	class AgentLogoffEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("AgentLogoffEvent");
+		}
 		AgentLogoffEvent(const std::string & values);
 		virtual ~AgentLogoffEvent();
 

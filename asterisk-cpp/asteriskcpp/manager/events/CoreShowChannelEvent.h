@@ -20,6 +20,9 @@ namespace asteriskcpp {
 	 */
 	class CoreShowChannelEvent: public ResponseEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("CoreShowChannelEvent");
+		}
 		CoreShowChannelEvent(const std::string & values) :
 				ResponseEvent(values) {
 		}

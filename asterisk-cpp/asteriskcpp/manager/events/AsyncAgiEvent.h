@@ -30,6 +30,9 @@ namespace asteriskcpp {
 	 */
 	class AsyncAgiEvent: public ResponseEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("AsyncAgiEvent");
+		}
 		AsyncAgiEvent(const std::string & values);
 		virtual ~AsyncAgiEvent();
 

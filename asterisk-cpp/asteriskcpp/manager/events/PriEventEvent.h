@@ -20,6 +20,9 @@ namespace asteriskcpp {
 	 */
 	class PriEventEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("PriEventEvent");
+		}
 		PriEventEvent(const std::string & values);
 		virtual ~PriEventEvent();
 

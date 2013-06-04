@@ -19,6 +19,9 @@ namespace asteriskcpp {
 	 */
 	class NewStateEvent: public AbstractChannelStateEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("NewStateEvent");
+		}
 		NewStateEvent(const std::string & values);
 		virtual ~NewStateEvent();
 	};

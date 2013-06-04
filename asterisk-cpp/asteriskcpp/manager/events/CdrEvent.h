@@ -24,6 +24,10 @@ namespace asteriskcpp {
 	 */
 	class CdrEvent: public ManagerEvent {
 	public:
+		inline static std::string getEventName() {
+			return ("CdrEvent");
+		}
+
 		CdrEvent(const std::string & values) :
 				ManagerEvent(values) {
 		}
