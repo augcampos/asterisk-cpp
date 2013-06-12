@@ -9,13 +9,12 @@
 
 namespace asteriskcpp {
 
-	UnlinkEvent::UnlinkEvent(const std::string & values) :
-		BridgeEvent(values) {
+    UnlinkEvent::UnlinkEvent(const std::string & values) :
+    BridgeEvent(values) {
 
-	}
+    }
 
-	UnlinkEvent::~UnlinkEvent()
-	{
-	}
+    UnlinkEvent::~UnlinkEvent() {
+    }
 
 } /* namespace asteriskcpp */

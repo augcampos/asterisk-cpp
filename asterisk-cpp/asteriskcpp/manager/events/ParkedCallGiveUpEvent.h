@@ -12,22 +12,19 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A ParkedCallGiveUpEvent is triggered when a channel that has been parked is
-	 * hung up.<p>
-	 * It is implemented in <code>res/res_features.c</code><p>
-	 * Available since Asterisk 1.2
-	 *
-	 * @since 0.2
-	 */
-	class ParkedCallGiveUpEvent: public AbstractParkedCallEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("ParkedCallGiveUpEvent");
-		}
-		ParkedCallGiveUpEvent(const std::string & values);
-		virtual ~ParkedCallGiveUpEvent();
-	};
+    /**
+     * A ParkedCallGiveUpEvent is triggered when a channel that has been parked is
+     * hung up.<p>
+     * It is implemented in <code>res/res_features.c</code><p>
+     * Available since Asterisk 1.2
+     *
+     * @since 0.2
+     */
+    class ParkedCallGiveUpEvent : public AbstractParkedCallEvent {
+    public:
+        ParkedCallGiveUpEvent(const std::string & values);
+        virtual ~ParkedCallGiveUpEvent();
+    };
 
 } /* namespace asteriskcpp */
 #endif /* PARKEDCALLGIVEUPEVENT_H_ */

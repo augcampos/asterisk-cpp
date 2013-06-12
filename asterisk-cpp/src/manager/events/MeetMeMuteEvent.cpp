@@ -9,17 +9,15 @@
 
 namespace asteriskcpp {
 
-	MeetMeMuteEvent::MeetMeMuteEvent(const std::string & values) :
-			AbstractMeetMeEvent(values) {
-	}
+    MeetMeMuteEvent::MeetMeMuteEvent(const std::string & values) :
+    AbstractMeetMeEvent(values) {
+    }
 
-	MeetMeMuteEvent::~MeetMeMuteEvent()
-	{
-	}
+    MeetMeMuteEvent::~MeetMeMuteEvent() {
+    }
 
-	bool MeetMeMuteEvent::getStatus() const
-	{
-		return (getProperty<bool>("Status"));
-	}
+    bool MeetMeMuteEvent::getStatus() const {
+        return (getProperty<bool>("Status"));
+    }
 
 }/* namespace asteriskcpp */

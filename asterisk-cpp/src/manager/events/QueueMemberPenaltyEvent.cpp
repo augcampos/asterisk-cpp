@@ -9,27 +9,23 @@
 
 namespace asteriskcpp {
 
-	QueueMemberPenaltyEvent::QueueMemberPenaltyEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
+    QueueMemberPenaltyEvent::QueueMemberPenaltyEvent(const std::string & values) :
+    ManagerEvent(values) {
+    }
 
-	QueueMemberPenaltyEvent::~QueueMemberPenaltyEvent()
-	{
+    QueueMemberPenaltyEvent::~QueueMemberPenaltyEvent() {
 
-	}
+    }
 
-	const std::string& QueueMemberPenaltyEvent::getQueue() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& QueueMemberPenaltyEvent::getQueue() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& QueueMemberPenaltyEvent::getLocation() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& QueueMemberPenaltyEvent::getLocation() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	int QueueMemberPenaltyEvent::getPenalty() const
-	{
-		return (getGetterValue<int>(__FUNCTION__));
-	}
+    int QueueMemberPenaltyEvent::getPenalty() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

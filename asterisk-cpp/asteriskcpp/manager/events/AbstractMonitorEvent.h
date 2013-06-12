@@ -12,37 +12,37 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * Abstract base class for monitoring events.<p>
-	 * Monitoring events are implemented in <code>res/res_monitor.c</code>
-	 *
-	 * @author srt
-	 * @version $Id$
-	 * @since 1.0.0
-	 */
-	class AbstractMonitorEvent: public asteriskcpp::ManagerEvent {
-	public:
-		/**
-		 * @param source
-		 */
-		AbstractMonitorEvent(const std::string& values);
-		virtual ~AbstractMonitorEvent();
+    /**
+     * Abstract base class for monitoring events.<p>
+     * Monitoring events are implemented in <code>res/res_monitor.c</code>
+     *
+     * @author srt
+     * @version $Id$
+     * @since 1.0.0
+     */
+    class AbstractMonitorEvent : public asteriskcpp::ManagerEvent {
+    public:
+        /**
+         * @param source
+         */
+        AbstractMonitorEvent(const std::string& values);
+        virtual ~AbstractMonitorEvent();
 
-		/**
-		 * Returns the name of the channel.
-		 *
-		 * @return the name of the channel.
-		 */
-		const std::string& getChannel() const;
+        /**
+         * Returns the name of the channel.
+         *
+         * @return the name of the channel.
+         */
+        const std::string& getChannel() const;
 
-		/**
-		 * Returns the unique id of the channel.
-		 *
-		 * @return the unique id of the channel.
-		 */
-		const std::string& getUniqueId() const;
+        /**
+         * Returns the unique id of the channel.
+         *
+         * @return the unique id of the channel.
+         */
+        const std::string& getUniqueId() const;
 
-	};
+    };
 
 } /* namespace asteriskcpp */
 #endif /* ABSTRACTMONITOREVENT_H_ */

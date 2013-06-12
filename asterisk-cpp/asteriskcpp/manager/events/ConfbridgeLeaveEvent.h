@@ -12,31 +12,30 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * This event is sent when a user leaves a conference.
-	 *
-	 * @since 1.0.0
-	 */
-	class ConfbridgeLeaveEvent: public AbstractChannelEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("ConfbridgeLeaveEvent");
-		}
-		ConfbridgeLeaveEvent(const std::string& values) :
-				AbstractChannelEvent(values) {
-		}
-		virtual ~ConfbridgeLeaveEvent() {
-		}
+    /**
+     * This event is sent when a user leaves a conference.
+     *
+     * @since 1.0.0
+     */
+    class ConfbridgeLeaveEvent : public AbstractChannelEvent {
+    public:
 
-		/**
-		 * Returns the id of the conference the participant left.
-		 *
-		 * @return the id of the conference the participant left.
-		 */
-		const std::string& getConference() const {
-			return (getProperty("Conference"));
-		}
-	};
+        ConfbridgeLeaveEvent(const std::string& values) :
+        AbstractChannelEvent(values) {
+        }
+
+        virtual ~ConfbridgeLeaveEvent() {
+        }
+
+        /**
+         * Returns the id of the conference the participant left.
+         *
+         * @return the id of the conference the participant left.
+         */
+        const std::string& getConference() const {
+            return (getProperty("Conference"));
+        }
+    };
 
 }
 

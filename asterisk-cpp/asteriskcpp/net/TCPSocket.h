@@ -29,44 +29,44 @@
 
 namespace asteriskcpp {
 
-	class TCPSocket {
-	protected:
-		int socketFD;
-		bool releaseForced;
-		IPAddress ipAddress;
-		boost::mutex mutRead;
-		boost::mutex mutWrite;
-		IPAddress peerAddress;
-		struct timeval timeout;
+    class TCPSocket {
+    protected:
+        int socketFD;
+        bool releaseForced;
+        IPAddress ipAddress;
+        boost::mutex mutRead;
+        boost::mutex mutWrite;
+        IPAddress peerAddress;
+        struct timeval timeout;
 
-	public:
-		TCPSocket();
-		TCPSocket(const int socketFD);
-		TCPSocket(const IPAddress& ipAddress);
-		virtual ~TCPSocket();
+    public:
+        TCPSocket();
+        TCPSocket(const int socketFD);
+        TCPSocket(const IPAddress& ipAddress);
+        virtual ~TCPSocket();
 
-		int readData(char* buf, const unsigned int size);
-		std::string readData();
-		void writeData(const char* buf, const unsigned int size);
-		void writeData(const std::string& data);
+        int readData(char* buf, const unsigned int size);
+        std::string readData();
+        void writeData(const char* buf, const unsigned int size);
+        void writeData(const std::string& data);
 
-		void setTimeout(const unsigned long timeout);
-		unsigned long getTimeout();
+        void setTimeout(const unsigned long timeout);
+        unsigned long getTimeout();
 
-		void release();
-		void close();
+        void release();
+        void close();
 
-		bool check4readData(const unsigned long timeout);
+        bool check4readData(const unsigned long timeout);
 
-		IPAddress getLocalAddress();
-		IPAddress getPeerAddress();
+        IPAddress getLocalAddress();
+        IPAddress getPeerAddress();
 
-		int getSocketFD();
+        int getSocketFD();
 
-	private:
-		void resolvePeerAddr();
-		void resolveLocalAddr();
-	};
+    private:
+        void resolvePeerAddr();
+        void resolveLocalAddr();
+    };
 
 }
 

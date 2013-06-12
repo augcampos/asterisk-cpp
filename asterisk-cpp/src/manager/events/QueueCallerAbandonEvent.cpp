@@ -9,26 +9,22 @@
 
 namespace asteriskcpp {
 
-	QueueCallerAbandonEvent::QueueCallerAbandonEvent(const std::string & values) :
-			QueueEvent(values) {
-	}
+    QueueCallerAbandonEvent::QueueCallerAbandonEvent(const std::string & values) :
+    QueueEvent(values) {
+    }
 
-	QueueCallerAbandonEvent::~QueueCallerAbandonEvent()
-	{
-	}
+    QueueCallerAbandonEvent::~QueueCallerAbandonEvent() {
+    }
 
-	int QueueCallerAbandonEvent::getHoldTime() const
-	{
-		return (getGetterValue<int>(__FUNCTION__));
-	}
+    int QueueCallerAbandonEvent::getHoldTime() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
 
-	int QueueCallerAbandonEvent::getOriginalPosition() const
-	{
-		return (getGetterValue<int>(__FUNCTION__));
-	}
+    int QueueCallerAbandonEvent::getOriginalPosition() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
 
-	int QueueCallerAbandonEvent::getPosition() const
-	{
-		return (getGetterValue<int>(__FUNCTION__));
-	}
+    int QueueCallerAbandonEvent::getPosition() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

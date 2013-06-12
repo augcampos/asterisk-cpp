@@ -9,17 +9,15 @@
 
 namespace asteriskcpp {
 
-	UnparkedCallEvent::UnparkedCallEvent(const std::string & values) :
-			AbstractParkedCallEvent(values) {
+    UnparkedCallEvent::UnparkedCallEvent(const std::string & values) :
+    AbstractParkedCallEvent(values) {
 
-	}
+    }
 
-	UnparkedCallEvent::~UnparkedCallEvent()
-	{
-	}
+    UnparkedCallEvent::~UnparkedCallEvent() {
+    }
 
-	const std::string& UnparkedCallEvent::getFrom() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& UnparkedCallEvent::getFrom() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

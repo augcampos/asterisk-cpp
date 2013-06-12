@@ -11,23 +11,21 @@
 #include "ResponseEvent.h"
 
 namespace asteriskcpp {
-	/**
-	 * A QueueStatusCompleteEvent is triggered after the state of all queues has been reported in response
-	 * to a QueueStatusAction.<p>
-	 * Since Asterisk 1.2
-	 *
-	 * @see org.asteriskjava.manager.action.QueueStatusAction
-	 *
-	 * @since 0.2
-	 */
-	class QueueStatusCompleteEvent: public ResponseEvent {
-	public:
-		inline static std::string getEventName() {
-					return ("QueueStatusCompleteEvent");
-				}
-		QueueStatusCompleteEvent(const std::string & values);
-		virtual ~QueueStatusCompleteEvent();
-	};
+
+    /**
+     * A QueueStatusCompleteEvent is triggered after the state of all queues has been reported in response
+     * to a QueueStatusAction.<p>
+     * Since Asterisk 1.2
+     *
+     * @see org.asteriskjava.manager.action.QueueStatusAction
+     *
+     * @since 0.2
+     */
+    class QueueStatusCompleteEvent : public ResponseEvent {
+    public:
+        QueueStatusCompleteEvent(const std::string & values);
+        virtual ~QueueStatusCompleteEvent();
+    };
 
 } /* namespace asteriskcpp */
 #endif /* QUEUESTATUSCOMPLETEEVENT_H_ */

@@ -9,13 +9,12 @@
 
 namespace asteriskcpp {
 
-	UnholdEvent::UnholdEvent(const std::string & values) :
-		HoldEvent(values) {
+    UnholdEvent::UnholdEvent(const std::string & values) :
+    HoldEvent(values) {
 
-	}
+    }
 
-	UnholdEvent::~UnholdEvent()
-	{
-	}
+    UnholdEvent::~UnholdEvent() {
+    }
 
 } /* namespace asteriskcpp */

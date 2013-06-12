@@ -9,13 +9,12 @@
 
 namespace asteriskcpp {
 
-	MeetMeStopTalkingEvent::MeetMeStopTalkingEvent(const std::string & values) :
-			MeetMeTalkingEvent(values) {
+    MeetMeStopTalkingEvent::MeetMeStopTalkingEvent(const std::string & values) :
+    MeetMeTalkingEvent(values) {
 
-	}
+    }
 
-	MeetMeStopTalkingEvent::~MeetMeStopTalkingEvent()
-	{
-	}
+    MeetMeStopTalkingEvent::~MeetMeStopTalkingEvent() {
+    }
 
 } /* namespace asteriskcpp */

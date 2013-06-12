@@ -9,17 +9,15 @@
 
 namespace asteriskcpp {
 
-	StatusCompleteEvent::StatusCompleteEvent(const std::string & values) :
-			ResponseEvent(values) {
+    StatusCompleteEvent::StatusCompleteEvent(const std::string & values) :
+    ResponseEvent(values) {
 
-	}
+    }
 
-	StatusCompleteEvent::~StatusCompleteEvent()
-	{
-	}
+    StatusCompleteEvent::~StatusCompleteEvent() {
+    }
 
-	int StatusCompleteEvent::getItems() const
-	{
-		return (getGetterValue<int>(__FUNCTION__));
-	}
+    int StatusCompleteEvent::getItems() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

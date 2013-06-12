@@ -9,22 +9,19 @@
 
 namespace asteriskcpp {
 
-	ShutdownEvent::ShutdownEvent(const std::string & values) :
-			ManagerEvent(values) {
+    ShutdownEvent::ShutdownEvent(const std::string & values) :
+    ManagerEvent(values) {
 
-	}
+    }
 
-	ShutdownEvent::~ShutdownEvent()
-	{
-	}
+    ShutdownEvent::~ShutdownEvent() {
+    }
 
-	const std::string& ShutdownEvent::getShutdown() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& ShutdownEvent::getShutdown() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	bool ShutdownEvent::getRestart() const
-	{
-		return (getGetterValue<bool>(__FUNCTION__));
-	}
+    bool ShutdownEvent::getRestart() const {
+        return (getGetterValue<bool>(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

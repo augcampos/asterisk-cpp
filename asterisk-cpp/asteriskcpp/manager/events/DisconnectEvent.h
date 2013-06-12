@@ -12,23 +12,22 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A DisconnectEvent is triggered when the connection to the asterisk server is lost.<p>
-	 * It is a pseudo event not directly related to an Asterisk generated event.
-	 *
-	 * @see org.asteriskjava.manager.event.ConnectEvent
-	 */
-	class DisconnectEvent: public ManagerEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("ChannelUpdateEvent");
-		}
-		DisconnectEvent(const std::string & values) :
-				ManagerEvent(values) {
-		}
-		virtual ~DisconnectEvent() {
-		}
-	};
+    /**
+     * A DisconnectEvent is triggered when the connection to the asterisk server is lost.<p>
+     * It is a pseudo event not directly related to an Asterisk generated event.
+     *
+     * @see org.asteriskjava.manager.event.ConnectEvent
+     */
+    class DisconnectEvent : public ManagerEvent {
+    public:
+
+        DisconnectEvent(const std::string & values) :
+        ManagerEvent(values) {
+        }
+
+        virtual ~DisconnectEvent() {
+        }
+    };
 
 }
 #endif /* DISCONNECTEVENT_H_ */

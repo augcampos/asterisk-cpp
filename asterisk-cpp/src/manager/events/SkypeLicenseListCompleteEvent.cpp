@@ -9,13 +9,12 @@
 
 namespace asteriskcpp {
 
-	SkypeLicenseListCompleteEvent::SkypeLicenseListCompleteEvent(const std::string & values) :
-		ResponseEvent(values) {
+    SkypeLicenseListCompleteEvent::SkypeLicenseListCompleteEvent(const std::string & values) :
+    ResponseEvent(values) {
 
-	}
+    }
 
-	SkypeLicenseListCompleteEvent::~SkypeLicenseListCompleteEvent()
-	{
-	}
+    SkypeLicenseListCompleteEvent::~SkypeLicenseListCompleteEvent() {
+    }
 
 } /* namespace asteriskcpp */

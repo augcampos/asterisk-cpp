@@ -12,19 +12,16 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A LeaveEvent is triggered when a channel leaves a queue.<p>
-	 * It is implemented in <code>apps/app_queue.c</code>
-	 *
-	 */
-	class LeaveEvent: public asteriskcpp::QueueEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("LeaveEvent");
-		}
-		LeaveEvent(const std::string & values);
-		virtual ~LeaveEvent();
-	};
+    /**
+     * A LeaveEvent is triggered when a channel leaves a queue.<p>
+     * It is implemented in <code>apps/app_queue.c</code>
+     *
+     */
+    class LeaveEvent : public asteriskcpp::QueueEvent {
+    public:
+        LeaveEvent(const std::string & values);
+        virtual ~LeaveEvent();
+    };
 
 } /* namespace asterisk_cpp */
 #endif /* LEAVEEVENT_H_ */

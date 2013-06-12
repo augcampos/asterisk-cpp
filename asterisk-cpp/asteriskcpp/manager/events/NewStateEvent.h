@@ -12,19 +12,16 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A NewStateEvent is triggered when the state of a channel has changed.<p>
-	 * It is implemented in <code>channel.c</code>
-	 *
-	 */
-	class NewStateEvent: public AbstractChannelStateEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("NewStateEvent");
-		}
-		NewStateEvent(const std::string & values);
-		virtual ~NewStateEvent();
-	};
+    /**
+     * A NewStateEvent is triggered when the state of a channel has changed.<p>
+     * It is implemented in <code>channel.c</code>
+     *
+     */
+    class NewStateEvent : public AbstractChannelStateEvent {
+    public:
+        NewStateEvent(const std::string & values);
+        virtual ~NewStateEvent();
+    };
 
 } /* namespace asteriskcpp */
 #endif /* NEWSTATEEVENT_H_ */

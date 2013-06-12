@@ -9,27 +9,27 @@
 
 namespace asteriskcpp {
 
-	AbstractRtcpEvent::AbstractRtcpEvent(const std::string& values) :
-			ManagerEvent(values) {
-	}
+    AbstractRtcpEvent::AbstractRtcpEvent(const std::string& values) :
+    ManagerEvent(values) {
+    }
 
-	AbstractRtcpEvent::~AbstractRtcpEvent() {
+    AbstractRtcpEvent::~AbstractRtcpEvent() {
 
-	}
+    }
 
-	long AbstractRtcpEvent::getFractionLost() const {
-		return (convertFromString<long>(getProperty("FractionLost")));
+    long AbstractRtcpEvent::getFractionLost() const {
+        return (convertFromString<long>(getProperty("FractionLost")));
 
-	}
+    }
 
-	double AbstractRtcpEvent::getIaJitter() const {
-		return (convertFromString<double>(getProperty("IaJitter")));
+    double AbstractRtcpEvent::getIaJitter() const {
+        return (convertFromString<double>(getProperty("IaJitter")));
 
-	}
+    }
 
-	double AbstractRtcpEvent::getDlSr() const {
-		return (convertFromString<double>(getProperty("DlSr")));
+    double AbstractRtcpEvent::getDlSr() const {
+        return (convertFromString<double>(getProperty("DlSr")));
 
-	}
+    }
 
 } /* namespace asteriskcpp */

@@ -9,13 +9,12 @@
 
 namespace asteriskcpp {
 
-	QueueMemberRemovedEvent::QueueMemberRemovedEvent(const std::string & values) :
-			AbstractQueueMemberEvent(values) {
-	}
+    QueueMemberRemovedEvent::QueueMemberRemovedEvent(const std::string & values) :
+    AbstractQueueMemberEvent(values) {
+    }
 
-	QueueMemberRemovedEvent::~QueueMemberRemovedEvent()
-	{
+    QueueMemberRemovedEvent::~QueueMemberRemovedEvent() {
 
-	}
+    }
 
 } /* namespace asteriskcpp */

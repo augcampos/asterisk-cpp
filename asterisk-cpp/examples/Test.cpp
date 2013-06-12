@@ -10,15 +10,15 @@
 #include <iostream>
 #include <asteriskcpp/Manager.hpp>
 
+
 using namespace asteriskcpp;
 
 void eventCallback(const ManagerEvent& me) {
-//    if (me.getEventName().c_str() == "NewChannel")
-//	{
-//		std::cout << "E - " << me.toString() << std::endl;
-//	}
-//	
-	std::cout << "TEST EVENT: " << me.toLog() << std::endl;
+    std::cout << "TEST EVENT START: " << me.getEventName() << std::endl;
+    if (me.getEventName() == "NewChannel") {
+        std::cout << "E - " << me.toString() << std::endl;
+    }
+    std::cout << "TEST EVENT: " << me.toLog() << std::endl;
 }
 
 int main() {
@@ -34,7 +34,7 @@ int main() {
 
             if (mc.login("administrator", "secret")) {
 
-                for (int i = 0; i < 500; i++) {
+                for (int i = 0; i < 1; i++) {
                     asteriskcpp::EventsAction ea("OFF");
                     mc.sendAction(ea);
                     ea.setEventMask("ON");

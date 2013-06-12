@@ -9,19 +9,20 @@
 
 namespace asteriskcpp {
 
-	AgentLogoffEvent::AgentLogoffEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
-	AgentLogoffEvent::~AgentLogoffEvent() {
-	}
+    AgentLogoffEvent::AgentLogoffEvent(const std::string & values) :
+    ManagerEvent(values) {
+    }
 
-	const std::string& AgentLogoffEvent::getAgent() const {
-		return (getProperty("Agent"));
-	}
+    AgentLogoffEvent::~AgentLogoffEvent() {
+    }
 
-	const std::string& AgentLogoffEvent::getLoginTime() const {
-		return (getProperty("Logintime"));
-	}
+    const std::string& AgentLogoffEvent::getAgent() const {
+        return (getProperty("Agent"));
+    }
+
+    const std::string& AgentLogoffEvent::getLoginTime() const {
+        return (getProperty("Logintime"));
+    }
 
 } //NS
 

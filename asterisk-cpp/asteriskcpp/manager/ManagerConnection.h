@@ -20,102 +20,103 @@
 
 namespace asteriskcpp {
 
-	class ManagerConnection: public Dispatcher, private ManagerEventsHandler, private ManagerResponsesHandler {
-	public:
-		enum State {
-			DISCONNECTED = 0, CONNECTED = 1, AUTHENTICATED = 2
-		};
+    class ManagerConnection : public Dispatcher, private ManagerEventsHandler, private ManagerResponsesHandler {
+    public:
 
-		ManagerConnection();
-		virtual ~ManagerConnection();
+        enum State {
+            DISCONNECTED = 0, CONNECTED = 1, AUTHENTICATED = 2
+        };
 
-		bool connect();
-		bool connect(const std::string& server, unsigned int port = 0);
-		void disconnect();
-		bool login();
-		bool login(const std::string& eventMask);
-		bool login(const std::string& user, const std::string& pass, const std::string& eventMask = "ON");
-		void logoff();
+        ManagerConnection();
+        virtual ~ManagerConnection();
 
-		bool isConnected() const;
-		bool isAuthenticated() const;
+        bool connect();
+        bool connect(const std::string& server, unsigned int port = 0);
+        void disconnect();
+        bool login();
+        bool login(const std::string& eventMask);
+        bool login(const std::string& user, const std::string& pass, const std::string& eventMask = "ON");
+        void logoff();
 
-		void sendAction(ManagerAction& action);
-		void sendAction(ManagerAction& action, responseCallbackFunction_t rcbf);
-		ManagerResponse* syncSendAction(ManagerAction& action)  ;
-		ManagerResponse* syncSendAction(ManagerAction& action, unsigned int timeout) ;
+        bool isConnected() const;
+        bool isAuthenticated() const;
 
-		void addEventCallback(onManagerEventCallback_t callback);
+        void sendAction(ManagerAction& action);
+        void sendAction(ManagerAction& action, responseCallbackFunction_t rcbf);
+        ManagerResponse* syncSendAction(ManagerAction& action);
+        ManagerResponse* syncSendAction(ManagerAction& action, unsigned int timeout);
 
-		State getState() const;
-		unsigned int getDefaultResponseTimeout() const;
-		std::string getHostname() const;
-		std::string getPassword() const;
-		unsigned int getPort() const;
-		std::string getUsername() const;
-		bool isSsl() const;
-		void setDefaultResponseTimeout(unsigned int defaultResponseTimeout);
-		void setHostname(std::string hostname);
-		void setPassword(std::string password);
-		void setPort(unsigned int port);
-		void setSsl(bool ssl);
-		void setUsername(std::string username);
+        void addEventCallback(onManagerEventCallback_t callback);
 
-	protected:
-		void send(const std::string& data);
+        State getState() const;
+        unsigned int getDefaultResponseTimeout() const;
+        std::string getHostname() const;
+        std::string getPassword() const;
+        unsigned int getPort() const;
+        std::string getUsername() const;
+        bool isSsl() const;
+        void setDefaultResponseTimeout(unsigned int defaultResponseTimeout);
+        void setHostname(std::string hostname);
+        void setPassword(std::string password);
+        void setPort(unsigned int port);
+        void setSsl(bool ssl);
+        void setUsername(std::string username);
 
-		void dispatchAsteriskVersion(AsteriskVersion* version);
-		void dispatchResponse(const std::string& response);
-		void dispatchEvent(const std::string& event);
+    protected:
+        void send(const std::string& data);
 
-	private:
+        void dispatchAsteriskVersion(AsteriskVersion* version);
+        void dispatchResponse(const std::string& response);
+        void dispatchEvent(const std::string& event);
 
-		TCPSocket* socket;
-		Reader reader;
-		EventBuilder eventBuilder;
-		ResponseBuilder responseBuilder;
-		AsteriskVersion* asteriskVersion;
+    private:
 
-		State state;
-		/* Config attributes */
-		/**
-		 * Hostname of the Asterisk server to connect to.
-		 */
-		std::string hostname;
+        TCPSocket* socket;
+        Reader reader;
+        EventBuilder eventBuilder;
+        ResponseBuilder responseBuilder;
+        AsteriskVersion* asteriskVersion;
 
-		/**
-		 * TCP port to connect to.
-		 */
-		unsigned int port;
+        State state;
+        /* Config attributes */
+        /**
+         * Hostname of the Asterisk server to connect to.
+         */
+        std::string hostname;
 
-		/**
-		 * <code>true</code> to use SSL for the connection, <code>false</code>
-		 * for a plain text connection.
-		 */
-		bool ssl;
+        /**
+         * TCP port to connect to.
+         */
+        unsigned int port;
 
-		/**
-		 * The username to use for login as defined in Asterisk's
-		 * <code>manager.conf</code>.
-		 */
-		std::string username;
+        /**
+         * <code>true</code> to use SSL for the connection, <code>false</code>
+         * for a plain text connection.
+         */
+        bool ssl;
 
-		/**
-		 * The password to use for login as defined in Asterisk's
-		 * <code>manager.conf</code>.
-		 */
-		std::string password;
+        /**
+         * The username to use for login as defined in Asterisk's
+         * <code>manager.conf</code>.
+         */
+        std::string username;
 
-		/**
-		 * The default timeout to wait for a ManagerResponse after sending a
-		 * ManagerAction.
-		 */
-		unsigned int defaultResponseTimeout;
+        /**
+         * The password to use for login as defined in Asterisk's
+         * <code>manager.conf</code>.
+         */
+        std::string password;
 
-		void setState(State state);
-		std::string extractActionID(const std::string& response);
+        /**
+         * The default timeout to wait for a ManagerResponse after sending a
+         * ManagerAction.
+         */
+        unsigned int defaultResponseTimeout;
 
-	};
+        void setState(State state);
+        std::string extractActionID(const std::string& response);
+
+    };
 
 }
 

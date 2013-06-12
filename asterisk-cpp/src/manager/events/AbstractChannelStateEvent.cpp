@@ -9,24 +9,24 @@
 
 namespace asteriskcpp {
 
-	AbstractChannelStateEvent::AbstractChannelStateEvent(const std::string& values) :
-			AbstractChannelEvent(values) {
-	}
+    AbstractChannelStateEvent::AbstractChannelStateEvent(const std::string& values) :
+    AbstractChannelEvent(values) {
+    }
 
-	AbstractChannelStateEvent::~AbstractChannelStateEvent() {
+    AbstractChannelStateEvent::~AbstractChannelStateEvent() {
 
-	}
+    }
 
-	int AbstractChannelStateEvent::getChannelState() const {
-		return (convertFromString<int>(getProperty("ChannelState")));
-	}
+    int AbstractChannelStateEvent::getChannelState() const {
+        return (convertFromString<int>(getProperty("ChannelState")));
+    }
 
-	const std::string& AbstractChannelStateEvent::getChannelStateDesc() const {
-		return (getProperty("ChannelStateDesc"));
-	}
+    const std::string& AbstractChannelStateEvent::getChannelStateDesc() const {
+        return (getProperty("ChannelStateDesc"));
+    }
 
-	const std::string& AbstractChannelStateEvent::getState() const {
-		return (getProperty("ChannelStateDesc"));
-	}
+    const std::string& AbstractChannelStateEvent::getState() const {
+        return (getProperty("ChannelStateDesc"));
+    }
 
 } /* namespace asteriskcpp */

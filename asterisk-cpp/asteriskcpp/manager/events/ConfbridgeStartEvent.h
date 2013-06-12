@@ -12,32 +12,31 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * This event is sent when the first user requests a conference and it is instantiated.
-	 *
-	 * @since 1.0.0
-	 */
-	class ConfbridgeStartEvent: public ManagerEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("ConfbridgeStartEvent");
-		}
-		ConfbridgeStartEvent(const std::string & values) :
-				ManagerEvent(values) {
-		}
-		virtual ~ConfbridgeStartEvent() {
-		}
+    /**
+     * This event is sent when the first user requests a conference and it is instantiated.
+     *
+     * @since 1.0.0
+     */
+    class ConfbridgeStartEvent : public ManagerEvent {
+    public:
 
-		/**
-		 * Returns the id of the conference started.
-		 *
-		 * @return the id of the conference started.
-		 */
-		const std::string& getConference() const {
-			return (getProperty("Conference"));
-		}
+        ConfbridgeStartEvent(const std::string & values) :
+        ManagerEvent(values) {
+        }
 
-	};
+        virtual ~ConfbridgeStartEvent() {
+        }
+
+        /**
+         * Returns the id of the conference started.
+         *
+         * @return the id of the conference started.
+         */
+        const std::string& getConference() const {
+            return (getProperty("Conference"));
+        }
+
+    };
 
 }
 

@@ -13,24 +13,24 @@
 
 namespace asteriskcpp {
 
-	ManagerResponse::~ManagerResponse() {
-	}
+    ManagerResponse::~ManagerResponse() {
+    }
 
-	ManagerResponse::ManagerResponse(const std::string& responseStr) {
-		convertStr(responseStr);
-	}
+    ManagerResponse::ManagerResponse(const std::string& responseStr) {
+        convertStr(responseStr);
+    }
 
-	ManagerResponse::Type ManagerResponse::getType() {
-		std::string sType = getProperty("Response");
-		if (sType == TYPE_ERROR) {
-			return (ManagerResponse::Type_ERROR);
-		}
-		return (ManagerResponse::Type_SUCCESS);
+    ManagerResponse::Type ManagerResponse::getType() {
+        std::string sType = getProperty("Response");
+        if (sType == TYPE_ERROR) {
+            return (ManagerResponse::Type_ERROR);
+        }
+        return (ManagerResponse::Type_SUCCESS);
 
-	}
+    }
 
-	std::string ManagerResponse::getActionId() const {
-		return (getProperty(ACTION_ID));
-	}
+    std::string ManagerResponse::getActionId() const {
+        return (getProperty(ACTION_ID));
+    }
 
 }

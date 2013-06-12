@@ -12,12 +12,12 @@
 
 namespace asteriskcpp {
 
-	class LogoffAction: public AbstractManagerAction {
-	public:
-		LogoffAction();
+    class LogoffAction : public AbstractManagerAction {
+    public:
+        LogoffAction();
 
-		virtual ~LogoffAction();
-	};
+        virtual ~LogoffAction();
+    };
 
 }
 

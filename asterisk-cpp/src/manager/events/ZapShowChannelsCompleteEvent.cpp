@@ -9,13 +9,12 @@
 
 namespace asteriskcpp {
 
-	ZapShowChannelsCompleteEvent::ZapShowChannelsCompleteEvent(const std::string & values) :
-		ResponseEvent(values) {
+    ZapShowChannelsCompleteEvent::ZapShowChannelsCompleteEvent(const std::string & values) :
+    ResponseEvent(values) {
 
-	}
+    }
 
-	ZapShowChannelsCompleteEvent::~ZapShowChannelsCompleteEvent()
-	{
-	}
+    ZapShowChannelsCompleteEvent::~ZapShowChannelsCompleteEvent() {
+    }
 
 } /* namespace asteriskcpp */

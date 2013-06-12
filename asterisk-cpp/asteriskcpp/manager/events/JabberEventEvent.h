@@ -12,25 +12,22 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A JabberEventEvent is triggered when Asterisk receives a Jabber (XMPP) message.<p>
-	 * It is implemented in <code>res/res_jabber.c</code><p>
-	 * Available since Asterisk 1.4
-	 *
-	 * @since 1.0.0
-	 */
-	class JabberEventEvent: public asteriskcpp::ManagerEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("JabberEventEvent");
-		}
-		JabberEventEvent(const std::string & values);
-		virtual ~JabberEventEvent();
+    /**
+     * A JabberEventEvent is triggered when Asterisk receives a Jabber (XMPP) message.<p>
+     * It is implemented in <code>res/res_jabber.c</code><p>
+     * Available since Asterisk 1.4
+     *
+     * @since 1.0.0
+     */
+    class JabberEventEvent : public asteriskcpp::ManagerEvent {
+    public:
+        JabberEventEvent(const std::string & values);
+        virtual ~JabberEventEvent();
 
-		const std::string& getAccount() const;
-		const std::string& getPacket() const;
+        const std::string& getAccount() const;
+        const std::string& getPacket() const;
 
-	};
+    };
 
 } /* namespace asterisk_cpp */
 #endif /* JABBEREVENTEVENT_H_ */

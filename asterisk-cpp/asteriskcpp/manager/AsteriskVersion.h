@@ -12,19 +12,20 @@
 
 namespace asteriskcpp {
 
-	class AsteriskVersion {
-	public:
-		enum ManagerType {
-			ASTERISK = 0, OPENPBX, CALLWEAVER, ASTMANPROXY
-		};
-		void setManagerValues(const std::string& value);
+    class AsteriskVersion {
+    public:
 
-		std::string toString() const;
-		private:
-		ManagerType type;
-		float managerVersion;
-		float version;
-	};
+        enum ManagerType {
+            ASTERISK = 0, OPENPBX, CALLWEAVER, ASTMANPROXY
+        };
+        void setManagerValues(const std::string& value);
+
+        std::string toString() const;
+    private:
+        ManagerType type;
+        float managerVersion;
+        float version;
+    };
 
 }
 

@@ -12,25 +12,25 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * An AbstractFaxEvent is a base class for fax related events
-	 */
-	class AbstractFaxEvent: public ManagerEvent {
-	public:
-		AbstractFaxEvent(const std::string& values);
-		virtual ~AbstractFaxEvent();
+    /**
+     * An AbstractFaxEvent is a base class for fax related events
+     */
+    class AbstractFaxEvent : public ManagerEvent {
+    public:
+        AbstractFaxEvent(const std::string& values);
+        virtual ~AbstractFaxEvent();
 
-		/**
-		 * @return the channel
-		 */
-		const std::string& getChannelType() const;
+        /**
+         * @return the channel
+         */
+        const std::string& getChannelType() const;
 
-		/**
-		 * @return the faxSession
-		 */
+        /**
+         * @return the faxSession
+         */
 
-		int getFaxSession() const;
-	};
+        int getFaxSession() const;
+    };
 
 }
 #endif /* ABSTRACTFAXEVENT_H_ */

@@ -9,31 +9,26 @@
 
 namespace asteriskcpp {
 
-	PriEventEvent::PriEventEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
+    PriEventEvent::PriEventEvent(const std::string & values) :
+    ManagerEvent(values) {
+    }
 
-	PriEventEvent::~PriEventEvent()
-	{
-	}
+    PriEventEvent::~PriEventEvent() {
+    }
 
-	const std::string& PriEventEvent::getPriEvent() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& PriEventEvent::getPriEvent() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	int PriEventEvent::getPriEventCode() const
-	{
-		return (getGetterValue<int>(__FUNCTION__));
-	}
+    int PriEventEvent::getPriEventCode() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
 
-	const std::string& PriEventEvent::getDChannel() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& PriEventEvent::getDChannel() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	int PriEventEvent::getSpan() const
-	{
-		return (getGetterValue<int>(__FUNCTION__));
-	}
+    int PriEventEvent::getSpan() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

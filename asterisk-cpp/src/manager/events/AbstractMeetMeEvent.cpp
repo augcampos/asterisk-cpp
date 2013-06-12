@@ -10,27 +10,27 @@
 
 namespace asteriskcpp {
 
-	AbstractMeetMeEvent::AbstractMeetMeEvent(const std::string& values) :
-			ManagerEvent(values) {
-	}
+    AbstractMeetMeEvent::AbstractMeetMeEvent(const std::string& values) :
+    ManagerEvent(values) {
+    }
 
-	AbstractMeetMeEvent::~AbstractMeetMeEvent() {
-	}
+    AbstractMeetMeEvent::~AbstractMeetMeEvent() {
+    }
 
-	const std::string& AbstractMeetMeEvent::getChannel() const {
-		return (getProperty("Channel"));
-	}
+    const std::string& AbstractMeetMeEvent::getChannel() const {
+        return (getProperty("Channel"));
+    }
 
-	const std::string& AbstractMeetMeEvent::getUniqueId() const {
-		return (getProperty("UniqueId"));
-	}
+    const std::string& AbstractMeetMeEvent::getUniqueId() const {
+        return (getProperty("UniqueId"));
+    }
 
-	const std::string& AbstractMeetMeEvent::getMeetMe() const {
-		return (getProperty("MeetMe"));
-	}
+    const std::string& AbstractMeetMeEvent::getMeetMe() const {
+        return (getProperty("MeetMe"));
+    }
 
-	int AbstractMeetMeEvent::getUserNum() const {
-		return (convertFromString<int>(getProperty("UserNum")));
-	}
+    int AbstractMeetMeEvent::getUserNum() const {
+        return (convertFromString<int>(getProperty("UserNum")));
+    }
 
 } /* namespace asterisk_cpp */

@@ -9,22 +9,19 @@
 
 namespace asteriskcpp {
 
-	QueueMemberPausedEvent::QueueMemberPausedEvent(const std::string & values) :
-			AbstractQueueMemberEvent(values) {
-	}
+    QueueMemberPausedEvent::QueueMemberPausedEvent(const std::string & values) :
+    AbstractQueueMemberEvent(values) {
+    }
 
-	QueueMemberPausedEvent::~QueueMemberPausedEvent()
-	{
+    QueueMemberPausedEvent::~QueueMemberPausedEvent() {
 
-	}
+    }
 
-	bool QueueMemberPausedEvent::getPaused() const
-	{
-		return (getGetterValue<bool>(__FUNCTION__));
-	}
+    bool QueueMemberPausedEvent::getPaused() const {
+        return (getGetterValue<bool>(__FUNCTION__));
+    }
 
-	const std::string& QueueMemberPausedEvent::getReason() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& QueueMemberPausedEvent::getReason() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

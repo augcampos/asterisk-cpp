@@ -12,210 +12,209 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A FaxDocumentStatusEvent is an event of Digium's Fax For Asterisk add-on.
-	 */
-	class FaxStatusEvent: public asteriskcpp::AbstractFaxEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("FaxStatusEvent");
-		}
-		FaxStatusEvent(const std::string & values) :
-				AbstractFaxEvent(values) {
-		}
-		virtual ~FaxStatusEvent() {
-		}
+    /**
+     * A FaxDocumentStatusEvent is an event of Digium's Fax For Asterisk add-on.
+     */
+    class FaxStatusEvent : public asteriskcpp::AbstractFaxEvent {
+    public:
 
-		/**
-		 * @return the operatingMode
-		 */
-		const std::string& getOperatingMode() const {
-			return (getProperty("OperatingMode"));
-		}
+        FaxStatusEvent(const std::string & values) :
+        AbstractFaxEvent(values) {
+        }
 
-		/**
-		 * @return the result
-		 */
-		const std::string& getResult() const {
-			return (getProperty("Result"));
-		}
+        virtual ~FaxStatusEvent() {
+        }
 
-		/**
-		 * @return the error
-		 */
-		const std::string& getError() const {
-			return (getProperty("Error"));
-		}
+        /**
+         * @return the operatingMode
+         */
+        const std::string& getOperatingMode() const {
+            return (getProperty("OperatingMode"));
+        }
 
-		/**
-		 * @return the callDuration
-		 */
-		double getCallDuration() const {
-			return (convertFromString<double>(getProperty("CallDuration")));
-		}
+        /**
+         * @return the result
+         */
+        const std::string& getResult() const {
+            return (getProperty("Result"));
+        }
 
-		/**
-		 * @return the ecmMode
-		 */
-		const std::string& getEcmMode() const {
-			return (getProperty("EcmMode"));
-		}
+        /**
+         * @return the error
+         */
+        const std::string& getError() const {
+            return (getProperty("Error"));
+        }
 
-		/**
-		 * @return the dataRate
-		 */
-		int getDataRate() const {
-			return (convertFromString<int>(getProperty("DataRate")));
-		}
+        /**
+         * @return the callDuration
+         */
+        double getCallDuration() const {
+            return (convertFromString<double>(getProperty("CallDuration")));
+        }
 
-		/**
-		 * @return the imageResolution
-		 */
-		const std::string& getImageResolution() const {
-			return (getProperty("ImageResolution"));
-		}
+        /**
+         * @return the ecmMode
+         */
+        const std::string& getEcmMode() const {
+            return (getProperty("EcmMode"));
+        }
 
-		/**
-		 * @return the imageEncoding
-		 */
-		const std::string& getImageEncoding() const {
-			return (getProperty("ImageEncoding"));
-		}
+        /**
+         * @return the dataRate
+         */
+        int getDataRate() const {
+            return (convertFromString<int>(getProperty("DataRate")));
+        }
 
-		/**
-		 * @return the pageSize
-		 */
-		const std::string& getPageSize() const {
-			return (getProperty("PageSize"));
-		}
+        /**
+         * @return the imageResolution
+         */
+        const std::string& getImageResolution() const {
+            return (getProperty("ImageResolution"));
+        }
 
-		/**
-		 * @return the documentNumber
-		 */
-		int getDocumentNumber() const {
-			return (convertFromString<int>(getProperty("DocumentNumber")));
-		}
+        /**
+         * @return the imageEncoding
+         */
+        const std::string& getImageEncoding() const {
+            return (getProperty("ImageEncoding"));
+        }
 
-		/**
-		 * @return the pageNumber
-		 */
-		int getPageNumber() const {
-			return (convertFromString<int>(getProperty("PageNumber")));
-		}
+        /**
+         * @return the pageSize
+         */
+        const std::string& getPageSize() const {
+            return (getProperty("PageSize"));
+        }
 
-		/**
-		 * @return the fileName
-		 */
-		const std::string& getFileName() const {
-			return (getProperty("FileName"));
-		}
+        /**
+         * @return the documentNumber
+         */
+        int getDocumentNumber() const {
+            return (convertFromString<int>(getProperty("DocumentNumber")));
+        }
 
-		/**
-		 * @return the txPages
-		 */
-		int getTxPages() const {
-			return (convertFromString<int>(getProperty("TxPages")));
-		}
+        /**
+         * @return the pageNumber
+         */
+        int getPageNumber() const {
+            return (convertFromString<int>(getProperty("PageNumber")));
+        }
 
-		/**
-		 * @return the txBytes
-		 */
-		int getTxBytes() const {
-			return (convertFromString<int>(getProperty("TxBytes")));
-		}
+        /**
+         * @return the fileName
+         */
+        const std::string& getFileName() const {
+            return (getProperty("FileName"));
+        }
 
-		/**
-		 * @return the totalTxLines
-		 */
-		int getTotalTxLines() const {
-			return (convertFromString<int>(getProperty("TotalTxLines")));
-		}
+        /**
+         * @return the txPages
+         */
+        int getTxPages() const {
+            return (convertFromString<int>(getProperty("TxPages")));
+        }
 
-		/**
-		 * @return the rxPages
-		 */
-		int getRxPages() const {
-			return (convertFromString<int>(getProperty("RxPages")));
-		}
+        /**
+         * @return the txBytes
+         */
+        int getTxBytes() const {
+            return (convertFromString<int>(getProperty("TxBytes")));
+        }
 
-		/**
-		 * @return the rxBytes
-		 */
-		int getRxBytes() const {
-			return (convertFromString<int>(getProperty("RxBytes")));
-		}
+        /**
+         * @return the totalTxLines
+         */
+        int getTotalTxLines() const {
+            return (convertFromString<int>(getProperty("TotalTxLines")));
+        }
 
-		/**
-		 * @return the totalRxLines
-		 */
-		int getTotalRxLines() const {
-			return (convertFromString<int>(getProperty("TotalRxLines")));
-		}
+        /**
+         * @return the rxPages
+         */
+        int getRxPages() const {
+            return (convertFromString<int>(getProperty("RxPages")));
+        }
 
-		/**
-		 * @return the totalBadLines
-		 */
-		int getTotalBadLines() const {
-			return (convertFromString<int>(getProperty("TotalBadLines")));
-		}
+        /**
+         * @return the rxBytes
+         */
+        int getRxBytes() const {
+            return (convertFromString<int>(getProperty("RxBytes")));
+        }
 
-		/**
-		 * @return the disDcsDtcCtcCount
-		 */
-		int getDisDcsDtcCtcCount() const {
-			return (convertFromString<int>(getProperty("DisDcsDtcCtcCount")));
-		}
+        /**
+         * @return the totalRxLines
+         */
+        int getTotalRxLines() const {
+            return (convertFromString<int>(getProperty("TotalRxLines")));
+        }
 
-		/**
-		 * @return the cfrCount
-		 */
-		int getCfrCount() const {
-			return (convertFromString<int>(getProperty("CfrCount")));
-		}
+        /**
+         * @return the totalBadLines
+         */
+        int getTotalBadLines() const {
+            return (convertFromString<int>(getProperty("TotalBadLines")));
+        }
 
-		/**
-		 * @return the fttCount
-		 */
-		int getFttCount() const {
-			return (convertFromString<int>(getProperty("FttCount")));
-		}
+        /**
+         * @return the disDcsDtcCtcCount
+         */
+        int getDisDcsDtcCtcCount() const {
+            return (convertFromString<int>(getProperty("DisDcsDtcCtcCount")));
+        }
 
-		/**
-		 * @return the mcfCount
-		 */
-		int getMcfCount() const {
-			return (convertFromString<int>(getProperty("McfCount")));
-		}
+        /**
+         * @return the cfrCount
+         */
+        int getCfrCount() const {
+            return (convertFromString<int>(getProperty("CfrCount")));
+        }
 
-		/**
-		 * @return the pprCount
-		 */
-		int getPprCount() const {
-			return (convertFromString<int>(getProperty("PprCount")));
-		}
+        /**
+         * @return the fttCount
+         */
+        int getFttCount() const {
+            return (convertFromString<int>(getProperty("FttCount")));
+        }
 
-		/**
-		 * @return the rtnCount
-		 */
-		int getRtnCount() const {
-			return (convertFromString<int>(getProperty("RtnCount")));
-		}
+        /**
+         * @return the mcfCount
+         */
+        int getMcfCount() const {
+            return (convertFromString<int>(getProperty("McfCount")));
+        }
 
-		/**
-		 * @return the dcnCount
-		 */
-		int getDcnCount() const {
-			return (convertFromString<int>(getProperty("DcnCount")));
-		}
+        /**
+         * @return the pprCount
+         */
+        int getPprCount() const {
+            return (convertFromString<int>(getProperty("PprCount")));
+        }
 
-		/**
-		 * @return the remoteStationId
-		 */
-		const std::string& getRemoteStationId() const {
-			return (getProperty("RemoteStationId"));
-		}
+        /**
+         * @return the rtnCount
+         */
+        int getRtnCount() const {
+            return (convertFromString<int>(getProperty("RtnCount")));
+        }
 
-	};
+        /**
+         * @return the dcnCount
+         */
+        int getDcnCount() const {
+            return (convertFromString<int>(getProperty("DcnCount")));
+        }
+
+        /**
+         * @return the remoteStationId
+         */
+        const std::string& getRemoteStationId() const {
+            return (getProperty("RemoteStationId"));
+        }
+
+    };
 
 } /* namespace asterisk_cpp */
 #endif /* FAXSTATUSEVENT_H_ */

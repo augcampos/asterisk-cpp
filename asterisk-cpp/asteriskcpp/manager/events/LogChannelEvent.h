@@ -12,50 +12,47 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A LogChannelEvent is triggered when logging is turned on or off.<p>
-	 * It is implemented in <code>logger.c</code><p>
-	 * Available since Asterisk 1.2
-	 *
-	 * @since 0.2
-	 */
-	class LogChannelEvent: public ManagerEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("LogChannelEvent");
-		}
-		LogChannelEvent(const std::string & values);
-		virtual ~LogChannelEvent();
+    /**
+     * A LogChannelEvent is triggered when logging is turned on or off.<p>
+     * It is implemented in <code>logger.c</code><p>
+     * Available since Asterisk 1.2
+     *
+     * @since 0.2
+     */
+    class LogChannelEvent : public ManagerEvent {
+    public:
+        LogChannelEvent(const std::string & values);
+        virtual ~LogChannelEvent();
 
-		/**
-		 * Returns the name of the log channel.
-		 *
-		 * @return the name of the log channel.
-		 */
-		const std::string& getChannel() const;
+        /**
+         * Returns the name of the log channel.
+         *
+         * @return the name of the log channel.
+         */
+        const std::string& getChannel() const;
 
-		/**
-		 * Returns if logging has been enabled or disabled.
-		 *
-		 * @return Boolean.TRUE if logging has been enabled, Boolean.FALSE if it has
-		 *         been disabled.
-		 */
-		bool getEnabled() const;
+        /**
+         * Returns if logging has been enabled or disabled.
+         *
+         * @return Boolean.TRUE if logging has been enabled, Boolean.FALSE if it has
+         *         been disabled.
+         */
+        bool getEnabled() const;
 
-		/**
-		 * Returns the reason code for disabling logging.
-		 *
-		 * @return the reason code for disabling logging.
-		 */
-		int getReason() const;
+        /**
+         * Returns the reason code for disabling logging.
+         *
+         * @return the reason code for disabling logging.
+         */
+        int getReason() const;
 
-		/**
-		 * Returns the textual representation of the reason for disabling logging.
-		 *
-		 * @return the textual representation of the reason for disabling logging.
-		 */
-		const std::string& getReasonTxt() const;
-	};
+        /**
+         * Returns the textual representation of the reason for disabling logging.
+         *
+         * @return the textual representation of the reason for disabling logging.
+         */
+        const std::string& getReasonTxt() const;
+    };
 
 } /* namespace asterisk_cpp */
 #endif /* LOGCHANNELEVENT_H_ */

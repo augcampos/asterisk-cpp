@@ -9,13 +9,12 @@
 
 namespace asteriskcpp {
 
-	VoicemailUserEntryCompleteEvent::VoicemailUserEntryCompleteEvent(const std::string & values) :
-		ResponseEvent(values) {
+    VoicemailUserEntryCompleteEvent::VoicemailUserEntryCompleteEvent(const std::string & values) :
+    ResponseEvent(values) {
 
-	}
+    }
 
-	VoicemailUserEntryCompleteEvent::~VoicemailUserEntryCompleteEvent()
-	{
-	}
+    VoicemailUserEntryCompleteEvent::~VoicemailUserEntryCompleteEvent() {
+    }
 
 } /* namespace asteriskcpp */

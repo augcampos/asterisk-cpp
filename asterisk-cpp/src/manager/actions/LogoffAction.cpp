@@ -8,11 +8,11 @@
 
 namespace asteriskcpp {
 
-	LogoffAction::LogoffAction()  {
-	}
+    LogoffAction::LogoffAction() {
+    }
 
-	LogoffAction::~LogoffAction() {
-	}
+    LogoffAction::~LogoffAction() {
+    }
 
 } //NS
 

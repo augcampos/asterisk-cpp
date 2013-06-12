@@ -8,20 +8,20 @@
 
 namespace asteriskcpp {
 
-	EventsAction::EventsAction(const std::string& eventMask) {
-		setEventMask(eventMask);
-	}
+    EventsAction::EventsAction(const std::string& eventMask) {
+        setEventMask(eventMask);
+    }
 
-	EventsAction::~EventsAction() {
-	}
+    EventsAction::~EventsAction() {
+    }
 
-	const std::string& EventsAction::getEventMask() const {
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& EventsAction::getEventMask() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	void EventsAction::setEventMask(const std::string& eventMask) {
-		setSetterValue(__FUNCTION__, eventMask);
-	}
+    void EventsAction::setEventMask(const std::string& eventMask) {
+        setSetterValue(__FUNCTION__, eventMask);
+    }
 
 } //NS
 

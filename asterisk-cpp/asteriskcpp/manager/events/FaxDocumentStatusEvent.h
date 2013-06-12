@@ -12,132 +12,131 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A FaxDocumentStatusEvent is an event of Digium's Fax For Asterisk add-on.
-	 */
-	class FaxDocumentStatusEvent: public AbstractFaxEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("FaxDocumentStatusEvent");
-		}
-		FaxDocumentStatusEvent(const std::string & values) :
-				AbstractFaxEvent(values) {
-		}
-		virtual ~FaxDocumentStatusEvent() {
-		}
+    /**
+     * A FaxDocumentStatusEvent is an event of Digium's Fax For Asterisk add-on.
+     */
+    class FaxDocumentStatusEvent : public AbstractFaxEvent {
+    public:
 
-		/**
-		 * @return the documentNumber
-		 */
-		int getDocumentNumber() const {
-			return (convertFromString<int>(getProperty("DocumentNumber")));
-		}
+        FaxDocumentStatusEvent(const std::string & values) :
+        AbstractFaxEvent(values) {
+        }
 
-		/**
-		 * @return the lastError
-		 */
-		int getLastError() const {
-			return (convertFromString<int>(getProperty("LastError")));
-		}
+        virtual ~FaxDocumentStatusEvent() {
+        }
 
-		/**
-		 * @return the pageCount
-		 */
-		int getPageCount() const {
-			return (convertFromString<int>(getProperty("PageCount")));
-		}
+        /**
+         * @return the documentNumber
+         */
+        int getDocumentNumber() const {
+            return (convertFromString<int>(getProperty("DocumentNumber")));
+        }
 
-		/**
-		 * @return the startPage
-		 */
-		int getStartPage() const {
-			return (convertFromString<int>(getProperty("StartPage")));
-		}
+        /**
+         * @return the lastError
+         */
+        int getLastError() const {
+            return (convertFromString<int>(getProperty("LastError")));
+        }
 
-		/**
-		 * @return the LastPageProcessed
-		 */
-		int getLastPageProcessed() const {
-			return (convertFromString<int>(getProperty("LastPageProcessed")));
-		}
+        /**
+         * @return the pageCount
+         */
+        int getPageCount() const {
+            return (convertFromString<int>(getProperty("PageCount")));
+        }
 
-		/**
-		 * @return the RetransmitCount
-		 */
-		int getRetransmitCount() const {
-			return (convertFromString<int>(getProperty("RetransmitCount")));
-		}
+        /**
+         * @return the startPage
+         */
+        int getStartPage() const {
+            return (convertFromString<int>(getProperty("StartPage")));
+        }
 
-		/**
-		 * @return the TransferPels
-		 */
-		int getTransferPels() const {
-			return (convertFromString<int>(getProperty("TransferPels")));
-		}
+        /**
+         * @return the LastPageProcessed
+         */
+        int getLastPageProcessed() const {
+            return (convertFromString<int>(getProperty("LastPageProcessed")));
+        }
 
-		/**
-		 * @return the TransferRate
-		 */
-		int getTransferRate() const {
-			return (convertFromString<int>(getProperty("TransferRate")));
-		}
+        /**
+         * @return the RetransmitCount
+         */
+        int getRetransmitCount() const {
+            return (convertFromString<int>(getProperty("RetransmitCount")));
+        }
 
-		/**
-		 * @return the transferDuration
-		 */
-		const std::string& getTransferDuration() const {
-			return (getProperty("TransferDuration"));
-		}
+        /**
+         * @return the TransferPels
+         */
+        int getTransferPels() const {
+            return (convertFromString<int>(getProperty("TransferPels")));
+        }
 
-		/**
-		 * @return the BadLineCount
-		 */
-		int getBadLineCount() const {
-			return (convertFromString<int>(getProperty("BadLineCount")));
-		}
+        /**
+         * @return the TransferRate
+         */
+        int getTransferRate() const {
+            return (convertFromString<int>(getProperty("TransferRate")));
+        }
 
-		/**
-		 * @return the ProcessedStatus
-		 */
-		const std::string& getProcessedStatus() const {
-			return (getProperty("ProcessedStatus"));
-		}
+        /**
+         * @return the transferDuration
+         */
+        const std::string& getTransferDuration() const {
+            return (getProperty("TransferDuration"));
+        }
 
-		/**
-		 * @return the DocumentTime
-		 */
-		const std::string& getDocumentTime() const {
-			return (getProperty("DocumentTime"));
-		}
+        /**
+         * @return the BadLineCount
+         */
+        int getBadLineCount() const {
+            return (convertFromString<int>(getProperty("BadLineCount")));
+        }
 
-		/**
-		 * @return the LocalSid
-		 */
-		const std::string& getLocalSid() const {
-			return (getProperty("LocalSid"));
-		}
+        /**
+         * @return the ProcessedStatus
+         */
+        const std::string& getProcessedStatus() const {
+            return (getProperty("ProcessedStatus"));
+        }
 
-		/**
-		 * @return the LocalDis
-		 */
-		const std::string& getLocalDis() const {
-			return (getProperty("LocalDis"));
-		}
+        /**
+         * @return the DocumentTime
+         */
+        const std::string& getDocumentTime() const {
+            return (getProperty("DocumentTime"));
+        }
 
-		/**
-		 * @return the RemoteSid
-		 */
-		const std::string& getRemoteSid() const {
-			return (getProperty("RemoteSid"));
-		}
+        /**
+         * @return the LocalSid
+         */
+        const std::string& getLocalSid() const {
+            return (getProperty("LocalSid"));
+        }
 
-		/**
-		 * @return the RemoteDis
-		 */
-		const std::string& getRemoteDis() const {
-			return (getProperty("RemoteDis"));
-		}
-	};
+        /**
+         * @return the LocalDis
+         */
+        const std::string& getLocalDis() const {
+            return (getProperty("LocalDis"));
+        }
+
+        /**
+         * @return the RemoteSid
+         */
+        const std::string& getRemoteSid() const {
+            return (getProperty("RemoteSid"));
+        }
+
+        /**
+         * @return the RemoteDis
+         */
+        const std::string& getRemoteDis() const {
+            return (getProperty("RemoteDis"));
+        }
+    };
 
 }
 

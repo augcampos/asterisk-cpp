@@ -9,16 +9,14 @@
 
 namespace asteriskcpp {
 
-	MeetMeTalkingRequestEvent::MeetMeTalkingRequestEvent(const std::string & values) :
-			AbstractMeetMeEvent(values) {
-	}
+    MeetMeTalkingRequestEvent::MeetMeTalkingRequestEvent(const std::string & values) :
+    AbstractMeetMeEvent(values) {
+    }
 
-	MeetMeTalkingRequestEvent::~MeetMeTalkingRequestEvent()
-	{
-	}
+    MeetMeTalkingRequestEvent::~MeetMeTalkingRequestEvent() {
+    }
 
-	bool MeetMeTalkingRequestEvent::getStatus() const
-	{
-		return (getProperty<bool>("Status"));
-	}
+    bool MeetMeTalkingRequestEvent::getStatus() const {
+        return (getProperty<bool>("Status"));
+    }
 } /* namespace asteriskcpp */

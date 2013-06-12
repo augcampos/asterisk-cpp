@@ -9,12 +9,11 @@
 
 namespace asteriskcpp {
 
-	ParkedCallTimeOutEvent::ParkedCallTimeOutEvent(const std::string & values) :
-			AbstractParkedCallEvent(values) {
-	}
+    ParkedCallTimeOutEvent::ParkedCallTimeOutEvent(const std::string & values) :
+    AbstractParkedCallEvent(values) {
+    }
 
-	ParkedCallTimeOutEvent::~ParkedCallTimeOutEvent()
-	{
-	}
+    ParkedCallTimeOutEvent::~ParkedCallTimeOutEvent() {
+    }
 
 } /* namespace asteriskcpp */

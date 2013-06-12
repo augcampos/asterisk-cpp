@@ -11,18 +11,19 @@
 
 namespace asteriskcpp {
 
-	AbstractFaxEvent::AbstractFaxEvent(const std::string& values) :
-			ManagerEvent(values) {
-	}
-	AbstractFaxEvent::~AbstractFaxEvent() {
-	}
+    AbstractFaxEvent::AbstractFaxEvent(const std::string& values) :
+    ManagerEvent(values) {
+    }
 
-	const std::string& AbstractFaxEvent::getChannelType() const {
-		return (getProperty("ChannelType"));
-	}
+    AbstractFaxEvent::~AbstractFaxEvent() {
+    }
 
-	int AbstractFaxEvent::getFaxSession() const {
-		return (convertFromString<int>(getProperty("FaxSession")));
-	}
+    const std::string& AbstractFaxEvent::getChannelType() const {
+        return (getProperty("ChannelType"));
+    }
+
+    int AbstractFaxEvent::getFaxSession() const {
+        return (convertFromString<int>(getProperty("FaxSession")));
+    }
 
 } //NS

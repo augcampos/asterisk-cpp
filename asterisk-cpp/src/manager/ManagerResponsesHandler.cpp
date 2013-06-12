@@ -150,7 +150,7 @@ namespace asteriskcpp {
     }
 
     void ManagerResponsesHandler::fireResponseCallback(ManagerResponse *mr) {
-        LOG_DEBUG_STR("FIRE RESPONSE " + typeid (*mr).name() + "::" + mr->toLog());
+        LOG_DEBUG_STR("FIRE RESPONSE " +  "::" + mr->toLog());
         std::string key = mr->getActionId();
 
         ResponseCallBack* listner = this->getListener(key);

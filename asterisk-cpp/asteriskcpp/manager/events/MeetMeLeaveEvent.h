@@ -12,46 +12,43 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A MeetMeLeaveEvent is triggered if a channel leaves a MeetMe conference.<p>
-	 * Channel and unqiueId properties for this event are available since Asterisk 1.0.<p>
-	 * It is implemented in <code>apps/app_meetme.c</code>
-	 *
-	 * @author srt
-	 * @version $Id$
-	 */
-	class MeetMeLeaveEvent: public asteriskcpp::AbstractMeetMeEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("MeetMeLeaveEvent");
-		}
-		MeetMeLeaveEvent(const std::string & values);
-		virtual ~MeetMeLeaveEvent();
+    /**
+     * A MeetMeLeaveEvent is triggered if a channel leaves a MeetMe conference.<p>
+     * Channel and unqiueId properties for this event are available since Asterisk 1.0.<p>
+     * It is implemented in <code>apps/app_meetme.c</code>
+     *
+     * @author srt
+     * @version $Id$
+     */
+    class MeetMeLeaveEvent : public asteriskcpp::AbstractMeetMeEvent {
+    public:
+        MeetMeLeaveEvent(const std::string & values);
+        virtual ~MeetMeLeaveEvent();
 
-		/**
-		 * Returns the Caller*ID Name of the channel that left the conference.<p>
-		 * This property is available since Asterisk 1.4.
-		 *
-		 * @return the Caller*ID Name of the channel that left the conference.
-		 */
-		const std::string& getCallerIdName() const;
+        /**
+         * Returns the Caller*ID Name of the channel that left the conference.<p>
+         * This property is available since Asterisk 1.4.
+         *
+         * @return the Caller*ID Name of the channel that left the conference.
+         */
+        const std::string& getCallerIdName() const;
 
-		/**
-		 * Returns the Caller*ID Number of the channel that left the conference.<p>
-		 * This property is available since Asterisk 1.4.
-		 *
-		 * @return the Caller*ID Number of the channel that left the conference.
-		 */
-		const std::string& getCallerIdNum() const;
+        /**
+         * Returns the Caller*ID Number of the channel that left the conference.<p>
+         * This property is available since Asterisk 1.4.
+         *
+         * @return the Caller*ID Number of the channel that left the conference.
+         */
+        const std::string& getCallerIdNum() const;
 
-		/**
-		 * Returns how long the user spent in the conference.<p>
-		 * This property is available since Asterisk 1.4.
-		 *
-		 * @return the duration in seconds the user spent in the conference.
-		 */
-		long getDuration() const;
-	};
+        /**
+         * Returns how long the user spent in the conference.<p>
+         * This property is available since Asterisk 1.4.
+         *
+         * @return the duration in seconds the user spent in the conference.
+         */
+        long getDuration() const;
+    };
 
 } /* namespace asteriskcpp */
 #endif /* MEETMELEAVEEVENT_H_ */

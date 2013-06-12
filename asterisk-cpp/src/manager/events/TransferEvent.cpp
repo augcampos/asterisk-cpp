@@ -10,79 +10,65 @@
 
 namespace asteriskcpp {
 
-	const static std::string TRANSFER_TYPE_ATTENDED = "Attended";
-	const static std::string TRANSFER_TYPE_BLIND = "Blind";
+    const static std::string TRANSFER_TYPE_ATTENDED = "Attended";
+    const static std::string TRANSFER_TYPE_BLIND = "Blind";
 
-	TransferEvent::TransferEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
+    TransferEvent::TransferEvent(const std::string & values) :
+    ManagerEvent(values) {
+    }
 
-	TransferEvent::~TransferEvent()
-	{
-	}
+    TransferEvent::~TransferEvent() {
+    }
 
-	const std::string& TransferEvent::getChannel() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& TransferEvent::getChannel() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& TransferEvent::getUniqueId() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& TransferEvent::getUniqueId() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& TransferEvent::getTransferMethod() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& TransferEvent::getTransferMethod() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& TransferEvent::getTransferType() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& TransferEvent::getTransferType() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	bool TransferEvent::isAttended() const
-	{
-		return (boost::iequals(getTransferType(), TRANSFER_TYPE_ATTENDED));
-	}
+    bool TransferEvent::isAttended() const {
+        return (boost::iequals(getTransferType(), TRANSFER_TYPE_ATTENDED));
+    }
 
-	bool TransferEvent::isBlind() const
-	{
-		return (boost::iequals(getTransferType(), TRANSFER_TYPE_BLIND));
-	}
+    bool TransferEvent::isBlind() const {
+        return (boost::iequals(getTransferType(), TRANSFER_TYPE_BLIND));
+    }
 
-	const std::string& TransferEvent::getSipCallId() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& TransferEvent::getSipCallId() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& TransferEvent::getTargetChannel() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& TransferEvent::getTargetChannel() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& TransferEvent::getTargetUniqueId() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& TransferEvent::getTargetUniqueId() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& TransferEvent::getTransferExten() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& TransferEvent::getTransferExten() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& TransferEvent::getTransferContext() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& TransferEvent::getTransferContext() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	bool TransferEvent::getTransfer2Parking() const
-	{
-		return (getGetterValue<bool>(__FUNCTION__));
-	}
+    bool TransferEvent::getTransfer2Parking() const {
+        return (getGetterValue<bool>(__FUNCTION__));
+    }
 
-	bool TransferEvent::isParking() const
-	{
-		return (getTransfer2Parking());
-	}
+    bool TransferEvent::isParking() const {
+        return (getTransfer2Parking());
+    }
 } /* namespace asteriskcpp */

@@ -9,27 +9,23 @@
 
 namespace asteriskcpp {
 
-	RtpSenderStatEvent::RtpSenderStatEvent(const std::string & values) :
-			AbstractRtpStatEvent(values) {
+    RtpSenderStatEvent::RtpSenderStatEvent(const std::string & values) :
+    AbstractRtpStatEvent(values) {
 
-	}
+    }
 
-	RtpSenderStatEvent::~RtpSenderStatEvent()
-	{
-	}
+    RtpSenderStatEvent::~RtpSenderStatEvent() {
+    }
 
-	long RtpSenderStatEvent::getSentPackets() const
-	{
-		return (getGetterValue<long>(__FUNCTION__));
-	}
+    long RtpSenderStatEvent::getSentPackets() const {
+        return (getGetterValue<long>(__FUNCTION__));
+    }
 
-	long RtpSenderStatEvent::getSrCount() const
-	{
-		return (getGetterValue<long>(__FUNCTION__));
-	}
+    long RtpSenderStatEvent::getSrCount() const {
+        return (getGetterValue<long>(__FUNCTION__));
+    }
 
-	double RtpSenderStatEvent::getRtt() const
-	{
-		return (getGetterValue<double>(__FUNCTION__));
-	}
+    double RtpSenderStatEvent::getRtt() const {
+        return (getGetterValue<double>(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

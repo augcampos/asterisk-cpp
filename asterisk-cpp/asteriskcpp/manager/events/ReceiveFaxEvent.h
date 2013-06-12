@@ -12,37 +12,34 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A ReceiveFaxEvent is an event of Digium's Fax For Asterisk add-on.
-	 */
-	class ReceiveFaxEvent: public ManagerEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("ReceiveFaxEvent");
-		}
-		ReceiveFaxEvent(const std::string & values);
-		virtual ~ReceiveFaxEvent();
+    /**
+     * A ReceiveFaxEvent is an event of Digium's Fax For Asterisk add-on.
+     */
+    class ReceiveFaxEvent : public ManagerEvent {
+    public:
+        ReceiveFaxEvent(const std::string & values);
+        virtual ~ReceiveFaxEvent();
 
-		const std::string& getChannel() const;
+        const std::string& getChannel() const;
 
-		const std::string& getContext() const;
+        const std::string& getContext() const;
 
-		const std::string& getExten() const;
+        const std::string& getExten() const;
 
-		const std::string& getCallerId() const;
+        const std::string& getCallerId() const;
 
-		const std::string& getRemoteStationId() const;
+        const std::string& getRemoteStationId() const;
 
-		const std::string& getLocalStationId() const;
+        const std::string& getLocalStationId() const;
 
-		int getPagesTransferred() const;
+        int getPagesTransferred() const;
 
-		const std::string& getResolution() const;
+        const std::string& getResolution() const;
 
-		int getTransferRate() const;
+        int getTransferRate() const;
 
-		const std::string& getFileName() const;
-	};
+        const std::string& getFileName() const;
+    };
 
 } /* namespace asteriskcpp */
 #endif /* RECEIVEFAXEVENT_H_ */

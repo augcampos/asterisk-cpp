@@ -9,28 +9,24 @@
 
 namespace asteriskcpp {
 
-	DahdiShowChannelsCompleteEvent::DahdiShowChannelsCompleteEvent(const std::string& values) :
-			ResponseEvent(values) {
+    DahdiShowChannelsCompleteEvent::DahdiShowChannelsCompleteEvent(const std::string& values) :
+    ResponseEvent(values) {
 
-	}
+    }
 
-	DahdiShowChannelsCompleteEvent::~DahdiShowChannelsCompleteEvent()
-	{
-	}
+    DahdiShowChannelsCompleteEvent::~DahdiShowChannelsCompleteEvent() {
+    }
 
-	int DahdiShowChannelsCompleteEvent::getItems() const
-	{
-		return (getProperty<int>("Items"));
-	}
+    int DahdiShowChannelsCompleteEvent::getItems() const {
+        return (getProperty<int>("Items"));
+    }
 
-	const std::string& DahdiShowChannelsCompleteEvent::getEventlist() const
-	{
-		return (getProperty("Eventlist"));
-	}
+    const std::string& DahdiShowChannelsCompleteEvent::getEventlist() const {
+        return (getProperty("Eventlist"));
+    }
 
-	int DahdiShowChannelsCompleteEvent::getListitems() const
-	{
-		return (getProperty<int>("Listitems"));
-	}
+    int DahdiShowChannelsCompleteEvent::getListitems() const {
+        return (getProperty<int>("Listitems"));
+    }
 
 }/* namespace asteriskcpp */

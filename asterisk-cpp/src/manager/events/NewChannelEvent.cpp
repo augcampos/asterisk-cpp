@@ -9,23 +9,23 @@
 
 namespace asteriskcpp {
 
-	NewChannelEvent::NewChannelEvent(const std::string & values) :
-			AbstractChannelStateEvent(values) {
-	}
+    NewChannelEvent::NewChannelEvent(const std::string & values) :
+    AbstractChannelStateEvent(values) {
+    }
 
-	NewChannelEvent::~NewChannelEvent() {
-	}
+    NewChannelEvent::~NewChannelEvent() {
+    }
 
-	const std::string& NewChannelEvent::getAccountCode() const {
-		return (getProperty("Channel"));
-	}
+    const std::string& NewChannelEvent::getAccountCode() const {
+        return (getProperty("Channel"));
+    }
 
-	const std::string& NewChannelEvent::getContext() const {
-		return (getProperty("Channel"));
-	}
+    const std::string& NewChannelEvent::getContext() const {
+        return (getProperty("Channel"));
+    }
 
-	const std::string& NewChannelEvent::getExten() const {
-		return (getProperty("Exten"));
-	}
+    const std::string& NewChannelEvent::getExten() const {
+        return (getProperty("Exten"));
+    }
 
 } /* namespace asteriskcpp */

@@ -9,27 +9,27 @@
 
 namespace asteriskcpp {
 
-	AbstractMeetMeMuteAction::AbstractMeetMeMuteAction(const std::string& meetMe, int userNum) {
-	}
+    AbstractMeetMeMuteAction::AbstractMeetMeMuteAction(const std::string& meetMe, int userNum) {
+    }
 
-	AbstractMeetMeMuteAction::~AbstractMeetMeMuteAction() {
-	}
+    AbstractMeetMeMuteAction::~AbstractMeetMeMuteAction() {
+    }
 
-	const std::string& AbstractMeetMeMuteAction::getMeetMe() const {
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& AbstractMeetMeMuteAction::getMeetMe() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	void AbstractMeetMeMuteAction::setMeetMe(const std::string & meetMe) {
-		setSetterValue(__FUNCTION__, meetMe);
-	}
+    void AbstractMeetMeMuteAction::setMeetMe(const std::string & meetMe) {
+        setSetterValue(__FUNCTION__, meetMe);
+    }
 
-	int AbstractMeetMeMuteAction::getUserNum() const {
-		return (getGetterValue<int>(__FUNCTION__));
-	}
+    int AbstractMeetMeMuteAction::getUserNum() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
 
-	void AbstractMeetMeMuteAction::setUserNum(int userNum) {
-		setSetterValue(__FUNCTION__, userNum);
-	}
+    void AbstractMeetMeMuteAction::setUserNum(int userNum) {
+        setSetterValue(__FUNCTION__, userNum);
+    }
 
 } /* namespace asterisk_cpp */
 

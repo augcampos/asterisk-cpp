@@ -9,20 +9,20 @@
 
 namespace asteriskcpp {
 
-	AbstractMonitorEvent::AbstractMonitorEvent(const std::string& values) :
-			ManagerEvent(values) {
-	}
+    AbstractMonitorEvent::AbstractMonitorEvent(const std::string& values) :
+    ManagerEvent(values) {
+    }
 
-	AbstractMonitorEvent::~AbstractMonitorEvent() {
+    AbstractMonitorEvent::~AbstractMonitorEvent() {
 
-	}
+    }
 
-	const std::string& AbstractMonitorEvent::getChannel() const {
-		return (getProperty("Channel"));
-	}
+    const std::string& AbstractMonitorEvent::getChannel() const {
+        return (getProperty("Channel"));
+    }
 
-	const std::string& AbstractMonitorEvent::getUniqueId() const {
-		return (getProperty("UniqueId"));
-	}
+    const std::string& AbstractMonitorEvent::getUniqueId() const {
+        return (getProperty("UniqueId"));
+    }
 
 } /* namespace asteriskcpp */

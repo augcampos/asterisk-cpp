@@ -12,22 +12,19 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A ZapShowChannelsCompleteEvent is triggered after the state of all zap channels has been reported
-	 * in response to a ZapShowChannelsAction.
-	 *
-	 * @see org.asteriskjava.manager.action.ZapShowChannelsAction
-	 * @see org.asteriskjava.manager.event.ZapShowChannelsEvent
-	 *
-	 */
-	class ZapShowChannelsCompleteEvent: public ResponseEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("ZapShowChannelsCompleteEvent");
-		}
-		ZapShowChannelsCompleteEvent(const std::string & values);
-		virtual ~ZapShowChannelsCompleteEvent();
-	};
+    /**
+     * A ZapShowChannelsCompleteEvent is triggered after the state of all zap channels has been reported
+     * in response to a ZapShowChannelsAction.
+     *
+     * @see org.asteriskjava.manager.action.ZapShowChannelsAction
+     * @see org.asteriskjava.manager.event.ZapShowChannelsEvent
+     *
+     */
+    class ZapShowChannelsCompleteEvent : public ResponseEvent {
+    public:
+        ZapShowChannelsCompleteEvent(const std::string & values);
+        virtual ~ZapShowChannelsCompleteEvent();
+    };
 
 } /* namespace asteriskcpp */
 #endif /* ZAPSHOWCHANNELSCOMPLETEEVENT_H_ */

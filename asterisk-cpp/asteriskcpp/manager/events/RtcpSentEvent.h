@@ -11,63 +11,61 @@
 #include "AbstractRtcpEvent.h"
 
 namespace asteriskcpp {
-	/**
-	 * An RtcpSentEvent is triggered when Asterisk sends an RTCP message.<p>
-	 * Available since Asterisk 1.6<p>
-	 * It is implemented in <code>main/rtp.c</code>
-	 *
-	 * @since 1.0.0
-	 */
-	class RtcpSentEvent: public AbstractRtcpEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("RtcpSentEvent");
-		}
-		RtcpSentEvent(const std::string & values);
-		virtual ~RtcpSentEvent();
 
-		/**
-		 * Returns the IP address the RTCP message has been sent to.
-		 *
-		 * @return the IP address the RTCP message has been sent to.
-		 */
-		const std::string& getToAddress() const;
+    /**
+     * An RtcpSentEvent is triggered when Asterisk sends an RTCP message.<p>
+     * Available since Asterisk 1.6<p>
+     * It is implemented in <code>main/rtp.c</code>
+     *
+     * @since 1.0.0
+     */
+    class RtcpSentEvent : public AbstractRtcpEvent {
+    public:
+        RtcpSentEvent(const std::string & values);
+        virtual ~RtcpSentEvent();
 
-		/**
-		 * Returns the port the RTCP message has been sent to.
-		 *
-		 * @return the port the RTCP message has been sent to.
-		 */
-		int getToPort() const;
+        /**
+         * Returns the IP address the RTCP message has been sent to.
+         *
+         * @return the IP address the RTCP message has been sent to.
+         */
+        const std::string& getToAddress() const;
 
-		/**
-		 * Returns our synchronization source identifier that uniquely identifies the source of a stream.
-		 * @return our synchronization source identifier.
-		 */
-		long getOurSsrc() const;
+        /**
+         * Returns the port the RTCP message has been sent to.
+         *
+         * @return the port the RTCP message has been sent to.
+         */
+        int getToPort() const;
 
-		double getSentNtp() const;
+        /**
+         * Returns our synchronization source identifier that uniquely identifies the source of a stream.
+         * @return our synchronization source identifier.
+         */
+        long getOurSsrc() const;
 
-		long getSentRtp() const;
+        double getSentNtp() const;
 
-		/**
-		 * Returns the number of packets sent.
-		 *
-		 * @return the number of packets sent.
-		 */
-		long getSentPackets() const;
+        long getSentRtp() const;
 
-		/**
-		 * Returns the number of octets (bytes) sent.
-		 *
-		 * @return the number of octets (bytes) sent.
-		 */
-		long getSentOctets() const;
+        /**
+         * Returns the number of packets sent.
+         *
+         * @return the number of packets sent.
+         */
+        long getSentPackets() const;
 
-		long getCumulativeLoss() const;
+        /**
+         * Returns the number of octets (bytes) sent.
+         *
+         * @return the number of octets (bytes) sent.
+         */
+        long getSentOctets() const;
 
-		long getTheirLastSr() const;
-	};
+        long getCumulativeLoss() const;
+
+        long getTheirLastSr() const;
+    };
 
 } /* namespace asteriskcpp */
 #endif /* RTCPSENTEVENT_H_ */

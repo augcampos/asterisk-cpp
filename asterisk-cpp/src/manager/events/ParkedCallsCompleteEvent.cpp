@@ -9,12 +9,11 @@
 
 namespace asteriskcpp {
 
-	ParkedCallsCompleteEvent::ParkedCallsCompleteEvent(const std::string & values) :
-			ResponseEvent(values) {
-	}
+    ParkedCallsCompleteEvent::ParkedCallsCompleteEvent(const std::string & values) :
+    ResponseEvent(values) {
+    }
 
-	ParkedCallsCompleteEvent::~ParkedCallsCompleteEvent()
-	{
-	}
+    ParkedCallsCompleteEvent::~ParkedCallsCompleteEvent() {
+    }
 
 } /* namespace asteriskcpp */

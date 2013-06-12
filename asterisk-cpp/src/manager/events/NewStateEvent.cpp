@@ -9,13 +9,12 @@
 
 namespace asteriskcpp {
 
-	NewStateEvent::NewStateEvent(const std::string & values) :
-			AbstractChannelStateEvent(values) {
-	}
+    NewStateEvent::NewStateEvent(const std::string & values) :
+    AbstractChannelStateEvent(values) {
+    }
 
-	NewStateEvent::~NewStateEvent()
-	{
-		// TODO Auto-generated destructor stub
-	}
+    NewStateEvent::~NewStateEvent() {
+        // TODO Auto-generated destructor stub
+    }
 
 } /* namespace asteriskcpp */

@@ -12,28 +12,25 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A MeetMeEnd event indicates that a conference room was disposed.<p>
-	 * Available since Asterisk 1.6.<p>
-	 * It is defined in <code>apps/app_meetme.c</code>
-	 *
-	 * @since 1.0.0
-	 */
-	class MeetMeEndEvent: public ManagerEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("MeetMeEndEvent");
-		}
-		MeetMeEndEvent(const std::string & values);
-		virtual ~MeetMeEndEvent();
+    /**
+     * A MeetMeEnd event indicates that a conference room was disposed.<p>
+     * Available since Asterisk 1.6.<p>
+     * It is defined in <code>apps/app_meetme.c</code>
+     *
+     * @since 1.0.0
+     */
+    class MeetMeEndEvent : public ManagerEvent {
+    public:
+        MeetMeEndEvent(const std::string & values);
+        virtual ~MeetMeEndEvent();
 
-		/**
-		 * Returns the conference number.
-		 *
-		 * @return the conference number.
-		 */
-		const std::string& getMeetMe() const;
-	};
+        /**
+         * Returns the conference number.
+         *
+         * @return the conference number.
+         */
+        const std::string& getMeetMe() const;
+    };
 
 } /* namespace asterisk_cpp */
 #endif /* MEETMEENDEVENT_H_ */

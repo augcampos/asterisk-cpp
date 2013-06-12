@@ -10,27 +10,27 @@
 
 namespace asteriskcpp {
 
-	LogChannelEvent::LogChannelEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
+    LogChannelEvent::LogChannelEvent(const std::string & values) :
+    ManagerEvent(values) {
+    }
 
-	LogChannelEvent::~LogChannelEvent() {
-	}
+    LogChannelEvent::~LogChannelEvent() {
+    }
 
-	const std::string& LogChannelEvent::getChannel() const {
-		return (getProperty("Channel"));
-	}
+    const std::string& LogChannelEvent::getChannel() const {
+        return (getProperty("Channel"));
+    }
 
-	bool LogChannelEvent::getEnabled() const {
-		return (getProperty<bool>("Enabled"));
-	}
+    bool LogChannelEvent::getEnabled() const {
+        return (getProperty<bool>("Enabled"));
+    }
 
-	int LogChannelEvent::getReason() const {
-		return (convertFromString<int>(getProperty("Reason")));
-	}
+    int LogChannelEvent::getReason() const {
+        return (convertFromString<int>(getProperty("Reason")));
+    }
 
-	const std::string& LogChannelEvent::getReasonTxt() const {
-		return (getProperty("ReasonTxt"));
-	}
+    const std::string& LogChannelEvent::getReasonTxt() const {
+        return (getProperty("ReasonTxt"));
+    }
 
 } /* namespace asterisk_cpp */

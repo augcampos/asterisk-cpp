@@ -9,21 +9,18 @@
 
 namespace asteriskcpp {
 
-	ParkedCallEvent::ParkedCallEvent(const std::string & values) :
-			AbstractParkedCallEvent(values) {
-	}
+    ParkedCallEvent::ParkedCallEvent(const std::string & values) :
+    AbstractParkedCallEvent(values) {
+    }
 
-	ParkedCallEvent::~ParkedCallEvent()
-	{
-	}
+    ParkedCallEvent::~ParkedCallEvent() {
+    }
 
-	const std::string& ParkedCallEvent::getFrom() const
-	{
-		return (getProperty("From"));
-	}
+    const std::string& ParkedCallEvent::getFrom() const {
+        return (getProperty("From"));
+    }
 
-	int ParkedCallEvent::getTimeout() const
-	{
-		return (getProperty<int>("Timeout"));
-	}
+    int ParkedCallEvent::getTimeout() const {
+        return (getProperty<int>("Timeout"));
+    }
 } /* namespace asteriskcpp */

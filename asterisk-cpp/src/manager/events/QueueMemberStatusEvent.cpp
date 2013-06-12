@@ -9,12 +9,11 @@
 
 namespace asteriskcpp {
 
-	QueueMemberStatusEvent::QueueMemberStatusEvent(const std::string & values) :
-			QueueMemberEvent(values) {
-	}
+    QueueMemberStatusEvent::QueueMemberStatusEvent(const std::string & values) :
+    QueueMemberEvent(values) {
+    }
 
-	QueueMemberStatusEvent::~QueueMemberStatusEvent()
-	{
-	}
+    QueueMemberStatusEvent::~QueueMemberStatusEvent() {
+    }
 
 } /* namespace asteriskcpp */

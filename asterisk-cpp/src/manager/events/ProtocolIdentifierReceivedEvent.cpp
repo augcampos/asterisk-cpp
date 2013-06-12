@@ -9,16 +9,14 @@
 
 namespace asteriskcpp {
 
-	ProtocolIdentifierReceivedEvent::ProtocolIdentifierReceivedEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
+    ProtocolIdentifierReceivedEvent::ProtocolIdentifierReceivedEvent(const std::string & values) :
+    ManagerEvent(values) {
+    }
 
-	ProtocolIdentifierReceivedEvent::~ProtocolIdentifierReceivedEvent()
-	{
-	}
+    ProtocolIdentifierReceivedEvent::~ProtocolIdentifierReceivedEvent() {
+    }
 
-	const std::string& ProtocolIdentifierReceivedEvent::getProtocolIdentifier() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& ProtocolIdentifierReceivedEvent::getProtocolIdentifier() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

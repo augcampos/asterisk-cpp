@@ -9,14 +9,13 @@
 
 namespace asteriskcpp {
 
-	OriginateFailureEvent::OriginateFailureEvent(const std::string & values) :
-			OriginateResponseEvent(values) {
-		setProperty("Response", RESPONSE_FAILURE);
+    OriginateFailureEvent::OriginateFailureEvent(const std::string & values) :
+    OriginateResponseEvent(values) {
+        setProperty("Response", RESPONSE_FAILURE);
 
-	}
+    }
 
-	OriginateFailureEvent::~OriginateFailureEvent()
-	{
-	}
+    OriginateFailureEvent::~OriginateFailureEvent() {
+    }
 
 } /* namespace asteriskcpp */

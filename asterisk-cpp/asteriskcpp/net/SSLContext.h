@@ -20,35 +20,35 @@
 
 namespace asteriskcpp {
 
-	class SSLContext {
-	private:
-		SSL_CTX* ctx;
+    class SSLContext {
+    private:
+        SSL_CTX* ctx;
 
-		static bool sslInit;
-		static std::string password2check;
-		static std::vector<boost::mutex*> mutexVector;
+        static bool sslInit;
+        static std::string password2check;
+        static std::vector<boost::mutex*> mutexVector;
 
-	public:
-		static boost::mutex mut;
+    public:
+        static boost::mutex mut;
 
-	public:
-		SSLContext(const std::string& certFileList);
-		SSLContext(const std::string& keyFile, const std::string& certFile, const std::string& pass);
-		SSLContext(const std::string& keyFile, const std::string& certFile, const std::string& certFileList, const std::string& pass,
-				bool requireCertification = false);
-		~SSLContext();
+    public:
+        SSLContext(const std::string& certFileList);
+        SSLContext(const std::string& keyFile, const std::string& certFile, const std::string& pass);
+        SSLContext(const std::string& keyFile, const std::string& certFile, const std::string& certFileList, const std::string& pass,
+                bool requireCertification = false);
+        ~SSLContext();
 
-		SSL_CTX* getContext();
+        SSL_CTX* getContext();
 
-	private:
-		void createCTX();
-		void loadKeys(const std::string& keyFile, const std::string& certFile, const std::string& pass);
-		void loadCerts(const std::string& certFileList, bool requireCertification);
+    private:
+        void createCTX();
+        void loadKeys(const std::string& keyFile, const std::string& certFile, const std::string& pass);
+        void loadCerts(const std::string& certFileList, bool requireCertification);
 
-		static int passwordCheck(char *buffer, int num, int rwflag, void *userdata);
-		static void lock(int mode, int n, const char *file, int line);
-		static unsigned long getID();
-	};
+        static int passwordCheck(char *buffer, int num, int rwflag, void *userdata);
+        static void lock(int mode, int n, const char *file, int line);
+        static unsigned long getID();
+    };
 
 }
 

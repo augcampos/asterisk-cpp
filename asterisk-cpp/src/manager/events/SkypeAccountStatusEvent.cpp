@@ -9,22 +9,19 @@
 
 namespace asteriskcpp {
 
-	SkypeAccountStatusEvent::SkypeAccountStatusEvent(const std::string & values) :
-			ManagerEvent(values) {
+    SkypeAccountStatusEvent::SkypeAccountStatusEvent(const std::string & values) :
+    ManagerEvent(values) {
 
-	}
+    }
 
-	SkypeAccountStatusEvent::~SkypeAccountStatusEvent()
-	{
-	}
+    SkypeAccountStatusEvent::~SkypeAccountStatusEvent() {
+    }
 
-	const std::string& SkypeAccountStatusEvent::getUsername() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& SkypeAccountStatusEvent::getUsername() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& SkypeAccountStatusEvent::getStatus() const
-	{
-		return (getGetterValue(__FUNCTION__));
-	}
+    const std::string& SkypeAccountStatusEvent::getStatus() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */

@@ -12,45 +12,44 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A CoreShowChannelsCompleteEvent is triggered after the state of all channels has been reported in response
-	 * to a CoreShowChannelsAction.
-	 *
-	 * @see org.asteriskjava.manager.action.CoreShowChannelsAction
-	 * @see org.asteriskjava.manager.event.CoreShowChannelEvent
-	 * @since 1.0.0
-	 */
-	class CoreShowChannelsCompleteEvent: public ResponseEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("CoreShowChannelsCompleteEvent");
-		}
-		CoreShowChannelsCompleteEvent(const std::string& values) :
-				ResponseEvent(values) {
-		}
-		virtual ~CoreShowChannelsCompleteEvent() {
-		}
+    /**
+     * A CoreShowChannelsCompleteEvent is triggered after the state of all channels has been reported in response
+     * to a CoreShowChannelsAction.
+     *
+     * @see org.asteriskjava.manager.action.CoreShowChannelsAction
+     * @see org.asteriskjava.manager.event.CoreShowChannelEvent
+     * @since 1.0.0
+     */
+    class CoreShowChannelsCompleteEvent : public ResponseEvent {
+    public:
 
-		/**
-		 * Returns if the status of the eventlist (should be Complete).<p>
-		 *
-		 * @return the status of the list.
-		 * @since 1.0.0
-		 */
-		const std::string& getEventlist() const {
-			return (getProperty("Eventlist"));
-		}
+        CoreShowChannelsCompleteEvent(const std::string& values) :
+        ResponseEvent(values) {
+        }
 
-		/**
-		 * Returns the number of channels reported.<p>
-		 *
-		 * @return the number of channels reported.
-		 */
-		int getListitems() const {
-			return (convertFromString<int>(getProperty("Listitems")));
-		}
+        virtual ~CoreShowChannelsCompleteEvent() {
+        }
 
-	};
+        /**
+         * Returns if the status of the eventlist (should be Complete).<p>
+         *
+         * @return the status of the list.
+         * @since 1.0.0
+         */
+        const std::string& getEventlist() const {
+            return (getProperty("Eventlist"));
+        }
+
+        /**
+         * Returns the number of channels reported.<p>
+         *
+         * @return the number of channels reported.
+         */
+        int getListitems() const {
+            return (convertFromString<int>(getProperty("Listitems")));
+        }
+
+    };
 
 }
 

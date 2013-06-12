@@ -7,69 +7,74 @@
 
 #include "asteriskcpp/manager/events/ManagerEvent.h"
 #include "asteriskcpp/utils/LogHandler.h"
+#include <stdio.h>
 
 static unsigned long nextSequenceNumber = 0;
 
 namespace asteriskcpp {
 
-	ManagerEvent::ManagerEvent() {
-	}
+    ManagerEvent::ManagerEvent() {
+    }
 
-	ManagerEvent::ManagerEvent(const std::string& values) {
-		internalNumber = (nextSequenceNumber++);
-		received = std::time(0);
-		convertStr(values);
-	}
+    ManagerEvent::ManagerEvent(const std::string& values) {
+        internalNumber = (nextSequenceNumber++);
+        received = std::time(0);
+        convertStr(values);
+    }
 
-	ManagerEvent::~ManagerEvent() {
-	}
+    const std::string ManagerEvent::getEventName() const {
+        return this->getClassName();
+    }
 
-	inline time_t ManagerEvent::getDateReceived() const {
-		return (received);
-	}
+    ManagerEvent::~ManagerEvent() {
+    }
 
-	const std::string& ManagerEvent::getPrivilege() const {
-		//TODO: Verify name
-		return (getGetterValue(__FUNCTION__));
-	}
+    inline time_t ManagerEvent::getDateReceived() const {
+        return (received);
+    }
 
-	double ManagerEvent::getTimestamp() const {
-		//TODO: Implement
-		return (0);
-	}
+    const std::string& ManagerEvent::getPrivilege() const {
+        //TODO: Verify name
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	const std::string& ManagerEvent::getServer() const {
-		return (getGetterValue(__FUNCTION__));
-	}
+    double ManagerEvent::getTimestamp() const {
+        //TODO: Implement
+        return (0);
+    }
 
-	const std::string& ManagerEvent::getFile() const {
-		//TODO: Verify name
-		return (getProperty("File"));
-	}
+    const std::string& ManagerEvent::getServer() const {
+        return (getGetterValue(__FUNCTION__));
+    }
 
-	int ManagerEvent::getLine() const {
-		//TODO: Verify name
-		//return (getProperty("Line"));
-		return (0);
-	}
+    const std::string& ManagerEvent::getFile() const {
+        //TODO: Verify name
+        return (getProperty("File"));
+    }
 
-	const std::string& ManagerEvent::getFunc() const {
-		//TODO: Verify name
-		return (getProperty("Func"));
-	}
+    int ManagerEvent::getLine() const {
+        //TODO: Verify name
+        //return (getProperty("Line"));
+        return (0);
+    }
 
-	unsigned long ManagerEvent::getSequenceNumber() const {
-		//TODO: Verify name
-		//return (getProperty("SequenceNumber"));
-		return (0);
-	}
+    const std::string& ManagerEvent::getFunc() const {
+        //TODO: Verify name
+        return (getProperty("Func"));
+    }
 
-	inline unsigned long ManagerEvent::getInternalNumber() const {
-		return (internalNumber);
-	}
+    unsigned long ManagerEvent::getSequenceNumber() const {
+        //TODO: Verify name
+        //return (getProperty("SequenceNumber"));
+        return (0);
+    }
 
-	const std::string& ManagerEvent::getUniqueID() const {
-		return (getProperty("Uniqueid"));
-	}
+    inline unsigned long ManagerEvent::getInternalNumber() const {
+        return (internalNumber);
+    }
+
+    const std::string& ManagerEvent::getUniqueID() const {
+        return (getProperty("Uniqueid"));
+    }
 
 }

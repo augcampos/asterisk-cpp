@@ -10,24 +10,24 @@
 
 namespace asteriskcpp {
 
-	AbstractRtpStatEvent::AbstractRtpStatEvent(const std::string& values) :
-			ManagerEvent(values) {
+    AbstractRtpStatEvent::AbstractRtpStatEvent(const std::string& values) :
+    ManagerEvent(values) {
 
-	}
+    }
 
-	AbstractRtpStatEvent::~AbstractRtpStatEvent() {
-	}
+    AbstractRtpStatEvent::~AbstractRtpStatEvent() {
+    }
 
-	long AbstractRtpStatEvent::getSsrc() const {
-		return (convertFromString<long>(getProperty("Ssrc")));
-	}
+    long AbstractRtpStatEvent::getSsrc() const {
+        return (convertFromString<long>(getProperty("Ssrc")));
+    }
 
-	long AbstractRtpStatEvent::getLostPackets() const {
-		return (convertFromString<long>(getProperty("LostPackets")));
-	}
+    long AbstractRtpStatEvent::getLostPackets() const {
+        return (convertFromString<long>(getProperty("LostPackets")));
+    }
 
-	double AbstractRtpStatEvent::getJitter() const {
-		return (convertFromString<double>(getProperty("LostPackets")));
-	}
+    double AbstractRtpStatEvent::getJitter() const {
+        return (convertFromString<double>(getProperty("LostPackets")));
+    }
 
 } /* namespace asteriskcpp */

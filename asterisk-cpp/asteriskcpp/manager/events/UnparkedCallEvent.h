@@ -12,27 +12,24 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A UnparkedCallEvent is triggered when a channel that has been parked is
-	 * resumed.<p>
-	 * It is implemented in <code>res/res_features.c</code><p>
-	 * Available since Asterisk 1.2
-	 *
-	 * @since 0.2
-	 */
-	class UnparkedCallEvent: public AbstractParkedCallEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("UnparkedCallEvent");
-		}
-		UnparkedCallEvent(const std::string & values);
-		virtual ~UnparkedCallEvent();
+    /**
+     * A UnparkedCallEvent is triggered when a channel that has been parked is
+     * resumed.<p>
+     * It is implemented in <code>res/res_features.c</code><p>
+     * Available since Asterisk 1.2
+     *
+     * @since 0.2
+     */
+    class UnparkedCallEvent : public AbstractParkedCallEvent {
+    public:
+        UnparkedCallEvent(const std::string & values);
+        virtual ~UnparkedCallEvent();
 
-		/**
-		 * Returns the name of the channel that parked the call.
-		 */
-		const std::string& getFrom() const;
-	};
+        /**
+         * Returns the name of the channel that parked the call.
+         */
+        const std::string& getFrom() const;
+    };
 
 } /* namespace asteriskcpp */
 #endif /* UNPARKEDCALLEVENT_H_ */

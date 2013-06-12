@@ -27,64 +27,66 @@
 
 namespace asteriskcpp {
 
-	class IPAddress {
-	private:
-		int ip;
-		std::string host;
-		unsigned short port;
-		static boost::mutex mut;
+    class IPAddress {
+    private:
+        int ip;
+        std::string host;
+        unsigned short port;
+        static boost::mutex mut;
 
-	public:
-		IPAddress();
-		IPAddress(unsigned short port);
-		IPAddress(int ip, unsigned short port);
-		IPAddress(const std::string& host, unsigned short port);
-		IPAddress(const IPAddress& ipAddress);
-		~IPAddress();
+    public:
+        IPAddress();
+        IPAddress(unsigned short port);
+        IPAddress(int ip, unsigned short port);
+        IPAddress(const std::string& host, unsigned short port);
+        IPAddress(const IPAddress& ipAddress);
+        ~IPAddress();
 
-		void setHost(const std::string& host);
-		void setIP(int ip);
-		void setPort(unsigned short port);
+        void setHost(const std::string& host);
+        void setIP(int ip);
+        void setPort(unsigned short port);
 
-		std::string getHost() const;
-		int getIP() const;
-		unsigned short getPort() const;
+        std::string getHost() const;
+        int getIP() const;
+        unsigned short getPort() const;
 
-		operator const bool() {
-			return (ip != 0);
-		}
+        operator const bool() {
+            return (ip != 0);
+        }
 
-		//not a full comparison (args ignored)
-		friend inline bool operator !=(const IPAddress& a, const IPAddress& b) {
-			return (a.ip != b.ip || a.port != b.port);
-		}
+        //not a full comparison (args ignored)
 
-		friend inline bool operator ==(const IPAddress& a, const IPAddress& b) {
-			return (a.ip == b.ip && a.port == b.port);
-		}
+        friend inline bool operator !=(const IPAddress& a, const IPAddress& b) {
+            return (a.ip != b.ip || a.port != b.port);
+        }
 
-		friend std::ostream& operator<<(std::ostream& os, IPAddress& o) {
-			os << o.host << ":" << o.port;
-			return (os);
-		}
+        friend inline bool operator ==(const IPAddress& a, const IPAddress& b) {
+            return (a.ip == b.ip && a.port == b.port);
+        }
 
-		friend std::ostream& operator<<(std::ostream& os, const IPAddress& o) {
-			os << o.host << ":" << o.port;
-			return (os);
-		}
+        friend std::ostream& operator<<(std::ostream& os, IPAddress& o) {
+            os << o.host << ":" << o.port;
+            return (os);
+        }
 
-	private:
-		void resolveAddr();
-		void toStringAddr();
-		void getLocalIP();
-	};
+        friend std::ostream& operator<<(std::ostream& os, const IPAddress& o) {
+            os << o.host << ":" << o.port;
+            return (os);
+        }
+
+    private:
+        void resolveAddr();
+        void toStringAddr();
+        void getLocalIP();
+    };
 
 #ifdef _WIN32
-class InitWSA {
-public:
-	InitWSA();
-	~InitWSA();
-};
+
+    class InitWSA {
+    public:
+        InitWSA();
+        ~InitWSA();
+    };
 #endif
 
 }

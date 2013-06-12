@@ -9,12 +9,11 @@
 
 namespace asteriskcpp {
 
-	ParkedCallGiveUpEvent::ParkedCallGiveUpEvent(const std::string & values) :
-			AbstractParkedCallEvent(values) {
-	}
+    ParkedCallGiveUpEvent::ParkedCallGiveUpEvent(const std::string & values) :
+    AbstractParkedCallEvent(values) {
+    }
 
-	ParkedCallGiveUpEvent::~ParkedCallGiveUpEvent()
-	{
-	}
+    ParkedCallGiveUpEvent::~ParkedCallGiveUpEvent() {
+    }
 
 } /* namespace asteriskcpp */

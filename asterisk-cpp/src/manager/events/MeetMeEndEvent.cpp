@@ -9,15 +9,15 @@
 
 namespace asteriskcpp {
 
-	MeetMeEndEvent::MeetMeEndEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
+    MeetMeEndEvent::MeetMeEndEvent(const std::string & values) :
+    ManagerEvent(values) {
+    }
 
-	MeetMeEndEvent::~MeetMeEndEvent() {
-	}
+    MeetMeEndEvent::~MeetMeEndEvent() {
+    }
 
-	const std::string& MeetMeEndEvent::getMeetMe() const {
-		return (getProperty("MeetMe"));
-	}
+    const std::string& MeetMeEndEvent::getMeetMe() const {
+        return (getProperty("MeetMe"));
+    }
 
 }/* namespace asterisk_cpp */

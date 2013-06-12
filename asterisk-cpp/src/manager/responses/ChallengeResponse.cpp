@@ -8,15 +8,15 @@
 #include "asteriskcpp/manager/responses/ChallengeResponse.h"
 namespace asteriskcpp {
 
-	ChallengeResponse::ChallengeResponse(const std::string& responseStr) :
-			ManagerResponse(responseStr) {
-	}
+    ChallengeResponse::ChallengeResponse(const std::string& responseStr) :
+    ManagerResponse(responseStr) {
+    }
 
-	ChallengeResponse::~ChallengeResponse() {
-	}
+    ChallengeResponse::~ChallengeResponse() {
+    }
 
-	std::string ChallengeResponse::getChallenge() const {
-		return (this->getProperty("challenge"));
-	}
+    std::string ChallengeResponse::getChallenge() const {
+        return (this->getProperty("challenge"));
+    }
 
 }

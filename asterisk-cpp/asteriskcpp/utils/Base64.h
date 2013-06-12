@@ -13,13 +13,12 @@
 
 namespace asteriskcpp {
 
-
-	class Base64 {
-	public:
-		static std::string encode(unsigned char const* bytes_to_encode, unsigned int in_len);
-		static std::string encode(std::string const& decoded_string);
-		static std::string decode(std::string const& encoded_string);
-	};
+    class Base64 {
+    public:
+        static std::string encode(unsigned char const* bytes_to_encode, unsigned int in_len);
+        static std::string encode(std::string const& decoded_string);
+        static std::string decode(std::string const& encoded_string);
+    };
 
 } /* namespace asteriskcpp */
 #endif /* BASE64_H_ */

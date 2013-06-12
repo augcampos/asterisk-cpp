@@ -13,26 +13,26 @@
 
 namespace asteriskcpp {
 
-	class Exception: std::exception {
-	private:
-		std::string name;
-		std::string message;
-		std::string stackTrace;
-		std::string information;
+    class Exception : std::exception {
+    private:
+        std::string name;
+        std::string message;
+        std::string stackTrace;
+        std::string information;
 
-	public:
-		Exception(const std::string& message);
-		virtual ~Exception() throw ();
+    public:
+        Exception(const std::string& message);
+        virtual ~Exception() throw ();
 
-		void printStackTrace();
-		std::string getMessage();
-		std::string getInformation();
-		std::string getStackTrace();
-		void setExceptionInformation(const char* file, const char* function, const int line);
+        void printStackTrace();
+        std::string getMessage();
+        std::string getInformation();
+        std::string getStackTrace();
+        void setExceptionInformation(const char* file, const char* function, const int line);
 
-	protected:
-		Exception(const std::string& name, const std::string& message);
-	};
+    protected:
+        Exception(const std::string& name, const std::string& message);
+    };
 
 #if !defined(__PRETTY_FUNCTION__)
 #define __PRETTY_FUNCTION__ __FUNCTION__

@@ -9,34 +9,29 @@
 
 namespace asteriskcpp {
 
-	NewAccountCodeEvent::NewAccountCodeEvent(const std::string & values) :
-			ManagerEvent(values) {
-	}
+    NewAccountCodeEvent::NewAccountCodeEvent(const std::string & values) :
+    ManagerEvent(values) {
+    }
 
-	NewAccountCodeEvent::~NewAccountCodeEvent()
-	{
-	}
+    NewAccountCodeEvent::~NewAccountCodeEvent() {
+    }
 
-	const std::string& NewAccountCodeEvent::getChannel() const
-	{
-		return (getProperty("Channel"));
-	}
+    const std::string& NewAccountCodeEvent::getChannel() const {
+        return (getProperty("Channel"));
+    }
 
-	const std::string& NewAccountCodeEvent::getUniqueId() const
-	{
-		return (getProperty("UniqueId"));
+    const std::string& NewAccountCodeEvent::getUniqueId() const {
+        return (getProperty("UniqueId"));
 
-	}
+    }
 
-	const std::string& NewAccountCodeEvent::getAccountCode() const
-	{
-		return (getProperty("AccountCode"));
+    const std::string& NewAccountCodeEvent::getAccountCode() const {
+        return (getProperty("AccountCode"));
 
-	}
+    }
 
-	const std::string& NewAccountCodeEvent::getOldAccountCode() const
-	{
-		return (getProperty("OldAccountCode"));
-	}
+    const std::string& NewAccountCodeEvent::getOldAccountCode() const {
+        return (getProperty("OldAccountCode"));
+    }
 }
 /* namespace asteriskcpp */

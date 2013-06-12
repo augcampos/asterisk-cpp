@@ -12,22 +12,19 @@
 
 namespace asteriskcpp {
 
-	class AgentLogoffEvent: public ManagerEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("AgentLogoffEvent");
-		}
-		AgentLogoffEvent(const std::string & values);
-		virtual ~AgentLogoffEvent();
+    class AgentLogoffEvent : public ManagerEvent {
+    public:
+        AgentLogoffEvent(const std::string & values);
+        virtual ~AgentLogoffEvent();
 
-		/**
-		 * Gets the name of the agent that logged off.
-		 */
-		const std::string& getAgent() const;
+        /**
+         * Gets the name of the agent that logged off.
+         */
+        const std::string& getAgent() const;
 
-		const std::string& getLoginTime() const;
+        const std::string& getLoginTime() const;
 
-	};
+    };
 
 }
 

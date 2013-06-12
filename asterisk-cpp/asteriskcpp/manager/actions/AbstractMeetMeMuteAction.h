@@ -12,46 +12,46 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * Abstract base class for mute and unmute actions.
-	 *
-	 */
-	class AbstractMeetMeMuteAction: public AbstractManagerAction {
-	public:
-		AbstractMeetMeMuteAction(const std::string& meetMe, int userNum);
-		virtual ~AbstractMeetMeMuteAction();
+    /**
+     * Abstract base class for mute and unmute actions.
+     *
+     */
+    class AbstractMeetMeMuteAction : public AbstractManagerAction {
+    public:
+        AbstractMeetMeMuteAction(const std::string& meetMe, int userNum);
+        virtual ~AbstractMeetMeMuteAction();
 
-		/**
-		 * Returns the conference number.
-		 *
-		 * @return the conference number.
-		 */
-		const std::string& getMeetMe() const;
+        /**
+         * Returns the conference number.
+         *
+         * @return the conference number.
+         */
+        const std::string& getMeetMe() const;
 
-		/**
-		 * Sets the conference number.<p>
-		 * This property is mandatory.
-		 *
-		 * @param meetMe the conference number.
-		 */
-		void setMeetMe(const std::string& meetMe);
+        /**
+         * Sets the conference number.<p>
+         * This property is mandatory.
+         *
+         * @param meetMe the conference number.
+         */
+        void setMeetMe(const std::string& meetMe);
 
-		/**
-		 * Returns the index of the user in the conference.
-		 *
-		 * @return the index of the user in the conference.
-		 */
-		int getUserNum() const;
+        /**
+         * Returns the index of the user in the conference.
+         *
+         * @return the index of the user in the conference.
+         */
+        int getUserNum() const;
 
-		/**
-		 * Sets the index of the user in the conference.<p>
-		 * This property is mandatory.
-		 *
-		 * @param userNum the index of the user in the conference.
-		 */
-		void setUserNum(int userNum);
+        /**
+         * Sets the index of the user in the conference.<p>
+         * This property is mandatory.
+         *
+         * @param userNum the index of the user in the conference.
+         */
+        void setUserNum(int userNum);
 
-	};
+    };
 
 } /* namespace asterisk_cpp */
 #endif /* ABSTRACTMEETMEMUTEACTION_H_ */

@@ -9,11 +9,11 @@
 
 namespace asteriskcpp {
 
-	ListCommandsAction::ListCommandsAction()  {
-	}
+    ListCommandsAction::ListCommandsAction() {
+    }
 
-	ListCommandsAction::~ListCommandsAction() {
-	}
+    ListCommandsAction::~ListCommandsAction() {
+    }
 
 } //NS
 

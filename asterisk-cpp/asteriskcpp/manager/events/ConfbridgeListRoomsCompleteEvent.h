@@ -12,33 +12,32 @@
 
 namespace asteriskcpp {
 
-	class ConfbridgeListRoomsCompleteEvent: public ResponseEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("ConfbridgeListRoomsCompleteEvent");
-		}
-		ConfbridgeListRoomsCompleteEvent(const std::string& values) :
-				ResponseEvent(values) {
-		}
-		virtual ~ConfbridgeListRoomsCompleteEvent() {
-		}
+    class ConfbridgeListRoomsCompleteEvent : public ResponseEvent {
+    public:
 
-		/**
-		 * Returns the status of the list that is always "Complete".
-		 */
-		const std::string& getEventList() const {
-			return (getProperty("EventList"));
-		}
+        ConfbridgeListRoomsCompleteEvent(const std::string& values) :
+        ResponseEvent(values) {
+        }
 
-		/**
-		 * Returns the number listitems.
-		 *
-		 * @return the number items returned.
-		 */
-		const std::string& getListItems() const {
-			return (getProperty("ListItems"));
-		}
-	};
+        virtual ~ConfbridgeListRoomsCompleteEvent() {
+        }
+
+        /**
+         * Returns the status of the list that is always "Complete".
+         */
+        const std::string& getEventList() const {
+            return (getProperty("EventList"));
+        }
+
+        /**
+         * Returns the number listitems.
+         *
+         * @return the number items returned.
+         */
+        const std::string& getListItems() const {
+            return (getProperty("ListItems"));
+        }
+    };
 
 }
 

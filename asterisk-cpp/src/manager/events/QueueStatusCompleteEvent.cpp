@@ -9,13 +9,12 @@
 
 namespace asteriskcpp {
 
-	QueueStatusCompleteEvent::QueueStatusCompleteEvent(const std::string & values) :
-			ResponseEvent(values) {
-	}
+    QueueStatusCompleteEvent::QueueStatusCompleteEvent(const std::string & values) :
+    ResponseEvent(values) {
+    }
 
-	QueueStatusCompleteEvent::~QueueStatusCompleteEvent()
-	{
+    QueueStatusCompleteEvent::~QueueStatusCompleteEvent() {
 
-	}
+    }
 
 } /* namespace asteriskcpp */

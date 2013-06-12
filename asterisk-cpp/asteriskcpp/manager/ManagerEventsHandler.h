@@ -15,31 +15,32 @@
 
 namespace asteriskcpp {
 
-	typedef void (*onManagerEventCallback_t)(const ManagerEvent& me);
-	class ASyncEventCallBack: public ManagerEventListener {
-	public:
-		ASyncEventCallBack(onManagerEventCallback_t f);
-		virtual ~ASyncEventCallBack();
-		void onManagerEvent(const ManagerEvent& me);
-		protected:
-		onManagerEventCallback_t function;
-	};
+    typedef void (*onManagerEventCallback_t)(const ManagerEvent& me);
 
-	class ManagerEventsHandler {
-		typedef std::set<const ManagerEventListener*> EventListenersList;
-		public:
-		virtual ~ManagerEventsHandler();
-		void addEventListener(const ManagerEventListener& mel);
-		void removeEventListener(const ManagerEventListener& mel);
+    class ASyncEventCallBack : public ManagerEventListener {
+    public:
+        ASyncEventCallBack(onManagerEventCallback_t f);
+        virtual ~ASyncEventCallBack();
+        void onManagerEvent(const ManagerEvent& me);
+    protected:
+        onManagerEventCallback_t function;
+    };
 
-	protected:
-		EventListenersList listeners;
-		void fireEvent(const ManagerEvent& me);
+    class ManagerEventsHandler {
+        typedef std::set<const ManagerEventListener*> EventListenersList;
+    public:
+        virtual ~ManagerEventsHandler();
+        void addEventListener(const ManagerEventListener& mel);
+        void removeEventListener(const ManagerEventListener& mel);
 
-	private:
-		void internalFireEvent(const ManagerEvent& me);
+    protected:
+        EventListenersList listeners;
+        void fireEvent(const ManagerEvent& me);
 
-	};
+    private:
+        void internalFireEvent(ManagerEvent& me);
+
+    };
 
 }
 

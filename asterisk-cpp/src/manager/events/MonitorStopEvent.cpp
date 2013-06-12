@@ -9,13 +9,11 @@
 
 namespace asteriskcpp {
 
-	MonitorStopEvent::MonitorStopEvent(const std::string & values) :
-			AbstractMonitorEvent(values)
-	{
-	}
+    MonitorStopEvent::MonitorStopEvent(const std::string & values) :
+    AbstractMonitorEvent(values) {
+    }
 
-	MonitorStopEvent::~MonitorStopEvent()
-	{
-	}
+    MonitorStopEvent::~MonitorStopEvent() {
+    }
 
 } /* namespace asteriskcpp */

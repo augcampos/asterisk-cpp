@@ -1,2 +1,2 @@
 # /bin/bash
-g++ -Wall Test.cpp -o teste -lasteriskcpp -lpthread -L/usr/local/lib 
+g++ -Wall Test.cpp -o teste -L/usr/local/lib/ -lasteriskcpp -lpthread  

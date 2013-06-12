@@ -12,22 +12,19 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * An UnlinkEvent is triggered when a link between two voice channels is discontinued, for example,
-	 * just before call completion.<p>
-	 * It is implemented in <code>channel.c</code>
-	 *
-	 * @deprecated as of 1.0.0, use {@link org.asteriskjava.manager.event.BridgeEvent} and
-	 *             {@link BridgeEvent#isUnlink()} instead
-	 */
-	class UnlinkEvent: public BridgeEvent {
-	public:
-		inline static std::string getEventName() {
-			return ("UnlinkEvent");
-		}
-		UnlinkEvent(const std::string & values);
-		virtual ~UnlinkEvent();
-	};
+    /**
+     * An UnlinkEvent is triggered when a link between two voice channels is discontinued, for example,
+     * just before call completion.<p>
+     * It is implemented in <code>channel.c</code>
+     *
+     * @deprecated as of 1.0.0, use {@link org.asteriskjava.manager.event.BridgeEvent} and
+     *             {@link BridgeEvent#isUnlink()} instead
+     */
+    class UnlinkEvent : public BridgeEvent {
+    public:
+        UnlinkEvent(const std::string & values);
+        virtual ~UnlinkEvent();
+    };
 
 } /* namespace asteriskcpp */
 #endif /* UNLINKEVENT_H_ */

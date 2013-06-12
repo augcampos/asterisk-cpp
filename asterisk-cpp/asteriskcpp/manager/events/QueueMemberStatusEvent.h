@@ -12,16 +12,16 @@
 
 namespace asteriskcpp {
 
-	/**
-	 * A QueueMemberStatusEvent shows the status of a QueueMemberEvent
-	 *
-	 * @author Asteria Solutions Group, Inc. <http://www.asteriasgi.com/>
-	 */
-	class QueueMemberStatusEvent: public QueueMemberEvent {
-	public:
-		QueueMemberStatusEvent(const std::string & values);
-		virtual ~QueueMemberStatusEvent();
-	};
+    /**
+     * A QueueMemberStatusEvent shows the status of a QueueMemberEvent
+     *
+     * @author Asteria Solutions Group, Inc. <http://www.asteriasgi.com/>
+     */
+    class QueueMemberStatusEvent : public QueueMemberEvent {
+    public:
+        QueueMemberStatusEvent(const std::string & values);
+        virtual ~QueueMemberStatusEvent();
+    };
 
 } /* namespace asteriskcpp */
 #endif /* QUEUEMEMBERSTATUSEVENT_H_ */

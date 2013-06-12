@@ -9,17 +9,15 @@
 
 namespace asteriskcpp {
 
-	SkypeBuddyListCompleteEvent::SkypeBuddyListCompleteEvent(const std::string & values) :
-			ResponseEvent(values) {
+    SkypeBuddyListCompleteEvent::SkypeBuddyListCompleteEvent(const std::string & values) :
+    ResponseEvent(values) {
 
-	}
+    }
 
-	SkypeBuddyListCompleteEvent::~SkypeBuddyListCompleteEvent()
-	{
-	}
+    SkypeBuddyListCompleteEvent::~SkypeBuddyListCompleteEvent() {
+    }
 
-	int SkypeBuddyListCompleteEvent::getListItems() const
-	{
-		return (getGetterValue<int>(__FUNCTION__));
-	}
+    int SkypeBuddyListCompleteEvent::getListItems() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
 } /* namespace asteriskcpp */
