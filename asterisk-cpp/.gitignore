@@ -1,2 +1,6 @@
 /Debug
 /Release
+/.deps/
+/.libs/
+/autom4te.cache/
+/m4/
