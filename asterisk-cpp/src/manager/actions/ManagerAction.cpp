@@ -17,7 +17,7 @@ namespace asteriskcpp {
     }
 
     const std::string ManagerAction::getAction() const {
-        return (this->getClassName());
+        return (this->getClassName().substr(0, this->getClassName().size() - 6));
     }
 
     ManagerResponse *ManagerAction::expectedResponce(const std::string & response) {
