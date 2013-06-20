@@ -159,6 +159,9 @@ libasteriskcpp_la_SOURCES= \
 	src/manager/actions/AbsoluteTimeoutAction.cpp \
 	src/manager/actions/AbstractMeetMeMuteAction.cpp \
 	src/manager/actions/AgentCallbackLoginAction.cpp \
+	src/manager/actions/AgentLogoffAction.cpp \
+	src/manager/actions/AgentsAction.cpp \
+	src/manager/actions/AgiAction.cpp \
 	src/manager/actions/ChallengeAction.cpp \
 	src/manager/actions/CommandAction.cpp \
 	src/manager/actions/EventsAction.cpp \
@@ -351,6 +354,9 @@ nobase_inst_HEADERS= \
 	asteriskcpp/manager/actions/AbstractManagerAction.h \
 	asteriskcpp/manager/actions/AbstractMeetMeMuteAction.h \
 	asteriskcpp/manager/actions/AgentCallbackLoginAction.h \
+	asteriskcpp/manager/actions/AgentLogoffAction.h \
+	asteriskcpp/manager/actions/AgentsAction.h \
+	asteriskcpp/manager/actions/AgiAction.h \
 	asteriskcpp/manager/actions/ChallengeAction.h \
 	asteriskcpp/manager/actions/CommandAction.h \
 	asteriskcpp/manager/actions/EventsAction.h \

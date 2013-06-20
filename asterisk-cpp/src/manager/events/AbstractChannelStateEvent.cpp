@@ -17,16 +17,24 @@ namespace asteriskcpp {
 
     }
 
+    const std::string& AbstractChannelStateEvent::getConnectedlinename() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& AbstractChannelStateEvent::getConnectedlinenum() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
     int AbstractChannelStateEvent::getChannelState() const {
-        return (convertFromString<int>(getProperty("ChannelState")));
+        return (getGetterValue<int>(__FUNCTION__));
     }
 
     const std::string& AbstractChannelStateEvent::getChannelStateDesc() const {
-        return (getProperty("ChannelStateDesc"));
+        return (getGetterValue(__FUNCTION__));
     }
 
     const std::string& AbstractChannelStateEvent::getState() const {
-        return (getProperty("ChannelStateDesc"));
+        return (getGetterValue(__FUNCTION__));
     }
 
 } /* namespace asteriskcpp */

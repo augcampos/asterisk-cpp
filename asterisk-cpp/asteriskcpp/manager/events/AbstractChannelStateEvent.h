@@ -21,6 +21,10 @@ namespace asteriskcpp {
         AbstractChannelStateEvent(const std::string& values);
         virtual ~AbstractChannelStateEvent();
 
+        const std::string& getConnectedlinename() const;
+
+        const std::string& getConnectedlinenum() const;
+
         /**
          * Returns the new state of the channel.<p>
          * For Asterisk versions prior to 1.6 (that do not send the numeric value) it is derived
