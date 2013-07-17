@@ -15,7 +15,7 @@ namespace asteriskcpp {
     /**
      * Abstract base class for RTCP related events.<p>
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      * @since 1.0.0
      */

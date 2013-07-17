@@ -34,7 +34,7 @@ namespace asteriskcpp {
         /**
          * Returns if logging has been enabled or disabled.
          *
-         * @return Boolean.TRUE if logging has been enabled, Boolean.FALSE if it has
+         * @return bool.TRUE if logging has been enabled, bool.FALSE if it has
          *         been disabled.
          */
         bool getEnabled() const;

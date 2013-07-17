@@ -29,7 +29,7 @@ namespace asteriskcpp {
     PropertyMap::~PropertyMap() {
     }
 
-    const std::string PropertyMap::getClassName() const{
+    const std::string PropertyMap::getClassName() const {
         char str[128];
         int i;
         const char *realname = typeid (*this).name();

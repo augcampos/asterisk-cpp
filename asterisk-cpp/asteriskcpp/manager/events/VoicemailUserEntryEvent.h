@@ -119,7 +119,7 @@ namespace asteriskcpp {
          * Returns whether Asterisk copies a voicemail message to an audio file and sends it to the user as an
          * attachment in an eemail voicemail notification message.
          *
-         * @return Booelan.TRUE if message will be attached, Boolean.FALSE if not, <code>null</code> if unset.
+         * @return Booelan.TRUE if message will be attached, bool.FALSE if not, <code>null</code> if unset.
          */
         bool getAttachMessage() const;
 
@@ -128,7 +128,7 @@ namespace asteriskcpp {
         /**
          * Returns whether messages will be deleted from the voicemailbox (after having been emailed).
          *
-         * @return Booelan.TRUE if messages will be deleted from the voicemailbox, Boolean.FALSE if not,
+         * @return Booelan.TRUE if messages will be deleted from the voicemailbox, bool.FALSE if not,
          *         <code>null</code> if unset.
          */
         bool getDeleteMessage() const;

@@ -33,7 +33,7 @@ namespace asteriskcpp {
         /**
          * Returns DND state of the channel.
          *
-         * @return Boolean.TRUE if do not disturb is on, Boolean.FALSE if it is off.
+         * @return bool.TRUE if do not disturb is on, bool.FALSE if it is off.
          */
         int getState() const {
             return (getProperty<bool>("State"));

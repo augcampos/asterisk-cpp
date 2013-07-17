@@ -9,6 +9,9 @@
 
 namespace asteriskcpp {
 
+     AbstractMeetMeMuteAction::AbstractMeetMeMuteAction() {
+    }
+    
     AbstractMeetMeMuteAction::AbstractMeetMeMuteAction(const std::string& meetMe, int userNum) {
     }
 

@@ -16,7 +16,7 @@ namespace asteriskcpp {
      * Corresponds to a ChallengeAction and contains the challenge needed to log in using
      * challenge/response.
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      * @see org.asteriskjava.manager.action.ChallengeAction
      * @see org.asteriskjava.manager.action.LoginAction

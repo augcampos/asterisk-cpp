@@ -20,7 +20,7 @@ namespace asteriskcpp {
      * Available since Asterisk 1.2
      *
      * @see org.asteriskjava.manager.event.MeetMeStopTalkingEvent
-     * @author srt
+     * @author augcampos
      * @version $Id$
      * @since 0.2
      */

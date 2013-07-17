@@ -32,14 +32,14 @@ namespace asteriskcpp {
     }
 
     /**
-     * Returns the the maximum duation of the call (in seconds) to set.
+     * Returns the the maximum duration of the call (in seconds) to set.
      */
     int AbsoluteTimeoutAction::getTimeout() const {
         return (getGetterValue<int>(__FUNCTION__));
     }
 
     /**
-     * Sets the the maximum duation of the call (in seconds) to set on channel.<p>
+     * Sets the the maximum duration of the call (in seconds) to set on channel.<p>
      * Setting the timeout to 0 cancels the timeout.
      */
     void AbsoluteTimeoutAction::setTimeout(int timeout) {

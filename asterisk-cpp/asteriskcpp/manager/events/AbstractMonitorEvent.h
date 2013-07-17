@@ -16,7 +16,7 @@ namespace asteriskcpp {
      * Abstract base class for monitoring events.<p>
      * Monitoring events are implemented in <code>res/res_monitor.c</code>
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      * @since 1.0.0
      */

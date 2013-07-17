@@ -21,7 +21,7 @@ namespace asteriskcpp {
      * in an agent.<p>
      * Available since Asterisk 1.2, deprecated in Asterisk 1.4 and removed in Asterisk 1.6.
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      * @since 0.2
      * @deprecated use {@link org.asteriskjava.manager.action.QueueAddAction} instead.
@@ -52,8 +52,8 @@ namespace asteriskcpp {
          * @param exten      the extension that is called to connect a queue member with
          *                   this agent
          * @param context    the context of the extension to use for callback
-         * @param ackCall    <code>Boolean.TRUE</code> to require an acknowledgement by
-         *                   '#' when agent is called back, <code>Boolean.FALSE</code> otherwise.
+         * @param ackCall    <code>bool.TRUE</code> to require an acknowledgement by
+         *                   '#' when agent is called back, <code>bool.FALSE</code> otherwise.
          *                   <code>null</code> if default should be used.
          * @param wrapupTime the minimum amount of time (in seconds) after disconnecting before
          *                   the caller can receive a new call.
@@ -109,8 +109,8 @@ namespace asteriskcpp {
         /**
          * Returns if an acknowledgement is needed when agent is called back.
          *
-         * @return <code>Boolean.TRUE</code> if acknowledgement by '#' is required when agent is
-         *         called back, <code>Boolean.FALSE</code> otherwise. <code>null</code> if
+         * @return <code>bool.TRUE</code> if acknowledgement by '#' is required when agent is
+         *         called back, <code>bool.FALSE</code> otherwise. <code>null</code> if
          *         default should be used.
          */
         bool getAckCall() const;
@@ -121,8 +121,8 @@ namespace asteriskcpp {
          * This property is optional, it allows you to override the defaults defined
          * in Asterisk's configuration.
          *
-         * @param ackCall <code>Boolean.TRUE</code> to require an acknowledgement by
-         *                '#' when agent is called back, <code>Boolean.FALSE</code> otherwise.
+         * @param ackCall <code>bool.TRUE</code> to require an acknowledgement by
+         *                '#' when agent is called back, <code>bool.FALSE</code> otherwise.
          *                <code>null</code> if default should be used.
          */
         void setAckCall(bool ackCall);

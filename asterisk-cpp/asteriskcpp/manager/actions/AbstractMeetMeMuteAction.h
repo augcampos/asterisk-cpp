@@ -18,6 +18,7 @@ namespace asteriskcpp {
      */
     class AbstractMeetMeMuteAction : public AbstractManagerAction {
     public:
+        AbstractMeetMeMuteAction();
         AbstractMeetMeMuteAction(const std::string& meetMe, int userNum);
         virtual ~AbstractMeetMeMuteAction();
 

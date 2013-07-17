@@ -16,7 +16,7 @@ namespace asteriskcpp {
     /**
      * Abstract base class for RTP statistics events.<p>
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      * @since 1.0.0
      */

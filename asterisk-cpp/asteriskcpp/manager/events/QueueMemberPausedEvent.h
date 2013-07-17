@@ -28,8 +28,8 @@ namespace asteriskcpp {
         /**
          * Returns if this queue member is paused (not accepting calls).<p>
          *
-         * @return <code>Boolean.TRUE</code> if this member has been paused or
-         *         <code>Boolean.FALSE</code> if not.
+         * @return <code>bool.TRUE</code> if this member has been paused or
+         *         <code>bool.FALSE</code> if not.
          */
         bool getPaused() const;
 

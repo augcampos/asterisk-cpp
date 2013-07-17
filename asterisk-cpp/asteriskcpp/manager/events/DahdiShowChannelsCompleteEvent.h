@@ -19,7 +19,7 @@ namespace asteriskcpp {
      * @see org.asteriskjava.manager.action.DahdiShowChannelsAction
      * @see org.asteriskjava.manager.event.DahdiShowChannelsEvent
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      */
     class DahdiShowChannelsCompleteEvent : public ResponseEvent {

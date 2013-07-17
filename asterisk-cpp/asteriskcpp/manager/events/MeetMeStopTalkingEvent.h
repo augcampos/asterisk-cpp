@@ -21,7 +21,7 @@ namespace asteriskcpp {
      * {@link org.asteriskjava.manager.event.MeetMeTalkingEvent} with status set to
      * <code>false</code> instead.
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      * @see org.asteriskjava.manager.event.MeetMeTalkingEvent
      * @since 0.2

@@ -112,7 +112,7 @@ namespace asteriskcpp {
         /**
          * Returns whether this is a transfer to a parking extension.
          *
-         * @return Boolean.TRUE if this is a transfer to a parking extension, <code>null</code> otherwise.
+         * @return bool.TRUE if this is a transfer to a parking extension, <code>null</code> otherwise.
          */
         bool getTransfer2Parking() const;
 

@@ -15,7 +15,7 @@ namespace asteriskcpp {
     /**
      * Abstract base class for several queue member related events.
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      * @since 0.2
      */

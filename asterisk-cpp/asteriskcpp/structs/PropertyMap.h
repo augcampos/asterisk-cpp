@@ -47,7 +47,7 @@ namespace asteriskcpp {
         PropertyMap();
         PropertyMap(const std::string& str);
         virtual ~PropertyMap();
-        
+
         virtual std::string toString() const;
         std::string toLog() const;
 

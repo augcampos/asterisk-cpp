@@ -18,7 +18,7 @@ namespace asteriskcpp {
      * It is implemented in <code>apps/app_meetme.c</code><p>
      * Available since Asterisk 1.4.
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      */
     class MeetMeMuteEvent : public asteriskcpp::AbstractMeetMeEvent {

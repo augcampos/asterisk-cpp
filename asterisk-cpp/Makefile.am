@@ -1,7 +1,7 @@
 AUTOMAKE_OPTIONS = foreign
 
-AM_CXXFLAGS=-I$(abs_top_builddir) -Wall -g3
-AM_CFLAGS= $(DEFINES) -Wall -g3
+AM_CXXFLAGS=-I$(abs_top_builddir) -Wall -g3 -std=c++0x -Wextra -pedantic
+AM_CFLAGS= $(DEFINES) -Wall -g3 -std=c++0x -Wextra -pedantic
 AM_DEFAULT_SOURCE_EXT = .cpp
 ACLOCAL_AMFLAGS = -I m4
 
@@ -155,21 +155,98 @@ libasteriskcpp_la_SOURCES= \
 	src/manager/responses/ManagerResponse.cpp \
 	src/manager/responses/ManagerError.cpp \
 	src/manager/responses/CommandResponse.cpp \
-	src/manager/actions/AbstractManagerAction.cpp \
 	src/manager/actions/AbsoluteTimeoutAction.cpp \
+	src/manager/actions/AbstractManagerAction.cpp \
 	src/manager/actions/AbstractMeetMeMuteAction.cpp \
 	src/manager/actions/AgentCallbackLoginAction.cpp \
 	src/manager/actions/AgentLogoffAction.cpp \
 	src/manager/actions/AgentsAction.cpp \
 	src/manager/actions/AgiAction.cpp \
+	src/manager/actions/AtxferAction.cpp \
+	src/manager/actions/BridgeAction.cpp \
 	src/manager/actions/ChallengeAction.cpp \
+	src/manager/actions/ChangeMonitorAction.cpp \
 	src/manager/actions/CommandAction.cpp \
+	src/manager/actions/ConfbridgeKickAction.cpp \
+	src/manager/actions/ConfbridgeListAction.cpp \
+	src/manager/actions/ConfbridgeListRoomsAction.cpp \
+	src/manager/actions/ConfbridgeLockAction.cpp \
+	src/manager/actions/ConfbridgeMuteAction.cpp \
+	src/manager/actions/ConfbridgeSetSingleVideoSrcAction.cpp \
+	src/manager/actions/ConfbridgeStartRecordAction.cpp \
+	src/manager/actions/ConfbridgeStopRecordAction.cpp \
+	src/manager/actions/ConfbridgeUnlockAction.cpp \
+	src/manager/actions/ConfbridgeUnmuteAction.cpp \
+	src/manager/actions/CoreSettingsAction.cpp \
+	src/manager/actions/CoreShowChannelsAction.cpp \
+	src/manager/actions/CoreStatusAction.cpp \
+	src/manager/actions/DahdiShowChannelsAction.cpp \
+	src/manager/actions/DbDelAction.cpp \
+	src/manager/actions/DbDelTreeAction.cpp \
+	src/manager/actions/DbGetAction.cpp \
+	src/manager/actions/DbPutAction.cpp \
 	src/manager/actions/EventsAction.cpp \
+	src/manager/actions/ExtensionStateAction.cpp \
+	src/manager/actions/GetConfigAction.cpp \
+	src/manager/actions/GetVarAction.cpp \
+	src/manager/actions/HangupAction.cpp \
+	src/manager/actions/IaxPeerListAction.cpp \
+	src/manager/actions/JabberSendAction.cpp \
 	src/manager/actions/ListCommandsAction.cpp \
+	src/manager/actions/LocalOptimizeAwayAction.cpp \
 	src/manager/actions/LoginAction.cpp \
 	src/manager/actions/LogoffAction.cpp \
-	src/manager/actions/ManagerAction.cpp 
-
+	src/manager/actions/MailboxCountAction.cpp \
+	src/manager/actions/MailboxStatusAction.cpp \
+	src/manager/actions/ManagerAction.cpp \
+	src/manager/actions/MeetMeMuteAction.cpp \
+	src/manager/actions/MeetMeUnmuteAction.cpp \
+	src/manager/actions/MixMonitorMuteAction.cpp \
+	src/manager/actions/ModuleCheckAction.cpp \
+	src/manager/actions/ModuleLoadAction.cpp \
+	src/manager/actions/MonitorAction.cpp \
+	src/manager/actions/ParkAction.cpp \
+	src/manager/actions/ParkedCallsAction.cpp \
+	src/manager/actions/PauseMixMonitorAction.cpp \
+	src/manager/actions/PauseMonitorAction.cpp \
+	src/manager/actions/PingAction.cpp \
+	src/manager/actions/PlayDtmfAction.cpp \
+	src/manager/actions/QueueAddAction.cpp \
+	src/manager/actions/QueueLogAction.cpp \
+	src/manager/actions/QueuePauseAction.cpp \
+	src/manager/actions/QueuePenaltyAction.cpp \
+	src/manager/actions/QueueRemoveAction.cpp \
+	src/manager/actions/QueueResetAction.cpp \
+	src/manager/actions/QueueStatusAction.cpp \
+	src/manager/actions/QueueSummaryAction.cpp \
+	src/manager/actions/RedirectAction.cpp \
+	src/manager/actions/SendTextAction.cpp \
+	src/manager/actions/SetCdrUserFieldAction.cpp \
+	src/manager/actions/SetVarAction.cpp \
+	src/manager/actions/ShowDialplanAction.cpp \
+	src/manager/actions/SipPeersAction.cpp \
+	src/manager/actions/SipShowPeerAction.cpp \
+	src/manager/actions/SipShowRegistryAction.cpp \
+	src/manager/actions/SkypeAddBuddyAction.cpp \
+	src/manager/actions/SkypeBuddiesAction.cpp \
+	src/manager/actions/SkypeBuddyAction.cpp \
+	src/manager/actions/SkypeChatSendAction.cpp \
+	src/manager/actions/SkypeLicenseListAction.cpp \
+	src/manager/actions/SkypeLicenseStatusAction.cpp \
+	src/manager/actions/SkypeRemoveBuddyAction.cpp \
+	src/manager/actions/StatusAction.cpp \
+	src/manager/actions/StopMonitorAction.cpp \
+	src/manager/actions/UnpauseMonitorAction.cpp \
+	src/manager/actions/UserEventAction.cpp \
+	src/manager/actions/VoicemailUsersListAction.cpp \
+	src/manager/actions/ZapDialOffhookAction.cpp \
+	src/manager/actions/ZapDndOffAction.cpp \
+	src/manager/actions/ZapDndOnAction.cpp \
+	src/manager/actions/ZapHangupAction.cpp \
+	src/manager/actions/ZapRestartAction.cpp \
+	src/manager/actions/ZapShowChannelsAction.cpp \
+	src/manager/actions/ZapTransferAction.cpp
+  
 instdir = $(includedir)
 
 nobase_inst_HEADERS= \
@@ -357,11 +434,87 @@ nobase_inst_HEADERS= \
 	asteriskcpp/manager/actions/AgentLogoffAction.h \
 	asteriskcpp/manager/actions/AgentsAction.h \
 	asteriskcpp/manager/actions/AgiAction.h \
+	asteriskcpp/manager/actions/AtxferAction.h \
+	asteriskcpp/manager/actions/BridgeAction.h \
 	asteriskcpp/manager/actions/ChallengeAction.h \
+	asteriskcpp/manager/actions/ChangeMonitorAction.h \
 	asteriskcpp/manager/actions/CommandAction.h \
+	asteriskcpp/manager/actions/ConfbridgeKickAction.h \
+	asteriskcpp/manager/actions/ConfbridgeListAction.h \
+	asteriskcpp/manager/actions/ConfbridgeListRoomsAction.h \
+	asteriskcpp/manager/actions/ConfbridgeLockAction.h \
+	asteriskcpp/manager/actions/ConfbridgeMuteAction.h \
+	asteriskcpp/manager/actions/ConfbridgeSetSingleVideoSrcAction.h \
+	asteriskcpp/manager/actions/ConfbridgeStartRecordAction.h \
+	asteriskcpp/manager/actions/ConfbridgeStopRecordAction.h \
+	asteriskcpp/manager/actions/ConfbridgeUnlockAction.h \
+	asteriskcpp/manager/actions/ConfbridgeUnmuteAction.h \
+	asteriskcpp/manager/actions/CoreSettingsAction.h \
+	asteriskcpp/manager/actions/CoreShowChannelsAction.h \
+	asteriskcpp/manager/actions/CoreStatusAction.h \
+	asteriskcpp/manager/actions/DahdiShowChannelsAction.h \
+	asteriskcpp/manager/actions/DbDelAction.h \
+	asteriskcpp/manager/actions/DbDelTreeAction.h \
+	asteriskcpp/manager/actions/DbGetAction.h \
+	asteriskcpp/manager/actions/DbPutAction.h \
 	asteriskcpp/manager/actions/EventsAction.h \
+	asteriskcpp/manager/actions/ExtensionStateAction.h \
+	asteriskcpp/manager/actions/GetConfigAction.h \
+	asteriskcpp/manager/actions/GetVarAction.h \
+	asteriskcpp/manager/actions/HangupAction.h \
+	asteriskcpp/manager/actions/IaxPeerListAction.h \
+	asteriskcpp/manager/actions/JabberSendAction.h \
 	asteriskcpp/manager/actions/ListCommandsAction.h \
+	asteriskcpp/manager/actions/LocalOptimizeAwayAction.h \
 	asteriskcpp/manager/actions/LoginAction.h \
 	asteriskcpp/manager/actions/LogoffAction.h \
-	asteriskcpp/manager/actions/ManagerAction.h 
-
+	asteriskcpp/manager/actions/MailboxCountAction.h \
+	asteriskcpp/manager/actions/MailboxStatusAction.h \
+	asteriskcpp/manager/actions/ManagerAction.h \
+	asteriskcpp/manager/actions/MeetMeMuteAction.h \
+	asteriskcpp/manager/actions/MeetMeUnmuteAction.h \
+	asteriskcpp/manager/actions/MixMonitorMuteAction.h \
+	asteriskcpp/manager/actions/ModuleCheckAction.h \
+	asteriskcpp/manager/actions/ModuleLoadAction.h \
+	asteriskcpp/manager/actions/MonitorAction.h \
+	asteriskcpp/manager/actions/ParkAction.h \
+	asteriskcpp/manager/actions/ParkedCallsAction.h \
+	asteriskcpp/manager/actions/PauseMixMonitorAction.h \
+	asteriskcpp/manager/actions/PauseMonitorAction.h \
+	asteriskcpp/manager/actions/PingAction.h \
+	asteriskcpp/manager/actions/PlayDtmfAction.h \
+	asteriskcpp/manager/actions/QueueAddAction.h \
+	asteriskcpp/manager/actions/QueueLogAction.h \
+	asteriskcpp/manager/actions/QueuePauseAction.h \
+	asteriskcpp/manager/actions/QueuePenaltyAction.h \
+	asteriskcpp/manager/actions/QueueRemoveAction.h \
+	asteriskcpp/manager/actions/QueueResetAction.h \
+	asteriskcpp/manager/actions/QueueStatusAction.h \
+	asteriskcpp/manager/actions/QueueSummaryAction.h \
+	asteriskcpp/manager/actions/RedirectAction.h \
+	asteriskcpp/manager/actions/SendTextAction.h \
+	asteriskcpp/manager/actions/SetCdrUserFieldAction.h \
+	asteriskcpp/manager/actions/SetVarAction.h \
+	asteriskcpp/manager/actions/ShowDialplanAction.h \
+	asteriskcpp/manager/actions/SipPeersAction.h \
+	asteriskcpp/manager/actions/SipShowPeerAction.h \
+	asteriskcpp/manager/actions/SipShowRegistryAction.h \
+	asteriskcpp/manager/actions/SkypeAddBuddyAction.h \
+	asteriskcpp/manager/actions/SkypeBuddiesAction.h \
+	asteriskcpp/manager/actions/SkypeBuddyAction.h \
+	asteriskcpp/manager/actions/SkypeChatSendAction.h \
+	asteriskcpp/manager/actions/SkypeLicenseListAction.h \
+	asteriskcpp/manager/actions/SkypeLicenseStatusAction.h \
+	asteriskcpp/manager/actions/SkypeRemoveBuddyAction.h \
+	asteriskcpp/manager/actions/StatusAction.h \
+	asteriskcpp/manager/actions/StopMonitorAction.h \
+	asteriskcpp/manager/actions/UnpauseMonitorAction.h \
+	asteriskcpp/manager/actions/UserEventAction.h \
+	asteriskcpp/manager/actions/VoicemailUsersListAction.h \
+	asteriskcpp/manager/actions/ZapDialOffhookAction.h \
+	asteriskcpp/manager/actions/ZapDndOffAction.h \
+	asteriskcpp/manager/actions/ZapDndOnAction.h \
+	asteriskcpp/manager/actions/ZapHangupAction.h \
+	asteriskcpp/manager/actions/ZapRestartAction.h \
+	asteriskcpp/manager/actions/ZapShowChannelsAction.h \
+	asteriskcpp/manager/actions/ZapTransferAction.h

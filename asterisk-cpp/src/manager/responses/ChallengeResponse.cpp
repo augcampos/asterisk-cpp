@@ -16,7 +16,7 @@ namespace asteriskcpp {
     }
 
     std::string ChallengeResponse::getChallenge() const {
-        return (this->getProperty("challenge"));
+        return (getGetterValue(__FUNCTION__));
     }
 
 }

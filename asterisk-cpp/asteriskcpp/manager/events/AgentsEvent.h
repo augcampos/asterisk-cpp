@@ -18,7 +18,7 @@ namespace asteriskcpp {
      * Available since Asterisk 1.2
      *
      * @see org.asteriskjava.manager.action.AgentsAction
-     * @author srt
+     * @author augcampos
      * @version $Id$
      * @since 0.2
      */

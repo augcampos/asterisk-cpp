@@ -134,8 +134,8 @@ namespace asteriskcpp {
          * <p>
          * Available since Asterisk 1.2.
          *
-         * @return <code>Boolean.TRUE</code> if this member has been paused,
-         *         <code>Boolean.FALSE</code> if not or <code>null</code> if
+         * @return <code>bool.TRUE</code> if this member has been paused,
+         *         <code>bool.FALSE</code> if not or <code>null</code> if
          *         pausing is not supported by your version of Asterisk.
          * @since 0.2
          */

@@ -17,7 +17,7 @@ namespace asteriskcpp {
      * Channel and unqiueId properties for this event are available since Asterisk 1.0.<p>
      * It is implemented in <code>apps/app_meetme.c</code>
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      */
     class MeetMeLeaveEvent : public asteriskcpp::AbstractMeetMeEvent {

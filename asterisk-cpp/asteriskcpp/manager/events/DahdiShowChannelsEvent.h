@@ -18,7 +18,7 @@ namespace asteriskcpp {
      *
      * @see org.asteriskjava.manager.action.DahdiShowChannelsAction
      *
-     * @author srt
+     * @author augcampos
      * @version $Id$
      */
     class DahdiShowChannelsEvent : public ResponseEvent {
@@ -71,7 +71,7 @@ namespace asteriskcpp {
         /**
          * Returns whether dnd (do not disturb) is enabled for this Dahdi channel.
          *
-         * @return Boolean.TRUE if dnd is enabled, Boolean.FALSE if it is disabled,
+         * @return bool.TRUE if dnd is enabled, bool.FALSE if it is disabled,
          *         <code>null</code> if not set.
          * @since 0.3
          */
