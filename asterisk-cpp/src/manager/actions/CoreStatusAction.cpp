@@ -15,6 +15,9 @@ namespace asteriskcpp {
      */
     CoreStatusAction::CoreStatusAction() {
     }
+    
+    CoreStatusAction::~CoreStatusAction() {
+    }    
 
     ManagerResponse* CoreStatusAction::expectedResponce(const std::string & response) {
         return (new CoreStatusResponse(response));

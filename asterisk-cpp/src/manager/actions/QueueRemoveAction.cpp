@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     QueueRemoveAction::QueueRemoveAction() {
     }
+    
+    QueueRemoveAction::~QueueRemoveAction() {
+    }    
 
     QueueRemoveAction::QueueRemoveAction(const std::string& queue, const std::string& iface) {
         this->setQueue(queue);

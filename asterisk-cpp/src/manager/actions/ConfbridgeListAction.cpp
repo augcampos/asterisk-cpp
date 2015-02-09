@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     ConfbridgeListAction::ConfbridgeListAction() {
     }
+    
+    ConfbridgeListAction::~ConfbridgeListAction() {
+    }    
 
     ConfbridgeListAction::ConfbridgeListAction(const std::string& conference) {
         this->setConference(conference);

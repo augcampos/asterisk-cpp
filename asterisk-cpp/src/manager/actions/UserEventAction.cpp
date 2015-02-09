@@ -18,6 +18,8 @@ namespace asteriskcpp {
         //this->setUserEvent(userEvent);
     }
 
+    UserEventAction::~UserEventAction() {
+    }    
 
     /*
      * TODO: Implement

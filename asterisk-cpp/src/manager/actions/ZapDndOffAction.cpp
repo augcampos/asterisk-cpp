@@ -15,6 +15,9 @@ namespace asteriskcpp {
     ZapDndOffAction::ZapDndOffAction(int zapChannel) {
         this->setZapChannel(zapChannel);
     }
+    
+    ZapDndOffAction::~ZapDndOffAction() {
+    }
 
     int ZapDndOffAction::getZapChannel() const {
         return (getGetterValue<int>(__FUNCTION__));

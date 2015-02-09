@@ -16,6 +16,9 @@ namespace asteriskcpp {
         this->setNumber(number);
         this->setZapChannel(zapChannel);
     }
+    
+    ZapDialOffhookAction::~ZapDialOffhookAction() {
+    }    
 
     int ZapDialOffhookAction::getZapChannel() const {
         return (getGetterValue<int>(__FUNCTION__));

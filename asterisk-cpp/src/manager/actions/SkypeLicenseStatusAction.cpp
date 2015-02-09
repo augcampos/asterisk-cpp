@@ -16,6 +16,9 @@ namespace asteriskcpp {
     SkypeLicenseStatusAction::SkypeLicenseStatusAction() {
     }
 
+    SkypeLicenseStatusAction::~SkypeLicenseStatusAction() {
+    }    
+    
     ManagerResponse *SkypeLicenseStatusAction::expectedResponce(const std::string & response) {
         return (new SkypeLicenseStatusResponse(response));
     }

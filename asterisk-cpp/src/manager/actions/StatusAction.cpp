@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     StatusAction::StatusAction() {
     }
+    
+    StatusAction::~StatusAction() {
+    }    
 
     StatusAction::StatusAction(const std::string& channel) {
         this->setChannel(channel);

@@ -5,7 +5,7 @@
  * Created on July 17, 2013, 1:29 AM
  */
 
-#include "SkypeBuddyResponse.h"
+#include "asteriskcpp/manager/responses/SkypeBuddyResponse.h"
 
 namespace asteriskcpp {
 
@@ -16,43 +16,43 @@ namespace asteriskcpp {
     SkypeBuddyResponse::~SkypeBuddyResponse() {
     }
 
-    const std::string& getSkypename() const {
+    const std::string& SkypeBuddyResponse::getSkypename() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getTimezone() const {
+    const std::string& SkypeBuddyResponse::getTimezone() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getAvailability() const {
+    const std::string& SkypeBuddyResponse::getAvailability() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getFullname() const {
+    const std::string& SkypeBuddyResponse::getFullname() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getLanguage() const {
+    const std::string& SkypeBuddyResponse::getLanguage() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getCountry() const {
+    const std::string& SkypeBuddyResponse::getCountry() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getPhoneHome() const {
+    const std::string& SkypeBuddyResponse::getPhoneHome() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getPhoneOffice() const {
+    const std::string& SkypeBuddyResponse::getPhoneOffice() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getPhoneMobile() const {
+    const std::string& SkypeBuddyResponse::getPhoneMobile() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getAbout() const {
+    const std::string& SkypeBuddyResponse::getAbout() const {
         return (getGetterValue(__FUNCTION__));
     }
 

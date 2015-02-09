@@ -7,7 +7,7 @@
 
 #include "asteriskcpp/structs/Thread.h"
 #include <iostream>
-#include "asteriskcpp//utils/LogHandler.h"
+#include "asteriskcpp/utils/LogHandler.h"
 
 namespace asteriskcpp {
 

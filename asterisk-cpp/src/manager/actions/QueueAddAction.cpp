@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     QueueAddAction::QueueAddAction() {
     }
+    
+    QueueAddAction::~QueueAddAction() {
+    }    
 
     QueueAddAction::QueueAddAction(const std::string& iface) {
         this->setInterface(iface);

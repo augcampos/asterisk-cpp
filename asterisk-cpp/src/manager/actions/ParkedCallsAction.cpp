@@ -14,5 +14,8 @@ namespace asteriskcpp {
      */
     ParkedCallsAction::ParkedCallsAction() {
     }
+    
+    ParkedCallsAction::~ParkedCallsAction() {
+    }    
 } //NAMESPACE
 

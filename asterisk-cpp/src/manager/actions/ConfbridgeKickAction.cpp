@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     ConfbridgeKickAction::ConfbridgeKickAction() {
     }
+    
+    ConfbridgeKickAction::~ConfbridgeKickAction() {
+    }    
 
     /**
      * Creates a new ConfbridgeKickAction.

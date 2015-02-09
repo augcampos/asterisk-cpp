@@ -8,6 +8,8 @@
 #ifndef GETVARRESPONSE_H
 #define	GETVARRESPONSE_H
 
+#include "asteriskcpp/manager/responses/ManagerResponse.h"
+
 namespace asteriskcpp {
 
     /**

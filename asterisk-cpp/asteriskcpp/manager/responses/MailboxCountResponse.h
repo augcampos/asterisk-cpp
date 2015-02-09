@@ -8,6 +8,8 @@
 #ifndef MAILBOXCOUNTRESPONSE_H
 #define	MAILBOXCOUNTRESPONSE_H
 
+#include "asteriskcpp/manager/responses/ManagerResponse.h"
+
 namespace asteriskcpp {
 
     /**

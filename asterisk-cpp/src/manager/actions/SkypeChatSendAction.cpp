@@ -12,6 +12,9 @@ namespace asteriskcpp {
   
     SkypeChatSendAction::SkypeChatSendAction() {
     }
+    
+    SkypeChatSendAction::~SkypeChatSendAction() {
+    }    
 
 
     SkypeChatSendAction::SkypeChatSendAction(const std::string& message) {

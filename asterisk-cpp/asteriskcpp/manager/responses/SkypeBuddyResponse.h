@@ -8,6 +8,8 @@
 #ifndef SKYPEBUDDYRESPONSE_H
 #define	SKYPEBUDDYRESPONSE_H
 
+#include "asteriskcpp/manager/responses/ManagerResponse.h"
+
 namespace asteriskcpp {
 
     /**

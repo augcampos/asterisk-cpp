@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     ParkAction::ParkAction() {
     }
+    
+    ParkAction::~ParkAction() {
+    }    
 
     ParkAction::ParkAction(const std::string& channel2) {
         this->setChannel2(channel2);

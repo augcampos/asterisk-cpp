@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     ConfbridgeUnlockAction::ConfbridgeUnlockAction() {
     }
+    
+    ConfbridgeUnlockAction::~ConfbridgeUnlockAction() {
+    }    
 
     /**
      * Creates a new ConfbridgeUnlockAction for a specific conference.

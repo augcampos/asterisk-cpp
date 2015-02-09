@@ -12,6 +12,9 @@ namespace asteriskcpp {
     QueueSummaryAction::QueueSummaryAction() {
     }
 
+    QueueSummaryAction::~QueueSummaryAction() {
+    }    
+    
     QueueSummaryAction::QueueSummaryAction(const std::string& queue) {
         this->setQueue(queue);
     }

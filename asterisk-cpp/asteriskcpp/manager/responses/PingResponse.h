@@ -8,6 +8,8 @@
 #ifndef PINGRESPONSE_H
 #define	PINGRESPONSE_H
 
+#include "asteriskcpp/manager/responses/ManagerResponse.h"
+
 namespace asteriskcpp {
 
     /**

@@ -11,5 +11,8 @@ namespace asteriskcpp {
 
     ZapRestartAction::ZapRestartAction() {
     }
+    
+    ZapRestartAction::~ZapRestartAction() {
+    }
 } //NAMESPACE
 

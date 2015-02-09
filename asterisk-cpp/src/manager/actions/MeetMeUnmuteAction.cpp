@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     MeetMeUnmuteAction::MeetMeUnmuteAction() {
     }
+    
+    MeetMeUnmuteAction::~MeetMeUnmuteAction() {
+    }    
 
     /**
      * Creates a new MeetMeUnmuteAction.

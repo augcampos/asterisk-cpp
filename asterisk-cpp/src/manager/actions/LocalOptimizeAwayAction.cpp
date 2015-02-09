@@ -13,7 +13,9 @@ namespace asteriskcpp {
     LocalOptimizeAwayAction::LocalOptimizeAwayAction() {
     }
 
- 
+    LocalOptimizeAwayAction::~LocalOptimizeAwayAction() {
+    } 
+    
     LocalOptimizeAwayAction::LocalOptimizeAwayAction(const std::string& channel) {
         this->setChannel(channel);
     }

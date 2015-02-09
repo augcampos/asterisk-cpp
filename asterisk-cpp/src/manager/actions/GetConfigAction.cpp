@@ -15,6 +15,9 @@ namespace asteriskcpp {
      */
     GetConfigAction::GetConfigAction() {
     }
+    
+    GetConfigAction::~GetConfigAction() {
+    }    
 
      ManagerResponse* GetConfigAction::expectedResponce(const std::string & response) {
         return (new GetConfigResponse(response));

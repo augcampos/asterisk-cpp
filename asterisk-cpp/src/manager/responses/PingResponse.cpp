@@ -5,7 +5,7 @@
  * Created on July 16, 2013, 2:28 AM
  */
 
-#include "PingResponse.h"
+#include "asteriskcpp/manager/responses/PingResponse.h"
 
 
 namespace asteriskcpp {

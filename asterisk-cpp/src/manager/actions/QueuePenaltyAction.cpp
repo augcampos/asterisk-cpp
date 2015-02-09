@@ -12,6 +12,9 @@ namespace asteriskcpp {
     QueuePenaltyAction::QueuePenaltyAction() {
     }
 
+    QueuePenaltyAction::~QueuePenaltyAction() {
+    }    
+    
     QueuePenaltyAction::QueuePenaltyAction(int penalty, const std::string& iface) {
         this->setPenalty(penalty);
         this->setInterface(iface);

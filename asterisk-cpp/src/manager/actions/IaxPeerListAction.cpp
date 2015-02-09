@@ -11,5 +11,8 @@ namespace asteriskcpp {
 
     IaxPeerListAction::IaxPeerListAction() {
     }
+    
+    IaxPeerListAction::~IaxPeerListAction() {
+    }    
 } //NAMESPACE
 

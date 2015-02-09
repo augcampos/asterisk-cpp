@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     JabberSendAction::JabberSendAction() {
     }
+    
+    JabberSendAction::~JabberSendAction() {
+    }    
 
     JabberSendAction::JabberSendAction(const std::string& message) {
         this->setMessage(message);

@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     ConfbridgeSetSingleVideoSrcAction::ConfbridgeSetSingleVideoSrcAction() {
     }
+    
+    ConfbridgeSetSingleVideoSrcAction::~ConfbridgeSetSingleVideoSrcAction() {
+    }    
 
     /**
      * Sets the id of the conference for which the video source is to be set.

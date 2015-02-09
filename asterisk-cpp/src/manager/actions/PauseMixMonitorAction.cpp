@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     PauseMixMonitorAction::PauseMixMonitorAction() {
     }
+    
+    PauseMixMonitorAction::~PauseMixMonitorAction() {
+    }    
 
     PauseMixMonitorAction::PauseMixMonitorAction(const std::string& direction, int state) {
         this->setDirection(direction);

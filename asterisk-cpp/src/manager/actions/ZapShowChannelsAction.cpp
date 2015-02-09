@@ -14,5 +14,8 @@ namespace asteriskcpp {
      */
     ZapShowChannelsAction::ZapShowChannelsAction() {
     }
+    
+    ZapShowChannelsAction::~ZapShowChannelsAction() {
+    }    
 } //NAMESPACE
 

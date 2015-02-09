@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     SkypeAddBuddyAction::SkypeAddBuddyAction() {
     }
+    
+    SkypeAddBuddyAction::~SkypeAddBuddyAction() {
+    }    
 
     SkypeAddBuddyAction::SkypeAddBuddyAction(const std::string& user, const std::string& buddy) {
         this->setUser(user);

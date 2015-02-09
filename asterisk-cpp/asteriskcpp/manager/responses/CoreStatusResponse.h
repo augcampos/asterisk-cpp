@@ -8,6 +8,8 @@
 #ifndef CORESTATUSRESPONSE_H
 #define	CORESTATUSRESPONSE_H
 
+#include "asteriskcpp/manager/responses/ManagerResponse.h"
+
 namespace asteriskcpp {
 
     /**

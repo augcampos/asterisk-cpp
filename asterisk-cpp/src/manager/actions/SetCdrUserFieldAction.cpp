@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     SetCdrUserFieldAction::SetCdrUserFieldAction() {
     }
+    
+    SetCdrUserFieldAction::~SetCdrUserFieldAction() {
+    }    
 
     SetCdrUserFieldAction::SetCdrUserFieldAction(const std::string& channel, const std::string& userField) {
         this->setChannel(channel);

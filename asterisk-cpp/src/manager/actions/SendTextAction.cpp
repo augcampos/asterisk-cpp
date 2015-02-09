@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     SendTextAction::SendTextAction() {
     }
+    
+    SendTextAction::~SendTextAction() {
+    }    
 
     SendTextAction::SendTextAction(const std::string& channel, const std::string& message) {
         this->setChannel(channel);

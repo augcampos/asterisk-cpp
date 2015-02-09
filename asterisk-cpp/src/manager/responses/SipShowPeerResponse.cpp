@@ -5,7 +5,7 @@
  * Created on July 16, 2013, 5:05 AM
  */
 
-#include "SipShowPeerResponse.h"
+#include "asteriskcpp/manager/responses/SipShowPeerResponse.h"
 
 namespace asteriskcpp {
 
@@ -16,227 +16,228 @@ namespace asteriskcpp {
     SipShowPeerResponse::~SipShowPeerResponse() {
     }
 
-    const std::string& getChannelType() const {
+    const std::string& SipShowPeerResponse::getChannelType() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getObjectName() const {
+    const std::string& SipShowPeerResponse::getObjectName() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getChanObjectType() const {
+    const std::string& SipShowPeerResponse::getChanObjectType() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    bool getSecretExist() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    bool getMd5SecretExist() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    bool getRemoteSecretExist() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getContext() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getLanguage() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getAccountCode() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getAmaFlags() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getCidCallingPres() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getSipFromUser() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getSipFromDomain() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getCallGroup() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getPickupGroup() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getVoiceMailbox() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getTransferMode() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    int getLastMsgsSent() const {
-        return (getGetterValue<int>(__FUNCTION__));
-    }
-
-    int getCallLimit() const {
-        return (getGetterValue<int>(__FUNCTION__));
-    }
-
-    int getBusyLevel() const {
-        return (getGetterValue<int>(__FUNCTION__));
-    }
-
-    int getMaxCallBr() const {
-        return (getGetterValue<int>(__FUNCTION__));
-    }
-
-    bool getDynamic() const {
+    bool SipShowPeerResponse::getSecretExist() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    const std::string& getCallerId() const {
+    bool SipShowPeerResponse::getMd5SecretExist() const {
+        return (getGetterValue<bool>(__FUNCTION__));
+    }
+
+    bool SipShowPeerResponse::getRemoteSecretExist() const {
+        return (getGetterValue<bool>(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getContext() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    long getRegExpire() const {
+    const std::string& SipShowPeerResponse::getLanguage() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getAccountCode() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getAmaFlags() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getCidCallingPres() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getSipFromUser() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getSipFromDomain() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getCallGroup() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getPickupGroup() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getVoiceMailbox() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getTransferMode() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    int SipShowPeerResponse::getLastMsgsSent() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
+
+    int SipShowPeerResponse::getCallLimit() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
+
+    int SipShowPeerResponse::getBusyLevel() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
+
+    int SipShowPeerResponse::getMaxCallBr() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
+
+    bool SipShowPeerResponse::getDynamic() const {
+        return (getGetterValue<bool>(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getCallerId() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    long SipShowPeerResponse::getRegExpire() const {
         return (getGetterValue<long>(__FUNCTION__));
     }
 
-    bool getSipAuthInsecure() const {
+    bool SipShowPeerResponse::getSipAuthInsecure() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    bool getSipNatSupport() const {
+    bool SipShowPeerResponse::getSipNatSupport() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    bool getAcl() const {
+    bool SipShowPeerResponse::getAcl() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    bool getSipT38support() const {
+    bool SipShowPeerResponse::getSipT38support() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    const std::string& getSipT38ec() const {
+    const std::string& SipShowPeerResponse::getSipT38ec() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    int getSipT38MaxDtgrm() const {
+    int SipShowPeerResponse::getSipT38MaxDtgrm() const {
         return (getGetterValue<int>(__FUNCTION__));
     }
 
-    bool getSipDirectMedia() const {
+    bool SipShowPeerResponse::getSipDirectMedia() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    bool getSipCanReinvite() const {
+    bool SipShowPeerResponse::getSipCanReinvite() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    bool getSipPromiscRedir() const {
+    bool SipShowPeerResponse::getSipPromiscRedir() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    bool getSipUserPhone() const {
+    bool SipShowPeerResponse::getSipUserPhone() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    bool getSipVideoSupport() const {
+    bool SipShowPeerResponse::getSipVideoSupport() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    bool getSipTextSupport() const {
+    bool SipShowPeerResponse::getSipTextSupport() const {
         return (getGetterValue<bool>(__FUNCTION__));
     }
 
-    const std::string& getSipSessTimers() const {
+    const std::string& SipShowPeerResponse::getSipSessTimers() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getSipSessRefresh() const {
+    const std::string& SipShowPeerResponse::getSipSessRefresh() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    int getSipSessExpires() const {
+    int SipShowPeerResponse::getSipSessExpires() const {
         return (getGetterValue<int>(__FUNCTION__));
     }
 
-    int getSipSessMin() const {
+    int SipShowPeerResponse::getSipSessMin() const {
         return (getGetterValue<int>(__FUNCTION__));
     }
 
-    const std::string& getSipDtmfMode() const {
+    const std::string& SipShowPeerResponse::getSipDtmfMode() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getToHost() const {
+    const std::string& SipShowPeerResponse::getToHost() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    const std::string& getAddressIp() const {
+    const std::string& SipShowPeerResponse::getAddressIp() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    int getAddressPort() const {
+    int SipShowPeerResponse::getAddressPort() const {
         return (getGetterValue<int>(__FUNCTION__));
     }
 
-    const std::string& getDefaultAddrIp() const {
+    const std::string& SipShowPeerResponse::getDefaultAddrIp() const {
         return (getGetterValue(__FUNCTION__));
     }
 
-    int getDefaultAddrPort() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getDefaultUsername() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getRegExtension() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getCodecs() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getCodecOrder() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getStatus() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getSipUserAgent() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getParkingLot() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    const std::string& getRegContact() const {
-        return (getGetterValue(__FUNCTION__));
-    }
-
-    int getQualifyFreq() const {
+    int SipShowPeerResponse::getDefaultAddrPort() const {
         return (getGetterValue<int>(__FUNCTION__));
     }
 
-    std::map<const std::string, const std::string> getChanVariable() const {
+    const std::string& SipShowPeerResponse::getDefaultUsername() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getRegExtension() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getCodecs() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getCodecOrder() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getStatus() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getSipUserAgent() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getParkingLot() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    const std::string& SipShowPeerResponse::getRegContact() const {
+        return (getGetterValue(__FUNCTION__));
+    }
+
+    int SipShowPeerResponse::getQualifyFreq() const {
+        return (getGetterValue<int>(__FUNCTION__));
+    }
+    
+    //std::map<const std::string, const std::string>
+    const std::string SipShowPeerResponse::getChanVariable() const {
         return (getGetterValue(__FUNCTION__));
     }
 }

@@ -12,6 +12,9 @@ namespace asteriskcpp {
 
     MailboxCountAction::MailboxCountAction() {
     }
+    
+    MailboxCountAction::~MailboxCountAction() {
+    }    
 
     MailboxCountAction::MailboxCountAction(const std::string& mailbox) {
         this->setMailbox(mailbox);

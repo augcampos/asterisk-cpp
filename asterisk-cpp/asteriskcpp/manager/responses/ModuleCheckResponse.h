@@ -8,6 +8,8 @@
 #ifndef MODULECHECKRESPONSE_H
 #define	MODULECHECKRESPONSE_H
 
+#include "asteriskcpp/manager/responses/ManagerResponse.h"
+
 namespace asteriskcpp {
 
     /**

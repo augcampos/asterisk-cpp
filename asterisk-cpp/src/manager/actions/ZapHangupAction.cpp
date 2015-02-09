@@ -16,6 +16,9 @@ namespace asteriskcpp {
         this->setZapChannel(zapChannel);
     }
 
+    ZapHangupAction::~ZapHangupAction() {
+    }        
+    
     int ZapHangupAction::getZapChannel() const {
         return (getGetterValue<int>(__FUNCTION__));
     }

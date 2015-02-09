@@ -8,6 +8,8 @@
 #ifndef GETCONFIGRESPONSE_H
 #define	GETCONFIGRESPONSE_H
 
+#include "asteriskcpp/manager/responses/ManagerResponse.h"
+
 namespace asteriskcpp {
 
     /**

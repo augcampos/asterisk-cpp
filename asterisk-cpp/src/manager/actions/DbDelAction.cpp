@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     DbDelAction::DbDelAction() {
     }
+    
+    DbDelAction::~DbDelAction() {
+    }    
 
     /**
      * Creates a new DbDelAction that deletes the value of the database

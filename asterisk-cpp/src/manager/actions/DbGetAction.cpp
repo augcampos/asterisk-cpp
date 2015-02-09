@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     DbGetAction::DbGetAction() {
     }
+    
+    DbGetAction::~DbGetAction() {
+    }    
 
     /**
      * Creates a new DbGetAction that retrieves the value of the database entry

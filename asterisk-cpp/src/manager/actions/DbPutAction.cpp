@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     DbPutAction::DbPutAction() {
     }
+    
+    DbPutAction::~DbPutAction() {
+    }    
 
     /**
      * Creates a new DbPutAction that sets the value of the database entry with

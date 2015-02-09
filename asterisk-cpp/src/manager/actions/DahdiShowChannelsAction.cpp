@@ -14,5 +14,8 @@ namespace asteriskcpp {
      */
     DahdiShowChannelsAction::DahdiShowChannelsAction() {
     }
+    
+    DahdiShowChannelsAction::~DahdiShowChannelsAction() {
+    }    
 } //NAMESPACE
 

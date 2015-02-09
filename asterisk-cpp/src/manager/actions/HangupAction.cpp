@@ -12,6 +12,9 @@ namespace asteriskcpp {
     HangupAction::HangupAction() {
     }
 
+    HangupAction::~HangupAction() {
+    }    
+    
     HangupAction::HangupAction(const std::string& channel) {
         this->setChannel(channel);
     }

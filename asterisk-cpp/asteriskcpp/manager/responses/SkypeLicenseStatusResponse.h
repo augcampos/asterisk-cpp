@@ -8,6 +8,8 @@
 #ifndef SKYPELICENSESTATUSRESPONSE_H
 #define	SKYPELICENSESTATUSRESPONSE_H
 
+#include "asteriskcpp/manager/responses/ManagerResponse.h"
+
 namespace asteriskcpp {
 
     /**
@@ -28,6 +30,7 @@ namespace asteriskcpp {
          */
         int getCallsLicensed() const;
 
+        int getSkypename() const;
 
     private:
 

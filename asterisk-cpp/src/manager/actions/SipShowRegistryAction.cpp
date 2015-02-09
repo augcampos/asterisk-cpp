@@ -11,5 +11,8 @@ namespace asteriskcpp {
 
     SipShowRegistryAction::SipShowRegistryAction() {
     }
+    
+    SipShowRegistryAction::~SipShowRegistryAction() {
+    }    
 } //NAMESPACE
 

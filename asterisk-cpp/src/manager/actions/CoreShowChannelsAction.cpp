@@ -11,5 +11,8 @@ namespace asteriskcpp {
 
     CoreShowChannelsAction::CoreShowChannelsAction() {
     }
+    
+    CoreShowChannelsAction::~CoreShowChannelsAction() {
+    }    
 } //NAMESPACE
 

@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     PingAction::PingAction() {
     }
+    
+    PingAction::~PingAction() {
+    }    
 
     ManagerResponse* PingAction::expectedResponce(const std::string & response) {
         return (new PingResponse(response));

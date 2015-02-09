@@ -8,6 +8,10 @@
 #include "asteriskcpp/manager/actions/ConfbridgeListRoomsAction.h"
 
 namespace asteriskcpp {
+    
+    ConfbridgeListRoomsAction::~ConfbridgeListRoomsAction(){
+        
+    }
 
 } //NAMESPACE
 

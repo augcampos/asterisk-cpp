@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     MonitorAction::MonitorAction() {
     }
+    
+    MonitorAction::~MonitorAction() {
+    }    
 
     MonitorAction::MonitorAction(const std::string& channel, const std::string& file) {
         this->setChannel(channel);
