@@ -5,7 +5,7 @@
  * Created on July 17, 2013, 1:41 AM
  */
 
-#include "SkypeLicenseStatusResponse.h"
+#include "asteriskcpp/manager/responses/SkypeLicenseStatusResponse.h"
 
 namespace asteriskcpp {
 

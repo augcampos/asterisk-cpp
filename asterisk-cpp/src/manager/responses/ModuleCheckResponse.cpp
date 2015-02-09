@@ -5,7 +5,7 @@
  * Created on July 16, 2013, 2:01 AM
  */
 
-#include "ModuleCheckResponse.h"
+#include "asteriskcpp/manager/responses/ModuleCheckResponse.h"
 
 namespace asteriskcpp {
 
