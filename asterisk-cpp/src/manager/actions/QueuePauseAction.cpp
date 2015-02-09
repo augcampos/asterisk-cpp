@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     QueuePauseAction::QueuePauseAction() {
     }
+    
+    QueuePauseAction::~QueuePauseAction() {
+    }    
 
     QueuePauseAction::QueuePauseAction(const std::string& iface) {
         this->setInterface(iface);

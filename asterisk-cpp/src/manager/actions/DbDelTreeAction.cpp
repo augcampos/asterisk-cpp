@@ -15,6 +15,9 @@ namespace asteriskcpp {
     DbDelTreeAction::DbDelTreeAction() {
     }
 
+    DbDelTreeAction::~DbDelTreeAction() {
+    }    
+    
     /**
      * Creates a new DbDelTreeAction.
      *

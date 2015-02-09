@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     PlayDtmfAction::PlayDtmfAction() {
     }
+    
+    PlayDtmfAction::~PlayDtmfAction() {
+    }    
 
     PlayDtmfAction::PlayDtmfAction(const std::string& digit) {
         this->setDigit(digit);

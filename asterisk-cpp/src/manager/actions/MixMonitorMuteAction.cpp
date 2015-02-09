@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     MixMonitorMuteAction::MixMonitorMuteAction() {
     }
+    
+    MixMonitorMuteAction::~MixMonitorMuteAction() {
+    }    
 
     MixMonitorMuteAction::MixMonitorMuteAction(const std::string& channel) {
         this->setChannel(channel);

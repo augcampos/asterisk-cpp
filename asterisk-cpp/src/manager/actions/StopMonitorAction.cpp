@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     StopMonitorAction::StopMonitorAction() {
     }
+    
+    StopMonitorAction::~StopMonitorAction() {
+    }    
 
     StopMonitorAction::StopMonitorAction(const std::string& channel) {
         this->setChannel(channel);

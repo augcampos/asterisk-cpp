@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     ZapTransferAction::ZapTransferAction() {
     }
+    
+    ZapTransferAction::~ZapTransferAction() {
+    }    
 
     int ZapTransferAction::getZapChannel() const {
         return (getGetterValue<int>(__FUNCTION__));

@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     ChangeMonitorAction::ChangeMonitorAction() {
     }
+    
+    ChangeMonitorAction::~ChangeMonitorAction() {
+    }    
 
     /**
      * Creates a new ChangeMonitorAction that causes monitoring data for the

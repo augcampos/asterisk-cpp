@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     BridgeAction::BridgeAction() {
     }
+    
+    BridgeAction::~BridgeAction() {
+    }   
 
     /**
      * Creates a new BridgeAction that bridges the two given channels.

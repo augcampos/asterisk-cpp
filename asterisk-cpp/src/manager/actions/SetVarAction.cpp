@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     SetVarAction::SetVarAction() {
     }
+    
+    SetVarAction::~SetVarAction() {
+    }    
 
     SetVarAction::SetVarAction(const std::string& variable, const std::string& value) {
         this->setVariable(variable);

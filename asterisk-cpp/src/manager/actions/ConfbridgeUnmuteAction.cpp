@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     ConfbridgeUnmuteAction::ConfbridgeUnmuteAction() {
     }
+    
+    ConfbridgeUnmuteAction::~ConfbridgeUnmuteAction() {
+    }
 
     /**
      * Creates a new ConfbridgeUnmuteAction.

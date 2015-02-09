@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     QueueStatusAction::QueueStatusAction() {
     }
+    
+    QueueStatusAction::~QueueStatusAction() {
+    }    
 
     const std::string& QueueStatusAction::getQueue() const {
         return (getGetterValue(__FUNCTION__));

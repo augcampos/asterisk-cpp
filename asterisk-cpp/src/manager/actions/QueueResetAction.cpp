@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     QueueResetAction::QueueResetAction() {
     }
+    
+    QueueResetAction::~QueueResetAction() {
+    }    
 
     QueueResetAction::QueueResetAction(const std::string& queue) {
         this->setQueue(queue);

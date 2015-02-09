@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     QueueLogAction::QueueLogAction() {
     }
+    
+    QueueLogAction::~QueueLogAction() {
+    }    
 
     QueueLogAction::QueueLogAction(const std::string& queue, const std::string& event) {
         this->setQueue(queue);

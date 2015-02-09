@@ -11,5 +11,8 @@ namespace asteriskcpp {
 
     VoicemailUsersListAction::VoicemailUsersListAction() {
     }
+    
+    VoicemailUsersListAction::~VoicemailUsersListAction() {
+    }    
 } //NAMESPACE
 

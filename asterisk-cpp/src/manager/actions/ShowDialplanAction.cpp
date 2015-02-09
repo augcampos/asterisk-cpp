@@ -11,5 +11,8 @@ namespace asteriskcpp {
 
     ShowDialplanAction::ShowDialplanAction() {
     }
+    
+    ShowDialplanAction::~ShowDialplanAction() {
+    }    
 } //NAMESPACE
 

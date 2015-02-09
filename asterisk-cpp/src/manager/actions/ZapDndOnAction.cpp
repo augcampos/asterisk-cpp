@@ -12,6 +12,9 @@ namespace asteriskcpp {
     ZapDndOnAction::ZapDndOnAction() {
     }
 
+    ZapDndOnAction::~ZapDndOnAction() {
+    }    
+
     ZapDndOnAction::ZapDndOnAction(int zapChannel) {
         this->setZapChannel(zapChannel);
     }

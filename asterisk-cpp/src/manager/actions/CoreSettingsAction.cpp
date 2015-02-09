@@ -16,6 +16,9 @@ namespace asteriskcpp {
     CoreSettingsAction::CoreSettingsAction() {
     }
     
+    CoreSettingsAction::~CoreSettingsAction() {
+    }    
+    
     
     ManagerResponse *CoreSettingsAction::expectedResponce(const std::string & response) {
         return (new CoreSettingsResponse(response));

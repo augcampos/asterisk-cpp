@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     ModuleLoadAction::ModuleLoadAction() {
     }
+    
+    ModuleLoadAction::~ModuleLoadAction() {
+    }    
 
     ModuleLoadAction::ModuleLoadAction(const std::string& loadType) {
         this->setLoadType(loadType);

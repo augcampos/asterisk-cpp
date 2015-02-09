@@ -16,6 +16,9 @@ namespace asteriskcpp {
     ExtensionStateAction::ExtensionStateAction() {
     }
 
+    ExtensionStateAction::~ExtensionStateAction() {
+    }    
+    
     ManagerResponse* ExtensionStateAction::expectedResponce(const std::string & response) {
         return (new ExtensionStateResponse(response));
     }

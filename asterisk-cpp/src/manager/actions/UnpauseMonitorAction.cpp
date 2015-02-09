@@ -15,6 +15,9 @@ namespace asteriskcpp {
     UnpauseMonitorAction::UnpauseMonitorAction(const std::string& channel) {
         this->setChannel(channel);
     }
+    
+    UnpauseMonitorAction::~UnpauseMonitorAction() {
+    }    
 
     const std::string& UnpauseMonitorAction::getChannel() const {
         return (getGetterValue(__FUNCTION__));

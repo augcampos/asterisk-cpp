@@ -15,6 +15,9 @@ namespace asteriskcpp {
     ConfbridgeStartRecordAction::ConfbridgeStartRecordAction() {
     }
 
+    ConfbridgeStartRecordAction::~ConfbridgeStartRecordAction() {
+    }    
+
     /**
      * Creates a new ConfbridgeStartRecordAction for a specific conference.
      */

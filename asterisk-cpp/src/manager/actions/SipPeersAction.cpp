@@ -11,5 +11,8 @@ namespace asteriskcpp {
 
     SipPeersAction::SipPeersAction() {
     }
+    
+    SipPeersAction::~SipPeersAction() {
+    }    
 } //NAMESPACE
 

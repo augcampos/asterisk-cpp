@@ -14,5 +14,8 @@ namespace asteriskcpp {
      */
     SkypeLicenseListAction::SkypeLicenseListAction() {
     }
+    
+    SkypeLicenseListAction::~SkypeLicenseListAction() {
+    }    
 } //NAMESPACE
 

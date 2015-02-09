@@ -15,6 +15,9 @@ namespace asteriskcpp {
      */
     ModuleCheckAction::ModuleCheckAction() {
     }
+    
+    ModuleCheckAction::~ModuleCheckAction() {
+    }    
 
     ManagerResponse* ModuleCheckAction::expectedResponce(const std::string & response) {
         return (new ModuleCheckResponse(response));

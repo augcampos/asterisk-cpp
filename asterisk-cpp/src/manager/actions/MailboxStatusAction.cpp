@@ -12,6 +12,9 @@ namespace asteriskcpp {
 
     MailboxStatusAction::MailboxStatusAction() {
     }
+    
+    MailboxStatusAction::~MailboxStatusAction() {
+    }    
 
     MailboxStatusAction::MailboxStatusAction(const std::string& mailbox) {
         this->setMailbox(mailbox);

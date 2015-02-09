@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     SipShowPeerAction::SipShowPeerAction() {
     }
+    
+    SipShowPeerAction::~SipShowPeerAction() {
+    }    
 
     SipShowPeerAction::SipShowPeerAction(const std::string& peer) {
         this->setPeer(peer);

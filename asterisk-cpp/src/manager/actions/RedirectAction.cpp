@@ -11,6 +11,9 @@ namespace asteriskcpp {
 
     RedirectAction::RedirectAction() {
     }
+    
+    RedirectAction::~RedirectAction() {
+    }    
 
     RedirectAction::RedirectAction(const std::string& channel, const std::string& context, const std::string& exten, int priority) {
         this->setChannel(channel);

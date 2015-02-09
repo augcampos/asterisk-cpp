@@ -14,6 +14,9 @@ namespace asteriskcpp {
      */
     ConfbridgeStopRecordAction::ConfbridgeStopRecordAction() {
     }
+    
+    ConfbridgeStopRecordAction::~ConfbridgeStopRecordAction() {
+    }    
 
     /**
      * Creates a new ConfbridgeStopRecordAction for a specific conference.

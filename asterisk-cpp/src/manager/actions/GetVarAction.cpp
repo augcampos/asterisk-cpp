@@ -16,6 +16,8 @@ namespace asteriskcpp {
     GetVarAction::GetVarAction() {
     }
 
+    GetVarAction::~GetVarAction() {
+    }    
     
     GetVarAction::GetVarAction(const std::string& variable) {
         this->setVariable(variable);
