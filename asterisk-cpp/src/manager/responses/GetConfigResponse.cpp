@@ -17,13 +17,13 @@ namespace asteriskcpp {
     }
 
     const std::map<std::string, std::string>& GetConfigResponse::getCategories() const {
-        std::map<std::string, std::string> rt = new std::map<std::string, std::string>();
+        std::map<std::string, std::string> rt;
 
         return rt;
     }
 
-    const std::map<int, std::string>& getLines(int categoryNumber) const {
-        std::map<int, std::string> rt = new std::map<int, std::string>();
+    const std::map<int, std::string>& GetConfigResponse::getLines(int categoryNumber) const {
+        std::map<int, std::string> rt;
 
         return rt;
     }

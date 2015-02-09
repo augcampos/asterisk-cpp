@@ -8,6 +8,8 @@
 #ifndef SIPSHOWPEERRESPONSE_H
 #define	SIPSHOWPEERRESPONSE_H
 
+#include "asteriskcpp/manager/responses/ManagerResponse.h"
+
 namespace asteriskcpp {
 
     /**
@@ -78,7 +80,8 @@ namespace asteriskcpp {
         const std::string& getParkingLot() const;
         const std::string& getRegContact() const;
         int getQualifyFreq() const;
-        std::map<const std::string, const std::string> getChanVariable() const;
+        //std::map<const std::string, const std::string>
+        const std::string getChanVariable() const;
     private:
 
     };

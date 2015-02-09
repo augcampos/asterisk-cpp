@@ -8,10 +8,6 @@
 #include "asteriskcpp/manager/responses/GetVarResponse.h"
 
 namespace asteriskcpp {
-
-    GetVarResponse::GetVarResponse() {
-    }
-
     GetVarResponse::GetVarResponse(const std::string& responseStr) :
     ManagerResponse(responseStr) {
     }

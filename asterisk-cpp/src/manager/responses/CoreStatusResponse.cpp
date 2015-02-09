@@ -29,7 +29,7 @@ namespace asteriskcpp {
         return (getGetterValue(__FUNCTION__));
     }
 
-    long CoreStatusResponse::getCoreReloadDateTimeAsDate() const {
+    long CoreStatusResponse::getCoreReloadDateTimeAsDate(long timezone) const {
         return (getGetterValue<long>(__FUNCTION__));
     }
 
