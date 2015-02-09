@@ -7,7 +7,7 @@
 
 #include "asteriskcpp/exceptions/ExceptionHandler.h"
 #include "asteriskcpp/exceptions/Exception.h"
-#include "asteriskcpp//utils/LogHandler.h"
+#include "asteriskcpp/utils/LogHandler.h"
 namespace asteriskcpp {
 
     Exception::Exception(const std::string& message) {
