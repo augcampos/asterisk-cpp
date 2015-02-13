@@ -23,6 +23,7 @@ namespace asteriskcpp {
         void run();
 
     private:
+        using Thread::start;
         TCPSocket* connectionSocket;
         Dispatcher* dispatcher;
         std::string unprocessedStr;

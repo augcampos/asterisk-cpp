@@ -23,6 +23,7 @@ namespace asteriskcpp {
         void run();
 
     private:
+        using Thread::start;
         TCPSocket* m_connectionSocket;
         SynchronisedQueue<std::string>* m_WriteQueue;
     };
