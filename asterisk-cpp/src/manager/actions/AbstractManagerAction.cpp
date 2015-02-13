@@ -34,14 +34,14 @@ namespace asteriskcpp {
         return (this->actionID);
     }
 
-    const std::string& AbstractManagerAction::toString() {
+    const std::string AbstractManagerAction::toString() const {
         std::stringstream stream;
         stream << makeStdLine(ACTION, this->getAction());
         stream << makeStdLine(ACTION_ID, this->getActionId());
         stream << PropertyMap::toString();
 
-        this->to_string = stream.str();
-        return (this->to_string);
+        std::string to_string = stream.str();
+        return (to_string);
     }
 
 }
