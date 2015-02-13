@@ -37,7 +37,7 @@ namespace asteriskcpp {
         return std::string(str, 0, i);
     }
 
-    std::string PropertyMap::toString() const {
+    const std::string PropertyMap::toString() const {
         std::stringstream stream;
         for (propertyIndex::const_iterator it = index.begin(); it != index.end(); it++) {
             stream << makeStdLine(*it, getProperty(*it));

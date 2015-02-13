@@ -24,7 +24,7 @@ namespace asteriskcpp {
 
         virtual ~AbstractManagerAction();
 
-        virtual const std::string& toString();
+        virtual const std::string toString() const;
 
         const std::string& generateID();
 
@@ -57,7 +57,6 @@ namespace asteriskcpp {
     private:
 
         std::string actionID;
-        std::string to_string;
     };
 
 }

@@ -49,6 +49,8 @@ namespace asteriskcpp {
         const std::map<int, std::string>& getLines(int categoryNumber) const;
 
     private:
+        std::map<std::string, std::string> categories;
+        std::map<int, std::string> lines;
 
     };
 }

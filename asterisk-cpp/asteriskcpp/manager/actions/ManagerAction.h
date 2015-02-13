@@ -50,7 +50,7 @@ namespace asteriskcpp {
          * Returns the action string representation action.
          * @return the action string representation action.
          */
-        virtual const std::string& toString() = 0;
+        virtual const std::string toString() const = 0;
 
         virtual ManagerResponse* expectedResponce(const std::string& response);
 

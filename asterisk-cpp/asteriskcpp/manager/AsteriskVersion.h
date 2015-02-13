@@ -24,7 +24,6 @@ namespace asteriskcpp {
     private:
         ManagerType type;
         float managerVersion;
-        float version;
     };
 
 }
