@@ -58,9 +58,11 @@ namespace asteriskcpp {
     }
 
     void ManagerConnection::disconnect() {
-        this->setState(DISCONNECTED);
-        if (this->socket != NULL) {
-            delete (socket);
+        if (state != DISCONNECTED) {
+            this->setState(DISCONNECTED);
+            if (this->socket != NULL) {
+                delete (socket);
+            }
         }
     }
 
@@ -155,32 +157,45 @@ namespace asteriskcpp {
         if (this->state == newState)
             return;
 
-        LOG_DEBUG_DATA(status[state] << " => " << status[newState]);
+        std::stringstream transition;
+        transition << status[state] << " => " << status[newState];
+        LOG_DEBUG_DATA(transition.str());
 
-        switch (newState) {
+        switch (state) { //from state..
             case DISCONNECTED:
-            {
-                this->reader.stop();
-                ManagerResponsesHandler::stop();
-            }
+                if (newState != CONNECTED) {
+                    throw new Exception(transition.str());
+                }
+                //transition to connected
+                LOG_INFO_STR("CONNECTED");
+                this->reader.start(socket, this);
+                ManagerResponsesHandler::start();
                 break;
             case CONNECTED:
-            {
-                if (state == DISCONNECTED) {
-                    this->reader.start(socket, this);
-                    ManagerResponsesHandler::start();
-                } else {
-                    this->reader.stop();
+                if (newState == DISCONNECTED) {
+                    //to disconnected
+                    LOG_INFO_STR("DISCONNECTED");
                     ManagerResponsesHandler::stop();
+                    this->reader.stop();
+                } else {
+                    //to authenticated
+                    LOG_INFO_STR("AUTHENTICATED");
                 }
-            }
                 break;
             case AUTHENTICATED:
-            {
-
-            }
+                if (newState == CONNECTED) {
+                    // to connected, i.e. logoff
+                    LOG_INFO_STR("CONNECTED:=DEAUTHENTICATED");
+                } else {
+                    //to disconnected
+                    LOG_INFO_STR("DISCONNECTED");
+                    //logoff()¿?
+                    setState(CONNECTED);
+                    setState(DISCONNECTED);
+                }
                 break;
         }
+
         this->state = newState;
     }
 
