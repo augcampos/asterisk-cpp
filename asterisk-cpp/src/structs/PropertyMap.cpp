@@ -90,8 +90,9 @@ namespace asteriskcpp {
                 knull.append(line);
             }
 
+            std::string::size_type tmpLastPos = lastPos;
             lastPos = propertyStr.find_first_not_of(NEWLINE, pos);
-            pos = propertyStr.find(NEWLINE, lastPos);
+            pos = propertyStr.find(NEWLINE, tmpLastPos);
         }
 
         if (knull.size())
