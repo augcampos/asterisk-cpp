@@ -62,6 +62,7 @@ namespace asteriskcpp {
             this->setState(DISCONNECTED);
             if (this->socket != NULL) {
                 delete (socket);
+                this->socket = NULL;
             }
         }
     }
@@ -256,6 +257,7 @@ namespace asteriskcpp {
         this->state = DISCONNECTED;
         if (this->socket != NULL) {
             delete (socket);
+            this->socket = NULL;
         }
     }
 
