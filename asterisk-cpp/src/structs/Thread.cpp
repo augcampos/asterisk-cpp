@@ -38,8 +38,12 @@ namespace asteriskcpp {
 
         // Wait for the thread to finish.
         if (m_thread != NULL) {
-            m_thread->interrupt();
-            m_thread->join();
+            if (m_thread->get_id() != boost::this_thread::get_id()) {
+                m_thread->interrupt();
+                m_thread->join();
+                delete (m_thread);
+                m_thread = NULL;
+            }
         }
     }
 
