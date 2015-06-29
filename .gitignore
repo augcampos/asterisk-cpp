@@ -20,3 +20,4 @@
 /asterisk-cpp/examples/Test
 /asterisk-cpp/install-sh
 /asterisk-cpp/examples/Makefile
+/asterisk-cpp/*.lo
