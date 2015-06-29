@@ -42,8 +42,9 @@ namespace asteriskcpp {
         listeners.erase(&mel);
     }
 
-    void ManagerEventsHandler::fireEvent(const ManagerEvent& me) {
-        boost::thread t(boost::bind(&ManagerEventsHandler::internalFireEvent, this, me));
+    void ManagerEventsHandler::fireEvent(ManagerEvent& me) {
+//TODO   boost::thread t(boost::bind(&ManagerEventsHandler::internalFireEvent, this, me));
+        this->internalFireEvent(me);
     }
 
     void ManagerEventsHandler::internalFireEvent(ManagerEvent& me) {
