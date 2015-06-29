@@ -25,6 +25,9 @@ namespace asteriskcpp {
     void Thread::start() {
         setMustStop(false);
 
+        if (m_thread != NULL) {
+            delete (m_thread);
+        }
         // Create thread and start it with myself as argument. Pass myself as reference since I don't want a copy
         m_thread = new boost::thread(boost::ref(*this));
     }
