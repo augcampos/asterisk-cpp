@@ -28,7 +28,7 @@ static const char* status[] = {"Disconnected", "Connected", "Authenticated"};
 namespace asteriskcpp {
 
     ManagerConnection::ManagerConnection() :
-    state(DISCONNECTED), hostname(DEFAULT_HOSTNAME), port(DEFAULT_PORT), ssl(false), defaultResponseTimeout(DEFAULT_TIMEOUT) {
+    state(DISCONNECTED), hostname(DEFAULT_HOSTNAME), port(DEFAULT_PORT), ssl(false), defaultResponseTimeout(DEFAULT_TIMEOUT), socket(NULL) {
     }
 
     ManagerConnection::~ManagerConnection() {
@@ -68,6 +68,12 @@ namespace asteriskcpp {
 
     void ManagerConnection::send(const std::string& data) {
         LOG_DEBUG_STR(str2Log(data));
+
+        if (this->state == DISCONNECTED) {
+            LOG_TRACE_STR("OUT :state is DISCONNECTED");
+            return;
+        }
+
         this->socket->writeData(data);
         LOG_TRACE_STR("OUT");
     }
@@ -243,6 +249,14 @@ namespace asteriskcpp {
             this->fireEvent(*me);
         }
         delete (me);
+    }
+
+    void ManagerConnection::notifyDisconnect() {
+        LOG_ERROR_STR("Disconnected");
+        this->state = DISCONNECTED;
+        if (this->socket != NULL) {
+            delete (socket);
+        }
     }
 
     bool ManagerConnection::login() {

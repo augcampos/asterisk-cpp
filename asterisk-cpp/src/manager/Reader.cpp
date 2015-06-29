@@ -32,6 +32,7 @@ namespace asteriskcpp {
 
     void Reader::stop() {
         Thread::stop();
+		dispatcher->notifyDisconnect();
         dispatcher = NULL;
         connectionSocket = NULL;
     }

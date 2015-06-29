@@ -23,6 +23,7 @@ namespace asteriskcpp {
         virtual void dispatchAsteriskVersion(AsteriskVersion* version) = 0;
         virtual void dispatchResponse(const std::string& response) = 0;
         virtual void dispatchEvent(const std::string& event) = 0;
+        virtual void notifyDisconnect() = 0;
     };
 
 }

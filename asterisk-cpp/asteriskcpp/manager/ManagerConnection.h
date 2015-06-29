@@ -68,6 +68,7 @@ namespace asteriskcpp {
         void dispatchAsteriskVersion(AsteriskVersion* version);
         void dispatchResponse(const std::string& response);
         void dispatchEvent(const std::string& event);
+        void notifyDisconnect();
 
     private:
 
