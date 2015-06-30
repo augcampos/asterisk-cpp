@@ -79,7 +79,7 @@ namespace asteriskcpp {
         std::string knull;
         std::string::size_type lastPos = propertyStr.find_first_not_of(NEWLINE, 0);
         std::string::size_type pos = propertyStr.find(NEWLINE);
-        while (std::string::npos != pos || std::string::npos != lastPos) {
+        while (std::string::npos != pos && std::string::npos != lastPos) {
             std::string line = propertyStr.substr(lastPos, pos - lastPos);
 
             size_t sep = line.find(SEP);
