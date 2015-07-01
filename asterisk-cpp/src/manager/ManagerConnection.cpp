@@ -79,14 +79,14 @@ namespace asteriskcpp {
         LOG_TRACE_STR("OUT");
     }
 
-    void ManagerConnection::sendAction(ManagerAction & action) {
+    void ManagerConnection::sendAction(ManagerAction* action) {
         sendAction(action, NULL);
     }
 
-    void ManagerConnection::sendAction(ManagerAction & action, responseCallbackFunction_t rcbf) {
-        ASyncResponseCallBack *asrcb = new ASyncResponseCallBack(&action, defaultResponseTimeout, rcbf);
-        addResponsetListener(action.generateID(), asrcb);
-        send(action.toString());
+    void ManagerConnection::sendAction(ManagerAction* action, responseCallbackFunction_t rcbf) {
+        ASyncResponseCallBack *asrcb = new ASyncResponseCallBack(action, defaultResponseTimeout, rcbf);
+        addResponsetListener(action->generateID(), asrcb);
+        send(action->toString());
     }
 
     ManagerResponse* ManagerConnection::syncSendAction(ManagerAction& action) {
@@ -95,11 +95,11 @@ namespace asteriskcpp {
 
     ManagerResponse* ManagerConnection::syncSendAction(ManagerAction& action, unsigned int timeout) {
         LOG_TRACE_STR("IN");
-        SyncResponseCallBack srcb(&action, timeout);
-        addResponsetListener(action.generateID(), &srcb);
+        SyncResponseCallBack *srcb = new SyncResponseCallBack(&action, timeout);
+        addResponsetListener(action.generateID(), srcb);
         send(action.toString());
-        srcb.stoll();
-        return (srcb.response);
+        srcb->stoll();
+        return (srcb->response);
     }
 
     void ManagerConnection::addEventCallback(onManagerEventCallback_t callback) {
@@ -247,9 +247,8 @@ namespace asteriskcpp {
         LOG_TRACE_STR(str2Log(event));
         ManagerEvent *me = this->eventBuilder.buildEvent(event);
         if (me != NULL) {
-            this->fireEvent(*me);
+            this->fireEvent(me);
         }
-        delete (me);
     }
 
     void ManagerConnection::notifyDisconnect() {

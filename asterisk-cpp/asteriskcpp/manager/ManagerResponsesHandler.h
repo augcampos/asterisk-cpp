@@ -42,6 +42,7 @@ namespace asteriskcpp {
     class ASyncResponseCallBack : public ResponseCallBack {
     public:
         ASyncResponseCallBack(ManagerAction* a, unsigned int tout, responseCallbackFunction_t f);
+		virtual ~ASyncResponseCallBack();
         virtual void fireCallBack(ManagerResponse* mr);
 
     protected:

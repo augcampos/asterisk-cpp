@@ -41,8 +41,8 @@ namespace asteriskcpp {
         bool isConnected() const;
         bool isAuthenticated() const;
 
-        void sendAction(ManagerAction& action);
-        void sendAction(ManagerAction& action, responseCallbackFunction_t rcbf);
+        void sendAction(ManagerAction* action);
+        void sendAction(ManagerAction* action, responseCallbackFunction_t rcbf);
         ManagerResponse* syncSendAction(ManagerAction& action);
         ManagerResponse* syncSendAction(ManagerAction& action, unsigned int timeout);
 

@@ -42,21 +42,22 @@ namespace asteriskcpp {
         listeners.erase(&mel);
     }
 
-    void ManagerEventsHandler::fireEvent(ManagerEvent& me) {
-//TODO   boost::thread t(boost::bind(&ManagerEventsHandler::internalFireEvent, this, me));
-        this->internalFireEvent(me);
+    void ManagerEventsHandler::fireEvent(ManagerEvent* me) {
+          boost::thread t(boost::bind(&ManagerEventsHandler::internalFireEvent, this, me));
     }
 
-    void ManagerEventsHandler::internalFireEvent(ManagerEvent& me) {
-        LOG_DEBUG_STR("FIRE EVENT " + me.getEventName() + ":: " + me.toLog());
+    void ManagerEventsHandler::internalFireEvent(ManagerEvent* me) {
+        LOG_DEBUG_STR("FIRE EVENT " + me->getEventName() + ":: " + me->toLog());
 
         for (EventListenersList::const_iterator iter = listeners.begin(); iter != listeners.end(); ++iter) {
             try {
-                (const_cast<ManagerEventListener *> (*iter))->onManagerEvent(me);
+                (const_cast<ManagerEventListener *> (*iter))->onManagerEvent(*me);
             } catch (Exception& E) {
                 LOG_ERROR_STR(E.getMessage());
             }
         }
+
+        delete me;
     }
 
 }

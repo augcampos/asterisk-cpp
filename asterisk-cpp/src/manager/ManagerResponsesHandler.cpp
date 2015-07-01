@@ -27,16 +27,23 @@ namespace asteriskcpp {
         this->function = f;
     }
 
+    ASyncResponseCallBack::~ASyncResponseCallBack() {
+        LOG_TRACE_STR("IN");
+        delete this->action;
+        LOG_TRACE_STR("OUT");
+    }
+
     void ASyncResponseCallBack::fireCallBack(ManagerResponse* mr) {
         LOG_TRACE_STR("ASyncResponseCallBack :" + mr->toLog());
         if (this->function != NULL) {
             (this->function)(mr);
         }
+        delete mr;
         LOG_TRACE_STR("OUT");
     }
 
     SyncResponseCallBack::SyncResponseCallBack(ManagerAction* a, unsigned int timeOut) :
-    ResponseCallBack(a, timeOut), isReady(false) {
+    ResponseCallBack(a, timeOut), response(NULL), isReady(false) {
     }
 
     SyncResponseCallBack::~SyncResponseCallBack() {
@@ -90,13 +97,14 @@ namespace asteriskcpp {
     }
 
     void ManagerResponsesHandler::removeResponseListener(const std::string& key) {
+        std::string keytmp = key;
         LOG_TRACE_STR("REMOVE RESPONSE Listener " + key);
         ResponseCallBack* m = getListener(key);
         this->listeners.erase(key);
         if (m) {
-            //delete (m);
+            delete (m);
         }
-        LOG_TRACE_STR("OUT" + key);
+        LOG_TRACE_STR("OUT" + keytmp);
     }
 
     bool ManagerResponsesHandler::isEmpty() {
@@ -123,11 +131,13 @@ namespace asteriskcpp {
             {
                 if (!isEmpty()) {
 
-                    for (listenersList_t::const_iterator it = this->listeners.begin(); it != this->listeners.end(); it++) {
+                    for (listenersList_t::const_iterator it = this->listeners.begin(); it != this->listeners.end(); ) {
                         ResponseCallBack* m = (*it).second;
                         if (boost::get_system_time() >= m->timeout) {
                             m->fireTimeout();
-                            removeResponseListener((*it).first);
+                            removeResponseListener((*it++).first);
+                        } else {
+                            ++it;
                         }
                     }
                 }
@@ -138,8 +148,8 @@ namespace asteriskcpp {
 
     void ManagerResponsesHandler::clear() {
         boost::lock_guard<boost::mutex> lock(this->m_mutex);
-        for (listenersList_t::const_iterator it = this->listeners.begin(); it != this->listeners.end(); it++) {
-            removeResponseListener((*it).first);
+        for (listenersList_t::const_iterator it = this->listeners.begin(); it != this->listeners.end(); ) {
+            removeResponseListener((*it++).first);
         }
         this->m_cond.notify_all();
         LOG_TRACE_STR("OUT");
