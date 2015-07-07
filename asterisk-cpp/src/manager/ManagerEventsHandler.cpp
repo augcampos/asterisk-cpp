@@ -43,7 +43,9 @@ namespace asteriskcpp {
     }
 
     void ManagerEventsHandler::fireEvent(ManagerEvent* me) {
-          boost::thread t(boost::bind(&ManagerEventsHandler::internalFireEvent, this, me));
+		//The outbreak order of event cannot work when I make thread here
+        //boost::thread t(boost::bind(&ManagerEventsHandler::internalFireEvent, this, me));
+        this->internalFireEvent(me);
     }
 
     void ManagerEventsHandler::internalFireEvent(ManagerEvent* me) {
@@ -58,6 +60,7 @@ namespace asteriskcpp {
         }
 
         delete me;
+        LOG_DEBUG_STR("OUT");
     }
 
 }
