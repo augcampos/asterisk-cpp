@@ -53,6 +53,7 @@ namespace asteriskcpp {
         boost::mutex m_mutex;
         boost::condition_variable m_cond;
         bool isReady;
+        bool isStollEnd;
 
     public:
         virtual ~SyncResponseCallBack();

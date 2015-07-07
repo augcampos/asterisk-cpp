@@ -43,12 +43,15 @@ namespace asteriskcpp {
     }
 
     SyncResponseCallBack::SyncResponseCallBack(ManagerAction* a, unsigned int timeOut) :
-    ResponseCallBack(a, timeOut), response(NULL), isReady(false) {
+    ResponseCallBack(a, timeOut), response(NULL), isReady(false), isStollEnd(false) {
     }
 
     SyncResponseCallBack::~SyncResponseCallBack() {
-        boost::lock_guard<boost::mutex> lock(this->m_mutex);
+        boost::unique_lock<boost::mutex> lock(this->m_mutex);
         this->m_cond.notify_all();
+        if (this->isStollEnd == false) {
+            this->m_cond.wait(lock);
+        }
         LOG_TRACE_STR("OUT");
     }
 
@@ -58,6 +61,8 @@ namespace asteriskcpp {
         if (this->isReady == false) {
             this->m_cond.wait(lock);
         }
+        this->isStollEnd = true;
+        this->m_cond.notify_all();
         LOG_TRACE_STR("OUT");
     }
 
