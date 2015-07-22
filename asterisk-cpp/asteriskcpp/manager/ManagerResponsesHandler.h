@@ -68,7 +68,6 @@ namespace asteriskcpp {
         typedef std::map<std::string, ResponseCallBack*> listenersList_t;
         boost::mutex m_mutex;
         boost::condition_variable m_cond;
-        ResponseCallBack* getListener(const std::string& key);
 
     public:
         virtual ~ManagerResponsesHandler();
@@ -78,6 +77,8 @@ namespace asteriskcpp {
 
         virtual void stop();
         virtual void run();
+
+        ResponseCallBack* getListener(const std::string& key);
 
     protected:
         listenersList_t listeners;

@@ -234,13 +234,12 @@ namespace asteriskcpp {
         ManagerAction *action = NULL;
         std::string actionId = extractActionID(response);
         if (!actionId.empty()) {
-            ResponseCallBack *cb = ManagerResponsesHandler::listeners[actionId];
+            ResponseCallBack *cb = this->getListener(actionId);
             if (cb != NULL) {
                 action = cb->getAction();
+                this->fireResponseCallback(this->responseBuilder.buildResponse(action, response));
             }
         }
-
-        this->fireResponseCallback(this->responseBuilder.buildResponse(action, response));
     }
 
     void ManagerConnection::dispatchEvent(const std::string& event) {
