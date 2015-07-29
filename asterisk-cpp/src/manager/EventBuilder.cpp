@@ -174,7 +174,7 @@ namespace asteriskcpp {
             if (it != eventFactoryMap.end()) {
                 return ((it->second)->create(eventStr));
             } else {
-                LOG_WARN_STR("EVENT:INVALID OR NOT IMPLEMENTED \n" + str2Log(eventStr));
+                //LOG_WARN_STR("EVENT:INVALID OR NOT IMPLEMENTED \n" + str2Log(eventStr));
                 return (new ManagerEvent(eventStr));
             }
         }

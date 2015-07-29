@@ -69,6 +69,7 @@ namespace asteriskcpp {
         void dispatchResponse(const std::string& response);
         void dispatchEvent(const std::string& event);
         void notifyDisconnect();
+        virtual void notifyResponseMessage(const std::string& responseMessage);
 
     private:
 

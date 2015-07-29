@@ -38,6 +38,7 @@ libasteriskcpp_la_SOURCES= \
 	src/manager/ManagerEventListener.cpp \
 	src/manager/ManagerEventsHandler.cpp \
 	src/manager/ManagerConnection.cpp \
+	src/manager/Dispatcher.cpp \
 	src/manager/EventBuilder.cpp \
 	src/manager/events/SkypeBuddyEntryEvent.cpp \
 	src/manager/events/AsyncAgiEvent.cpp \

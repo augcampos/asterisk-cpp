@@ -13,7 +13,8 @@
 
 namespace asteriskcpp {
 
-    ResponseCallBack::ResponseCallBack(ManagerAction* a, unsigned int tout) {
+    ResponseCallBack::ResponseCallBack(ManagerAction* a, unsigned int tout)
+        : isTimeout(false) {
         setAction(a);
         this->timeout = boost::get_system_time() + boost::posix_time::milliseconds(tout);
     }
@@ -55,15 +56,17 @@ namespace asteriskcpp {
         LOG_TRACE_STR("OUT");
     }
 
-    void SyncResponseCallBack::stoll() {
+    ManagerResponse* SyncResponseCallBack::stoll() {
         boost::unique_lock<boost::mutex> lock(this->m_mutex);
         LOG_TRACE_STR("");
         if (this->isReady == false) {
             this->m_cond.wait(lock);
         }
+        ManagerResponse* mr = this->response;
         this->isStollEnd = true;
         this->m_cond.notify_all();
         LOG_TRACE_STR("OUT");
+        return response;
     }
 
     void SyncResponseCallBack::fireCallBack(ManagerResponse* mr) {
@@ -135,12 +138,12 @@ namespace asteriskcpp {
             boost::this_thread::disable_interruption di;
             {
                 if (!isEmpty()) {
-
                     for (listenersList_t::const_iterator it = this->listeners.begin(); it != this->listeners.end(); ) {
                         ResponseCallBack* m = (*it).second;
-                        if (boost::get_system_time() >= m->timeout) {
-                            m->fireTimeout();
-                            removeResponseListener((*it++).first);
+                        if ((boost::get_system_time() >= m->timeout) && (m->isTimeout == false)) {
+                            m->isTimeout = true;
+                            std::string msg = "Response: Error\r\nActionID: " + m->getAction()->getActionId() + "\r\nMessage: Time Out\r\n\r\n";
+                            this->notifyResponseMessage(msg);
                         } else {
                             ++it;
                         }

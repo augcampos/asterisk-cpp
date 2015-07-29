@@ -98,8 +98,8 @@ namespace asteriskcpp {
         SyncResponseCallBack *srcb = new SyncResponseCallBack(&action, timeout);
         addResponsetListener(action.generateID(), srcb);
         send(action.toString());
-        srcb->stoll();
-        return (srcb->response);
+        ManagerResponse* mr = srcb->stoll();
+        return mr;
     }
 
     void ManagerConnection::addEventCallback(onManagerEventCallback_t callback) {
@@ -257,6 +257,10 @@ namespace asteriskcpp {
             delete (socket);
             this->socket = NULL;
         }
+    }
+
+    void ManagerConnection::notifyResponseMessage(const std::string& responseMessage) {
+        this->reader.delegeteResponseMessage(responseMessage);
     }
 
     bool ManagerConnection::login() {
