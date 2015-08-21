@@ -93,7 +93,6 @@ namespace asteriskcpp {
     }
 
     ManagerResponsesHandler::~ManagerResponsesHandler() {
-        this->stop();
     }
 
     void ManagerResponsesHandler::addResponsetListener(const std::string& key, ResponseCallBack* bcb) {
@@ -105,6 +104,7 @@ namespace asteriskcpp {
     }
 
     void ManagerResponsesHandler::removeResponseListener(const std::string& key) {
+        boost::lock_guard<boost::mutex> lock(this->m_mutex);
         std::string keytmp = key;
         LOG_TRACE_STR("REMOVE RESPONSE Listener " + key);
         ResponseCallBack* m = getListener(key);
@@ -135,9 +135,10 @@ namespace asteriskcpp {
         boost::posix_time::milliseconds duration(LOOP_INTERVAL);
         boost::this_thread::sleep<boost::posix_time::milliseconds>(duration);
         {
-            boost::this_thread::disable_interruption di;
+            //boost::this_thread::disable_interruption di;
             {
-                if (!isEmpty()) {
+                boost::lock_guard<boost::mutex> lock(this->m_mutex);
+                if (!this->listeners.empty()) {
                     for (listenersList_t::const_iterator it = this->listeners.begin(); it != this->listeners.end(); ) {
                         ResponseCallBack* m = (*it).second;
                         if ((boost::get_system_time() >= m->timeout) && (m->isTimeout == false)) {
@@ -149,7 +150,6 @@ namespace asteriskcpp {
                         }
                     }
                 }
-
             }
         }
     }
