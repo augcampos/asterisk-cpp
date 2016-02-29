@@ -84,9 +84,12 @@ namespace asteriskcpp {
 
         void log(const std::string& line, LogLevel level);
 
+        void reopenFile();
+
     private:
         LogHandler();
         LogHandler(const std::string& confFile);
+        void setup();
     };
 
 }
