@@ -75,7 +75,14 @@ namespace asteriskcpp {
             return;
         }
 
-        this->socket->writeData(data);
+        try {
+            this->socket->writeData(data);
+        } catch (Exception& E) {
+            LOG_ERROR_STR(E.getMessage());
+            this->reader.stop();
+            this->notifyDisconnect();
+        }
+
         LOG_TRACE_STR("OUT");
     }
 
