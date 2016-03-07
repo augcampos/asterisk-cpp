@@ -29,9 +29,11 @@ namespace asteriskcpp {
 
     ManagerConnection::ManagerConnection() :
     state(DISCONNECTED), hostname(DEFAULT_HOSTNAME), port(DEFAULT_PORT), ssl(false), defaultResponseTimeout(DEFAULT_TIMEOUT), socket(NULL) {
+        ManagerResponsesHandler::start();
     }
 
     ManagerConnection::~ManagerConnection() {
+        ManagerResponsesHandler::stop();
         disconnect();
     }
 
@@ -183,13 +185,11 @@ namespace asteriskcpp {
                 //transition to connected
                 LOG_INFO_STR("CONNECTED");
                 this->reader.start(socket, this);
-                ManagerResponsesHandler::start();
                 break;
             case CONNECTED:
                 if (newState == DISCONNECTED) {
                     //to disconnected
                     LOG_INFO_STR("DISCONNECTED");
-                    ManagerResponsesHandler::stop();
                     this->reader.stop();
                 } else {
                     //to authenticated
