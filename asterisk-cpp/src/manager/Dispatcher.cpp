@@ -10,12 +10,12 @@ namespace asteriskcpp {
     }
 
     void MessageTable::put(std::string message) {
-        static int MAX_COMMAND = 10000;
         boost::mutex::scoped_lock lock(this->mutex);
-        while (this->messageQueue.size() >= MAX_COMMAND) {
-            this->condition.wait(lock);
+        try {
+            this->messageQueue.push(message);
+        } catch (std::bad_alloc& e) {
+            LOG_ERROR_STR("catch bad_alloc.");
         }
-        this->messageQueue.push(message);
         this->condition.notify_all();
     }
 
