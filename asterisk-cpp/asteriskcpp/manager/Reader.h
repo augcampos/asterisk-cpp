@@ -18,6 +18,7 @@ namespace asteriskcpp {
 
     class Reader : public Thread {
     public:
+        Reader();
         void start(TCPSocket* s, Dispatcher* d);
         void stop();
         void run();

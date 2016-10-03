@@ -180,7 +180,7 @@ namespace asteriskcpp {
         switch (state) { //from state..
             case DISCONNECTED:
                 if (newState != CONNECTED) {
-                    throw new Exception(transition.str());
+                    Throw(Exception(transition.str()));
                 }
                 //transition to connected
                 LOG_INFO_STR("CONNECTED");

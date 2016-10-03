@@ -24,16 +24,34 @@ const unsigned int RCVBUFSIZE = 65536;
 
 namespace asteriskcpp {
 
+   Reader::Reader()
+      : connectionSocket(NULL)
+        , dispatcher(NULL)
+        , responseMessageTable(NULL)
+        , eventMessageTable(NULL)
+        , responseThread(NULL)
+        , eventThread(NULL)
+   {
+   }
+
     void Reader::start(TCPSocket* s, Dispatcher* d) {
         connectionSocket = s;
         dispatcher = d;
 
-        this->responseMessageTable = new MessageTable();
-        this->responseThread = new ResponseDispatchThread(this->responseMessageTable, d);
-        this->responseThread->start();
-        this->eventMessageTable = new MessageTable();
-        this->eventThread = new EventDispatchThread(this->eventMessageTable, d);
-        this->eventThread->start();
+        if (this->responseMessageTable == NULL) {
+            this->responseMessageTable = new MessageTable();
+        }
+        if (this->responseThread == NULL) {
+            this->responseThread = new ResponseDispatchThread(this->responseMessageTable, d);
+            this->responseThread->start();
+        }
+        if (this->eventMessageTable == NULL) {
+            this->eventMessageTable = new MessageTable();
+        }
+        if (this->eventThread == NULL) {
+            this->eventThread = new EventDispatchThread(this->eventMessageTable, d);
+            this->eventThread->start();
+        }
 
         Thread::start();
     }
