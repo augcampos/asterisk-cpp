@@ -24,14 +24,50 @@ const unsigned int RCVBUFSIZE = 65536;
 
 namespace asteriskcpp {
 
+   Reader::Reader()
+      : connectionSocket(NULL)
+        , dispatcher(NULL)
+        , responseMessageTable(NULL)
+        , eventMessageTable(NULL)
+        , responseThread(NULL)
+        , eventThread(NULL)
+   {
+   }
+
     void Reader::start(TCPSocket* s, Dispatcher* d) {
         connectionSocket = s;
         dispatcher = d;
+
+        if (this->responseMessageTable == NULL) {
+            this->responseMessageTable = new MessageTable();
+        }
+        if (this->responseThread == NULL) {
+            this->responseThread = new ResponseDispatchThread(this->responseMessageTable, d);
+            this->responseThread->start();
+        }
+        if (this->eventMessageTable == NULL) {
+            this->eventMessageTable = new MessageTable();
+        }
+        if (this->eventThread == NULL) {
+            this->eventThread = new EventDispatchThread(this->eventMessageTable, d);
+            this->eventThread->start();
+        }
+
         Thread::start();
+    }
+
+    Reader::~Reader() {
+        this->responseThread->stop();
+        this->eventThread->stop();
+        delete this->responseThread;
+        delete this->eventThread;
+        delete this->responseMessageTable;
+        delete this->eventMessageTable;
     }
 
     void Reader::stop() {
         Thread::stop();
+        dispatcher->notifyDisconnect();
         dispatcher = NULL;
         connectionSocket = NULL;
     }
@@ -47,6 +83,8 @@ namespace asteriskcpp {
                     processIncomming(rsv);
                     rsv.clear();
                 }
+            } else {
+                usleep(5000);
             }
         } catch (SocketException& e) {
             stop();
@@ -57,6 +95,14 @@ namespace asteriskcpp {
             std::cout << "___CATCH Exception" << std::endl;
             LOG_ERROR_STR(e.getMessage());
         }
+    }
+
+    void Reader::delegeteResponseMessage(const std::string& responseMessage) {
+        this->responseMessageTable->put(responseMessage);
+    }
+
+    void Reader::delegeteEventMessage(const std::string& eventMessage) {
+        this->eventMessageTable->put(eventMessage);
     }
 
     void Reader::processIncomming(const std::string& newStr) {
@@ -109,12 +155,12 @@ namespace asteriskcpp {
                     case 2:
                     case 3:
                     {
-                        dispatcher->dispatchResponse(nstr);
+                        this->responseMessageTable->put(nstr);
                     }
                         break;
                     case 4:
                     {
-                        dispatcher->dispatchEvent(nstr);
+                        this->eventMessageTable->put(nstr);
                     }
                         break;
                     default:

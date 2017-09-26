@@ -28,10 +28,12 @@ static const char* status[] = {"Disconnected", "Connected", "Authenticated"};
 namespace asteriskcpp {
 
     ManagerConnection::ManagerConnection() :
-    state(DISCONNECTED), hostname(DEFAULT_HOSTNAME), port(DEFAULT_PORT), ssl(false), defaultResponseTimeout(DEFAULT_TIMEOUT) {
+    state(DISCONNECTED), hostname(DEFAULT_HOSTNAME), port(DEFAULT_PORT), ssl(false), defaultResponseTimeout(DEFAULT_TIMEOUT), socket(NULL) {
+        ManagerResponsesHandler::start();
     }
 
     ManagerConnection::~ManagerConnection() {
+        ManagerResponsesHandler::stop();
         disconnect();
     }
 
@@ -62,24 +64,38 @@ namespace asteriskcpp {
             this->setState(DISCONNECTED);
             if (this->socket != NULL) {
                 delete (socket);
+                this->socket = NULL;
             }
         }
     }
 
     void ManagerConnection::send(const std::string& data) {
         LOG_DEBUG_STR(str2Log(data));
-        this->socket->writeData(data);
+
+        if (this->state == DISCONNECTED) {
+            LOG_TRACE_STR("OUT :state is DISCONNECTED");
+            return;
+        }
+
+        try {
+            this->socket->writeData(data);
+        } catch (Exception& E) {
+            LOG_ERROR_STR(E.getMessage());
+            this->reader.stop();
+            this->notifyDisconnect();
+        }
+
         LOG_TRACE_STR("OUT");
     }
 
-    void ManagerConnection::sendAction(ManagerAction & action) {
+    void ManagerConnection::sendAction(ManagerAction* action) {
         sendAction(action, NULL);
     }
 
-    void ManagerConnection::sendAction(ManagerAction & action, responseCallbackFunction_t rcbf) {
-        ASyncResponseCallBack *asrcb = new ASyncResponseCallBack(&action, defaultResponseTimeout, rcbf);
-        addResponsetListener(action.generateID(), asrcb);
-        send(action.toString());
+    void ManagerConnection::sendAction(ManagerAction* action, responseCallbackFunction_t rcbf) {
+        ASyncResponseCallBack *asrcb = new ASyncResponseCallBack(action, defaultResponseTimeout, rcbf);
+        addResponsetListener(action->generateID(), asrcb);
+        send(action->toString());
     }
 
     ManagerResponse* ManagerConnection::syncSendAction(ManagerAction& action) {
@@ -88,11 +104,11 @@ namespace asteriskcpp {
 
     ManagerResponse* ManagerConnection::syncSendAction(ManagerAction& action, unsigned int timeout) {
         LOG_TRACE_STR("IN");
-        SyncResponseCallBack srcb(&action, timeout);
-        addResponsetListener(action.generateID(), &srcb);
+        SyncResponseCallBack *srcb = new SyncResponseCallBack(&action, timeout);
+        addResponsetListener(action.generateID(), srcb);
         send(action.toString());
-        srcb.stoll();
-        return (srcb.response);
+        ManagerResponse* mr = srcb->stoll();
+        return mr;
     }
 
     void ManagerConnection::addEventCallback(onManagerEventCallback_t callback) {
@@ -164,18 +180,16 @@ namespace asteriskcpp {
         switch (state) { //from state..
             case DISCONNECTED:
                 if (newState != CONNECTED) {
-                    throw new Exception(transition.str());
+                    Throw(Exception(transition.str()));
                 }
                 //transition to connected
                 LOG_INFO_STR("CONNECTED");
                 this->reader.start(socket, this);
-                ManagerResponsesHandler::start();
                 break;
             case CONNECTED:
                 if (newState == DISCONNECTED) {
                     //to disconnected
                     LOG_INFO_STR("DISCONNECTED");
-                    ManagerResponsesHandler::stop();
                     this->reader.stop();
                 } else {
                     //to authenticated
@@ -227,22 +241,33 @@ namespace asteriskcpp {
         ManagerAction *action = NULL;
         std::string actionId = extractActionID(response);
         if (!actionId.empty()) {
-            ResponseCallBack *cb = ManagerResponsesHandler::listeners[actionId];
+            ResponseCallBack *cb = this->getListener(actionId);
             if (cb != NULL) {
                 action = cb->getAction();
+                this->fireResponseCallback(this->responseBuilder.buildResponse(action, response));
             }
         }
-
-        this->fireResponseCallback(this->responseBuilder.buildResponse(action, response));
     }
 
     void ManagerConnection::dispatchEvent(const std::string& event) {
         LOG_TRACE_STR(str2Log(event));
         ManagerEvent *me = this->eventBuilder.buildEvent(event);
         if (me != NULL) {
-            this->fireEvent(*me);
+            this->fireEvent(me);
         }
-        delete (me);
+    }
+
+    void ManagerConnection::notifyDisconnect() {
+        LOG_ERROR_STR("Disconnected");
+        this->state = DISCONNECTED;
+        if (this->socket != NULL) {
+            delete (socket);
+            this->socket = NULL;
+        }
+    }
+
+    void ManagerConnection::notifyResponseMessage(const std::string& responseMessage) {
+        this->reader.delegeteResponseMessage(responseMessage);
     }
 
     bool ManagerConnection::login() {

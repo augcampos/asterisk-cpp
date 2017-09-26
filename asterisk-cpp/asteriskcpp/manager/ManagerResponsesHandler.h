@@ -25,6 +25,7 @@ namespace asteriskcpp {
     class ResponseCallBack {
     public:
         boost::system_time timeout;
+        bool isTimeout;
         ResponseCallBack(ManagerAction* a, unsigned int tout);
         virtual ~ResponseCallBack();
 
@@ -42,6 +43,7 @@ namespace asteriskcpp {
     class ASyncResponseCallBack : public ResponseCallBack {
     public:
         ASyncResponseCallBack(ManagerAction* a, unsigned int tout, responseCallbackFunction_t f);
+        virtual ~ASyncResponseCallBack();
         virtual void fireCallBack(ManagerResponse* mr);
 
     protected:
@@ -51,21 +53,22 @@ namespace asteriskcpp {
     class SyncResponseCallBack : public ResponseCallBack {
         boost::mutex m_mutex;
         boost::condition_variable m_cond;
+        bool isReady;
+        bool isStollEnd;
 
     public:
         virtual ~SyncResponseCallBack();
 
         ManagerResponse *response;
         SyncResponseCallBack(ManagerAction* a, unsigned int timeOut);
-        void stoll();
+        ManagerResponse* stoll();
         virtual void fireCallBack(ManagerResponse* mr);
     };
 
     class ManagerResponsesHandler : public Thread {
-        typedef std::map<std::string, ResponseCallBack*> listenersList_t;
         boost::mutex m_mutex;
+        typedef std::map<std::string, ResponseCallBack*> listenersList_t;
         boost::condition_variable m_cond;
-        ResponseCallBack* getListener(const std::string& key);
 
     public:
         virtual ~ManagerResponsesHandler();
@@ -76,10 +79,13 @@ namespace asteriskcpp {
         virtual void stop();
         virtual void run();
 
+        ResponseCallBack* getListener(const std::string& key);
+
     protected:
         listenersList_t listeners;
         void clear();
         void fireResponseCallback(ManagerResponse* mr);
+        virtual void notifyResponseMessage(const std::string& responseMessage) {};
 
     };
 

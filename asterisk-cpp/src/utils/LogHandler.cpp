@@ -13,6 +13,8 @@
 
 namespace asteriskcpp {
 
+    boost::mutex lockLogger;
+
     LogHandler::LogHandler() {
         log4cplus::BasicConfigurator::doConfigure();
         log4cplus::Logger::getRoot().setLogLevel(log4cplus::TRACE_LOG_LEVEL);
@@ -20,12 +22,7 @@ namespace asteriskcpp {
 
     LogHandler::LogHandler(const std::string& confFile) :
     confFile(confFile) {
-        if (confFile.empty()) {
-            log4cplus::BasicConfigurator::doConfigure();
-            log4cplus::Logger::getRoot().setLogLevel(log4cplus::TRACE_LOG_LEVEL);
-        } else {
-            log4cplus::PropertyConfigurator::doConfigure(confFile);
-        }
+        this->setup();
     }
 
     LogHandler::~LogHandler() {
@@ -33,6 +30,7 @@ namespace asteriskcpp {
     }
 
     void LogHandler::setLevel(const LogLevel& level) {
+        boost::mutex::scoped_lock lock(lockLogger);
         switch (level) {
             case LL_TRACE:
             {
@@ -73,6 +71,7 @@ namespace asteriskcpp {
     }
 
     void LogHandler::log(const std::string& line, LogLevel level) {
+        boost::mutex::scoped_lock lock(lockLogger);
         switch (level) {
             case LL_TRACE:
             {
@@ -112,4 +111,18 @@ namespace asteriskcpp {
         }
     }
 
+    void LogHandler::setup() {
+        if (confFile.empty()) {
+            log4cplus::BasicConfigurator::doConfigure();
+            log4cplus::Logger::getRoot().setLogLevel(log4cplus::TRACE_LOG_LEVEL);
+        } else {
+            log4cplus::PropertyConfigurator::doConfigure(confFile);
+        }
+    }
+
+    void LogHandler::reopenFile() {
+        boost::mutex::scoped_lock lock(lockLogger);
+        log4cplus::Logger::shutdown();
+        this->setup();
+    }
 }

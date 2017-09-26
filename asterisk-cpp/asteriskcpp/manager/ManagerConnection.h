@@ -41,8 +41,8 @@ namespace asteriskcpp {
         bool isConnected() const;
         bool isAuthenticated() const;
 
-        void sendAction(ManagerAction& action);
-        void sendAction(ManagerAction& action, responseCallbackFunction_t rcbf);
+        void sendAction(ManagerAction* action);
+        void sendAction(ManagerAction* action, responseCallbackFunction_t rcbf);
         ManagerResponse* syncSendAction(ManagerAction& action);
         ManagerResponse* syncSendAction(ManagerAction& action, unsigned int timeout);
 
@@ -68,6 +68,8 @@ namespace asteriskcpp {
         void dispatchAsteriskVersion(AsteriskVersion* version);
         void dispatchResponse(const std::string& response);
         void dispatchEvent(const std::string& event);
+        void notifyDisconnect();
+        virtual void notifyResponseMessage(const std::string& responseMessage);
 
     private:
 

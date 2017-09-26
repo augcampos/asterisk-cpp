@@ -38,6 +38,7 @@ libasteriskcpp_la_SOURCES= \
 	src/manager/ManagerEventListener.cpp \
 	src/manager/ManagerEventsHandler.cpp \
 	src/manager/ManagerConnection.cpp \
+	src/manager/Dispatcher.cpp \
 	src/manager/EventBuilder.cpp \
 	src/manager/events/SkypeBuddyEntryEvent.cpp \
 	src/manager/events/AsyncAgiEvent.cpp \
@@ -155,6 +156,17 @@ libasteriskcpp_la_SOURCES= \
 	src/manager/responses/ManagerResponse.cpp \
 	src/manager/responses/ManagerError.cpp \
 	src/manager/responses/CommandResponse.cpp \
+	src/manager/responses/GetConfigResponse.cpp \
+	src/manager/responses/ModuleCheckResponse.cpp \
+	src/manager/responses/SkypeBuddyResponse.cpp \
+	src/manager/responses/PingResponse.cpp \
+	src/manager/responses/GetVarResponse.cpp \
+	src/manager/responses/MailboxCountResponse.cpp \
+	src/manager/responses/ExtensionStateResponse.cpp \
+	src/manager/responses/SkypeLicenseStatusResponse.cpp \
+	src/manager/responses/MailboxStatusResponse.cpp \
+	src/manager/responses/CoreSettingsResponse.cpp \
+	src/manager/responses/CoreStatusResponse.cpp \
 	src/manager/actions/AbsoluteTimeoutAction.cpp \
 	src/manager/actions/AbstractManagerAction.cpp \
 	src/manager/actions/AbstractMeetMeMuteAction.cpp \
@@ -427,6 +439,17 @@ nobase_inst_HEADERS= \
 	asteriskcpp/manager/responses/CommandResponse.h \
 	asteriskcpp/manager/responses/ChallengeResponse.h \
 	asteriskcpp/manager/responses/ManagerResponse.h \
+	asteriskcpp/manager/responses/GetConfigResponse.h \
+	asteriskcpp/manager/responses/ModuleCheckResponse.h \
+	asteriskcpp/manager/responses/SkypeBuddyResponse.h \
+	asteriskcpp/manager/responses/PingResponse.h \
+	asteriskcpp/manager/responses/GetVarResponse.h \
+	asteriskcpp/manager/responses/MailboxCountResponse.h \
+	asteriskcpp/manager/responses/ExtensionStateResponse.h \
+	asteriskcpp/manager/responses/SkypeLicenseStatusResponse.h \
+	asteriskcpp/manager/responses/MailboxStatusResponse.h \
+	asteriskcpp/manager/responses/CoreSettingsResponse.h \
+	asteriskcpp/manager/responses/CoreStatusResponse.h \
 	asteriskcpp/manager/actions/AbsoluteTimeoutAction.h \
 	asteriskcpp/manager/actions/AbstractManagerAction.h \
 	asteriskcpp/manager/actions/AbstractMeetMeMuteAction.h \
