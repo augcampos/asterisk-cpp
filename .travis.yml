@@ -1,6 +1,10 @@
 language: cpp
 compiler: gcc
 
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y liblog4cplus-dev libssl-dev libboost-thread-dev libboost-regex-dev
+
 install: true
 
 before_script: cd asterisk-cpp
