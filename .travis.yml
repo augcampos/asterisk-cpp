@@ -1,0 +1,12 @@
+language: cpp
+compiler: gcc
+
+install: true
+
+before_script: cd asterisk-cpp
+ 
+script:
+  - aclocal ; autoheader; automake -a -c; libtoolize --force --copy; autoconf;
+  - autoconf; automake; ./configure
+  - make
+#  - sudo make install
