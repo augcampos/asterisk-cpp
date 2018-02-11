@@ -13,4 +13,5 @@ script:
   - aclocal ; autoheader; automake -a -c; libtoolize --force --copy; autoconf;
   - autoconf; automake; ./configure
   - make
-#  - sudo make install
+  - ls -ls
+  - sudo make install
