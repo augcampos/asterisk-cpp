@@ -23,8 +23,7 @@ build:
 	cd $(SRC_FOLDER); aclocal ; autoheader; automake -a -c; libtoolize --force --copy; autoconf
 	cd $(SRC_FOLDER); autoconf; automake --add-missing; ./configure
 	cd $(SRC_FOLDER); make
-	ls -la /usr/local/include/asteriskcpp
-
+	
 /usr/local/lib/libasteriskcpp.so: build build # some times need a 2nd build 
 
 /usr/lib/libasteriskcpp.so: /usr/local/lib/libasteriskcpp.so
@@ -40,6 +39,6 @@ $(EXAMPLE_FOLDER)/tt:
 $(EXAMPLE_FOLDER)/teste:
 	cd $(EXAMPLE_FOLDER); sh ./makeTest.sh
 
-test: $(EXAMPLE_FOLDER)/tt $(EXAMPLE_FOLDER)/teste
+test: install $(EXAMPLE_FOLDER)/tt $(EXAMPLE_FOLDER)/teste
 	$(EXAMPLE_FOLDER)/tt
 	$(EXAMPLE_FOLDER)/teste
