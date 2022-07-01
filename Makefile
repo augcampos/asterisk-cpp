@@ -10,6 +10,7 @@ clean:
 	cd $(SRC_FOLDER); make clean
 	rm -f $(EXAMPLE_FOLDER)/tt
 	rm -f $(EXAMPLE_FOLDER)/teste
+	sudo rm -f /usr/lib/libasteriskcpp.so*
 
 dependencies:
 	sudo apt-get -qy install liblog4cplus-dev libssl-dev libboost-thread-dev libboost-regex-dev
@@ -34,4 +35,5 @@ $(EXAMPLE_FOLDER)/teste:
 	cd $(EXAMPLE_FOLDER); sh ./makeTest.sh
 
 test: $(EXAMPLE_FOLDER)/tt $(EXAMPLE_FOLDER)/teste
+	$(EXAMPLE_FOLDER)/tt
 	$(EXAMPLE_FOLDER)/teste
