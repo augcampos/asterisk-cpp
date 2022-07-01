@@ -36,9 +36,9 @@ int main() {
 
                 for (int i = 0; i < 1; i++) {
                     asteriskcpp::EventsAction ea("OFF");
-                    mc.sendAction(ea);
+                    mc.sendAction(&ea);
                     ea.setEventMask("ON");
-                    mc.sendAction(ea);
+                    mc.sendAction(&ea);
                     asteriskcpp::ManagerResponse* rpc;
 
                     asteriskcpp::AbsoluteTimeoutAction ata("SIP/1000", 30);
