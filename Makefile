@@ -1,5 +1,9 @@
 #!/usr/bin/env make
 
+# Makefile to build and test c++ asteriskcpp lib 
+# optimized for ubuntu, needs sudo pervileges
+
+
 SRC_FOLDER:=asterisk-cpp
 EXAMPLE_FOLDER:=asterisk-cpp/examples
 
