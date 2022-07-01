@@ -21,7 +21,9 @@ build:
 	cd $(SRC_FOLDER); make
 	ls -la /usr/local/include/asteriskcpp
 
-/usr/lib/libasteriskcpp.so: build
+/usr/local/lib/libasteriskcpp.so: build build # some times need a 2nd build 
+
+/usr/lib/libasteriskcpp.so: /usr/local/lib/libasteriskcpp.so
 	cd $(SRC_FOLDER); sudo make install
 	sudo ln -s /usr/local/lib/libasteriskcpp.so /usr/lib/libasteriskcpp.so
 	sudo ln -s /usr/local/lib/libasteriskcpp.so.0 /usr/lib/libasteriskcpp.so.0
