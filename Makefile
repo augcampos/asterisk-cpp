@@ -7,7 +7,7 @@ ALL: clean dependencies install
 	@echo " -- ALL -- "
 
 clean:
-	cd $(SRC_FOLDER); make clean
+	cd $(SRC_FOLDER); make clean || true
 	rm -f $(EXAMPLE_FOLDER)/tt
 	rm -f $(EXAMPLE_FOLDER)/teste
 	sudo rm -f /usr/lib/libasteriskcpp.so*
