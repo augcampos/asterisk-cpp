@@ -54,7 +54,6 @@ namespace asteriskcpp {
             if (it != eventFactoryMap.end()) {
                 eventFactoryMap.erase(it);
             }
-            eventFactoryMap.insert(std::make_pair(tmpEvent.getEventName(), new factory<C>()));
         }
 
         ManagerEvent* buildEvent(const std::string& eventStr);
