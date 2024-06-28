@@ -47,7 +47,7 @@ namespace asteriskcpp {
         }
 
         template<class C>
-        void UnegisterClass() {
+        void UnregisterClass() {
             C tmpEvent("");
             LOG_TRACE_STR("UNREGISTER EVENT CLASS " + tmpEvent.getEventName());
             EnventFactoryMapType::iterator it = eventFactoryMap.find(tmpEvent.getEventName());
