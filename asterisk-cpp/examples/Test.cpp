@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <asteriskcpp/Manager.hpp>
+#include <asteriskcpp/manager/responses/ManagerError.h>
 
 
 using namespace asteriskcpp;
@@ -35,10 +36,10 @@ int main() {
             if (mc.login("administrator", "secret")) {
 
                 for (int i = 0; i < 1; i++) {
-                    asteriskcpp::EventsAction ea("OFF");
-                    mc.sendAction(&ea);
-                    ea.setEventMask("ON");
-                    mc.sendAction(&ea);
+                    asteriskcpp::EventsAction *ea = new asteriskcpp::EventsAction("OFF");
+                    mc.sendAction(ea);
+                    asteriskcpp::EventsAction *ea2 = new asteriskcpp::EventsAction("ON");
+                    mc.sendAction(ea2);
                     asteriskcpp::ManagerResponse* rpc;
 
                     asteriskcpp::AbsoluteTimeoutAction ata("SIP/1000", 30);
@@ -50,12 +51,18 @@ int main() {
                     delete (rpc);
 
                     asteriskcpp::CommandAction coma("sip show peers");
-                    asteriskcpp::CommandResponse* cr = (asteriskcpp::CommandResponse*) (mc.syncSendAction(coma));
-                    std::cout << std::endl << "ZZZZZZ" << cr->toLog() << std::endl;
-                    for (std::vector<std::string>::const_iterator it = cr->getResult().begin(); it != cr->getResult().end(); it++) {
-                        std::cout << "[" << (*it) << "]" << std::endl;
+                    asteriskcpp::ManagerResponse* mr = mc.syncSendAction(coma);
+                    if (mr->getType() == asteriskcpp::ManagerResponse::Type_ERROR) {
+                        asteriskcpp::ManagerError *me = (asteriskcpp::ManagerError*)mr;
+                        std::cout << std::endl << "XXXXXX" << me->toLog() << std::endl;
+                    } else {
+                        asteriskcpp::CommandResponse* cr = (asteriskcpp::CommandResponse*)mr;
+                        std::cout << std::endl << "ZZZZZZ" << cr->toLog() << std::endl;
+                        for (std::vector<std::string>::const_iterator it = cr->getResult().begin(); it != cr->getResult().end(); it++) {
+                            std::cout << "[" << (*it) << "]" << std::endl;
+                        }
                     }
-                    delete (cr);
+                    delete mr;
                 }
                 mc.logoff();
             }
