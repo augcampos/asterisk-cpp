@@ -47,14 +47,13 @@ namespace asteriskcpp {
         }
 
         template<class C>
-        void UnegisterClass() {
+        void UnregisterClass() {
             C tmpEvent("");
             LOG_TRACE_STR("UNREGISTER EVENT CLASS " + tmpEvent.getEventName());
             EnventFactoryMapType::iterator it = eventFactoryMap.find(tmpEvent.getEventName());
             if (it != eventFactoryMap.end()) {
                 eventFactoryMap.erase(it);
             }
-            eventFactoryMap.insert(std::make_pair(tmpEvent.getEventName(), new factory<C>()));
         }
 
         ManagerEvent* buildEvent(const std::string& eventStr);
